@@ -1,0 +1,135 @@
+﻿AlTER TABLE [SkillMaps]
+WITH CHECK ADD CONSTRAINT FK_SkillMaps_Levels FOREIGN KEY(LevelID)
+REFERENCES Levels (ID)
+GO
+ALTER TABLE [SkillMaps]
+WITH CHECK ADD CONSTRAINT FK_SkillMaps_Skills FOREIGN KEY(SkillID)
+REFERENCES Skills (ID)
+GO
+
+
+ALTER TABLE [Levels]
+WITH CHECK ADD CONSTRAINT FK_Levels_Skills FOREIGN KEY(SkillID)
+REFERENCES Skills (ID)
+GO
+
+
+ALTER TABLE [WorkersSkillMaps]
+WITH CHECK ADD CONSTRAINT FK_WorkersSkillMaps_SkillMaps FOREIGN KEY(SkillMapID)
+REFERENCES SkillMaps (ID)
+GO
+ALTER TABLE [WorkersSkillMapS]
+WITH CHECK ADD CONSTRAINT FK_WorkersSkillMaps_Workers FOREIGN KEY(WorkerID)
+REFERENCES Workers (ID)
+GO
+
+
+
+ALTER TABLE [WorkersHistory]
+WITH CHECK ADD CONSTRAINT FK_WorkersHistory_Workers FOREIGN KEY(WorkerID)
+REFERENCES Workers (ID)
+GO
+
+
+
+ALTER TABLE [Employment]
+WITH CHECK ADD CONSTRAINT FK_Employment_Workers FOREIGN KEY(WorkerID)
+REFERENCES Workers (ID)
+GO
+ALTER TABLE [Employment]
+WITH CHECK ADD CONSTRAINT FK_Employment_Companies FOREIGN KEY(CompanyID)
+REFERENCES Companies (ID)
+GO
+ALTER TABLE [Employment]
+WITH CHECK ADD CONSTRAINT FK_Employment_Divisions FOREIGN KEY(DivisionID)
+REFERENCES Divisions (ID)
+GO
+ALTER TABLE [Employment]
+WITH CHECK ADD CONSTRAINT FK_Employment_Projects FOREIGN KEY(ProjectID)
+REFERENCES Projects (ID)
+GO
+ALTER TABLE [Employment]
+WITH CHECK ADD CONSTRAINT FK_Employment_Positions FOREIGN KEY(PositionID)
+REFERENCES Positions (ID)
+GO
+ALTER TABLE [Employment]
+WITH CHECK ADD CONSTRAINT FK_Employment_Statuses FOREIGN KEY(StatusID)
+REFERENCES Statuses (ID)
+GO
+
+
+
+ALTER TABLE [Requiries]
+WITH CHECK ADD CONSTRAINT FK_Requiries_SkillMaps FOREIGN KEY(SkillMapID)
+REFERENCES SkillMaps(ID)
+GO
+ALTER TABLE [Requiries]
+WITH CHECK ADD CONSTRAINT FK_Requiries_Positions FOREIGN KEY(PositionID)
+REFERENCES Positions(ID)
+GO
+
+
+ALTER TABLE [Workers]
+WITH CHECK ADD CONSTRAINT FK_Workers_Locations FOREIGN KEY(LocationID)
+REFERENCES Locations (ID)
+GO
+ALTER TABLE [Workers]
+WITH CHECK ADD CONSTRAINT FK_Workers_Contacts FOREIGN KEY(ContactID)
+REFERENCES Contacts (ID)
+GO
+
+
+ALTER TABLE [BranchOffices]
+WITH CHECK ADD CONSTRAINT FK_BranchOffices_Companies FOREIGN KEY(CompanyID)
+REFERENCES Companies (ID)
+GO
+ALTER TABLE [BranchOffices]
+WITH CHECK ADD CONSTRAINT FK_BranchOffices_Location FOREIGN KEY(LocationID)
+REFERENCES Locations (ID)
+GO
+ALTER TABLE [BranchOffices]
+WITH CHECK ADD CONSTRAINT FK_BranchOffices_Contacts FOREIGN KEY(ContactID)
+REFERENCES Contacts (ID)
+GO
+
+
+ALTER TABLE [Divisions]
+WITH CHECK ADD CONSTRAINT FK_Divisions_Contacts FOREIGN KEY(ContactID)
+REFERENCES Contacts (ID)
+GO
+ALTER TABLE [Divisions]
+WITH CHECK ADD CONSTRAINT FK_Divisions_BranchOffices FOREIGN KEY(BranchOfficeID)
+REFERENCES BranchOffices (ID)
+GO
+
+
+ALTER TABLE [Projects]
+WITH CHECK ADD CONSTRAINT FK_Projects_Divisions FOREIGN KEY(DivisionID)
+REFERENCES Divisions (ID)
+GO
+
+
+ALTER TABLE [Positions]
+WITH CHECK ADD CONSTRAINT FK_Positions_Projects FOREIGN KEY(ProjectID)
+REFERENCES Projects (ID)
+GO
+
+
+ALTER TABLE [Divisions_Directions]
+WITH CHECK ADD CONSTRAINT FK_DivisionsDirections_Directions FOREIGN KEY(DirectionID)
+REFERENCES Directions (ID)
+GO
+ALTER TABLE [Divisions_Directions]
+WITH CHECK ADD CONSTRAINT FK_DivisionsDirections_Divisions FOREIGN KEY(DivisionID)
+REFERENCES Divisions (ID)
+GO
+
+
+ALTER TABLE [Projects_Directions]
+WITH CHECK ADD CONSTRAINT FK_ProjectsDirections_Directions FOREIGN KEY(DirectionID)
+REFERENCES Directions(ID)
+GO
+ALTER TABLE [Projects_Directions]
+WITH CHECK ADD CONSTRAINT FK_ProjectsDirections_Projects FOREIGN KEY(ProjectID)
+REFERENCES Projects(ID)
+GO

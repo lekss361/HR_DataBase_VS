@@ -67,5 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Script create table\ScriptCreateEmploymentTable.sql" />
+    <None Include="dbo\Script create table\CreateOldTables.sql" />
+    <None Include="dbo\Script create table\CreateOldTableForeignKey.sql" />
   </ItemGroup>
 </Project>
