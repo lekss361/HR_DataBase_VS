@@ -1,13 +1,7 @@
-﻿CREATE TABLE [Requiries] (
-	PositionID int NOT NULL,
-	SkillMapID int NOT NULL
-)
-GO
-/* Таблица Requiries */
-ALTER TABLE [Requiries]
-WITH CHECK ADD CONSTRAINT FK_Requiries_SkillMaps FOREIGN KEY(SkillMapID)
-REFERENCES SkillMaps(ID)
-GO
-ALTER TABLE [Requiries]
-WITH CHECK ADD CONSTRAINT FK_Requiries_Positions FOREIGN KEY(PositionID)
-REFERENCES Positions(ID)
+﻿CREATE TABLE [dbo].[Requiries] (
+    [PositionID] INT NOT NULL,
+    [SkillMapID] INT NOT NULL,
+    CONSTRAINT [Requiries_fk0] FOREIGN KEY ([PositionID]) REFERENCES [dbo].[Project] ([ID]),
+    CONSTRAINT [Requiries_fk1] FOREIGN KEY ([SkillMapID]) REFERENCES [dbo].[SkillsMap] ([ID])
+);
+

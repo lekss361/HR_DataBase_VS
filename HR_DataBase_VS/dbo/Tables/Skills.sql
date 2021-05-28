@@ -1,5 +1,0 @@
-﻿CREATE TABLE [Skills] (
-	ID int PRIMARY KEY IDENTITY NOT NULL,
-	Name nvarchar(255) NOT NULL,
-	UNIQUE(ID)
-)

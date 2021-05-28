@@ -1,10 +1,10 @@
-﻿CREATE TABLE [Positions] (
-	ID int PRIMARY KEY NOT NULL,
-	Name nvarchar(255) NOT NULL,
-	ProjectID int,
-	UNIQUE(ID)
-)
-GO
-ALTER TABLE [Positions]
-WITH CHECK ADD CONSTRAINT FK_Positions_Projects FOREIGN KEY(ProjectID)
-REFERENCES Projects (ID)
+﻿CREATE TABLE [dbo].[Positions] (
+    [ID]           INT            NOT NULL,
+    [Name]         NVARCHAR (255) NOT NULL,
+    [DirectionsID] INT            NOT NULL,
+    [DivisionsID]  INT            NOT NULL,
+    CONSTRAINT [PK_POSITIONS] PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT [Positions_fk0] FOREIGN KEY ([DirectionsID]) REFERENCES [dbo].[Directions] ([ID]),
+    CONSTRAINT [Positions_fk1] FOREIGN KEY ([DivisionsID]) REFERENCES [dbo].[Divisions] ([ID])
+);
+

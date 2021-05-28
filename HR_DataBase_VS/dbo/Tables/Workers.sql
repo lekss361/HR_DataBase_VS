@@ -1,17 +1,15 @@
-﻿CREATE TABLE [Workers] (
-	ID int PRIMARY KEY IDENTITY NOT NULL,
-	FirstName nvarchar(255) NOT NULL,
-	LastName nvarchar(255) NOT NULL,
-	LocationID int NOT NULL,
-	ContactID int NOT NULL,
-	Information nvarchar(255) NOT NULL,
-	UNIQUE(ID)
-)
-GO
-ALTER TABLE [Workers]
-WITH CHECK ADD CONSTRAINT FK_Workers_Locations FOREIGN KEY(LocationID)
-REFERENCES Locations (ID)
-GO
-ALTER TABLE [Workers]
-WITH CHECK ADD CONSTRAINT FK_Workers_Contacts FOREIGN KEY(ContactID)
-REFERENCES Contacts (ID)
+﻿CREATE TABLE [dbo].[Workers] (
+    [ID]         INT            IDENTITY (1, 1) NOT NULL,
+    [FirstName]  NVARCHAR (255) NOT NULL,
+    [LastName]   NVARCHAR (255) NOT NULL,
+    [BirthDay]   DATE           NOT NULL,
+    [Education]  NVARCHAR (255) NOT NULL,
+    [ContactID]  INT            NOT NULL,
+    [LocationID] INT            NOT NULL,
+    [Sex]        NVARCHAR (255) NOT NULL,
+    [Hobby]      NVARCHAR (255) NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT [Workers_fk0] FOREIGN KEY ([ContactID]) REFERENCES [dbo].[Contacts] ([ID]),
+    CONSTRAINT [Workers_fk1] FOREIGN KEY ([LocationID]) REFERENCES [dbo].[Location] ([ID])
+);
+

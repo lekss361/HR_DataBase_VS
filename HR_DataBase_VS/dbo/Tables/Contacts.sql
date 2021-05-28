@@ -1,7 +1,8 @@
-﻿CREATE TABLE [Contacts] (
-	ID int PRIMARY KEY NOT NULL,
-	Phone decimal NOT NULL,
-	Email nvarchar(255),
-	Fax nvarchar(255),
-	UNIQUE(ID)
-)
+﻿CREATE TABLE [dbo].[Contacts] (
+    [ID]          INT            NOT NULL,
+    [Phone]       DECIMAL (30)   NULL,
+    [Email]       NVARCHAR (255) NULL,
+    [Information] NVARCHAR (1)   NOT NULL,
+    CONSTRAINT [PK_CONTACTS] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+

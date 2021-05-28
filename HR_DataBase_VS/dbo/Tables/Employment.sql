@@ -1,33 +1,12 @@
-﻿CREATE TABLE [Employment] (
-	WorkerID int PRIMARY KEY NOT NULL,
-	CompanyID int NOT NULL,
-	DivisionID int NOT NULL,
-	ProjectID int NOT NULL,
-	PositionID int NOT NULL,
-	StatusID int NOT NULL,
-)
-GO
-/* Таблица Employment */
-ALTER TABLE [Employment]
-WITH CHECK ADD CONSTRAINT FK_Employment_Workers FOREIGN KEY(WorkerID)
-REFERENCES Workers (ID)
-GO
-ALTER TABLE [Employment]
-WITH CHECK ADD CONSTRAINT FK_Employment_Companies FOREIGN KEY(CompanyID)
-REFERENCES Companies (ID)
-GO
-ALTER TABLE [Employment]
-WITH CHECK ADD CONSTRAINT FK_Employment_Divisions FOREIGN KEY(DivisionID)
-REFERENCES Divisions (ID)
-GO
-ALTER TABLE [Employment]
-WITH CHECK ADD CONSTRAINT FK_Employment_Projects FOREIGN KEY(ProjectID)
-REFERENCES Projects (ID)
-GO
-ALTER TABLE [Employment]
-WITH CHECK ADD CONSTRAINT FK_Employment_Positions FOREIGN KEY(PositionID)
-REFERENCES Positions (ID)
-GO
-ALTER TABLE [Employment]
-WITH CHECK ADD CONSTRAINT FK_Employment_Statuses FOREIGN KEY(StatusID)
-REFERENCES Statuses (ID)
+﻿CREATE TABLE [dbo].[Employment] (
+    [WorkerID]   INT NOT NULL,
+    [PositionID] INT NOT NULL,
+    [ProjectID]  INT NULL,
+    [StatusID]   INT NOT NULL,
+    CONSTRAINT [PK_EMPLOYMENT] PRIMARY KEY CLUSTERED ([WorkerID] ASC),
+    CONSTRAINT [Employment_fk0] FOREIGN KEY ([WorkerID]) REFERENCES [dbo].[Workers] ([ID]),
+    CONSTRAINT [Employment_fk1] FOREIGN KEY ([PositionID]) REFERENCES [dbo].[Positions] ([ID]),
+    CONSTRAINT [Employment_fk2] FOREIGN KEY ([ProjectID]) REFERENCES [dbo].[Project] ([ID]),
+    CONSTRAINT [Employment_fk3] FOREIGN KEY ([StatusID]) REFERENCES [dbo].[Statuses] ([ID])
+);
+
