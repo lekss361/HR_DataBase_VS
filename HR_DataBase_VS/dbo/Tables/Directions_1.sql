@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Directions] (
+    [ID]   INT            NOT NULL,
+    [Name] NVARCHAR (255) NOT NULL,
+    CONSTRAINT [PK_DIRECTIONS] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+

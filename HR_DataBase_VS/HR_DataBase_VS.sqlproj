@@ -12,7 +12,7 @@
     <RootPath />
     <RootNamespace>HR_DataBase_VS</RootNamespace>
     <AssemblyName>HR_DataBase_VS</AssemblyName>
-    <ModelCollation>1049,CI</ModelCollation>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -21,7 +21,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <DefaultCollation>Cyrillic_General_CI_AS</DefaultCollation>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -56,33 +56,5 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="dbo\" />
-    <Folder Include="dbo\Tables\" />
-    <Folder Include="dbo\Script create table" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="dbo\Tables\Table_1.sql" />
-    <Build Include="dbo\Tables\WorkersSkillMaps.sql" />
-    <Build Include="dbo\Tables\SkillMaps.sql" />
-    <Build Include="dbo\Tables\Levels.sql" />
-    <Build Include="dbo\Tables\Skills.sql" />
-    <Build Include="dbo\Tables\WorkersHistory.sql" />
-    <Build Include="dbo\Tables\Workers.sql" />
-    <Build Include="dbo\Tables\Employment.sql" />
-    <Build Include="dbo\Tables\Requiries.sql" />
-    <Build Include="dbo\Tables\Positions.sql" />
-    <Build Include="dbo\Tables\Companies.sql" />
-    <Build Include="dbo\Tables\BranchOffices.sql" />
-    <Build Include="dbo\Tables\Divisions.sql" />
-    <Build Include="dbo\Tables\Projects.sql" />
-    <Build Include="dbo\Tables\Statuses.sql" />
-    <Build Include="dbo\Tables\Locations.sql" />
-    <Build Include="dbo\Tables\Contacts.sql" />
-    <Build Include="dbo\Tables\Divisions_Directions.sql" />
-    <Build Include="dbo\Tables\Projects_Directions.sql" />
-    <Build Include="dbo\Tables\Directions.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="dbo\Script create table\ScriptCreateEmploymentTable.sql" />
   </ItemGroup>
 </Project>
