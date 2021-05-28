@@ -1,6 +1,0 @@
-﻿CREATE TABLE [dbo].[Statuses] (
-    [ID]   INT            NOT NULL,
-    [Name] NVARCHAR (255) NOT NULL,
-    CONSTRAINT [PK_STATUSES] PRIMARY KEY CLUSTERED ([ID] ASC)
-);
-
