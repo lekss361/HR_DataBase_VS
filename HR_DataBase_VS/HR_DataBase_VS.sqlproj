@@ -58,6 +58,8 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedure" />
+    <Folder Include="dbo\Stored Procedure\Base" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Workers.sql" />
@@ -78,5 +80,8 @@
     <Build Include="dbo\Tables\Previous_works.sql" />
     <Build Include="dbo\Tables\Comments.sql" />
     <Build Include="dbo\Tables\SkillName.sql" />
+    <Build Include="dbo\Stored Procedure\Base\GetAllCompany.sql" />
+    <Build Include="dbo\Stored Procedure\Base\GetAllWorkersWithLocaionAndContacts.sql" />
+    <Build Include="dbo\Stored Procedure\Base\GetWorkerWithLocaionAndContactsByID.sql" />
   </ItemGroup>
 </Project>
