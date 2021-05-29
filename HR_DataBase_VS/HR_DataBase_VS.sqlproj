@@ -58,6 +58,8 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Security" />
+    <Folder Include="dbo\Security\Schemas" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Workers.sql" />
@@ -78,5 +80,6 @@
     <Build Include="dbo\Tables\Previous_works.sql" />
     <Build Include="dbo\Tables\Comments.sql" />
     <Build Include="dbo\Tables\SkillName.sql" />
+    <Build Include="dbo\Security\Schemas\HR_DataBase.sql" />
   </ItemGroup>
 </Project>
