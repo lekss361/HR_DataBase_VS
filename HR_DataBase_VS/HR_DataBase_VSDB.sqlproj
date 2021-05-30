@@ -86,8 +86,11 @@
     <Build Include="dbo\Security\Schemas\HR_DataBase.sql" />
     <Build Include="dbo\Stored Procedures\Comments\AddNewComments.sql" />
     <Build Include="dbo\Stored Procedures\Comments\GetAllCommentsByWorkersID.sql" />
-    <Build Include="dbo\Stored Procedures\Comments\UpdateBuID.sql" />
     <Build Include="dbo\Stored Procedures\Base\GetAllWorkersWithLocaionAndContacts.sql" />
     <Build Include="dbo\Stored Procedures\Base\GetWorkerWithLocaionAndContactsByID.sql" />
+    <Build Include="dbo\Stored Procedures\Comments\UpdateAllByID.sql" />
+    <Build Include="dbo\Stored Procedures\Comments\GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\Comments\DeleteByID.sql" />
+    <Build Include="dbo\Stored Procedures\Comments\DeleteAll.sql" />
   </ItemGroup>
 </Project>
