@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[DeleteByID]
+﻿CREATE PROCEDURE [HR_DataBase].[DeleteByID]
 	@id INT
 AS
 	DELETE from [Comments] 
