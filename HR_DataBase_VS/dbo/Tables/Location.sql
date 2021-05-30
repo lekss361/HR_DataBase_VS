@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Location] (
-    [ID]              INT            NOT NULL,
+    [ID]         INT            IDENTITY (1, 1) NOT NULL,
     [LocationIndex]   INT            NOT NULL,
     [Country]         NVARCHAR (255) NOT NULL,
     [City]            NVARCHAR (255) NOT NULL,

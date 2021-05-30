@@ -60,6 +60,8 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Stored Procedure" />
     <Folder Include="dbo\Stored Procedure\Base" />
+    <Folder Include="dbo\Security" />
+    <Folder Include="dbo\Security\Schemas" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Workers.sql" />
@@ -83,5 +85,6 @@
     <Build Include="dbo\Stored Procedure\Base\GetAllCompany.sql" />
     <Build Include="dbo\Stored Procedure\Base\GetAllWorkersWithLocaionAndContacts.sql" />
     <Build Include="dbo\Stored Procedure\Base\GetWorkerWithLocaionAndContactsByID.sql" />
+    <Build Include="dbo\Security\Schemas\HR_DataBase.sql" />
   </ItemGroup>
 </Project>
