@@ -64,6 +64,7 @@
     <Folder Include="dbo\Stored Procedures\Comments" />
     <Folder Include="dbo\Stored Procedures\Base" />
     <Folder Include="dbo\Stored Procedures\SkillName" />
+    <Folder Include="dbo\Stored Procedures\Base\Workers" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Workers.sql" />
@@ -99,5 +100,11 @@
     <Build Include="dbo\Stored Procedures\SkillName\UpdateByID.sql" />
     <Build Include="dbo\Stored Procedures\SkillName\GetByID.sql" />
     <Build Include="dbo\Stored Procedures\SkillName\GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\GetAllWorkers.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\GetWorkerByID.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\AddWorker.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\DeleteAllWorkers.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\DeleteWorkerByID.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\UpdateWorkersByID.sql" />
   </ItemGroup>
 </Project>
