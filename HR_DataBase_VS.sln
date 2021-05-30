@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HR_DataBase_VS", "HR_DataBase_VS\HR_DataBase_VS.sqlproj", "{7866ACBF-344A-4669-BC43-085D11DDCA69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_DataBase_VSBLL", "HR_DataBase_VSBLL\HR_DataBase_VSBLL.csproj", "{C3408744-8389-4597-8BB4-63B9492AF984}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{7866ACBF-344A-4669-BC43-085D11DDCA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7866ACBF-344A-4669-BC43-085D11DDCA69}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7866ACBF-344A-4669-BC43-085D11DDCA69}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C3408744-8389-4597-8BB4-63B9492AF984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3408744-8389-4597-8BB4-63B9492AF984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3408744-8389-4597-8BB4-63B9492AF984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3408744-8389-4597-8BB4-63B9492AF984}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
