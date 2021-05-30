@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>HR_DataBase_VS</Name>
+    <Name>HR_DataBase_VSDB</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{7866acbf-344a-4669-bc43-085d11ddca69}</ProjectGuid>
@@ -60,6 +60,8 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Security" />
     <Folder Include="dbo\Security\Schemas" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="dbo\Stored Procedures\Comments" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Workers.sql" />
@@ -81,5 +83,8 @@
     <Build Include="dbo\Tables\Comments.sql" />
     <Build Include="dbo\Tables\SkillName.sql" />
     <Build Include="dbo\Security\Schemas\HR_DataBase.sql" />
+    <Build Include="dbo\Stored Procedures\Comments\AddNewComments.sql" />
+    <Build Include="dbo\Stored Procedures\Comments\GetAllCommentsByWorkersID.sql" />
+    <Build Include="dbo\Stored Procedures\Comments\UpdateBuID.sql" />
   </ItemGroup>
 </Project>
