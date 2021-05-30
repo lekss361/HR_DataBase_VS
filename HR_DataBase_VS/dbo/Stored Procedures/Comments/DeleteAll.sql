@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[DeleteAll]
+﻿CREATE PROCEDURE [HR_DataBase].[DeleteAll]
 AS
-	delete from [Comments]
+	delete from [SkillName]
 	DBCC CHECKIDENT ([Comments], RESEED, 0)
