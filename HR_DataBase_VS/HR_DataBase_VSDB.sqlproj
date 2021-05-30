@@ -63,6 +63,7 @@
     <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\Stored Procedures\Comments" />
     <Folder Include="dbo\Stored Procedures\Base" />
+    <Folder Include="dbo\Stored Procedures\SkillName" />
     <Folder Include="dbo\Stored Procedures\Base\Workers" />
   </ItemGroup>
   <ItemGroup>
@@ -87,9 +88,18 @@
     <Build Include="dbo\Security\Schemas\HR_DataBase.sql" />
     <Build Include="dbo\Stored Procedures\Comments\AddNewComments.sql" />
     <Build Include="dbo\Stored Procedures\Comments\GetAllCommentsByWorkersID.sql" />
-    <Build Include="dbo\Stored Procedures\Comments\UpdateBuID.sql" />
     <Build Include="dbo\Stored Procedures\Base\GetAllWorkersWithLocaionAndContacts.sql" />
     <Build Include="dbo\Stored Procedures\Base\GetWorkerWithLocaionAndContactsByID.sql" />
+    <Build Include="dbo\Stored Procedures\Comments\UpdateAllByID.sql" />
+    <Build Include="dbo\Stored Procedures\Comments\GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\Comments\DeleteByID.sql" />
+    <Build Include="dbo\Stored Procedures\Comments\DeleteAll.sql" />
+    <Build Include="dbo\Stored Procedures\SkillName\AddNewSkillName.sql" />
+    <Build Include="dbo\Stored Procedures\SkillName\DeleteByID.sql" />
+    <Build Include="dbo\Stored Procedures\SkillName\DeleteAll.sql" />
+    <Build Include="dbo\Stored Procedures\SkillName\UpdateByID.sql" />
+    <Build Include="dbo\Stored Procedures\SkillName\GetByID.sql" />
+    <Build Include="dbo\Stored Procedures\SkillName\GetAll.sql" />
     <Build Include="dbo\Stored Procedures\Base\Workers\GetAllWorkers.sql" />
     <Build Include="dbo\Stored Procedures\Base\Workers\GetWorkerByID.sql" />
     <Build Include="dbo\Stored Procedures\Base\Workers\AddWorker.sql" />
