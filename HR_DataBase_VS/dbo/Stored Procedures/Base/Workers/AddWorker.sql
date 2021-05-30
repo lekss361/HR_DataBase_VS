@@ -5,5 +5,5 @@
     @Education  NVARCHAR (255) NOT NULL,
     @Hobby      NVARCHAR (255) NULL
 AS 
-INSERT INTO [Workers] 
+INSERT INTO [Workers] (FirstName, LastName, BirthDay, Education, Hobby)
 VALUES(@FirstName, @LastName, @BirthDay, @Education, @Hobby)
