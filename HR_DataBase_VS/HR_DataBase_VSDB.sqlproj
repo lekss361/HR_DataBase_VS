@@ -64,6 +64,8 @@
     <Folder Include="dbo\Stored Procedures\Comments" />
     <Folder Include="dbo\Stored Procedures\Base" />
     <Folder Include="dbo\Stored Procedures\SkillName" />
+    <Folder Include="dbo\Stored Procedures\Base\Workers" />
+    <Folder Include="dbo\Stored Procedures\Base\Locations" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Workers.sql" />
@@ -99,5 +101,17 @@
     <Build Include="dbo\Stored Procedures\SkillName\UpdateByID.sql" />
     <Build Include="dbo\Stored Procedures\SkillName\GetByID.sql" />
     <Build Include="dbo\Stored Procedures\SkillName\GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\GetAllWorkers.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\GetWorkerByID.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\AddWorker.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\DeleteAllWorkers.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\DeleteWorkerByID.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\UpdateWorkersByID.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Locations\AddLocation.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Locations\DeleteAllLocations.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Locations\DeleteLocationByID.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Locations\GetAllLocations.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Locations\GetLocationByID.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Locations\UpdateLocationByID.sql" />
   </ItemGroup>
 </Project>
