@@ -95,5 +95,6 @@
     <Build Include="dbo\Stored Procedures\Base\Workers\AddWorker.sql" />
     <Build Include="dbo\Stored Procedures\Base\Workers\DeleteAllWorkers.sql" />
     <Build Include="dbo\Stored Procedures\Base\Workers\DeleteWorkerByID.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\UpdateWorkersByID.sql" />
   </ItemGroup>
 </Project>
