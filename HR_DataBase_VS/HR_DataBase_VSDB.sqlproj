@@ -91,5 +91,6 @@
     <Build Include="dbo\Stored Procedures\Base\GetAllWorkersWithLocaionAndContacts.sql" />
     <Build Include="dbo\Stored Procedures\Base\GetWorkerWithLocaionAndContactsByID.sql" />
     <Build Include="dbo\Stored Procedures\Base\Workers\GetAllWorkers.sql" />
+    <Build Include="dbo\Stored Procedures\Base\Workers\GetWorkerByID.sql" />
   </ItemGroup>
 </Project>
