@@ -1,6 +1,0 @@
-﻿CREATE TABLE [dbo].[SkillType] (
-    [ID]         INT            IDENTITY (1, 1) NOT NULL,
-    [Name] NVARCHAR (255) NOT NULL,
-    CONSTRAINT [PK_SKILLTYPE] PRIMARY KEY CLUSTERED ([ID] ASC)
-);
-

@@ -7,15 +7,15 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{7866acbf-344a-4669-bc43-085d11ddca69}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath />
-    <RootNamespace>HR_DataBase_VS</RootNamespace>
-    <AssemblyName>HR_DataBase_VS</AssemblyName>
+    <RootNamespace>HR_DataBase_VSDB</RootNamespace>
+    <AssemblyName>HR_DataBase_VSDB</AssemblyName>
     <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SqlServerVerification>False</SqlServerVerification>
@@ -23,6 +23,9 @@
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <DefaultSchema>HR_DataBase_VSDB</DefaultSchema>
+    <TargetFrameworkProfile />
+    <PermissionSet>UNSAFE</PermissionSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -46,6 +49,7 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
@@ -56,62 +60,62 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="dbo\" />
-    <Folder Include="dbo\Tables\" />
-    <Folder Include="dbo\Security" />
-    <Folder Include="dbo\Security\Schemas" />
-    <Folder Include="dbo\Stored Procedures" />
-    <Folder Include="dbo\Stored Procedures\Comments" />
-    <Folder Include="dbo\Stored Procedures\Base" />
-    <Folder Include="dbo\Stored Procedures\SkillName" />
-    <Folder Include="dbo\Stored Procedures\Base\Workers" />
-    <Folder Include="dbo\Stored Procedures\Base\Locations" />
+    <Folder Include="HR_DataBase_VSDB" />
+    <Folder Include="HR_DataBase_VSDB\Tables" />
+    <Folder Include="HR_DataBase_VSDB\Security" />
+    <Folder Include="HR_DataBase_VSDB\Security\Schemas" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\Base" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\Comments" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\SkillName" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\Locations" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\Workers" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Workers.sql" />
-    <Build Include="dbo\Tables\Divisions.sql" />
-    <Build Include="dbo\Tables\Directions.sql" />
-    <Build Include="dbo\Tables\Levels.sql" />
-    <Build Include="dbo\Tables\Employment.sql" />
-    <Build Include="dbo\Tables\Statuses.sql" />
-    <Build Include="dbo\Tables\SkillsMap.sql" />
-    <Build Include="dbo\Tables\WorkersSkillMap.sql" />
-    <Build Include="dbo\Tables\Requiries.sql" />
-    <Build Include="dbo\Tables\Company.sql" />
-    <Build Include="dbo\Tables\Positions.sql" />
-    <Build Include="dbo\Tables\Project.sql" />
-    <Build Include="dbo\Tables\Location.sql" />
-    <Build Include="dbo\Tables\Contacts.sql" />
-    <Build Include="dbo\Tables\SkillType.sql" />
-    <Build Include="dbo\Tables\Previous_works.sql" />
-    <Build Include="dbo\Tables\Comments.sql" />
-    <Build Include="dbo\Tables\SkillName.sql" />
-    <Build Include="dbo\Security\Schemas\HR_DataBase.sql" />
-    <Build Include="dbo\Stored Procedures\Comments\AddNewComments.sql" />
-    <Build Include="dbo\Stored Procedures\Comments\GetAllCommentsByWorkersID.sql" />
-    <Build Include="dbo\Stored Procedures\Base\GetAllWorkersWithLocaionAndContacts.sql" />
-    <Build Include="dbo\Stored Procedures\Base\GetWorkerWithLocaionAndContactsByID.sql" />
-    <Build Include="dbo\Stored Procedures\Comments\UpdateAllByID.sql" />
-    <Build Include="dbo\Stored Procedures\Comments\GetAll.sql" />
-    <Build Include="dbo\Stored Procedures\Comments\DeleteByID.sql" />
-    <Build Include="dbo\Stored Procedures\Comments\DeleteAll.sql" />
-    <Build Include="dbo\Stored Procedures\SkillName\AddNewSkillName.sql" />
-    <Build Include="dbo\Stored Procedures\SkillName\DeleteByID.sql" />
-    <Build Include="dbo\Stored Procedures\SkillName\DeleteAll.sql" />
-    <Build Include="dbo\Stored Procedures\SkillName\UpdateByID.sql" />
-    <Build Include="dbo\Stored Procedures\SkillName\GetByID.sql" />
-    <Build Include="dbo\Stored Procedures\SkillName\GetAll.sql" />
-    <Build Include="dbo\Stored Procedures\Base\Workers\GetAllWorkers.sql" />
-    <Build Include="dbo\Stored Procedures\Base\Workers\GetWorkerByID.sql" />
-    <Build Include="dbo\Stored Procedures\Base\Workers\AddWorker.sql" />
-    <Build Include="dbo\Stored Procedures\Base\Workers\DeleteAllWorkers.sql" />
-    <Build Include="dbo\Stored Procedures\Base\Workers\DeleteWorkerByID.sql" />
-    <Build Include="dbo\Stored Procedures\Base\Workers\UpdateWorkersByID.sql" />
-    <Build Include="dbo\Stored Procedures\Base\Locations\AddLocation.sql" />
-    <Build Include="dbo\Stored Procedures\Base\Locations\DeleteAllLocations.sql" />
-    <Build Include="dbo\Stored Procedures\Base\Locations\DeleteLocationByID.sql" />
-    <Build Include="dbo\Stored Procedures\Base\Locations\GetAllLocations.sql" />
-    <Build Include="dbo\Stored Procedures\Base\Locations\GetLocationByID.sql" />
-    <Build Include="dbo\Stored Procedures\Base\Locations\UpdateLocationByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Comments.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Companies.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Contacts.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Directions.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Divisions.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Employments.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Levels.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Locations.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Positions.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Previous_works.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Projects.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Requiries.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\SkillNames.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\SkillsMaps.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\SkillTypes.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Statuses.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Workers.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\WorkersSkillMaps.sql" />
+    <Build Include="HR_DataBase_VSDB\Security\Schemas\HR_DataBase_VSDB.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Base\GetAllWorkersWithLocaionAndContacts.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Base\GetWorkerWithLocaionAndContactsByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\AddNewComments.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\DeleteAll.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\DeleteByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\GetAll.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\GetAllCommentsByWorkersID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\UpdateAllByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\AddNewSkillName.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\DeleteAll.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\DeleteByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\GetAll.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\GetByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\UpdateByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Locations\AddLocation.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Locations\DeleteAllLocations.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Locations\DeleteLocationByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Locations\GetAllLocations.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Locations\GetLocationByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Locations\UpdateLocationByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\AddWorker.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\DeleteAllWorkers.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\DeleteWorkerByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\GetAllWorkers.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\GetWorkerByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\UpdateWorkersByID.sql" />
   </ItemGroup>
 </Project>

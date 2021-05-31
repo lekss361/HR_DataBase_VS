@@ -1,0 +1,1 @@
+﻿CREATE SCHEMA [HR_DataBase_VSDB]
