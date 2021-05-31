@@ -73,23 +73,23 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="HR_DataBase_VSDB\Tables\Comments.sql" />
-    <Build Include="HR_DataBase_VSDB\Tables\Company.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Companies.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Contacts.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Directions.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Divisions.sql" />
-    <Build Include="HR_DataBase_VSDB\Tables\Employment.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Employments.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Levels.sql" />
-    <Build Include="HR_DataBase_VSDB\Tables\Location.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Locations.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Positions.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Previous_works.sql" />
-    <Build Include="HR_DataBase_VSDB\Tables\Project.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Projects.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Requiries.sql" />
-    <Build Include="HR_DataBase_VSDB\Tables\SkillName.sql" />
-    <Build Include="HR_DataBase_VSDB\Tables\SkillsMap.sql" />
-    <Build Include="HR_DataBase_VSDB\Tables\SkillType.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\SkillNames.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\SkillsMaps.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\SkillTypes.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Statuses.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Workers.sql" />
-    <Build Include="HR_DataBase_VSDB\Tables\WorkersSkillMap.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\WorkersSkillMaps.sql" />
     <Build Include="HR_DataBase_VSDB\Security\Schemas\HR_DataBase_VSDB.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Base\GetAllWorkersWithLocaionAndContacts.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Base\GetWorkerWithLocaionAndContactsByID.sql" />

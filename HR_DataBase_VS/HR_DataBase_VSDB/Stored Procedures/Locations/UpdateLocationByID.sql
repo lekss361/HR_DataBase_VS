@@ -7,7 +7,7 @@
     @HouseNumber     INT            ,
     @ApartmentNumber INT            
 AS
-	update [Location]
+	update [Locations]
 	set [LocationIndex]=@LocationIndex,
 	    [Country]=@Country,
 	    [City]=@City,

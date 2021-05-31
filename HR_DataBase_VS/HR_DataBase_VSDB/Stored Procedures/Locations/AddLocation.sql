@@ -6,6 +6,6 @@
     @HouseNumber     INT            ,
     @ApartmentNumber INT            
 AS
-	INSERT INTO [Location]
+	INSERT INTO [Locations]
         ([LocationIndex],[Country],[City],[Street],[HouseNumber],[ApartmentNumber])
 	VALUES (@LocationIndex, @Country, @City, @Street, @HouseNumber, @ApartmentNumber)

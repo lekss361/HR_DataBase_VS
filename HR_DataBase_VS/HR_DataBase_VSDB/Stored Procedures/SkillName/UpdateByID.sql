@@ -3,7 +3,7 @@
 	@Skill  nvarchar (255),
 	@SkillTypeID int
 AS
-	update [SkillName]
+	update [SkillNames]
 	set [Skill]=@Skill,
 	[SkillTypeID]=@SkillTypeID
 	where [id]=@Id

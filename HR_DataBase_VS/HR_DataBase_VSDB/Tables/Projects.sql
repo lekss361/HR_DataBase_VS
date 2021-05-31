@@ -1,4 +1,4 @@
-﻿CREATE TABLE [HR_DataBase_VSDB].[Project] (
+﻿CREATE TABLE [HR_DataBase_VSDB].[Projects] (
     [id]         INT            IDENTITY (1, 1) NOT NULL,
     [Name]         NVARCHAR (255) NOT NULL,
     [DirectionsID] INT            NULL,

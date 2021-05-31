@@ -2,5 +2,5 @@
 	@id int
 AS 
  SELECT *
- FROM [Location] 
+ FROM [Locations] 
  WHERE [id]=@id

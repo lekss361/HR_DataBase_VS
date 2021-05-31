@@ -1,4 +1,4 @@
-﻿CREATE TABLE [HR_DataBase_VSDB].[Location] (
+﻿CREATE TABLE [HR_DataBase_VSDB].[Locations] (
     [id]         INT            IDENTITY (1, 1) NOT NULL,
     [LocationIndex]   INT            NOT NULL,
     [Country]         NVARCHAR (255) NOT NULL,

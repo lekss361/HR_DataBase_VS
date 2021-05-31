@@ -1,13 +1,13 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateWorkersByID]
 	@ID int,
-    @FirstName  NVARCHAR (255) ,
-    @LastName   NVARCHAR (255) ,
-    @BirthDay   DATE           ,
-    @Education  NVARCHAR (255) ,
-    @ContactID  INT            ,
-    @LocationID INT            ,
-    @Sex        NVARCHAR (255) ,
-    @Hobby      NVARCHAR (255) 
+    @FirstName  NVARCHAR (255) NOT NULL,
+    @LastName   NVARCHAR (255) NOT NULL,
+    @BirthDay   DATE           NOT NULL,
+    @Education  NVARCHAR (255) NOT NULL,
+    @ContactID  INT            NULL,
+    @LocationID INT            NULL,
+    @Sex        NVARCHAR (255) NOT NULL,
+    @Hobby      NVARCHAR (255) NULL
 AS
 	update [Workers]
 	set [FirstName]=@FirstName,
