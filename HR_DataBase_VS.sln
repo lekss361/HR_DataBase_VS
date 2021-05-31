@@ -7,7 +7,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HR_DataBase_VSDB", "HR_Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_DataBase_VSBLL", "HR_DataBase_VSBLL\HR_DataBase_VSBLL.csproj", "{C3408744-8389-4597-8BB4-63B9492AF984}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_DataBase_VSDAL", "HR_DataBase_VSDAL\HR_DataBase_VSDAL.csproj", "{4EA75103-CC32-42B9-B0B7-CB263341E2BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_DataBase_VSDAL", "HR_DataBase_VSDAL\HR_DataBase_VSDAL.csproj", "{4EA75103-CC32-42B9-B0B7-CB263341E2BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[AddLocation]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddLocation]
     @LocationIndex   INT            NOT NULL,
     @Country         NVARCHAR (255) NOT NULL,
     @City            NVARCHAR (255) NOT NULL,

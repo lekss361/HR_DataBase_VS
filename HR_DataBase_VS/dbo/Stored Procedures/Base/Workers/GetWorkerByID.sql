@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[GetWorkerByID]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[GetWorkerByID]
 @WorkersID int
 AS 
  SELECT *

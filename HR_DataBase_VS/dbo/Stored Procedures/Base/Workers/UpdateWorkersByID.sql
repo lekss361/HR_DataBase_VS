@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[UpdateWorkersByID]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateWorkersByID]
 	@ID int,
     @FirstName  NVARCHAR (255) NOT NULL,
     @LastName   NVARCHAR (255) NOT NULL,

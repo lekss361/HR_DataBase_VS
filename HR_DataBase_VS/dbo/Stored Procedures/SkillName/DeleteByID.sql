@@ -1,5 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[DeleteByID]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[DeleteByID]
 	@id INT
 AS
 	DELETE from [SkillName] 
-	WHERE id = @id
+	WHERE ID = @id

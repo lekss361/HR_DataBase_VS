@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE GetWorkerWithLocaionAndContactsByID 
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[GetWorkerWithLocaionAndContactsByID]
 @WorkersID int
 as 
 SELECT W.[FirstName], W.[LastName], W.[BirthDay], W.[Education], W.[Sex], W.[Hobby], 

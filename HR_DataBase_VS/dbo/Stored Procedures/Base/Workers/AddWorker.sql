@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[AddWorker]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddWorker]
     @FirstName  NVARCHAR (255) NOT NULL,
     @LastName   NVARCHAR (255) NOT NULL,
     @BirthDay   DATE           NOT NULL,

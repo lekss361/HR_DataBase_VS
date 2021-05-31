@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[UpdateLocationByID]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateLocationByID]
     @ID              INT            NOT NULL,
     @LocationIndex   INT            NOT NULL,
     @Country         NVARCHAR (255) NOT NULL,

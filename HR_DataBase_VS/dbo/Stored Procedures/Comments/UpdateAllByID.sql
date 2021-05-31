@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [HR_DataBase].[UpdateAllByID]
+﻿/*CREATE PROCEDURE [HR_DataBase].[UpdateAllByID]
 	@id int,
 	@Worker int,
 	@Comment  nvarchar (255),
@@ -8,4 +8,5 @@ AS
 	set [WorkersID]=@Worker,
 	[Comment]=@Comment,
 	[Date]=@Date
-	where id=@id
+	where ID=@id
+	*/

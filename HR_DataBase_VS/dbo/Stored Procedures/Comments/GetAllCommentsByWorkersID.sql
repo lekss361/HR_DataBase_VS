@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [HR_DataBase].[GetAllCommentsByWorkersID]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[GetAllCommentsByWorkersID]
 	@Worker int
 AS
 	SELECT  [ID],

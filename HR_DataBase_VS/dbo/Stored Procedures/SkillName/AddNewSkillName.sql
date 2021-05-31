@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[AddNewSkillName]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddNewSkillName]
 	@Skill  nvarchar (255),
 	@SkillTypeID int
 AS
