@@ -116,11 +116,4 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\GetByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\UpdateByID.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <SqlCmdVariable Include="1">
-      <DefaultValue>
-      </DefaultValue>
-      <Value>$(SqlCmdVar__1)</Value>
-    </SqlCmdVariable>
-  </ItemGroup>
 </Project>
