@@ -74,6 +74,7 @@
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Positions" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\SkillMap" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\SkillType" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\Projects" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="HR_DataBase_VSDB\Tables\Companies.sql" />
@@ -131,5 +132,13 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\GetAllSkillTypes.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\GetSkillTypeByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\UpdateSkillTypeByID.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\AddNewProject.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\DeleteAllProjects.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\DeleteProjectByID.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\GetAllProjects.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\GetProjectByID.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\UpdateProjectByID.sql" />
   </ItemGroup>
 </Project>
