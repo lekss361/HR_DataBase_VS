@@ -73,6 +73,7 @@
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Division" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Positions" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\SkillMap" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\SkillType" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="HR_DataBase_VSDB\Tables\Companies.sql" />
@@ -124,11 +125,11 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\AddGetAllPositions.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\AddNewPosition.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\GetPositionByID.sql" />
-    <Build Include="dbo\Stored Procedures\Base\SkillType\GetSkillTypeByID.sql" />
-    <Build Include="dbo\Stored Procedures\Base\SkillType\GetAllSkillTypes.sql" />
-    <Build Include="dbo\Stored Procedures\Base\SkillType\DeleteSkillTypeByID.sql" />
-    <Build Include="dbo\Stored Procedures\Base\SkillType\DeleteAllSkillTypes.sql" />
-    <Build Include="dbo\Stored Procedures\Base\SkillType\AddSkillType.sql" />
-    <Build Include="dbo\Stored Procedures\Base\SkillType\UpdateSkillTypeByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\AddSkillType.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\DeleteAllSkillTypes.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\DeleteSkillTypeByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\GetAllSkillTypes.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\GetSkillTypeByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\UpdateSkillTypeByID.sql" />
   </ItemGroup>
 </Project>
