@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[DeleteWorkerByID]
-	@id INT
+	@Id INT
 AS
 	DELETE from [Workers] 
-	WHERE id = @id
+	WHERE [id] = @Id

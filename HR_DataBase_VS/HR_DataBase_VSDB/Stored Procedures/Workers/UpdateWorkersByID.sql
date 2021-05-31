@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateWorkersByID]
-	@ID int,
+	@Id int,
     @FirstName  NVARCHAR (255) ,
     @LastName   NVARCHAR (255) ,
     @BirthDay   DATE           ,
@@ -18,4 +18,4 @@ AS
 	    [LocationID]=@LocationID,
 	    [Sex]=@Sex,
 	    [Hobby]=@Hobby
-	where id=@ID
+	where [id]=@Id
