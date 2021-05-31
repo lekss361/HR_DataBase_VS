@@ -96,5 +96,6 @@
     <Build Include="dbo\Stored Procedures\Division\AddNewDivision.sql" />
     <Build Include="dbo\Stored Procedures\SkillMap\AddNewSkillMap.sql" />
     <Build Include="dbo\Stored Procedures\Positions\AddGetAllPositions.sql" />
+    <Build Include="dbo\Stored Procedures\Positions\GetPositionByID.sql" />
   </ItemGroup>
 </Project>
