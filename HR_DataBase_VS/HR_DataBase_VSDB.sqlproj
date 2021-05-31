@@ -63,8 +63,9 @@
     <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\Stored Procedures\Comments" />
     <Folder Include="dbo\Stored Procedures\Base" />
-    <Folder Include="dbo\Stored Procedures\position" />
+    <Folder Include="dbo\Stored Procedures\Positions" />
     <Folder Include="dbo\Stored Procedures\Division" />
+    <Folder Include="dbo\Stored Procedures\SkillMap" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Workers.sql" />
@@ -91,7 +92,9 @@
     <Build Include="dbo\Stored Procedures\Comments\UpdateBuID.sql" />
     <Build Include="dbo\Stored Procedures\Base\GetAllWorkersWithLocaionAndContacts.sql" />
     <Build Include="dbo\Stored Procedures\Base\GetWorkerWithLocaionAndContactsByID.sql" />
-    <Build Include="dbo\Stored Procedures\position\AddNewPosition.sql" />
+    <Build Include="dbo\Stored Procedures\Positions\AddNewPosition.sql" />
     <Build Include="dbo\Stored Procedures\Division\AddNewDivision.sql" />
+    <Build Include="dbo\Stored Procedures\SkillMap\AddNewSkillMap.sql" />
+    <Build Include="dbo\Stored Procedures\Positions\AddGetAllPositions.sql" />
   </ItemGroup>
 </Project>

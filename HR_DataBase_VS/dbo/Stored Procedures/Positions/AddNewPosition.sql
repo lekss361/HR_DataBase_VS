@@ -4,4 +4,4 @@
 	@DivisionsID int
 AS
 	INSERT [Positions]([Name], [DirectionsID], [DivisionsID])
-	values (@Name, @DirectionsID, @DivisionsID )
+	VALUES (@Name, @DirectionsID, @DivisionsID )
