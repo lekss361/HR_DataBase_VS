@@ -2,4 +2,4 @@
 	@Id int
 AS
 	select * from [SkillNames]
-    WHERE ID=@Id
+    WHERE [id]=@Id

@@ -2,4 +2,4 @@
 	@id INT
 AS
 	DELETE from [SkillNames] 
-	WHERE ID = @id
+	WHERE [id] = @id

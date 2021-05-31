@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[AddNewDivision]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddNewDivision]
 	@Name nvarchar (255),
 	@CompanyID int,   
     @ContactID int,

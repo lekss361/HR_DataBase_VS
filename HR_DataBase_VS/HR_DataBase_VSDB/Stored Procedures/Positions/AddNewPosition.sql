@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[AddNewPosition]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddNewPosition]
 	@Name nvarchar (255),
 	@DirectionsID int,
 	@DivisionsID int
