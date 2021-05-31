@@ -72,8 +72,8 @@
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Workers" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="HR_DataBase_VSDB\Tables\Comments.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Companies.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\Comments.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Contacts.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Directions.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Divisions.sql" />
@@ -90,8 +90,8 @@
     <Build Include="HR_DataBase_VSDB\Tables\Statuses.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Workers.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\WorkersSkillMaps.sql" />
-    <Build Include="HR_DataBase_VSDB\Security\Schemas\HR_DataBase_VSDB.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Base\GetAllWorkersWithLocaionAndContacts.sql" />
+    <Build Include="HR_DataBase_VSDB\Security\Schemas\HR_DataBase_VSDB.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Base\GetWorkerWithLocaionAndContactsByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\AddNewComments.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\DeleteAll.sql" />
@@ -99,8 +99,8 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\GetAll.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\GetAllCommentsByWorkersID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\UpdateAllByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\AddNewSkillName.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\DeleteAll.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\AddNewSkillName.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\DeleteByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\GetAll.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\GetByID.sql" />
@@ -117,5 +117,10 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\GetAllWorkers.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\GetWorkerByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\UpdateWorkersByID.sql" />
+    <Build Include="dbo\Stored Procedures\Positions\AddNewPosition.sql" />
+    <Build Include="dbo\Stored Procedures\Division\AddNewDivision.sql" />
+    <Build Include="dbo\Stored Procedures\Positions\AddGetAllPositions.sql" />
+    <Build Include="dbo\Stored Procedures\Positions\GetPositionByID.sql" />
+    <Build Include="dbo\Stored Procedures\SkillMap\AddNewSkillMap.sql" />
   </ItemGroup>
 </Project>
