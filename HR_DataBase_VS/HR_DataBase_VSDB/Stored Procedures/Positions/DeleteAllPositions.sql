@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[DeleteAllPositions]	
-	@Positions int
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[DeleteAllPositions]
 AS
-    DELETE FROM [DBO].[Positions]
+DELETE
+FROM [Positions] 
