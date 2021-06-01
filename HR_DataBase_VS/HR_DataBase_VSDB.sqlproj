@@ -132,5 +132,7 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\GetSkillTypeByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\UpdateSkillTypeByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\DeleteAllPositions_1.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\DeletePositionByIndex.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\UpdateAllPositions_1.sql" />
   </ItemGroup>
 </Project>
