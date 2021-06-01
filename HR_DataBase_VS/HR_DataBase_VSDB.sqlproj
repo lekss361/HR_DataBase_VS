@@ -134,5 +134,9 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\DeleteAllPositions_1.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\DeletePositionByIndex.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\UpdateAllPositions_1.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Division\DeleteAllDivisions.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Division\DeleteDivisionByIndex.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Division\GetAllDivisions.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Division\UpdateDivisionByID.sql" />
   </ItemGroup>
 </Project>
