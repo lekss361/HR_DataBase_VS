@@ -5,4 +5,4 @@
 	@StatusID int
 AS
 	INSERT [Employments]([WorkerID],[PositionID],[ProjectID],[StatusID])
-	VALUES (@Name, @DirectionsID, @ProjectID, @StatusID)
+	VALUES (@WorkerID, @PositionID, @ProjectID, @StatusID)
