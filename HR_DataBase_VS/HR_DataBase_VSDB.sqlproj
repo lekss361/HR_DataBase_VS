@@ -74,6 +74,7 @@
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Positions" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\SkillMap" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\SkillType" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\Division" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="HR_DataBase_VSDB\Tables\Companies.sql" />
@@ -122,7 +123,6 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\GetWorkerByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\UpdateWorkersByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\AddNewDivision.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\AddGetAllPositions.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\AddNewPosition.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\GetPositionByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\AddSkillType.sql" />
@@ -136,5 +136,9 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\GetAllDivisions.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\GetDivisioinByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\UpdateDivisionByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\DeleteAllPositions.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\DeletePositionByIndex.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\GetAllPositions.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\UpdateAllPositions.sql" />
   </ItemGroup>
 </Project>
