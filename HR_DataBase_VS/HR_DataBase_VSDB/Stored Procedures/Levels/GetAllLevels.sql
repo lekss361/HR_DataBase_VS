@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [HR_DataBase_VSDB].[GetAllLocations]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[GetAllLevels]
 AS 
  SELECT *
- FROM [Locations]
+ FROM [Levels]

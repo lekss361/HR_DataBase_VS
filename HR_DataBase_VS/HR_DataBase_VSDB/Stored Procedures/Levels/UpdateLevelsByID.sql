@@ -1,17 +1,9 @@
-﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateLocationByID]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateLevelsByID]
     @Id             INT             ,
-    @LocationIndex   INT            ,
-    @Country         NVARCHAR (255) ,
-    @City            NVARCHAR (255) ,
-    @Street          NVARCHAR (255) ,
-    @HouseNumber     INT            ,
-    @ApartmentNumber INT            
+    @Name         NVARCHAR (255) 
+            
 AS
-	update [Locations]
-	set [LocationIndex]=@LocationIndex,
-	    [Country]=@Country,
-	    [City]=@City,
-	    [Street]=@Street,
-	    [HouseNumber]=@HouseNumber,
-	    [ApartmentNumber]=@ApartmentNumber
+	update [Levels]
+	set [Name]=@Name	   
+	    
 	WHERE [id]=@Id

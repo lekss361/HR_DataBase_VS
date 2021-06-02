@@ -1,5 +1,5 @@
-﻿CREATE PROCEDURE [HR_DataBase_VSDB].[DeleteLocationByID]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[DeleteLevelsByID]
 	@id INT
 AS
-	DELETE from [Locations] 
+	DELETE from [Levels] 
 	WHERE [id] = @id

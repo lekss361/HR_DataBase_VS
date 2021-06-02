@@ -1,6 +1,6 @@
-﻿CREATE PROCEDURE [HR_DataBase_VSDB].[GetLocationByID]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[GetLevelsByID]
 	@id int
 AS 
  SELECT *
- FROM [Locations] 
+ FROM [Levels] 
  WHERE [id]=@id
