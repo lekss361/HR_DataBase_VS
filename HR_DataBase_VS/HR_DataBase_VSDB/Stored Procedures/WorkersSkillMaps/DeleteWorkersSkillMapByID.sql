@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[DeleteWorkersSkillMapByID]
 	@WorkerID int,
-    @SkillMapID int
+    @SkillMapsID int
 AS
 	DELETE from [WorkersSkillMaps] 
 	WHERE [WorkersID] = @WorkerID
