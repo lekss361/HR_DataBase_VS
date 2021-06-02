@@ -77,6 +77,7 @@
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Projects" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Levels" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Company" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\Employments" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="HR_DataBase_VSDB\Tables\Companies.sql" />
@@ -154,6 +155,11 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\GetAllCompanies.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\GetCompaniesByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\UpdateCompaniesByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Employments\AddNewEmployment.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Employments\DeleteAllEmployments.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Employments\DeleteEmploymentByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Employments\GetAllEmployments.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Employments\GetEmploymentByID.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\AddNewProject.sql" />
