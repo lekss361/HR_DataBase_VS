@@ -3,7 +3,7 @@
     @LastName   NVARCHAR (255) ,
     @BirthDay   DATE           ,
     @Education  NVARCHAR (255) ,
-    @Hobby      NVARCHAR (255) 
+    @Hobby      NVARCHAR (255) = null
 AS 
 INSERT INTO [Workers] (FirstName, LastName, BirthDay, Education, Hobby)
 VALUES(@FirstName, @LastName, @BirthDay, @Education, @Hobby)
