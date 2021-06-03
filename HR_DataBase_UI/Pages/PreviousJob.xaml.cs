@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace HR_DataBase_UI.Pages
 {
     /// <summary>
-    /// Interaction logic for AddSkillMenu.xaml
+    /// Interaction logic for PreviousJob.xaml
     /// </summary>
-    public partial class AddSkillMenu : Page
+    public partial class PreviousJob : Page
     {
-        public AddSkillMenu()
+        public PreviousJob()
         {
             InitializeComponent();
         }
