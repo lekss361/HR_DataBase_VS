@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HR_DataBase_VSDAL.Models
 {
-    public class Workers
+    public class WorkersDTO
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -17,7 +17,7 @@ namespace HR_DataBase_VSDAL.Models
         public string Sex { get; set; }
         public string Hobby { get; set; }
 
-        public Workers
+        public WorkersDTO
         (
             string firstName,
             string lastName,
