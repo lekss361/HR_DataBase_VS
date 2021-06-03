@@ -14,6 +14,4 @@ namespace HR_DataBase_VSDAL.Models
         public int ContactID { get; set; }
         public int LocationID { get; set; }
     }
-
-
 }
