@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace HR_DataBase_UI.Pages
 {
     /// <summary>
-    /// Interaction logic for Company.xaml
+    /// Interaction logic for CreateNewPage.xaml
     /// </summary>
-    public partial class Company : Page
+    public partial class CreateNewPage : Page
     {
-        public Company()
+        public CreateNewPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

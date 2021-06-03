@@ -9,14 +9,17 @@
       Title="Company">
 
     <Grid Background="White" Height="440">
-        <Label Content="CompanyName" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="27,39,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Edit" HorizontalAlignment="Left" Margin="107,39,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Accept" HorizontalAlignment="Left" Margin="187,39,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="О компании" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="27,39,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Изменить" HorizontalAlignment="Left" Margin="107,39,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="187,39,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Отменить" HorizontalAlignment="Left" Margin="267,39,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
-        <TextBox HorizontalAlignment="Left" Height="340" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="780" Margin="10,90,0,0"/>
-
-
-
+        <Label Content="О компании" HorizontalAlignment="Center" Margin="338,77,338,0" VerticalAlignment="Top" FontSize="20"/>
+        <Grid HorizontalAlignment="Left" Height="136" Margin="10,131,0,0" VerticalAlignment="Top" Width="780">
+            <TextBox HorizontalAlignment="Left" Height="136" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="780"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="158" Margin="10,272,0,0" VerticalAlignment="Top" Width="780"/>
+        <Grid.RowDefinitions></Grid.RowDefinitions>
     </Grid>
 </Page>
