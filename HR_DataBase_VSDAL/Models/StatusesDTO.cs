@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HR_DataBase_VSDAL.Models
 {
-    public class SkillType
+    public class Statuses
     {
-        public int SkillTypeID { get; set; }
+        public int StatusesID { get; set; }
         public string Name { get; set; }
     }
 }
