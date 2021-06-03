@@ -16,29 +16,13 @@ using System.Windows.Shapes;
 namespace HR_DataBase_UI.Pages
 {
     /// <summary>
-    /// Interaction logic for Worker.xaml
+    /// Interaction logic for NewEmployee.xaml
     /// </summary>
-    public partial class Worker : Page
+    public partial class NewEmployee : Page
     {
-        public Worker()
+        public NewEmployee()
         {
             InitializeComponent();
-            ComboBox comboBox1 = new ComboBox();
-        }
-
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }

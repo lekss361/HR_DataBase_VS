@@ -1,0 +1,83 @@
+﻿<Page x:Class="HR_DataBase_UI.Pages.NewEmployee"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR_DataBase_UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="NewEmployee" Width="664" Height="844" MinWidth="664" MinHeight="844">
+    <Grid>
+        <Grid Margin="31,93,31,44">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="83"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="83" Foreground="White" TextAlignment="Center" LineHeight="10" Margin="0,37,0,0" Grid.RowSpan="2"><Run/><LineBreak/><Run Text="Company"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="2" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83"><Run/><LineBreak/><Run Text="Departament"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="3" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83"><Run Text=""/><LineBreak/><Run Text="Project"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="4" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83"><Run/><LineBreak/><Run Text="Job"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="5" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83"><Run/><LineBreak/><Run Text="Hard Skill"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="6" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83"><Run Text="Levels/"/><LineBreak/><Run Text="Experiance"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="8" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83" Margin="0,0,0,1"><Run Text=""/><LineBreak/><Run Text="First Name"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="8" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83" Grid.RowSpan="2"><Run Text=""/><LineBreak/><Run Text="Last Name"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="10" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83"><Run Text=""/><LineBreak/><Run Text="Gender"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="11" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83"><Run/><LineBreak/><Run Text="Birthday"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="12" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83"><Run/><LineBreak/><Run Text="Contact"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="13" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83"><Run/><LineBreak/><Run Text="Location"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="14" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83"><Run/><LineBreak/><Run Text="Education"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="15" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83"><Run/><LineBreak/><Run Text="Previous Work"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="17" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83" Margin="0,0,0,1"><Run/><LineBreak/><Run Text="Family Status"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="White" TextAlignment="Center" LineHeight="10" Grid.Row="18" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="83"><Run Text=""/><LineBreak/><Run Text="Hobby"/></TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="128,10,0,0" TextWrapping="Wrap" Text="Block1" VerticalAlignment="Top" Foreground="White"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="128,12,0,0" TextWrapping="Wrap" Text="Block2" VerticalAlignment="Top" Foreground="White" Grid.Row="7"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="144,11,0,0" TextWrapping="Wrap" Text="Block3" VerticalAlignment="Top" Foreground="White" Grid.Row="16"/>
+            <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="509" Height="37"/>
+            <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Top" Width="509" Height="37"/>
+            <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Top" Width="509" Height="37"/>
+            <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="4" VerticalAlignment="Top" Width="509" Height="37"/>
+            <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="5" VerticalAlignment="Top" Width="509" Height="37"/>
+            <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="6" VerticalAlignment="Top" Width="509" Height="37"/>
+            <TextBox Grid.Column="1" Height="38" Margin="10,0,0,0" Grid.Row="8" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+            <TextBox Grid.Column="1" Height="37" Margin="10,0,0,0" Grid.Row="9" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+            <RadioButton Content="Male" Grid.Column="1" HorizontalAlignment="Left" Margin="50,12,0,10" Grid.Row="10" Foreground="#FFF3F3F3" Checked="RadioButton_Checked"/>
+            <RadioButton Content="Female" Grid.Column="1" HorizontalAlignment="Left" Margin="200,12,0,10" Grid.Row="10" Foreground="#FFF3F3F3" Checked="RadioButton_Checked"/>
+            <RadioButton Content="Nothing" Grid.Column="1" HorizontalAlignment="Left" Margin="350,12,0,10" Grid.Row="10" Foreground="#FFF3F3F3" Checked="RadioButton_Checked"/>
+            <TextBox Grid.Column="1" Height="37" Margin="10,0,270,0" Grid.Row="11" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="240"/>
+            <Grid Grid.Column="1" Grid.Row="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox Height="37" Margin="10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+                <TextBox Height="37" Margin="10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Grid.Column="1"/>
+            </Grid>
+            <TextBox Grid.Column="1" Height="37" Margin="10,36,0,0" Grid.Row="13" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Grid.RowSpan="2"/>
+            <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Height="37" Margin="10,0,0,0" Grid.Column="1" Grid.Row="13"/>
+            <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Height="37" Margin="10,36,0,0" Grid.Column="1" Grid.Row="14" Grid.RowSpan="2"/>
+            <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,1,0,0" Grid.Row="17" VerticalAlignment="Top" Width="509" Height="37"/>
+            <TextBox Grid.Column="1" Height="37" Margin="10,0,0,0" Grid.Row="18" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Page>
