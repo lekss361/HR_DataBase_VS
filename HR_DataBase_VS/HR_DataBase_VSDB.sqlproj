@@ -78,6 +78,7 @@
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Levels" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Company" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Employments" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="HR_DataBase_VSDB\Tables\Companies.sql" />
@@ -160,6 +161,12 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\GetAllCompanies.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\GetCompaniesByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\UpdateLevelsByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps\AddNewWorkersSkillMap.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps\DeleteWorkersSkillMapByWorkersIDandSkillMapsID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps\DeleteAllWorkersSkillMaps.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps\GetAllWorkersSkillMaps.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps\GetAllWorkersSkillMapsByWorkersID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps\GetAllWorkersSkillMapsBySkillID.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\AddNewProject.sql" />
