@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HR_DataBase_VSBLL\HR_DataBase_VSBLL.csproj" />
+  </ItemGroup>
+
 </Project>
