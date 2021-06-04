@@ -8,12 +8,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>HR_DataBase_UI</RootNamespace>
     <AssemblyName>HR_DataBase_UI</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -71,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\EmployeeProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddLocationMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -95,6 +100,9 @@
   <ItemGroup>
     <Compile Include="Pages\AddNew Company.xaml.cs">
       <DependentUpon>AddNew Company.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EmployeeProfile.xaml.cs">
+      <DependentUpon>EmployeeProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddLocationMenu.xaml.cs">
       <DependentUpon>AddLocationMenu.xaml</DependentUpon>
@@ -135,6 +143,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HR_DataBase_VSBLL\HR_DataBase_VSBLL.csproj">
+      <Project>{c3408744-8389-4597-8bb4-63b9492af984}</Project>
+      <Name>HR_DataBase_VSBLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

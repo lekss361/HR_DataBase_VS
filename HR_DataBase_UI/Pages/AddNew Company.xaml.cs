@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+//using HR_DataBase_VSBLL;
 
 namespace HR_DataBase_UI.Pages
 {
@@ -23,6 +24,11 @@ namespace HR_DataBase_UI.Pages
         public AddNew_Company()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }
