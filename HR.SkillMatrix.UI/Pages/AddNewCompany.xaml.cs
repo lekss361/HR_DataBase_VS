@@ -19,9 +19,9 @@ namespace HR.SkillMatrix.UI.Pages
     /// <summary>
     /// Interaction logic for AddNew_Company.xaml
     /// </summary>
-    public partial class AddNew_Company : Page
+    public partial class AddNewCompany : Page
     {
-        public AddNew_Company()
+        public AddNewCompany(MainWindow mainWindow)
         {
             InitializeComponent();
         }

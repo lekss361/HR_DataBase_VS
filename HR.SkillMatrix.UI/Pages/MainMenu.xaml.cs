@@ -16,27 +16,22 @@ using System.Windows.Shapes;
 namespace HR.SkillMatrix.UI.Pages
 {
     /// <summary>
-    /// Interaction logic for CreateNewPage.xaml
+    /// Interaction logic for MainMenu.xaml
     /// </summary>
-    public partial class CreateNewPage : Page
+    public partial class MainMenu : Page
     {
         private readonly MainWindow _mainWindow;
-        public CreateNewPage(MainWindow mainWindow)
+
+        public MainMenu(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
         }
 
-        private void AddNewCompany_Click(object sender, RoutedEventArgs e)
+        private void Create_Click(object sender, RoutedEventArgs e)
         {
-            AddNewCompany addNewCompany = new AddNewCompany(_mainWindow);
-            _mainWindow.Content = addNewCompany;
-        }
-
-        private void Back_Click(object sender, RoutedEventArgs e)
-        {
-            MainMenu mainMenu = new MainMenu(_mainWindow);
-            _mainWindow.Content = mainMenu;
+            CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
+            _mainWindow.Content = createNewPage;
         }
     }
 }
