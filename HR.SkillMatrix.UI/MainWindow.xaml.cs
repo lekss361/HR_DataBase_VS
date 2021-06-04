@@ -21,13 +21,6 @@ namespace HR.SkillMatrix.UI
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly MainWindow _mainWindow;
-
-        public MainWindow(MainWindow mainWindow)
-        {
-            InitializeComponent();
-            _mainWindow = mainWindow;
-        }
         public MainWindow()
         {
             InitializeComponent();

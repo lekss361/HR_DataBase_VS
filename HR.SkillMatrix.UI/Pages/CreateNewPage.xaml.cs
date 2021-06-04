@@ -24,5 +24,11 @@ namespace HR.SkillMatrix.UI.Pages
         {
             InitializeComponent();
         }
+
+        private void AddNewCompany_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewCompany addNewCompany = new AddNewCompany();
+            this.Content = addNewCompany;
+        }
     }
 }
