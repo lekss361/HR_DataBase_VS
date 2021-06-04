@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace HR_DataBase_UI.Pages
 {
     /// <summary>
-    /// Interaction logic for EmployeeProfile.xaml
+    /// Interaction logic for CreateNewPage.xaml
     /// </summary>
-    public partial class EmployeeProfile : Page
+    public partial class CreateNewPage : Page
     {
-        public EmployeeProfile()
+        public CreateNewPage()
         {
             InitializeComponent();
         }
