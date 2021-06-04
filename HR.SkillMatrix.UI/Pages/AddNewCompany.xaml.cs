@@ -27,12 +27,13 @@ namespace HR.SkillMatrix.UI.Pages
             InitializeComponent();
             _mainWindow = mainWindow;
         }
+
         /// <summary>
         /// кнопка "Принять"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Save_Click(object sender, RoutedEventArgs e)
         {
             Companies companies = new Companies();
 
