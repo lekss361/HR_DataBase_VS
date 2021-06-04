@@ -38,5 +38,11 @@ namespace HR.SkillMatrix.UI.Pages
             MainMenu mainMenu = new MainMenu(_mainWindow);
             _mainWindow.Content = mainMenu;
         }
+
+        private void AddNewWorker_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeProfile employeeProfile = new EmployeeProfile(_mainWindow);
+            _mainWindow.Content = employeeProfile;
+        }
     }
 }

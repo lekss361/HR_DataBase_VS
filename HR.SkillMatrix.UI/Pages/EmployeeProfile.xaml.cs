@@ -20,9 +20,12 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class EmployeeProfile : Page
     {
-        public EmployeeProfile()
+        private readonly MainWindow _mainWindow;
+
+        public EmployeeProfile(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
         }
     }
 }
