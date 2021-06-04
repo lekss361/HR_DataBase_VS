@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateContactsByID]
-	@id				int,
+	@Id				int,
 	@Phone			decimal (30),
 	@Email			nvarchar (255),
 	@Information	nvarchar (255)
