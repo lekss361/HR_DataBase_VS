@@ -20,15 +20,23 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class CreateNewPage : Page
     {
-        public CreateNewPage()
+        private readonly MainWindow _mainWindow;
+        public CreateNewPage(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
         }
 
         private void AddNewCompany_Click(object sender, RoutedEventArgs e)
         {
-            AddNewCompany addNewCompany = new AddNewCompany();
-            this.Content = addNewCompany;
+            AddNewCompany addNewCompany = new AddNewCompany(_mainWindow);
+            _mainWindow.Content = addNewCompany;
         }
+
+        //private void Back_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MainWindow mainWindow = new MainWindow();
+        //    _mainWindow.Content = mainWindow;
+        //}
     }
 }

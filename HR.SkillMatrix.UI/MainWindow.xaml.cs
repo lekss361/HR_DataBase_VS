@@ -28,7 +28,7 @@ namespace HR.SkillMatrix.UI
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
-            CreateNewPage createNewPage = new CreateNewPage();
+            CreateNewPage createNewPage = new CreateNewPage(this);
             this.Content = createNewPage;
         }
     }

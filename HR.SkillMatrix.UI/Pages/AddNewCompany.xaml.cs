@@ -21,7 +21,7 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddNewCompany : Page
     {
-        public AddNewCompany()
+        public AddNewCompany(MainWindow mainWindow)
         {
             InitializeComponent();
         }
