@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_DataBase_VSDAL", "HR_Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_DataBase_UI", "HR_DataBase_UI\HR_DataBase_UI.csproj", "{6A4CE5A5-542F-461A-A2C3-E15FCD381317}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.SkillMatrix.UI", "HR.SkillMatrix.UI\HR.SkillMatrix.UI.csproj", "{DE9CE94D-3B9F-4A91-B282-E973DD7BDBDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{6A4CE5A5-542F-461A-A2C3-E15FCD381317}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A4CE5A5-542F-461A-A2C3-E15FCD381317}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A4CE5A5-542F-461A-A2C3-E15FCD381317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE9CE94D-3B9F-4A91-B282-E973DD7BDBDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE9CE94D-3B9F-4A91-B282-E973DD7BDBDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE9CE94D-3B9F-4A91-B282-E973DD7BDBDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE9CE94D-3B9F-4A91-B282-E973DD7BDBDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
