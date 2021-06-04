@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HR_DataBase_VSBLL.Models
 {
-    class Companies
+    public class Companies
     {
         public string Name { get; set; }
         public string Phone { get; set; }
