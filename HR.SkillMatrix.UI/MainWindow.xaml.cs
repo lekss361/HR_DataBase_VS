@@ -28,11 +28,15 @@ namespace HR.SkillMatrix.UI
             InitializeComponent();
             _mainWindow = mainWindow;
         }
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
-            CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
-            _mainWindow.Content = createNewPage;
+            CreateNewPage createNewPage = new CreateNewPage();
+            this.Content = createNewPage;
         }
     }
 }

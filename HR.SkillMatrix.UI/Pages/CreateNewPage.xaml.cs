@@ -20,11 +20,9 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class CreateNewPage : Page
     {
-        private readonly MainWindow _mainWindow;
-        public CreateNewPage(MainWindow mainWindow)
+        public CreateNewPage()
         {
             InitializeComponent();
-            _mainWindow = mainWindow;
         }
     }
 }
