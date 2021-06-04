@@ -10,7 +10,7 @@
 
     <Grid Background="White">
 
-        <Label Content="Профиль сотрудника" Grid.Column="1" HorizontalAlignment="Left" Margin="198,0,0,0" VerticalAlignment="Top"/>
+       
         <Grid.RowDefinitions>
 
             <RowDefinition Height="1.5*">
@@ -36,7 +36,14 @@
             <RowDefinition Height="3*"></RowDefinition>
 
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
 
+            <ColumnDefinition Width="0.25*" ></ColumnDefinition>
+            <ColumnDefinition Width="*" ></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Профиль сотрудника" Grid.Column="1" HorizontalAlignment="Left" Margin="198,0,0,0" VerticalAlignment="Top"/>
 
         <Button Content="Назад" HorizontalAlignment="Left" Margin="19,31,0,0" VerticalAlignment="Top" Width="110" Height="40"  Grid.Column="1"/>
         <Button Content="Редактировать" HorizontalAlignment="Left" Margin="134,31,0,0" VerticalAlignment="Top" Width="110" Height="40" Grid.Column="1" />
@@ -87,12 +94,7 @@
         <TextBlock Grid.Row="18" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Комментарии" VerticalAlignment="Top" Height="16" Width="85"  Grid.Column="1" Margin="19,0,0,0"/>
         <TextBox HorizontalAlignment="Left" Height="89" TextWrapping="Wrap" VerticalAlignment="Top" Width="500" Margin="10,10,0,0" Grid.Column="1" Grid.Row="17"/>
        
-        <Grid.ColumnDefinitions>
 
-            <ColumnDefinition Width="0.25*" ></ColumnDefinition>
-            <ColumnDefinition Width="*" ></ColumnDefinition>
-
-        </Grid.ColumnDefinitions>
 
 
     </Grid>
