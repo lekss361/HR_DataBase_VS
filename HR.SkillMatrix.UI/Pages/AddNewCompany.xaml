@@ -31,15 +31,15 @@
             <TextBox x:Name="textBoxDirection" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" Grid.Row="3"/>
             <TextBox x:Name="textBoxDescription" Grid.Column="1" HorizontalAlignment="Left" Height="151" Margin="10,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="496" Grid.Row="4"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="608" Margin="28,10,0,0">
+        <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="600" Margin="28,10,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="152" Height="65"/>
-            <Button Content="Принять" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="152" Height="65" Click="Button_Click"/>
+            <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Click="Back_Click"/>
+            <Button Content="Принять" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="50" Grid.ColumnSpan="2" Margin="5,0,0,0"/>
         </Grid>
     </Grid>
 </Page>

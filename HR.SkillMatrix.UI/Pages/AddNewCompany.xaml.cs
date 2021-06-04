@@ -21,9 +21,11 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddNewCompany : Page
     {
+        private readonly MainWindow _mainWindow;
         public AddNewCompany(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
         }
         /// <summary>
         /// кнопка "Принять"
@@ -39,6 +41,12 @@ namespace HR.SkillMatrix.UI.Pages
             companies.Location = textBoxLocation.Text;
             companies.Direction = textBoxDirection.Text;
             companies.Description = textBoxDescription.Text;
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
+            _mainWindow.Content = createNewPage;
         }
     }
 }
