@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR.SkillMatrix.UI.Pages;
 
 namespace HR.SkillMatrix.UI
 {
@@ -20,9 +21,18 @@ namespace HR.SkillMatrix.UI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly MainWindow _mainWindow;
+
+        public MainWindow(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
+        }
+
+        private void Create_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
+            _mainWindow.Content = createNewPage;
         }
     }
 }

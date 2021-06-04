@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HR_DataBase_UI.Pages
+namespace HR.SkillMatrix.UI.Pages
 {
     /// <summary>
     /// Interaction logic for PreviousJob.xaml

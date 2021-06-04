@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HR_DataBase_VSBLL.Models;
 
-namespace HR_DataBase_UI.Pages
+namespace HR.SkillMatrix.UI.Pages
 {
     /// <summary>
     /// Interaction logic for AddNew_Company.xaml

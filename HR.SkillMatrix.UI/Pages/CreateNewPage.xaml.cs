@@ -13,16 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HR_DataBase_UI.Pages
+namespace HR.SkillMatrix.UI.Pages
 {
     /// <summary>
     /// Interaction logic for CreateNewPage.xaml
     /// </summary>
     public partial class CreateNewPage : Page
     {
-        public CreateNewPage()
+        private readonly MainWindow _mainWindow;
+        public CreateNewPage(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
         }
     }
 }
