@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HR_DataBase_VSBLL\HR_DataBase_VSBLL.csproj" />
+    <ProjectReference Include="..\HR_DataBase_VSDAL\HR_DataBase_VSDAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\AddNew Company.xaml.cs">
+      <DependentUpon>AddNew Company.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\EmployeeProfile.xaml.cs">
+      <DependentUpon>EmployeeProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Worker.xaml.cs">
+      <DependentUpon>Worker.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Pages\AddNew Company.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\EmployeeProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Worker.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>
