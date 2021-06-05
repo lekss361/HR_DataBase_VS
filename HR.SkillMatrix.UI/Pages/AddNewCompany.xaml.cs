@@ -35,7 +35,7 @@ namespace HR.SkillMatrix.UI.Pages
         /// <param name="e"></param>
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            Companies companies = new Companies();
+            HR_DataBase_VSBLL.Models.Company companies = new HR_DataBase_VSBLL.Models.Company();
 
             companies.Name = textBoxName.Text;
             companies.Phone = textBoxPhone.Text;
