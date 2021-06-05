@@ -43,7 +43,11 @@ namespace HR.SkillMatrix.UI.Pages
             companies.Direction = textBoxDirection.Text;
             companies.Description = textBoxDescription.Text;
         }
-
+        /// <summary>
+        /// кнопка "Назад"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
