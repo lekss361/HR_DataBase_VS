@@ -14,5 +14,8 @@ namespace HR_DataBase_VSBLL.Models
         public int HouseNumber { get; set; }
         public int ApartmentNumber { get; set; }
 
+        public Location()
+        {
+        }
     }
 }
