@@ -11,23 +11,23 @@ using HR_DataBase_VSDAL.Models;
 
 namespace HR_DataBase_VSDAL.Dapper
 {
-    public class PreviousJobDapper
+    public class PreviousWorkDapper
     {
         /// <summary>
         /// Делаем запись в Базу Данных через хранимую процедуру
         /// </summary>
         /// <param name="previousJobDTO"></param>
         /// <returns></returns>
-        public void AddPreviousJob(PreviousJobDTO previousJobDTO)
+        public void AddPreviousWork(PreviousWorkDTO previousJobDTO)
         {
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
-            string tmp1 = "exec [HR_DataBase_VSDB].[";
+            string tmp1 = "exec [HR_DataBase_VSDB].[AddNewPreviousWork]";
             string tmp2 =
                 $"N'{previousJobDTO.StartDate}', N'{previousJobDTO.DismassDate}, N'{previousJobDTO.Description}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                connection.Query<PreviousJobDTO>(@$"{tmp1}{tmp2}");
+                connection.Query<PreviousWorkDTO>(@$"{tmp1}{tmp2}");
             }
         }
 

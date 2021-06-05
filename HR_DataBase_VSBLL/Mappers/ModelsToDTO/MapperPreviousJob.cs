@@ -17,20 +17,20 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
         /// Mapper моделей UI в DTO
         /// </summary>
         /// <param name="previousJob"></param>
-        public PreviousJobDTO MapToPreviousJobDTO(PreviousJob previousJob)
+        public PreviousWorkDTO MapToPreviousJobDTO(PreviousWork previousJob)
         {
-            PreviousJobDTO previousJobDTO = new PreviousJobDTO();
+            PreviousWorkDTO previousJobDTO = new PreviousWorkDTO();
 
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<PreviousJob, PreviousJobDTO>()
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<PreviousWork, PreviousWorkDTO>()
                 .ForMember(dest => dest.StartDate, option => option.MapFrom(source => source.StartDate))
                 .ForMember(dest => dest.DismassDate, option => option.MapFrom(source => source.DismassDate))
                 .ForMember(dest => dest.Description, option => option.MapFrom(source => source.Description)));
 
             Mapper mapper = new Mapper(config);
-            PreviousJobDapper dapper = new PreviousJobDapper();
+            PreviousWorkDapper dapper = new PreviousWorkDapper();
 
-            previousJobDTO = mapper.Map<PreviousJobDTO>(previousJob);
-            dapper.AddNewPreviousJob(previousJobDTO);
+            previousJobDTO = mapper.Map<PreviousWorkDTO>(previousJob);
+            dapper.AddPreviousWork(previousJobDTO);
             return previousJobDTO;
    
         }
