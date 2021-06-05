@@ -13,6 +13,7 @@ namespace HR_DataBase_VSBLL.Models
         public string Street { get; set; }
         public int HouseNumber { get; set; }
         public int ApartmentNumber { get; set; }
+        public int LocationIndex { get; set; }
 
         public Location()
         {
