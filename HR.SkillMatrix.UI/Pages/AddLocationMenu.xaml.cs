@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR_DataBase_VSBLL.Models;
+using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
+
 
 namespace HR.SkillMatrix.UI.Pages
 {
@@ -23,6 +26,21 @@ namespace HR.SkillMatrix.UI.Pages
         public AddLocationMenu()
         {
             InitializeComponent();
+        }
+        /// <summary>
+        /// кнопка "Сохранить"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Save(object sender, RoutedEventArgs e)
+        {
+            Location location = new Location();
+
+            location.Country = textBoxCountry.Text;
+            location.City = textBoxCity.Text;
+            location.Street = textBoxStreet.Text;
+            location.HouseNumber = Int32.Parse(textBoxHouseNumber.Text);
+            location.ApartmentNumber = Int32.Parse(textBoxApartmentNumber.Text);
         }
     }
 }
