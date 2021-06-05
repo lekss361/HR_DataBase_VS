@@ -10,22 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using HR.SkillMatrix.UI.Pages;
 
-namespace HR.SkillMatrix.UI
+namespace HR.SkillMatrix.UI.Windows
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Saved.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Saved : Window
     {
-        public MainWindow()
+        public Saved()
         {
             InitializeComponent();
-            MainMenu mainMenu = new MainMenu(this);
-            this.Content = mainMenu;
         }
     }
 }

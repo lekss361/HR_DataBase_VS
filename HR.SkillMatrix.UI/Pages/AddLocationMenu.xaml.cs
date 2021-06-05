@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR.SkillMatrix.UI.Windows;
 using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
 
@@ -49,9 +50,8 @@ namespace HR.SkillMatrix.UI.Pages
             MapperLocation mapper = new MapperLocation();
             mapper.MapToLocationDTO(location);
 
-            
+            Saved saved=new Saved();
+            saved.Show();
         }
-
-
     }
 }
