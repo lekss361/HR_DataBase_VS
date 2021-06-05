@@ -53,5 +53,10 @@ namespace HR.SkillMatrix.UI.Pages
             CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
             _mainWindow.Content = createNewPage;
         }
+        private void CreateLocation_Click(object sender, RoutedEventArgs e)
+        {
+            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow);
+            _mainWindow.Content = locationMenu;
+        }
     }
 }
