@@ -10,7 +10,7 @@
 
 
 
-    <Grid Background="White">
+    <Grid x:Name="___SearcResalt_" Background="White">
         <Label Content="Добавить меню местоположения" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="10"/>
         <Button Content="Сохранить" HorizontalAlignment="Left" Margin="142,29,0,0" VerticalAlignment="Top" Width="110" Height="40" Click="Button_Save"/>
         <Button Content="Закрыть" HorizontalAlignment="Left"   Margin="15,29,0,0" VerticalAlignment="Top" Width="110" Height="40"/>
