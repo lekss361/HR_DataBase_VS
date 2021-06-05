@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSDAL.Models;
+using HR_DataBase_VSDAL.Dapper;
 
 namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
 {
@@ -27,8 +28,10 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
             .ForMember(dest => dest.ApartmentNumber, option => option.MapFrom(source => source.ApartmentNumber)));
 
             Mapper mapper = new Mapper(config);
+            LocationDapper dapper = new LocationDapper();
 
             locationDTO = mapper.Map<LocationDTO>(location);
+            dapper.AddNewLocation(locationDTO);
             return locationDTO;
         }
     }
