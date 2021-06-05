@@ -21,6 +21,7 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
             LocationDTO locationDTO = new LocationDTO();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Location, LocationDTO>()
+            .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex))
             .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
             .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
             .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Street))

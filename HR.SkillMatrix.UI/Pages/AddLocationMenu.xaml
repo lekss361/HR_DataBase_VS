@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddLocationMenu" Height="271" Width= "437">
+      Title="AddLocationMenu" Height="270" Width= "440">
 
 
 
@@ -29,8 +29,8 @@
 
         <TextBox x:Name="textBoxApartmentNumber" HorizontalAlignment="Left" Height="20" Margin="96,221,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,221,0,0" TextWrapping="Wrap" Text="Квартира" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="20,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Индекс"/></TextBlock>
-        <TextBox x:Name="textBoxLocationIndex" HorizontalAlignment="Left" Height="20" Margin="96,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
+        <TextBlock HorizontalAlignment="Left" Margin="194,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Индекс"/></TextBlock>
+        <TextBox x:Name="textBoxLocationIndex" HorizontalAlignment="Left" Height="20" Margin="270,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
 
 
     </Grid>

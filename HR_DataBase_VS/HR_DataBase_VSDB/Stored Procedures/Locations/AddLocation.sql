@@ -7,5 +7,5 @@
     @ApartmentNumber INT            
 AS
 	INSERT INTO [Locations]
-        ([LocationIndex],[Country],[City],[Street],[HouseNumber],[ApartmentNumber])
-	VALUES (@LocationIndex, @Country, @City, @Street, @HouseNumber, @ApartmentNumber)
+        ([Country],[City],[Street],[HouseNumber],[ApartmentNumber])
+	VALUES ( @Country, @City, @Street, @HouseNumber, @ApartmentNumber)

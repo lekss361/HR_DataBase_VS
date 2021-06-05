@@ -8,12 +8,12 @@ namespace HR_DataBase_VSBLL.Models
 {
     public class Location
     {
+        public int LocationIndex { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
         public string Street { get; set; }
         public int HouseNumber { get; set; }
         public int ApartmentNumber { get; set; }
-        public int LocationIndex { get; set; }
 
         public Location()
         {
