@@ -93,7 +93,7 @@
     <Build Include="HR_DataBase_VSDB\Tables\Levels.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Locations.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Positions.sql" />
-    <Build Include="HR_DataBase_VSDB\Tables\Previous_works.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\PreviousWorks.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Projects.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Requiries.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\SkillNames.sql" />

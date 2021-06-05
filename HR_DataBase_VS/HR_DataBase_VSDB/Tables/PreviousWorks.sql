@@ -1,4 +1,4 @@
-﻿CREATE TABLE [HR_DataBase_VSDB].[Previous_works] (
+﻿CREATE TABLE [HR_DataBase_VSDB].[PreviousWorks] (
     [WorkerID]    INT            NOT NULL,
     [Information] NVARCHAR (255) NOT NULL,
     [DateStart]   DATE           NOT NULL,
