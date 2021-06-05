@@ -6,29 +6,31 @@
       xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddLocationMenu" Height="271" Width= "437">
+      Title="AddLocationMenu" Height="270" Width= "440">
 
 
 
     <Grid Background="White">
         <Label Content="Добавить меню местоположения" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="10"/>
-        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="142,29,0,0" VerticalAlignment="Top" Width="110" Height="40"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="142,29,0,0" VerticalAlignment="Top" Width="110" Height="40" Click="Button_Save"/>
         <Button Content="Закрыть" HorizontalAlignment="Left"   Margin="15,29,0,0" VerticalAlignment="Top" Width="110" Height="40"/>
-        
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="96,90,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="321"/>
+
+        <TextBox x:Name="textBoxCountry" HorizontalAlignment="Left" Height="20" Margin="96,90,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="321"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,90,0,0" TextWrapping="Wrap" Text="Страна" VerticalAlignment="Top"/>
-        
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="96,122,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="321"/>
+
+        <TextBox x:Name="textBoxCity" HorizontalAlignment="Left" Height="20" Margin="96,122,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="321"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,122,0,0" TextWrapping="Wrap" Text="Город" VerticalAlignment="Top"/>
-        
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="96,154,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="321"/> 
+
+        <TextBox x:Name="textBoxStreet" HorizontalAlignment="Left" Height="20" Margin="96,154,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="321"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,154,0,0" TextWrapping="Wrap" Text="Улица" VerticalAlignment="Top"/>
-        
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="96,189,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/> 
+
+        <TextBox x:Name="textBoxHouseNumber" HorizontalAlignment="Left" Height="20" Margin="96,189,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,189,0,0" TextWrapping="Wrap" Text="Дом" VerticalAlignment="Top"/>
-        
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="96,221,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
+
+        <TextBox x:Name="textBoxApartmentNumber" HorizontalAlignment="Left" Height="20" Margin="96,221,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,221,0,0" TextWrapping="Wrap" Text="Квартира" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="194,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Индекс"/></TextBlock>
+        <TextBox x:Name="textBoxLocationIndex" HorizontalAlignment="Left" Height="20" Margin="270,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
 
 
     </Grid>
