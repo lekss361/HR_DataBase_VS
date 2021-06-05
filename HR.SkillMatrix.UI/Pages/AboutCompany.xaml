@@ -1,0 +1,30 @@
+﻿<Page x:Class="HR.SkillMatrix.UI.Pages.DepartmentDescription"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DepartmentDescription">
+
+    <Grid Background="#FFDCCFCF">
+        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Top" Width="800" Grid.RowSpan="3">
+            <Button Content="Back" HorizontalAlignment="Left" Height="40" Margin="40,56,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Content="Edit" HorizontalAlignment="Left" Height="40" Margin="190,56,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Content="Accept" HorizontalAlignment="Left" Height="40" Margin="340,56,0,0" VerticalAlignment="Top" Width="100"/>
+            <TextBlock HorizontalAlignment="Center" Height="152" Margin="0,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="640" Foreground="#FFFBF9F9" Background="#FFFDF6F6" OpacityMask="#FFE24747"><Run Text="kdfj;lsak"/><Run Text="Е"/><Run Text="fjsfkThe Best CslfjsdlJJLJK"/></TextBlock>
+            <Label Content="MiseryCorp" HorizontalAlignment="Left" Height="30" Margin="80,160,0,0" VerticalAlignment="Top" Width="82" Foreground="#FF4D5EAA" />
+
+        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height ="90"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label  Content="About Company"  HorizontalAlignment="Center" Height="40" Margin="0,0,0,0" VerticalAlignment="Top" Width="100" FontFamily="Adobe Caslon Pro Bold"/>
+
+
+
+    </Grid>
+</Page>
