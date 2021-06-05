@@ -30,7 +30,6 @@
                   Background="#FF897D7D">
             <Grid.RowDefinitions>
                 <RowDefinition/>
-
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
