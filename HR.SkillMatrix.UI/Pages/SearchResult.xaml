@@ -1,0 +1,39 @@
+﻿<Page x:Class="HR.SkillMatrix.UI.Pages.SearchResult"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="660"
+      Title="SearchResult" Height="700" Width="660">
+
+    <Grid HorizontalAlignment="Center"
+          Width="660" Height="700" 
+          VerticalAlignment="Bottom"
+        Background="#FFA6A1A1">
+    <Grid.RowDefinitions>
+        <RowDefinition></RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition 
+            Width="220*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+    <Grid Margin="0,0,0,680" Background="#FF4D4242"/>
+    <Button Content="Back" HorizontalAlignment="Left"
+            Height="55" Margin="50,60,0,0" 
+            VerticalAlignment="Top" 
+            Width="104"/>
+        <Grid HorizontalAlignment="Left"
+                Height="147" Margin="31,150,0,0"
+                  VerticalAlignment="Top" Width="582"
+                  Background="#FF897D7D">
+            <Label Content="Company" HorizontalAlignment="Left" Height="20" Margin="50,15,0,0" VerticalAlignment="Top" Width="47"/>
+            <Label Content="Departament" HorizontalAlignment="Left" Height="20" Margin="50,50,0,0" VerticalAlignment="Top" Width="47"/>
+            <Label Content="Project" HorizontalAlignment="Left" Height="20" Margin="50,85,0,0" VerticalAlignment="Top" Width="47"/>
+            <Label Content="Job" HorizontalAlignment="Left" Height="20" Margin="50,120,0,0" VerticalAlignment="Top" Width="47"/>
+
+
+        </Grid>
+    </Grid>
+</Page>
