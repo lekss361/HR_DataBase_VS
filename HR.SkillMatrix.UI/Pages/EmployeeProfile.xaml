@@ -13,7 +13,7 @@
 
         <Grid.RowDefinitions>
 
-            <RowDefinition Height="1.5*">
+            <RowDefinition Height="2*">
 
             </RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -38,57 +38,57 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
 
-            <ColumnDefinition Width="0.25*" ></ColumnDefinition>
+            <ColumnDefinition Width="0.4*" ></ColumnDefinition>
             <ColumnDefinition Width="*" ></ColumnDefinition>
 
         </Grid.ColumnDefinitions>
 
         <Label Content="Профиль сотрудника" Grid.Column="1" HorizontalAlignment="Left" Margin="198,0,0,0" VerticalAlignment="Top"/>
 
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="19,31,0,0" VerticalAlignment="Top" Width="110" Height="40"  Grid.Column="1"/>
-        <Button Content="Редактировать" HorizontalAlignment="Left" Margin="134,31,0,0" VerticalAlignment="Top" Width="110" Height="40" Grid.Column="1" />
-        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="249,31,0,0" VerticalAlignment="Top" Width="110" Height="40" Grid.Column="1"/>
-        <Button Content="Сохранить комментарий" HorizontalAlignment="Left" Margin="364,104,0,0" VerticalAlignment="Top" Width="146" Height="40" Grid.Column="1" Grid.Row="17"/>
-        <Button Content="Добавить комментарий" HorizontalAlignment="Left" Margin="364,31,0,0" VerticalAlignment="Top" Width="146" Height="40" Grid.Column="1"/>
-        <Button Content="Добавить новый навык " HorizontalAlignment="Left" Margin="364,10,0,0" VerticalAlignment="Top" Width="143" Height="40" Grid.Column="1" Grid.Row="5"/>
-        <Button Content="Редактировать" HorizontalAlignment="Left" Margin="285,101,0,0" VerticalAlignment="Top" Width="110" Height="40" Grid.Column="1" Grid.Row="18" />
-        <Button Content="Удалить" HorizontalAlignment="Left" Margin="411,101,0,0" VerticalAlignment="Top" Width="110" Height="40" Grid.Column="1" Grid.Row="18" />
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="160,31,0,0" VerticalAlignment="Bottom" Width="110" Height="40" Grid.ColumnSpan="2"/>
+        <Button Content="Редактировать" HorizontalAlignment="Left" Margin="87,31,0,0" VerticalAlignment="Bottom" Width="110" Height="40" Grid.Column="1" />
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="203,31,0,0" VerticalAlignment="Bottom" Width="110" Height="40" Grid.Column="1"/>
+        <Button Content="Сохранить комментарий" HorizontalAlignment="Right" Margin="0,104,10,0" VerticalAlignment="Bottom" Width="146" Height="40" Grid.Column="1" Grid.Row="17"/>
+        <Button Content="Добавить комментарий" HorizontalAlignment="Left" Margin="318,31,0,0" VerticalAlignment="Bottom" Width="146" Height="40" Grid.Column="1"/>
+        <Button Content="Добавить новый навык " HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Center" Width="143" Height="40" Grid.Column="1" Grid.Row="5"/>
+        <Button Content="Редактировать" HorizontalAlignment="Right" Margin="0,101,135,0" VerticalAlignment="Top" Width="110" Height="40" Grid.Column="1" Grid.Row="18" />
+        <Button Content="Удалить" HorizontalAlignment="Right" Margin="0,101,10,0" VerticalAlignment="Top" Width="110" Height="40" Grid.Column="1" Grid.Row="18" />
 
 
 
-        <TextBlock Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Компания" VerticalAlignment="Top" Height="16" Width="55"/>
-        <TextBlock Grid.Row="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Отдел" VerticalAlignment="Top" Height="16" Width="40"/>
-        <TextBlock Grid.Row="3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Проект" VerticalAlignment="Top" Height="16" Width="40"/>
-        <TextBlock Grid.Row="4" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Должность" VerticalAlignment="Top" Height="16" Width="61"/>
-        <TextBlock Grid.Row="5" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Навыки" VerticalAlignment="Top" Height="16" Width="42"/>
-        <TextBlock Grid.Row="6" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Опыт" VerticalAlignment="Top" Height="16" Width="40"/>
-        <TextBlock Grid.Row="7" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Height="16" Width="35"/>
-        <TextBlock Grid.Row="8" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top" Height="16" Width="50"/>
-        <TextBlock Grid.Row="9" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Пол" VerticalAlignment="Top" Height="16" Width="22"/>
-        <TextBlock Grid.Row="10" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Дата рождения" VerticalAlignment="Top" Height="16" Width="85"/>
-        <TextBlock Grid.Row="11" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Контакты" VerticalAlignment="Top" Height="16" Width="51"/>
-        <TextBlock Grid.Row="12" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Местоположение" VerticalAlignment="Top" Height="16" Width="97"/>
-        <TextBlock Grid.Row="13" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Образование" VerticalAlignment="Top" Height="16" Width="76"/>
-        <TextBlock Grid.Row="14" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Предыдущая работа" VerticalAlignment="Top" Height="16" Width="113"/>
-        <TextBlock Grid.Row="15" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Семейное положение" VerticalAlignment="Top" Height="16" Width="122"/>
-        <TextBlock Grid.Row="16" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Хобби" VerticalAlignment="Top" Height="16" Width="35"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Компания" VerticalAlignment="Top" Height="16" Width="61" Margin="55,0,0,0"/>
+        <TextBlock Grid.Row="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Отдел" VerticalAlignment="Top" Height="16" Width="40"  Margin="55,0,0,0"/>
+        <TextBlock Grid.Row="3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Проект" VerticalAlignment="Top" Height="16" Width="40"  Margin="55,0,0,0"/>
+        <TextBlock Grid.Row="4" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Должность" VerticalAlignment="Top" Height="16" Width="76"  Margin="55,0,0,0"/>
+        <TextBlock Grid.Row="4" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Навыки" VerticalAlignment="Top" Height="16" Width="51"  Margin="55,50,0,0" />
+        <TextBlock Grid.Row="6" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Опыт" VerticalAlignment="Top" Height="16" Width="40"  Margin="55,0,0,0"/>
+        <TextBlock Grid.Row="7" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Height="16" Width="35"  Margin="55,0,0,0"/>
+        <TextBlock Grid.Row="8" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top"  Height="16"  Width="50"  Margin="55,0,0,0"/>
+        <TextBlock Grid.Row="9" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Пол" VerticalAlignment="Top" Height="16" Width="22"  Margin="55,0,0,0"/>
+        <TextBlock Grid.Row="10" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Дата рождения" VerticalAlignment="Top" Height="16" Width="85"  Margin="55,0,0,0"/>
+        <TextBlock Grid.Row="11" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Контакты" VerticalAlignment="Top" Height="16" Width="57"  Margin="55,0,0,0"/>
+        <TextBlock Grid.Row="12" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Местоположение" VerticalAlignment="Top" Height="16" Width="101"  Margin="55,0,0,0"/>
+        <TextBlock Grid.Row="13" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Образование" VerticalAlignment="Top" Height="16" Width="76"  Margin="55,0,0,0" />
+        <TextBlock Grid.Row="14" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Предыдущая работа" VerticalAlignment="Top" Height="16" Width="114" Margin="55,0,0,0" />
+        <TextBlock Grid.Row="15" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Семейное положение" VerticalAlignment="Top" Height="16" Width="122" Margin="55,0,0,0"/>
+        <TextBlock Grid.Row="16" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Хобби" VerticalAlignment="Top" Height="16" Width="35" Margin="55,0,0,0" />
 
 
 
-        <TextBlock Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Компания" VerticalAlignment="Top" Height="16" Width="55"  Grid.Column="1" Margin="19,0,0,0"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Компания" VerticalAlignment="Top" Height="16" Width="61"  Grid.Column="1" Margin="19,0,0,0"/>
         <TextBlock Grid.Row="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Отдел" VerticalAlignment="Top" Height="16" Width="42"  Grid.Column="1" Margin="19,0,0,0"/>
         <TextBlock Grid.Row="3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Проект" VerticalAlignment="Top" Height="16" Width="40"  Grid.Column="1" Margin="19,0,0,0"/>
-        <TextBlock Grid.Row="4" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Должность" VerticalAlignment="Top" Height="16" Width="61"  Grid.Column="1" Margin="19,0,0,0"/>
-        <TextBlock Grid.Row="5" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Навыки" VerticalAlignment="Top" Height="16" Width="42"  Grid.Column="1" Margin="19,0,0,0"/>
+        <TextBlock Grid.Row="4" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Должность" VerticalAlignment="Top" Height="16" Width="70"  Grid.Column="1" Margin="19,0,0,0"/>
+        <TextBlock Grid.Row="5" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Навыки" VerticalAlignment="Top" Height="16" Width="48"  Grid.Column="1" Margin="19,0,0,0" Grid.RowSpan="2"/>
         <TextBlock Grid.Row="6" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Опыт" VerticalAlignment="Top" Height="16" Width="35"  Grid.Column="1" Margin="19,0,0,0"/>
         <TextBlock Grid.Row="7" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Height="16" Width="35"  Grid.Column="1" Margin="19,0,0,0"/>
         <TextBlock Grid.Row="8" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top" Height="16" Width="50"  Grid.Column="1" Margin="19,0,0,0"/>
         <TextBlock Grid.Row="9" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Пол" VerticalAlignment="Top" Height="16" Width="22"  Grid.Column="1" Margin="19,0,0,0"/>
 
-        <TextBlock Grid.Row="11" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Контакты" VerticalAlignment="Top" Height="16" Width="51" Grid.Column="1" Margin="19,0,0,0" />
+        <TextBlock Grid.Row="11" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Контакты" VerticalAlignment="Top" Height="16" Width="55" Grid.Column="1" Margin="19,0,0,0" />
         <TextBlock Grid.Row="12" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Местоположение" VerticalAlignment="Top" Height="16" Width="97"  Grid.Column="1" Margin="19,0,0,0"/>
         <TextBlock Grid.Row="13" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Образование" VerticalAlignment="Top" Height="16" Width="76"  Grid.Column="1" Margin="19,0,0,0"/>
-        <TextBlock Grid.Row="14" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Предыдущая работа" VerticalAlignment="Top" Height="16" Width="113"/>
+        <TextBlock Grid.Row="14" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Предыдущая работа" VerticalAlignment="Top" Height="16" Width="114" Margin="19,0,0,0" Grid.Column="1" Grid.RowSpan="2"/>
         <TextBlock Grid.Row="15" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Семейное положение" VerticalAlignment="Top" Height="16" Width="122"  Grid.Column="1" Margin="19,0,0,0"/>
         <TextBlock Grid.Row="16" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Хобби" VerticalAlignment="Top" Height="16" Width="35"  Grid.Column="1" Margin="19,0,0,0"/>
         <TextBlock Grid.Row="18" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Комментарии" VerticalAlignment="Top" Height="16" Width="85"  Grid.Column="1" Margin="19,0,0,0"/>
