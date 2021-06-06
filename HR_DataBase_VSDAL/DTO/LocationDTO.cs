@@ -8,6 +8,7 @@ namespace HR_DataBase_VSDAL.Models
 {
     public class LocationDTO
     {
+        public int ID { get; set; }
         public int LocationIndex { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
