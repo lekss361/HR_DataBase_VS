@@ -14,8 +14,4 @@
     <ProjectReference Include="..\HR_DataBase_VSDAL\HR_DataBase_VSDAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mappers\DTOToModels\" />
-  </ItemGroup>
-
 </Project>
