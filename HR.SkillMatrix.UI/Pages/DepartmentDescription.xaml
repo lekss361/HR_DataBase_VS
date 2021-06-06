@@ -7,23 +7,18 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DepartmentDescription">
-
     <Grid Background="#FFDCCFCF">
         <Grid HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="800" Margin="10,0,0,0" Grid.RowSpan="2">
             <Button Content="Back" HorizontalAlignment="Left" Height="40" Margin="40,56,0,0" VerticalAlignment="Top" Width="100"/>
             <Button Content="Edit" HorizontalAlignment="Left" Height="40" Margin="190,56,0,0" VerticalAlignment="Top" Width="100"/>
             <Button Content="Accept" HorizontalAlignment="Left" Height="40" Margin="340,56,0,0" VerticalAlignment="Top" Width="100"/>
             <TextBlock HorizontalAlignment="Left" Height="152" Margin="70,195,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="640" Foreground="#FFFBF9F9" Background="#FFFDF6F6"/>
-
+            <Label Content="Department" Grid.Column="0" HorizontalAlignment="Center" Height="40" Margin="0,0,0,0" VerticalAlignment="Top" Width="80" FontFamily="Adobe Caslon Pro Bold"/>
         </Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height ="90"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Label Content="Department" Grid.Column="0" HorizontalAlignment="Center" Height="40" Margin="0,0,0,0" VerticalAlignment="Top" Width="80" FontFamily="Adobe Caslon Pro Bold"/>
-
-
-
     </Grid>
 </Page>
