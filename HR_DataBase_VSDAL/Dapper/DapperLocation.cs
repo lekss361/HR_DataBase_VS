@@ -11,7 +11,7 @@ using HR_DataBase_VSDAL.Models;
 
 namespace HR_DataBase_VSDAL.Dapper
 {
-    public class LocationDapper
+    public class DapperLocation
     {
         LocationDTO locationDTO;
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
