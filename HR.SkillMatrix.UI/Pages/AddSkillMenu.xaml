@@ -16,8 +16,8 @@
         <Button Content="Закрыть" HorizontalAlignment="Left"   Margin="15,29,0,0" VerticalAlignment="Top" Width="110" Height="40"/>
         <TextBox x:Name="textBoxNewSkill" HorizontalAlignment="Left" Height="26" Margin="15,82,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Новый навык" VerticalAlignment="Top" Width="401"/>
         <TextBox HorizontalAlignment="Left" Height="83" Margin="15,122,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Описание нового навыка" VerticalAlignment="Top" Width="401"/>
-        <RadioButton x:Name="SoftSkill" Content="SoftSkill" HorizontalAlignment="Left" Margin="440,57,0,0" VerticalAlignment="Top" IsChecked="True" GroupName="SkillType" Checked="SoftSkill_Checked"/>
-        <RadioButton x:Name="HardSkill" Content="HardSkill" HorizontalAlignment="Left" Margin="545,57,0,0" VerticalAlignment="Top" GroupName="SkillType" Checked="HardSkill_Checked"/>
+        <RadioButton x:Name="SoftSkill" Content="SoftSkill" HorizontalAlignment="Left" Margin="268,49,0,0" VerticalAlignment="Top" IsChecked="True" GroupName="SkillType" Checked="SoftSkill_Checked"/>
+        <RadioButton x:Name="HardSkill" Content="HardSkill" HorizontalAlignment="Left" Margin="342,49,0,0" VerticalAlignment="Top" GroupName="SkillType" Checked="HardSkill_Checked"/>
 
 
     </Grid>

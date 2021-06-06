@@ -47,12 +47,12 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void SoftSkill_Checked(object sender, RoutedEventArgs e)
         {
-            skillType = 0;
+            skillType = 1;
         }
 
         private void HardSkill_Checked(object sender, RoutedEventArgs e)
         {
-            skillType = 1;
+            skillType = 2;
         }
     }
 }
