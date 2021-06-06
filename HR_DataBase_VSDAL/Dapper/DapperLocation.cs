@@ -11,7 +11,7 @@ using HR_DataBase_VSDAL.Models;
 
 namespace HR_DataBase_VSDAL.Dapper
 {
-    public class LocationDapper
+    public class DapperLocation
     {
         /// <summary>
         /// Делаем запись в Базу Данных через хранимую процедуру
