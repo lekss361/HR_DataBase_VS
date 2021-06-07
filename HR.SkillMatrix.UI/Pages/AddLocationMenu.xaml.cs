@@ -45,12 +45,15 @@ namespace HR.SkillMatrix.UI.Pages
             location.Street = textBoxStreet.Text;
             location.HouseNumber = Int32.Parse(textBoxHouseNumber.Text);
             location.ApartmentNumber = Int32.Parse(textBoxApartmentNumber.Text);
-            location.LocationIndex = Int32.Parse(textBoxLocationIndex.Text);
+            if (location.LocationIndex != null)
+            {
+                location.LocationIndex = Int32.Parse(textBoxLocationIndex.Text);
+            }
 
             MapperLocation mapper = new MapperLocation();
             mapper.MapToLocationDTO(location);
 
-            Saved saved=new Saved();
+            Saved saved = new Saved();
             saved.Show();
         }
     }
