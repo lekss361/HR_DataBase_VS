@@ -40,14 +40,16 @@ namespace HR.SkillMatrix.UI.Pages
         {
             Worker worker = new Worker();
 
-            worker.Country = textBoxCountry.Text;
-            worker.City = textBoxCity.Text;
-            worker.Street = textBoxStreet.Text;
-            worker.HouseNumber = Int32.Parse(textBoxHouseNumber.Text);
-            worker.ApartmentNumber = Int32.Parse(textBoxApartmentNumber.Text);
-            location.LocationIndex = Int32.Parse(textBoxLocationIndex.Text);
+            worker.LastName = LastName.Text;
+            worker.FirstName = FirstName.Text;
+            worker.Hobby = Hobby.Text;
+            worker.Sex = "men";
+            worker.Education = Education.Text;
+            worker.BirthDay = 11;
+            worker.ContactID = 1;
+            worker.LocationID = 1;
 
-            MapperLocation mapper = new MapperLocation();
+            MapperWorker mapper = new MapperWorker();
             mapper.MapToWorkersDTO(worker);
 
             Saved saved = new Saved();

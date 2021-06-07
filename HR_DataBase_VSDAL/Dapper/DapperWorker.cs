@@ -20,7 +20,7 @@ namespace HR_DataBase_VSDAL.Dapper
         public void AddNewWorker(WorkersDTO workersDTO)
         {
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
-            string tmp1 = "exec [HR_DataBase_VSDB].[AddLocation]";
+            string tmp1 = "exec [HR_DataBase_VSDB].[AddWorker]";
             string tmp2 =
                 $" N'{workersDTO.BirthDay}', N'{workersDTO.Sex}', N'{workersDTO.ContactID}', N'{workersDTO.Education}', N'{workersDTO.FirstName}', N'{workersDTO.LastName}', N'{workersDTO.LocationID}'";
 
