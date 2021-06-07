@@ -24,5 +24,10 @@ namespace HR.SkillMatrix.UI.Windows
         {
             InitializeComponent();
         }
+
+        private void NewWindow_OnClosing(object sender, CancelEventArgs e)
+        {
+            MessageBox.Show("Все потеряно");
+        }
     }
 }
