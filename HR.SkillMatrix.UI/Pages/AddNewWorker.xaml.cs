@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HR.SkillMatrix.UI.Windows;
+using HR_DataBase_VSBLL.Mappers;
 using HR_DataBase_VSBLL.Models;
 
 namespace HR.SkillMatrix.UI.Pages
@@ -37,7 +38,20 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-           
+            Worker worker = new Worker();
+
+            worker.Country = textBoxCountry.Text;
+            worker.City = textBoxCity.Text;
+            worker.Street = textBoxStreet.Text;
+            worker.HouseNumber = Int32.Parse(textBoxHouseNumber.Text);
+            worker.ApartmentNumber = Int32.Parse(textBoxApartmentNumber.Text);
+            location.LocationIndex = Int32.Parse(textBoxLocationIndex.Text);
+
+            MapperLocation mapper = new MapperLocation();
+            mapper.MapToWorkersDTO(worker);
+
+            Saved saved = new Saved();
+            saved.Show();
         }
 
         private void CreateLocation_Click(object sender, RoutedEventArgs e)

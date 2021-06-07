@@ -10,13 +10,13 @@ using HR_DataBase_VSDAL.Models;
 
 namespace HR_DataBase_VSBLL.Mappers
 {
-    class MapperWorker
+    public class MapperWorker
     {
         /// <summary>
         /// Mapper моделей UI в DTO
         /// </summary>
         /// <param name="worker"></param>
-        public WorkersDTO MapToLocationDTO(Worker worker)
+        public WorkersDTO MapToWorkersDTO(Worker worker)
         {
             WorkersDTO workersDTO = new WorkersDTO();
 

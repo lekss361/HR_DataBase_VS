@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HR_DataBase_VSBLL.Models
 {
-    class Worker
+    public class Worker
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
