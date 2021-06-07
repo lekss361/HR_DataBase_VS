@@ -24,6 +24,7 @@ namespace HR.SkillMatrix.UI.Pages
     public partial class AddNewWorker : Page
     {
         private readonly MainWindow _mainWindow;
+        private string _sex;
         public AddNewWorker(MainWindow mainWindow)
         {
             InitializeComponent();
@@ -43,7 +44,7 @@ namespace HR.SkillMatrix.UI.Pages
             worker.LastName = LastName.Text;
             worker.FirstName = FirstName.Text;
             worker.Hobby = Hobby.Text;
-            worker.Sex = "men";
+            worker.Sex = _sex;
             worker.Education = Education.Text;
             worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
             worker.ContactID = 1;
@@ -83,5 +84,14 @@ namespace HR.SkillMatrix.UI.Pages
         //    AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow);
         //    _mainWindow.Content = locationMenu;
         //}
+        private void Men_OnChecked(object sender, RoutedEventArgs e)
+        {
+            _sex = "Мужской";
+        }
+
+        private void Women_OnChecked(object sender, RoutedEventArgs e)
+        {
+            _sex = "Женский";
+        }
     }
 }
