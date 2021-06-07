@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
@@ -22,7 +23,7 @@ namespace HR_DataBase_VSDAL.Dapper
         /// Делаем запись в БД через хранимую процедуру
         /// </summary>
         /// <param name="locationDTO"></param>
-        public void AddNewLocation(LocationDTO locationDTO)
+        public LocationDTO AddNewLocation(LocationDTO locationDTO)
         {
             string tmp1 = "exec [HR_DataBase_VSDB].[AddLocation]";
             string tmp2 =
@@ -35,7 +36,8 @@ namespace HR_DataBase_VSDAL.Dapper
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                connection.Query<LocationDTO>(@$"{tmp1}{tmp2}");
+                LocationDTO sss = connection.QuerySingle<LocationDTO>(@$"{tmp1}{tmp2}");
+                return sss;
             }
         }
 
