@@ -45,7 +45,7 @@ namespace HR.SkillMatrix.UI.Pages
             location.Street = textBoxStreet.Text;
             location.HouseNumber = Int32.Parse(textBoxHouseNumber.Text);
             location.ApartmentNumber = Int32.Parse(textBoxApartmentNumber.Text);
-            if (location.LocationIndex != null)
+            if (!string.IsNullOrEmpty(textBoxLocationIndex.Text))
             {
                 location.LocationIndex = Int32.Parse(textBoxLocationIndex.Text);
             }
