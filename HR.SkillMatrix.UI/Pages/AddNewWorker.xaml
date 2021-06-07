@@ -63,7 +63,7 @@
             <RadioButton x:Name="Men" Content="Мужской" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="29"/>
             <RadioButton x:Name="Women" Content="Женский" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="76,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="29"/>
             <Button x:Name="CreateContact" Content="Добавить контакты" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Height="29" Width="533"/>
-            <Button x:Name="CreateLocation" Content="Добавить адрес" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Height="29" Width="533"/>
+            <Button x:Name="CreateLocation" Content="Добавить адрес" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Height="29" Width="533" Click="CreateLocation_Click"/>
             <Button x:Name="PrewiousWork" Content="Добавить предыдущую работу" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" Height="29" Width="533"/>
             <Button x:Name="ChooseCompany" Content="Выбрать компанию" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Height="29" Width="533"/>
             <Button x:Name="ChooseDepartment" Content="Выбрать отдел" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="11" VerticalAlignment="Center" Height="29" Width="533"/>

@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace HR.SkillMatrix.UI.Windows
+{
+    /// <summary>
+    /// Interaction logic for NewWindow.xaml
+    /// </summary>
+    public partial class NewWindow : Window
+    {
+        public NewWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Window_OnClosing(object sender, CancelEventArgs e)
+        {
+            Saved saved = new Saved();
+            saved.Show();
+        }
+    }
+}

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR.SkillMatrix.UI.Windows;
 using HR_DataBase_VSBLL.Models;
 
 namespace HR.SkillMatrix.UI.Pages
@@ -36,7 +37,15 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            
+           
+        }
+
+        private void CreateLocation_Click(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow);
+            newWindow.Content = locationMenu;
+            newWindow.Show();
         }
         //private void BoxContacts_OnMouseEnter(object sender, MouseEventArgs e)
         //{
