@@ -45,7 +45,7 @@ namespace HR.SkillMatrix.UI.Pages
             worker.Hobby = Hobby.Text;
             worker.Sex = "men";
             worker.Education = Education.Text;
-            worker.BirthDay = 11;
+            worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
             worker.ContactID = 1;
             worker.LocationID = 1;
 

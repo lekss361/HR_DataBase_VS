@@ -10,7 +10,7 @@ namespace HR_DataBase_VSDAL.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int BirthDay { get; set; }
+        public string BirthDay { get; set; }
         public string Education { get; set; }
         public int? ContactID { get; set; }
         public int? LocationID { get; set; }
@@ -21,7 +21,7 @@ namespace HR_DataBase_VSDAL.Models
         (
             string firstName,
             string lastName,
-            int birthDay,
+            string birthDay,
             string education,
             int? contactID,
             int? locationID,
