@@ -36,27 +36,27 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
-        private void BoxContacts_OnMouseEnter(object sender, MouseEventArgs e)
-        {
-            List<int> numbers = new List<int>() { 1, 2, 3, 45 };
-            foreach (object ss in numbers)
-            { 
-                BoxContacts.Items.Add(ss + "ss");
-            }
+        //private void BoxContacts_OnMouseEnter(object sender, MouseEventArgs e)
+        //{
+        //    List<int> numbers = new List<int>() { 1, 2, 3, 45 };
+        //    foreach (object ss in numbers)
+        //    { 
+        //        BoxContacts.Items.Add(ss + "ss");
+        //    }
 
-            //Button addlocations = new Button();
-            //addlocations.Height = 100;
-            //addlocations.Width = 100;
-            //addlocations.Content = "sss";
-            //addlocations.Click += AddLocation_OnClick;
-        }
+        //    //Button addlocations = new Button();
+        //    //addlocations.Height = 100;
+        //    //addlocations.Width = 100;
+        //    //addlocations.Content = "sss";
+        //    //addlocations.Click += AddLocation_OnClick;
+        //}
 
-        private void AddLocation_OnClick(object sender, RoutedEventArgs e)
-        {
-            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow);
-            _mainWindow.Content = locationMenu;
-        }
+        //private void AddLocation_OnClick(object sender, RoutedEventArgs e)
+        //{
+        //    AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow);
+        //    _mainWindow.Content = locationMenu;
+        //}
     }
 }

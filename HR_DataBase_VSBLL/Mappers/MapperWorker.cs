@@ -37,4 +37,5 @@ namespace HR_DataBase_VSBLL.Mappers
             dapper.AddNewWorker(workersDTO);
             return workersDTO;
         }
+    }
 }
