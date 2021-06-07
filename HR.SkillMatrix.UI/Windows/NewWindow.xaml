@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="NewWindow" Height="450" Width="800">
     <Grid>
-        <local:NewWindow Closing="Window_OnClosing"></local:NewWindow>
+       
     </Grid>
 </Window>

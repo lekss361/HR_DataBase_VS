@@ -24,11 +24,5 @@ namespace HR.SkillMatrix.UI.Windows
         {
             InitializeComponent();
         }
-
-        private void Window_OnClosing(object sender, CancelEventArgs e)
-        {
-            Saved saved = new Saved();
-            saved.Show();
-        }
     }
 }
