@@ -57,5 +57,22 @@ namespace HR_DataBase_VSDAL.Dapper
             return locationDTO;
         }
 
+        /// <summary>
+        /// Достаём все записи из БД
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>List DTO записи из БД</returns>
+        public List<LocationDTO> GetAllLocation()
+        {
+            string tmp1 = "exec [HR_DataBase_VSDB].[GetAllLocations]";
+
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                ListDTO = connection
+                    .Query<LocationDTO>(@$"{tmp1}")
+                    .AsList<LocationDTO>();
+            }
+            return ListDTO;
+        }
     }
 }
