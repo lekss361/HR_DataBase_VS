@@ -38,5 +38,10 @@ namespace HR_DataBase_VSDAL.Models
             Sex = sex;
             Hobby = hobby;
         }
+
+        public WorkersDTO()
+        {
+
+        }
     }
 }

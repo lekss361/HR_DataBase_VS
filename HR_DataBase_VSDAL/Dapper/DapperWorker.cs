@@ -10,14 +10,14 @@ using HR_DataBase_VSDAL.Models;
 
 namespace HR_DataBase_VSDAL.Dapper
 {
-    class DapperWorker
+    public class DapperWorker
     {
         /// <summary>
         /// Делаем запись в Базу Данных через хранимую процедуру
         /// </summary>
         /// <param name="workersDTO"></param>
         /// <returns></returns>
-        public void AddNewLocation(WorkersDTO workersDTO)
+        public void AddNewWorker(WorkersDTO workersDTO)
         {
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
             string tmp1 = "exec [HR_DataBase_VSDB].[AddLocation]";
