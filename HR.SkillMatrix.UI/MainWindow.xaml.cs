@@ -23,9 +23,7 @@ namespace HR.SkillMatrix.UI
     {
         public MainWindow()
         {
-            InitializeComponent();
-            MainMenu mainMenu = new MainMenu(this);
-            this.Content = mainMenu;
+            InitializeComponent();                    
         }
     }
 }

@@ -13,19 +13,24 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddComment : Page
     {
-        //private readonly MainWindow _mainWindow;
-        public AddComment()
+        private readonly MainWindow _mainWindow;
+
+        public AddComment(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
         }
+
 
       
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Comments comments = new Comments();
 
-            comments.WorkersID = textBoxNameWorker.Text;
-            comments.Date = textBoxDataComment.Text;
+            //worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
+            comments.WorkersID = 1; //textBoxNameWorker.Text;
+            //comments.Date = Date.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
+
             if (!string.IsNullOrEmpty(textBoxComment.Text))
             {
                 comments.Comment = textBoxComment.Text;

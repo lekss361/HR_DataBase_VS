@@ -8,7 +8,7 @@ namespace HR_DataBase_VSBLL.Models
 {
     public class Comments
     {
-        public string WorkersID { get; set; }
+        public int WorkersID { get; set; }
         public string Comment { get; set; }
         public string Date { get; set; }
     }

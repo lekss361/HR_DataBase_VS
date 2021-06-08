@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
+      xmlns:sys="clr-namespace:System;assembly=System.Runtime"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddComment">
@@ -13,14 +14,12 @@
             <Grid HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="800" Background="#FF7F74C1">
                 <TextBlock HorizontalAlignment="Left" Height="30" Margin="256,0,0,0" Text="Комментарий" TextWrapping="Wrap" VerticalAlignment="Center" Width="220" FontSize="18" TextAlignment="Center"/>
             </Grid>
-            <TextBlock x:Name="WorkerID" HorizontalAlignment="Left" Height="32" Margin="65,90,0,0" Text="Работник" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="18"/>
             <TextBlock HorizontalAlignment="Left" Height="32" Margin="65,130,0,0" Text="Дата" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="18"/>
             <TextBlock HorizontalAlignment="Left" Height="32" Margin="65,170,0,0" Text="Комментарий" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="18"/>
-            <TextBox x:Name="textBoxDataComment" HorizontalAlignment="Left" Height="30" Margin="200,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="504" FontSize="14"/>
-            <TextBox x:Name="textBoxNameWorker" HorizontalAlignment="Left" Height="30" Margin="200,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="504" FontSize="14"/>
             <TextBox x:Name="textBoxComment" HorizontalAlignment="Left" Height="167" Margin="200,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="504" FontSize="14"/>
             <Button Content="Назад" HorizontalAlignment="Left" Height="51" Margin="246,361,0,0" VerticalAlignment="Top" Width="151" FontSize="18"/>
             <Button x:Name="buttonSave" Content="Сохранить" HorizontalAlignment="Left" Height="51" Margin="505,361,0,0" VerticalAlignment="Top" Width="158" Click="Button_Click" FontSize="18"/>
+            <DatePicker x:Name="Data" SelectedDate="{x:Static sys:DateTime.Now}" HorizontalAlignment="Left" Height="32" Margin="202,130,0,0" VerticalAlignment="Top" Width="120"/>
         </Grid>
 
     </Grid>
