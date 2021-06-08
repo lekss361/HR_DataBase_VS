@@ -20,7 +20,7 @@ namespace HR_DataBase_VSBLL.Mappers
         /// </summary>
         /// <param name="ID">ID записи</param>
         /// <returns>DTO записи из БД</returns>
-        public ContactsDTO GetLocationByID(int ID)
+        public ContactsDTO GetByID(int ID)
         {
             contactsDTO = dapper.GetContactByID(ID);
             return contactsDTO;
@@ -30,7 +30,7 @@ namespace HR_DataBase_VSBLL.Mappers
         /// Добавляем новую запись в БД
         /// </summary>
         /// <param name="model">Модель</param>
-        public void AddNewLocation(Contacts model)
+        public void AddNew(Contacts model)
         {
             contactsDTO = MapModelToDTO(model);
             dapper.AddNewContact(contactsDTO);
