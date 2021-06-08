@@ -18,5 +18,9 @@ namespace HR_DataBase_VSBLL.Models
         public Location()
         {
         }
+        public Location(int a=5)
+        {
+            LocationIndex = a;
+        }
     }
 }

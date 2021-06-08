@@ -13,7 +13,10 @@ namespace HR_DataBase_VSBLL.Mappers
     public class MapperLocation
     {
         LocationDTO locationDTO = new LocationDTO();
+        Location location = new Location();
         DapperLocation dapper = new DapperLocation();
+        //List<LocationDTO> locationDtos = new List<LocationDTO>();
+        //List<Location> locations = new List<Location>();
 
         /// <summary>
         /// поиск Location по ID
@@ -26,6 +29,21 @@ namespace HR_DataBase_VSBLL.Mappers
             return locationDTO;
         }
 
+        public Location GetLocationByID1(int ID)
+        {
+            locationDTO = dapper.GetLocationByID(ID);
+            location = MapLocationDTOToModel(locationDTO);
+            return location;
+        }
+
+        public List<Location> GetAllLocation()
+        {
+            List<LocationDTO> locationDtos = dapper.GetAllLocation();
+            List<Location> locations = MapLocationDTOToModelList(locationDtos);
+            locationDtos.Clear();
+            
+            return locations;
+        }
         /// <summary>
         /// Добавляем новую запись Location в БД
         /// </summary>
@@ -55,6 +73,41 @@ namespace HR_DataBase_VSBLL.Mappers
 
             locationDTO = mapper.Map<LocationDTO>(location);
             return locationDTO;
+        }
+
+        private Location MapLocationDTOToModel(LocationDTO locationDTO)
+        {
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<LocationDTO, Location>()
+                .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex))
+                .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
+                .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
+                .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Street))
+                .ForMember(dest => dest.HouseNumber, option => option.MapFrom(source => source.HouseNumber))
+                .ForMember(dest => dest.ApartmentNumber, option => option.MapFrom(source => source.ApartmentNumber)));
+
+            Mapper mapper = new Mapper(config);
+
+            location = mapper.Map<Location>(locationDTO);
+            return location;
+        }
+
+        private List<Location> MapLocationDTOToModelList(List<LocationDTO> locationDtos)
+        {
+            List<Location> sda = new List<Location>();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<LocationDTO, Location>()
+                .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex))
+                .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
+                .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
+                .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Street))
+                .ForMember(dest => dest.HouseNumber, option => option.MapFrom(source => source.HouseNumber))
+                .ForMember(dest => dest.ApartmentNumber, option => option.MapFrom(source => source.ApartmentNumber)));
+
+            Mapper mapper = new Mapper(config);
+
+            sda = mapper.Map<List<Location>>(locationDtos);
+            return sda;
         }
     }
 }
