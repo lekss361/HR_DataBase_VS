@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR.SkillMatrix.UI.Windows;
+using HR_DataBase_VSBLL.Models;
+using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
 
 namespace HR.SkillMatrix.UI.Pages
 {
@@ -20,9 +23,51 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddNewDepartment : Page
     {
+        private readonly MainWindow _mainWindow;
         public AddNewDepartment(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
         }
+
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+            Divisions divisions = new Divisions();
+
+            divisions.Name = textBoxName.Text;
+            divisions.CompanyID = 1;
+            divisions.ContactID = 1;
+            divisions.LocationID = 1;
+            divisions.DirectionsID = 1;
+            divisions.Information = textBoxDescription.Text;
+
+
+            MapperDivisions mapper = new MapperDivisions();
+            mapper.MapToDivisionsDTO(divisions);
+
+            Saved saved = new Saved();
+            saved.Show();
+        }
+       
+
+       
+       
+
+        private void ButtonAddContact_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonAddLocation_Click(object sender, RoutedEventArgs e)
+        {
+            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow);
+            _mainWindow.Content = locationMenu;
+        }
+
+        private void ButtonAddDirection_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

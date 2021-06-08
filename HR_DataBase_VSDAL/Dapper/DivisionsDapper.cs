@@ -11,24 +11,23 @@ using HR_DataBase_VSDAL.Models;
 
 namespace HR_DataBase_VSDAL.Dapper
 {
-    public class SkillNameDapper
+    public class DivisionDapper
     {
         /// <summary>
         /// Делаем запись в Базу Данных через хранимую процедуру
         /// </summary>
-        /// <param name="SkillNameDTO"></param>
+        /// <param name="divisionDTO"></param>
         /// <returns></returns>
-        public void AddNewSkillName(SkillNameDTO SkillNameDTO)
+        public void AddNewDivision(DivisionsDTO divisionsDTO)
         {
-            
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
-
-            string tmp1 = "exec [HR_DataBase_VSDB].[AddNewSkillName]";
-            string tmp2 = $" N'{SkillNameDTO.Skill}', N'{SkillNameDTO.SkillTypeID}'";
+            string tmp1 = "exec [HR_DataBase_VSDB].[AddNewDivision]";
+            string tmp2 =
+                $" N'{divisionsDTO.Name}', N'{divisionsDTO.Information}', N'{divisionsDTO.CompanyID}', N'{divisionsDTO.ContactID}', N'{divisionsDTO.LocationID}', N'{divisionsDTO.DirectionsID}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                connection.Query<SkillNameDTO>(@$"{tmp1}{tmp2}");
+                connection.Query<DivisionsDTO>(@$"{tmp1}{tmp2}");
             }
         }
     }

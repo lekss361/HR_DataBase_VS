@@ -28,7 +28,7 @@ namespace HR.SkillMatrix.UI.Pages
         {
             InitializeComponent();
             _mainWindow = mainWindow;
-            skillType = 0;
+            skillType = 1;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
