@@ -12,13 +12,15 @@ namespace HR_DataBase_VSBLL.Mappers
 {
     public class MapperLocation
     {
+        LocationDTO locationDTO = new LocationDTO();
+        DapperLocation dapper = new DapperLocation();
+
         /// <summary>
         /// Mapper моделей UI в DTO
         /// </summary>
         /// <param name="location"></param>
-        public LocationDTO MapToLocationDTO(Location location)
+        private LocationDTO MapModelToLocationDTO(Location location)
         {
-            LocationDTO locationDTO = new LocationDTO();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Location, LocationDTO>()
             .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex))
@@ -29,10 +31,8 @@ namespace HR_DataBase_VSBLL.Mappers
             .ForMember(dest => dest.ApartmentNumber, option => option.MapFrom(source => source.ApartmentNumber)));
 
             Mapper mapper = new Mapper(config);
-            DapperLocation dapper = new DapperLocation();
 
             locationDTO = mapper.Map<LocationDTO>(location);
-            dapper.AddNewLocation(locationDTO);
             return locationDTO;
         }
     }
