@@ -23,9 +23,11 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddNewProject : Page
     {
-        public AddNewProject()
+        private readonly MainWindow _mainWindow;
+        public AddNewProject(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow; 
         }
 
         private void buttonSave(object sender, RoutedEventArgs e)
