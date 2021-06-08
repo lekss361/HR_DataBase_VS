@@ -31,8 +31,6 @@ namespace HR.SkillMatrix.UI.Pages
             InitializeComponent();
             _mainWindow = mainWindow;
             MapperLocation mapperLocation = new MapperLocation();
-            //var sss= mapperLocation.GetAllLocation();
-            //    Companies.ItemsSource = sss;
             Companies.ItemsSource = mapperLocation.GetAllLocation();
         }
     }

@@ -9,11 +9,11 @@
       Title="ListOfCompanies">
 
     <Grid Background="White">
-        <DataGrid x:Name="Companies" AutoGenerateColumns="True" ItemsSource="{Binding}" >
+        <DataGrid x:Name="Companies" AutoGenerateColumns="False"  Margin="95,58,117,58">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding ="{Binding Path = LocationIndex}"  IsReadOnly="True" Header="Индекс" Width="100" />
-                <DataGridTextColumn Binding ="{Binding Path = Country}"  IsReadOnly="True" Header="Страна" Width="200"/>
-                <DataGridTextColumn Binding ="{Binding Path = City}"  IsReadOnly="True" Header="Город" Width="200"/>
+                <DataGridTextColumn Binding ="{Binding Path = LocationIndex}"  IsReadOnly="True" Header="Индекс" Width="50" />
+                <DataGridTextColumn Binding ="{Binding Path = Country}"  IsReadOnly="True" Header="Страна" Width="100"/>
+                <DataGridTextColumn Binding ="{Binding Path = City}"  IsReadOnly="True" Header="Город" Width="100"/>
                 <DataGridTextColumn Binding ="{Binding Path = Street}" IsReadOnly="True" Header="Улица" Width="200"/>
                 <DataGridTextColumn Binding ="{Binding Path = HouseNumber}" IsReadOnly="True" Header="Дом" Width="200" />
                 <DataGridTextColumn Binding ="{Binding Path = ApartmentNumber}" IsReadOnly="True" Header="Квартира" Width="*"/>
