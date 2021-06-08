@@ -9,10 +9,10 @@ namespace HR_DataBase_VSBLL.Models
     public class Company
     {
         public string Name { get; set; }
-        public string Phone { get; set; }
-        public string Location { get; set; }
-        public string Direction { get; set; }
-        public string Description { get; set; }
+        public string Information { get; set; }
+        public int ContactID { get; set; }
+        public int LocationID { get; set; }
+        
 
         public Company()
         {

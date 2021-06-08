@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HR_DataBase_VSBLL.Models;
+using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
+using HR.SkillMatrix.UI.Windows;
 
 namespace HR.SkillMatrix.UI.Pages
 {
@@ -33,30 +35,45 @@ namespace HR.SkillMatrix.UI.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Save_Click(object sender, RoutedEventArgs e)
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
             HR_DataBase_VSBLL.Models.Company companies = new HR_DataBase_VSBLL.Models.Company();
 
             companies.Name = textBoxName.Text;
-            companies.Phone = textBoxPhone.Text;
-            companies.Location = textBoxLocation.Text;
-            companies.Direction = textBoxDirection.Text;
-            companies.Description = textBoxDescription.Text;
+            companies.ContactID = 1;
+            companies.LocationID = 1;
+            companies.Information = textBoxDescription.Text;
+
+            MapperCompany mapper = new MapperCompany();
+            mapper.MapToCompaniesDTO(companies);
+
+            Saved saved = new Saved();
+            saved.Show();
         }
         /// <summary>
         /// кнопка "Назад"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Back_Click(object sender, RoutedEventArgs e)
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
             CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
             _mainWindow.Content = createNewPage;
         }
-        private void CreateLocation_Click(object sender, RoutedEventArgs e)
+
+
+        private void ButtonAddLocation_Click(object sender, RoutedEventArgs e)
         {
             AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow);
             _mainWindow.Content = locationMenu;
         }
+
+        private void ButtonAddContact_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+     
     }
 }
