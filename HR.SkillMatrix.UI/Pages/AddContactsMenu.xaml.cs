@@ -23,9 +23,11 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddContactsMenu : Page
     {
-        public AddContactsMenu()
+        private readonly MainWindow _mainWindow;
+        public AddContactsMenu(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
         }
 
         private void buttonSave_Click(object sender, RoutedEventArgs e)

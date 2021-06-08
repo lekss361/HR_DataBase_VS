@@ -65,15 +65,18 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonAddLocation_Click(object sender, RoutedEventArgs e)
         {
+            NewWindow newWindow = new NewWindow();
             AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow);
-            _mainWindow.Content = locationMenu;
+            newWindow.Content = locationMenu;
+            newWindow.Show();
         }
 
         private void ButtonAddContact_Click(object sender, RoutedEventArgs e)
         {
-
+            NewWindow newWindow = new NewWindow();
+            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow);
+            newWindow.Content = addContactsMenu;
+            newWindow.Show();
         }
-
-     
     }
 }

@@ -93,5 +93,13 @@ namespace HR.SkillMatrix.UI.Pages
         {
             _sex = "Женский";
         }
+
+        private void CreateContact_Click(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow);
+            newWindow.Content = addContactsMenu;
+            newWindow.Show();
+        }
     }
 }
