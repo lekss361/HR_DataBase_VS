@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR.SkillMatrix.UI.Windows;
+using HR_DataBase_VSBLL.Models;
+using HR_DataBase_VSBLL.Mappers;
 
 namespace HR.SkillMatrix.UI.Pages
 {
@@ -25,5 +28,22 @@ namespace HR.SkillMatrix.UI.Pages
             InitializeComponent();
         }
 
+        private void buttonSave(object sender, RoutedEventArgs e)
+        {
+            Contacts contacts = new Contacts();
+
+            contacts.Phone = textBoxPhone.Text;
+            contacts.Email = textBoxMail.Text;
+            if (!string.IsNullOrEmpty(textBoxOther.Text))
+            {
+                contacts.Information = textBoxOther.Text;
+            }
+
+            MapperContacts mapper = new MapperContacts();
+            mapper.AddNew(contacts); 
+
+            Saved saved = new Saved();
+            saved.Show();
+        }
     }
 }
