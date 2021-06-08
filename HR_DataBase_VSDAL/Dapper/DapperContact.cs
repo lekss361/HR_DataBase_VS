@@ -15,10 +15,10 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <summary>
         /// Делаем запись в БД через хранимую процедуру
         /// </summary>
-        /// <param name="locationDTO"></param>
+        /// <param name="contactsDTO"></param>
         public void AddNewContact(ContactsDTO contactsDTO)
         {
-            string query = "exec [HR_DataBase_VSDB].[AddLocation]";
+            string query = "exec [HR_DataBase_VSDB].[AddContacts]";
             string value =
                 $"N'{contactsDTO.Phone}', " +
                 $"N'{contactsDTO.Email}', " +
@@ -36,7 +36,7 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <returns>DTO записи из БД</returns>
         public ContactsDTO GetContactByID(int id)
         {
-            string query = "exec [HR_DataBase_VSDB].[GetLocationByID]";
+            string query = "exec [HR_DataBase_VSDB].[GetContactsByID]";
             string value =
                 $"N'{id}'";
             using (IDbConnection connection = new SqlConnection(connectionString))
@@ -54,7 +54,7 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <returns>List DTO записи из БД</returns>
         public List<ContactsDTO> GetAllContacts()
         {
-            string query = "exec [HR_DataBase_VSDB].[GetAllLocations]";
+            string query = "exec [HR_DataBase_VSDB].[GetAllContacts]";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
