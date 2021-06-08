@@ -14,6 +14,16 @@ namespace HR_DataBase_VSBLL.Mappers
     {
         LocationDTO locationDTO = new LocationDTO();
         DapperLocation dapper = new DapperLocation();
+   
+        /// <summary>
+        /// Добавляем новую запись Location в БД
+        /// </summary>
+        /// <param name="model"></param>
+        public void AddNewLocation(Location model)
+        {
+            locationDTO = MapModelToLocationDTO(model);
+            dapper.AddNewLocation(locationDTO);
+        }
 
         /// <summary>
         /// Mapper моделей UI в DTO
