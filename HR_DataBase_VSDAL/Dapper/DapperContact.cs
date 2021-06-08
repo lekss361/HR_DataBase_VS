@@ -18,7 +18,7 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <param name="locationDTO"></param>
         public void AddNewContact(ContactsDTO contactsDTO)
         {
-            string query = "exec [HR_DataBase_VSDB].[AddLocation]";
+            string query = "exec [HR_DataBase_VSDB].[AddContacts]";
             string value =
                 $"N'{contactsDTO.Phone}', " +
                 $"N'{contactsDTO.Email}', " +
