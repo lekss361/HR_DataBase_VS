@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using HR.SkillMatrix.UI.Windows;
 using HR_DataBase_VSBLL.Mappers;
 using HR_DataBase_VSBLL.Models;
-using System.Threading.Tasks;
 
 namespace HR.SkillMatrix.UI.Pages
 {
