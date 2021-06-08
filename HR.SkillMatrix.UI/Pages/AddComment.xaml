@@ -20,7 +20,7 @@
             <TextBox x:Name="textBoxNameWorker" HorizontalAlignment="Left" Height="30" Margin="200,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="504" FontSize="14"/>
             <TextBox x:Name="textBoxComment" HorizontalAlignment="Left" Height="167" Margin="200,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="504" FontSize="14"/>
             <Button Content="Назад" HorizontalAlignment="Left" Height="51" Margin="246,361,0,0" VerticalAlignment="Top" Width="151" FontSize="18"/>
-            <Button Content="Сохранить" HorizontalAlignment="Left" Height="51" Margin="505,361,0,0" VerticalAlignment="Top" Width="158" Click="Button_Click" FontSize="18"/>
+            <Button x:Name="buttonSave" Content="Сохранить" HorizontalAlignment="Left" Height="51" Margin="505,361,0,0" VerticalAlignment="Top" Width="158" Click="Button_Click" FontSize="18"/>
         </Grid>
 
     </Grid>
