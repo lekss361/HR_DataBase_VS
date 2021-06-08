@@ -153,7 +153,7 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\GetAllLevels.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\UpdateLevelsByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\GetLevelsByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\AddCompanies.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\AddNewCompany.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Employments\AddNewEmployment.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Employments\DeleteAllEmployments.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Employments\DeleteEmploymentByID.sql" />
