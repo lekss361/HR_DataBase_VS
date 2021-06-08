@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using Dapper;
 using HR_DataBase_VSDAL.Models;
 using System.Data;
+using System;
 
 namespace HR_DataBase_VSDAL.Dapper
 {
@@ -64,5 +65,38 @@ namespace HR_DataBase_VSDAL.Dapper
             }
             return listDTO;
         }
+
+        /// <summary>
+        /// Изменяем запись в БД через хранимую процедуру
+        /// </summary>
+        /// <param name="contactsDTO"></param>
+        public int UpdateNewContact(ContactsDTO contactsDTO)
+        {
+            ContactsDTO crntContactDTO = new ContactsDTO();
+            //crntContactDTO = GetContactByID(contactsDTO.id);
+            crntContactDTO = GetContactByID(2);
+
+            string query = "exec [HR_DataBase_VSDB].[UpdateContactsByID]";
+            string value =
+                $"N'{contactsDTO.id}', " +
+                $"N'{contactsDTO.Phone}', " +
+                $"N'{contactsDTO.Email}', " +
+                $"N'{contactsDTO.Information}'";
+
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    crntContactDTO = connection
+                        .QueryFirst<ContactsDTO>(@$"{query}{value}", contactsDTO);
+                }
+                catch
+                {
+                    new Exception("Всё плохо");
+                }
+            }
+            return crntContactDTO.id;
+        }
+
     }
 }
