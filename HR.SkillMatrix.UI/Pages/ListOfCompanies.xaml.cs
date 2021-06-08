@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR_DataBase_VSBLL.Mappers;
+using HR_DataBase_VSBLL.Models;
+using HR_DataBase_VSDAL.Models;
+
 
 namespace HR.SkillMatrix.UI.Pages
 {
@@ -25,6 +30,10 @@ namespace HR.SkillMatrix.UI.Pages
         {
             InitializeComponent();
             _mainWindow = mainWindow;
+            MapperLocation mapperLocation = new MapperLocation();
+            //var sss= mapperLocation.GetAllLocation();
+            //    Companies.ItemsSource = sss;
+            Companies.ItemsSource = mapperLocation.GetAllLocation();
         }
     }
 }

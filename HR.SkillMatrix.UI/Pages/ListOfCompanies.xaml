@@ -5,12 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="1200"
       Title="ListOfCompanies">
 
     <Grid Background="White">
-        <DataGrid AutoGenerateColumns="True">
-
+        <DataGrid x:Name="Companies" AutoGenerateColumns="True" ItemsSource="{Binding}" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding ="{Binding Path = LocationIndex}"  IsReadOnly="True" Header="Индекс" Width="100" />
+                <DataGridTextColumn Binding ="{Binding Path = Country}"  IsReadOnly="True" Header="Страна" Width="200"/>
+                <DataGridTextColumn Binding ="{Binding Path = City}"  IsReadOnly="True" Header="Город" Width="200"/>
+                <DataGridTextColumn Binding ="{Binding Path = Street}" IsReadOnly="True" Header="Улица" Width="200"/>
+                <DataGridTextColumn Binding ="{Binding Path = HouseNumber}" IsReadOnly="True" Header="Дом" Width="200" />
+                <DataGridTextColumn Binding ="{Binding Path = ApartmentNumber}" IsReadOnly="True" Header="Квартира" Width="*"/>
+            </DataGrid.Columns>
         </DataGrid>
     </Grid>
 </Page>
