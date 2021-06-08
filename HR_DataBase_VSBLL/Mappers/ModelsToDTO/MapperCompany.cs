@@ -23,8 +23,8 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Company, CompaniesDTO>()
 
             .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
-            .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))            
-            .ForMember(dest => dest.ContactID, option => option.MapFrom(source => source.ContactID))           
+            .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))
+            .ForMember(dest => dest.ContactID, option => option.MapFrom(source => source.ContactID))
             .ForMember(dest => dest.LocationID, option => option.MapFrom(source => source.LocationID)));
 
             Mapper mapper = new Mapper(config);
