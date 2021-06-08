@@ -14,7 +14,18 @@ namespace HR_DataBase_VSBLL.Mappers
     {
         LocationDTO locationDTO = new LocationDTO();
         DapperLocation dapper = new DapperLocation();
-   
+
+        /// <summary>
+        /// поиск Location по ID
+        /// </summary>
+        /// <param name="ID">LocationID</param>
+        /// <returns>LocationDTO</returns>
+        public LocationDTO GetLocationByID(int ID)
+        {
+            locationDTO = dapper.GetLocationByID(ID);
+            return locationDTO;
+        }
+
         /// <summary>
         /// Добавляем новую запись Location в БД
         /// </summary>
