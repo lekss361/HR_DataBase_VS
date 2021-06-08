@@ -23,10 +23,10 @@ namespace HR.SkillMatrix.UI.Pages
     /// <summary>
     /// Interaction logic for ListOfCompanies.xaml
     /// </summary>
-    public partial class ListOfCompanies : Page
+    public partial class ListOfLocation : Page
     {
         private readonly MainWindow _mainWindow;
-        public ListOfCompanies(MainWindow mainWindow)
+        public ListOfLocation(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
