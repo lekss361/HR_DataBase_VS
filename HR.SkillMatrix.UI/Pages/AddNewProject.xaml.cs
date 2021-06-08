@@ -50,7 +50,8 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void buttonBack(object sender, RoutedEventArgs e)
         {
-
+            CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
+            _mainWindow.Content = createNewPage;
         }
     }
 }
