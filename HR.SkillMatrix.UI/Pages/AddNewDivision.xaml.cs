@@ -19,12 +19,12 @@ using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
 namespace HR.SkillMatrix.UI.Pages
 {
     /// <summary>
-    /// Interaction logic for AddNewDepartment.xaml
+    /// Interaction logic for AddNewDivision.xaml
     /// </summary>
-    public partial class AddNewDepartment : Page
+    public partial class AddNewDivision : Page
     {
         private readonly MainWindow _mainWindow;
-        public AddNewDepartment(MainWindow mainWindow)
+        public AddNewDivision(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
