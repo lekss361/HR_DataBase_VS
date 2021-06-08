@@ -28,7 +28,7 @@ namespace HR.SkillMatrix.UI.Pages
             InitializeComponent();
         }
 
-        private void buttonSave(object sender, RoutedEventArgs e)
+        private void buttonSave_Click(object sender, RoutedEventArgs e)
         {
             Contacts contacts = new Contacts();
 
@@ -40,7 +40,7 @@ namespace HR.SkillMatrix.UI.Pages
             }
 
             MapperContacts mapper = new MapperContacts();
-            mapper.AddNew(contacts); 
+            mapper.AddNew(contacts);
 
             Saved saved = new Saved();
             saved.Show();
