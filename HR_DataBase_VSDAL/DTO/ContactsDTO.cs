@@ -1,7 +1,7 @@
 ﻿
 namespace HR_DataBase_VSDAL.Models
 {
-    class Contacts
+    public class ContactsDTO
     {
         public int id { get; set; }
         public string Phone { get; set; }
