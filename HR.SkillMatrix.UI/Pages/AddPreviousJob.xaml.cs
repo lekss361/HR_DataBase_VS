@@ -39,8 +39,8 @@ namespace HR.SkillMatrix.UI.Pages
         {
             PreviousWork previousWork = new PreviousWork();
 
-            previousWork.StartDate = DateTime.Parse(textBoxStarDate.Text);
-            previousWork.EndDate = DateTime.Parse(textBoxDismassDate.Text);
+            previousWork.StartDate = DatePikerStartData.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
+            previousWork.EndDate = DatePikerEndData.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
             previousWork.Information = textBoxDescription.Text;
 
             MapperPreviousJob mapper = new MapperPreviousJob();
