@@ -21,13 +21,16 @@ namespace HR_DataBase_VSDAL.Dapper
         public void AddPreviousWork(PreviousWorkDTO previousJobDTO)
         {
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
-            string tmp1 = "exec [HR_DataBase_VSDB].[AddNewPreviousWork]";
-            string tmp2 =
-                $"N'{previousJobDTO.WorkerID}',N'{previousJobDTO.StartDate}', N'{previousJobDTO.EndDate}, N'{previousJobDTO.Information}'";
+            string query = "exec [HR_DataBase_VSDB].[AddNewPreviousWork]";
+            string value =
+                $"N'{previousJobDTO.WorkerID}', " +
+                $"N'{previousJobDTO.StartDate}', " +
+                $"N'{previousJobDTO.EndDate}', " +
+                $"N'{previousJobDTO.Information}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                connection.Query<PreviousWorkDTO>(@$"{tmp1}{tmp2}");
+                connection.Query<PreviousWorkDTO>(@$"{query}{value}");
             }
         }
 

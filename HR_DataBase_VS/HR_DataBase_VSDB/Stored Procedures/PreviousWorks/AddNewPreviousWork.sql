@@ -1,8 +1,8 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddNewPreviousWork]
 	@WorkerID int,
-	@Information  nvarchar (255),
 	@DateStart date,
-	@DateEnd date
+	@DateEnd date,
+	@Information  nvarchar (255)
 AS
-	INSERT [PreviousWorks]([WorkerID],[Information],[DateStart],[DateEnd])
-	VALUES (@WorkerID, @Information, @DateStart, @DateEnd)
+	INSERT INTO [PreviousWorks]([WorkerID],[DateStart],[DateEnd],[Information])
+	VALUES (@WorkerID, @DateStart, @DateEnd, @Information)

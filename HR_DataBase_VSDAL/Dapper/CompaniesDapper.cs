@@ -21,13 +21,13 @@ namespace HR_DataBase_VSDAL.Dapper
         public void AddNewCompany(CompaniesDTO companiesDTO)
         {
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
-            string tmp1 = "exec [HR_DataBase_VSDB].[AddNewCompany]";
-            string tmp2 =
+            string query = "exec [HR_DataBase_VSDB].[AddNewCompany]";
+            string value =
                 $" N'{companiesDTO.Name}', N'{companiesDTO.Information}', N'{companiesDTO.ContactID}', N'{companiesDTO.LocationID}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                connection.Query<CompaniesDTO>(@$"{tmp1}{tmp2}");
+                connection.Query<CompaniesDTO>(@$"{query}{value}");
             }
         }
     }
