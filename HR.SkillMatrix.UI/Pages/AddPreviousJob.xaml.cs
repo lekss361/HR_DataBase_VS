@@ -40,8 +40,8 @@ namespace HR.SkillMatrix.UI.Pages
             PreviousWork previousWork = new PreviousWork();
 
             previousWork.StartDate = DateTime.Parse(textBoxStarDate.Text);
-            previousWork.DismassDate = DateTime.Parse(textBoxDismassDate.Text);
-            previousWork.Description = textBoxDescription.Text;
+            previousWork.EndDate = DateTime.Parse(textBoxDismassDate.Text);
+            previousWork.Information = textBoxDescription.Text;
 
             MapperPreviousJob mapper = new MapperPreviousJob();
             mapper.MapToPreviousJobDTO(previousWork);

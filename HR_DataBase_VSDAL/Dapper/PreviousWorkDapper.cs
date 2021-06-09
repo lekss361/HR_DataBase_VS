@@ -23,7 +23,7 @@ namespace HR_DataBase_VSDAL.Dapper
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
             string tmp1 = "exec [HR_DataBase_VSDB].[AddNewPreviousWork]";
             string tmp2 =
-                $"N'{previousJobDTO.StartDate}', N'{previousJobDTO.DismassDate}, N'{previousJobDTO.Description}'";
+                $"N'{previousJobDTO.WorkerID}',N'{previousJobDTO.StartDate}', N'{previousJobDTO.EndDate}, N'{previousJobDTO.Information}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {

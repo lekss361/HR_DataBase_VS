@@ -8,9 +8,10 @@ namespace HR_DataBase_VSBLL.Models
 {
     public class PreviousWork
     {
+        public int WorkerID { get; set; }
         public DateTime StartDate { get; set; }
-        public DateTime DismassDate { get; set; }
-        public string Description { get; set; }
+        public DateTime EndDate { get; set; }
+        public string Information { get; set; }
 
 
         public PreviousWork()
