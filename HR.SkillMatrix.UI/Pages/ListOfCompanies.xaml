@@ -15,8 +15,8 @@
                     <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
                     <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название Компании" Width="150" />
                     <DataGridTextColumn Binding ="{Binding Path = Information}"  IsReadOnly="True" Header="Информация" Width="100"/>
-                    <DataGridTextColumn Binding ="{Binding Path = Contact}"  IsReadOnly="True" Header="Контакты" Width="100"/>
-                    <DataGridTextColumn Binding ="{Binding Path = Location}" IsReadOnly="True" Header="Место нахождения" Width="200"/>
+                    <DataGridTextColumn Binding ="{Binding Path = ContactID}"  IsReadOnly="True" Header="Контакты" Width="100"/>
+                    <DataGridTextColumn Binding ="{Binding Path = LocationID}" IsReadOnly="True" Header="Место нахождения" Width="200"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

@@ -28,6 +28,7 @@ namespace HR.SkillMatrix.UI.Pages
             _mainWindow = mainWindow;
             MapperCompanies mapperCompanies = new MapperCompanies();
             Companies.ItemsSource = mapperCompanies.GetAllCompanies();
-        }      
+        }
+
     }
 }
