@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HR_DataBase_VSBLL.Mappers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class ListOfCompanies : Page
     {
-        public ListOfCompanies()
+        private readonly MainWindow _mainWindow;
+        public ListOfCompanies(MainWindow mainWindow)
         {
             InitializeComponent();
-        }
+            _mainWindow = mainWindow;
+            MapperCompanies mapperCompanies = new MapperCompanies();
+            Companies.ItemsSource = mapperCompanies.GetAllCompanies();
+        }      
     }
 }
