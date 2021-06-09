@@ -1,0 +1,21 @@
+﻿<Page x:Class="HR.SkillMatrix.UI.Pages.ListOfProject"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
+      mc:Ignorable="d" 
+         d:DesignHeight="450" d:DesignWidth="1200"
+      Title="ListOfProject">
+
+    <Grid Background="White">
+        <DataGrid x:Name="Projects" AutoGenerateColumns="False"  Margin="95,58,117,58">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
+                <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название" Width="300" />
+                <DataGridTextColumn Binding ="{Binding Path = DirectionName}"  IsReadOnly="True" Header="Направление" Width="300" />
+                <DataGridTextColumn Binding ="{Binding Path = Information}"  IsReadOnly="True" Header="Информация" Width="300"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
