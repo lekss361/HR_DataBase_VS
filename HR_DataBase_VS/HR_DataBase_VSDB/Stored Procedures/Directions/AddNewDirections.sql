@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddDirections]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddNewDirections]
     
     @Name         NVARCHAR (255)           
              

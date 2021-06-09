@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR_DataBase_VSDAL.Models
+namespace HR_DataBase_VSBLL.Models
 {
-    public class StatusesDTO
-    {
-        //public int StatusesID { get; set; }
+    public class Directions
+    {        
         public string Name { get; set; }
+      
+
+        public Directions()
+        {
+        }
     }
 }

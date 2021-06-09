@@ -170,13 +170,13 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Contacts\DeleteContactsByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Contacts\GetContactsByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Contacts\UpdateContactsByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Directions\AddDirections.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Directions\AddNewDirections.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Directions\DeleteAllDirections.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Directions\DeleteDirectionsByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Directions\GetAllDirections.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Directions\GetDirectionsByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Directions\UpdateDirectionsByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Statuses\AddStatuses.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Statuses\AddNewStatuses.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Statuses\DeleteAllStatuses.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Statuses\DeleteStatusesByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Statuses\GetAllStatuses.sql" />
@@ -188,6 +188,7 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps\GetAllWorkersSkillMaps.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps\GetAllWorkersSkillMapsByWorkersID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps\GetAllWorkersSkillMapsBySkillID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Directions\AddNewDirections.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\AddNewProject.sql" />
