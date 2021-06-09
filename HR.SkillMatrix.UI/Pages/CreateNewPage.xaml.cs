@@ -41,8 +41,14 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void AddNewWorker_Click(object sender, RoutedEventArgs e)
         {
-            EmployeeProfile employeeProfile = new EmployeeProfile(_mainWindow);
-            _mainWindow.Content = employeeProfile;
+            AddNewWorker addNewWorker = new AddNewWorker(_mainWindow);
+            _mainWindow.Content = addNewWorker;
+        }
+
+        private void AddNewProject_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewProject addNewProject = new AddNewProject(_mainWindow);
+            _mainWindow.Content = addNewProject;
         }
     }
 }

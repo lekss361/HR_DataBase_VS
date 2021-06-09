@@ -33,5 +33,11 @@ namespace HR.SkillMatrix.UI.Pages
             CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
             _mainWindow.Content = createNewPage;
         }
+
+        private void Companies_Click(object sender, RoutedEventArgs e)
+        {
+            ListOfLocation listOfLocation = new ListOfLocation(_mainWindow);
+            _mainWindow.Content = listOfLocation;
+        }
     }
 }

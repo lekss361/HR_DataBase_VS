@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HR.SkillMatrix.UI.Windows;
 using HR_DataBase_VSBLL.Models;
-using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
+using HR_DataBase_VSBLL.Mappers;
 
 
 namespace HR.SkillMatrix.UI.Pages
@@ -45,12 +45,15 @@ namespace HR.SkillMatrix.UI.Pages
             location.Street = textBoxStreet.Text;
             location.HouseNumber = Int32.Parse(textBoxHouseNumber.Text);
             location.ApartmentNumber = Int32.Parse(textBoxApartmentNumber.Text);
-            location.LocationIndex = Int32.Parse(textBoxLocationIndex.Text);
+            if (!string.IsNullOrEmpty(textBoxLocationIndex.Text))
+            {
+                location.LocationIndex = Int32.Parse(textBoxLocationIndex.Text);
+            }
 
             MapperLocation mapper = new MapperLocation();
-            mapper.MapToLocationDTO(location);
+            mapper.AddNewLocation(location);
 
-            Saved saved=new Saved();
+            Saved saved = new Saved();
             saved.Show();
         }
     }

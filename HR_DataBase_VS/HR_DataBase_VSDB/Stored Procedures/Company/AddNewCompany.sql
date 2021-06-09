@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddCompanies]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddNewCompany]
     
     @Name         NVARCHAR (255),
     @Information NVARCHAR (255),

@@ -8,7 +8,7 @@ namespace HR_DataBase_VSBLL.Models
 {
     public class Location
     {
-        public int LocationIndex { get; set; }
+        public int? LocationIndex { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
         public string Street { get; set; }
@@ -17,6 +17,10 @@ namespace HR_DataBase_VSBLL.Models
 
         public Location()
         {
+        }
+        public Location(int a=5)
+        {
+            LocationIndex = a;
         }
     }
 }

@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{7866acbf-344a-4669-bc43-085d11ddca69}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath />
     <RootNamespace>HR_DataBase_VSDB</RootNamespace>
@@ -154,7 +154,7 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\GetAllLevels.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\UpdateLevelsByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\GetLevelsByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\AddCompanies.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\AddNewCompany.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Employments\AddNewEmployment.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Employments\DeleteAllEmployments.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Employments\DeleteEmploymentByID.sql" />

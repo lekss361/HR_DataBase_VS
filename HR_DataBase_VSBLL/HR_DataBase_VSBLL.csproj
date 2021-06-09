@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mappers\DTOToModels\" />
+    <Folder Include="Mappers\DtoToModels\" />
   </ItemGroup>
 
 </Project>

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR_DataBase_VSBLL.Models;
+using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
 
 namespace HR.SkillMatrix.UI.Pages
 {
@@ -20,9 +22,37 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddSkillMenu : Page
     {
-        public AddSkillMenu()
+        private readonly MainWindow _mainWindow;
+        private int skillType;
+        public AddSkillMenu(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
+            skillType = 1;
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            SkillName skillName = new SkillName();
+
+            skillName.Skill = textBoxNewSkill.Text;
+            
+            skillName.SkillTypeID = skillType;
+
+            MapperSkillName mapper = new MapperSkillName();
+            mapper.MapToSkillNameDTO(skillName);
+        }
+
+
+
+        private void SoftSkill_Checked(object sender, RoutedEventArgs e)
+        {
+            skillType = 1;
+        }
+
+        private void HardSkill_Checked(object sender, RoutedEventArgs e)
+        {
+            skillType = 2;
         }
     }
 }
