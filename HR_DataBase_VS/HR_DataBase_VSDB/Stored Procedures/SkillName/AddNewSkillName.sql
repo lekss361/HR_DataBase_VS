@@ -1,6 +1,7 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddNewSkillName]
-	@Skill  nvarchar (255),
-	@SkillTypeID int
+	@Skill			nvarchar (255),
+	@SkillTypeID	int
 AS
-	INSERT [SkillNames]([Skill],[SkillTypeID])
-	VALUES (@Skill,@SkillTypeID)
+	INSERT [SkillNames]([Skill], [SkillTypeID])
+	VALUES (@Skill, @SkillTypeID)
+	SELECT @@IDENTITY

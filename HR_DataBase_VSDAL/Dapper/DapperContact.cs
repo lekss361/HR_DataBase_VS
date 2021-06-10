@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using Dapper;
 using HR_DataBase_VSDAL.Models;
 using System.Data;
+using System;
 
 namespace HR_DataBase_VSDAL.Dapper
 {
@@ -16,7 +17,7 @@ namespace HR_DataBase_VSDAL.Dapper
         /// Делаем запись в БД через хранимую процедуру
         /// </summary>
         /// <param name="contactsDTO"></param>
-        public void AddNewContact(ContactsDTO contactsDTO)
+        public int AddNewContact(ContactsDTO contactsDTO)
         {
             string query = "exec [HR_DataBase_VSDB].[AddContacts]";
             string value =
@@ -26,8 +27,9 @@ namespace HR_DataBase_VSDAL.Dapper
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                connection.Query<ContactsDTO>(@$"{query}{value}");
+                contactsDTO.Id = connection.QueryFirst<int>(@$"{query}{value}");
             }
+            return contactsDTO.Id;
         }
 
         /// <summary>
@@ -64,5 +66,38 @@ namespace HR_DataBase_VSDAL.Dapper
             }
             return listDTO;
         }
+
+        /// <summary>
+        /// Изменяем запись в БД через хранимую процедуру
+        /// </summary>
+        /// <param name="contactsDTO"></param>
+        public int UpdateNewContact(ContactsDTO contactsDTO)
+        {
+            ContactsDTO crntContactDTO = new ContactsDTO();
+            //crntContactDTO = GetContactByID(contactsDTO.id);
+            crntContactDTO = GetContactByID(2);
+
+            string query = "exec [HR_DataBase_VSDB].[UpdateContactsByID]";
+            string value =
+                $"N'{contactsDTO.Id}', " +
+                $"N'{contactsDTO.Phone}', " +
+                $"N'{contactsDTO.Email}', " +
+                $"N'{contactsDTO.Information}'";
+
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    crntContactDTO = connection
+                        .QueryFirst<ContactsDTO>(@$"{query}{value}", contactsDTO);
+                }
+                catch
+                {
+                    new Exception("Всё плохо");
+                }
+            }
+            return crntContactDTO.Id;
+        }
+
     }
 }

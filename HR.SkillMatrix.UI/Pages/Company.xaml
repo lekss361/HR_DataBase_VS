@@ -19,6 +19,17 @@
         <Grid HorizontalAlignment="Left" Height="136" Margin="10,131,0,0" VerticalAlignment="Top" Width="780">
             <TextBox HorizontalAlignment="Left" Height="136" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="780"/>
         </Grid>
+        <DataGrid x:Name="Divisions" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="158"  Width="780" AutoGenerateColumns="False" Margin="10,272,0,0">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
+                <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название отдела" Width="150" />
+                <DataGridTextColumn Binding ="{Binding Path = DirectionName}"  IsReadOnly="True" Header="Направление" Width="150"/>
+                <DataGridTextColumn Binding ="{Binding Path = Phone}"  IsReadOnly="True" Header="Телефон" Width="120"/>
+                <DataGridTextColumn Binding ="{Binding Path = Email}"  IsReadOnly="True" Header="Почта" Width="120"/>
+                <DataGridTextColumn Binding ="{Binding Path = Country}"  IsReadOnly="True" Header="Город" Width="90"/>
+                <DataGridTextColumn Binding ="{Binding Path = City}" IsReadOnly="True" Header="Страна" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Grid HorizontalAlignment="Left" Height="158" Margin="10,272,0,0" VerticalAlignment="Top" Width="780"/>
         <Grid.RowDefinitions></Grid.RowDefinitions>
     </Grid>

@@ -2,5 +2,5 @@
 	@id int
 AS 
  SELECT *
- FROM [Contacts] 
+ FROM [HR_DataBase_VSDB].[Contacts] 
  WHERE [id]=@id

@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR_DataBase_VSBLL.Mappers;
+using HR_DataBase_VSBLL.Models;
+using HR_DataBase_VSDAL.Models;
 
 namespace HR.SkillMatrix.UI.Pages
 {
@@ -20,9 +23,14 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class Company : Page
     {
-        public Company()
+        private readonly MainWindow _mainWindow;
+        public Company(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
+
+            MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
+            Divisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(2);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

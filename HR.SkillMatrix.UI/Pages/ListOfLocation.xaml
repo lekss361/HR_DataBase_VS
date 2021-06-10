@@ -9,7 +9,7 @@
       Title="ListOfCompanies">
 
     <Grid Background="White">
-        <DataGrid x:Name="Companies" AutoGenerateColumns="False"  Margin="95,58,117,58">
+        <DataGrid x:Name="Companies" AutoGenerateColumns="False"  Margin="95,58,117,58" SelectionChanged="Companies_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
                 <DataGridTextColumn Binding ="{Binding Path = LocationIndex}"  IsReadOnly="True" Header="Индекс" Width="50" />
