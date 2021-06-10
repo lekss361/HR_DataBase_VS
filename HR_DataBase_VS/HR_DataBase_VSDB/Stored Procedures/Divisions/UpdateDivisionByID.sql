@@ -14,5 +14,5 @@ AS
 		[CompanyID] = @CompanyID,
 		[ContactID] = @ContactID,
 		[LocationID] = @LocationID,
-		[DirectionsID] = @DirectionsID
+		[DirectionID] = @DirectionsID
 	WHERE [id] = @Id

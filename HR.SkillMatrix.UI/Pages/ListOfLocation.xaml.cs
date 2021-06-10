@@ -33,5 +33,10 @@ namespace HR.SkillMatrix.UI.Pages
             MapperLocation mapperLocation = new MapperLocation();
             Companies.ItemsSource = mapperLocation.GetAllLocation();
         }
+
+        private void Companies_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

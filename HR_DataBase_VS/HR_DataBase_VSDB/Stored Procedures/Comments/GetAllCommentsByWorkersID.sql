@@ -2,8 +2,8 @@
 	@Worker int
 AS
 	SELECT  [id],
-    [WorkersID],
+    [WorkerID],
     [Comment],
     [Date]
     FROM [Comments]
-    WHERE WorkersID=@Worker
+    WHERE WorkerID=@Worker

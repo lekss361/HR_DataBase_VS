@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\AddNewDirections.xaml.cs~RFe012b48.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HR_DataBase_VSBLL\HR_DataBase_VSBLL.csproj" />
   </ItemGroup>
 
