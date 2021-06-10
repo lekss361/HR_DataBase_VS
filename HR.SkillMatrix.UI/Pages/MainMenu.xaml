@@ -9,7 +9,7 @@
       Title="MainMenu">
 
     <Grid Background="White">
-        <Button x:Name="SearchEmploy" Content="Поиск сотрудника" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Height="50" Width="120" />
+        <Button x:Name="SearchEmploy" Content="Поиск сотрудника" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Height="50" Width="120" Click="SearchEmploy_Click" />
         <Button x:Name="Create" Content="Создать..." HorizontalAlignment="Center" Margin="0,131,0,0" VerticalAlignment="Top" Height="50" Width="120" Click="Create_Click" />
         <Button x:Name="Statistic" Content="Статистика?" HorizontalAlignment="Center" Margin="0,182,0,0" VerticalAlignment="Top" Height="50" Width="120" />
         <Button x:Name="Companies" Content="Компании" HorizontalAlignment="Center" Margin="0,233,0,0" VerticalAlignment="Top" Height="50" Width="120" Click="Companies_Click" />
