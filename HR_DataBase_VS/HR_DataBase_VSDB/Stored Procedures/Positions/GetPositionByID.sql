@@ -2,4 +2,4 @@
 	@Id int
 AS
     SELECT * FROM [Positions]
-    WHERE  [id]= @Id
+    WHERE [id]= @Id

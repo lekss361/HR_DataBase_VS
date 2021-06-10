@@ -10,12 +10,12 @@
     @Hobby      NVARCHAR (255) 
 AS
 	update [Workers]
-	set [FirstName]=@FirstName,
-	    [LastName]=@LastName,
-	    [BirthDay]=@BirthDay,
-	    [Education]=@Education,
-	    [ContactID]=@ContactID,
-	    [LocationID]=@LocationID,
-	    [Sex]=@Sex,
-	    [Hobby]=@Hobby
-	where [id]=@Id
+	set [FirstName] = @FirstName,
+	    [LastName] = @LastName,
+	    [BirthDay] = @BirthDay,
+	    [Education] = @Education,
+	    [ContactID] = @ContactID,
+	    [LocationID] = @LocationID,
+	    [Sex] = @Sex,
+	    [Hobby] = @Hobby
+	where [id] = @Id
