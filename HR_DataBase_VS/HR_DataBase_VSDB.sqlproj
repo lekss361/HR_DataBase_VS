@@ -142,9 +142,9 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\GetDivisioinByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\UpdateDivisionByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\DeleteAllPositions.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\DeletePositionByIndex.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\DeletePositionByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\GetAllPositions.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\UpdateAllPositions.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\UpdatePositionByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\AddNewLevel.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\DeleteAllLevels.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\DeleteLevelByID.sql" />
