@@ -36,11 +36,11 @@ namespace HR_DataBase_VSDAL.Dapper
         /// Находим запись по ID
         /// </summary>
         /// <returns>DTO записи из БД</returns>
-        public ContactsDTO GetContactByID(int id)
+        public ContactsDTO GetContactByID(int ContactsId)
         {
             string query = "exec [HR_DataBase_VSDB].[GetContactsByID]";
             string value =
-                $"N'{id}'";
+                $"N'{ContactsId}'";
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 contactsDTO = connection
