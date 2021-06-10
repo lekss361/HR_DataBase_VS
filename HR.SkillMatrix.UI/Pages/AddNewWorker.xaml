@@ -68,7 +68,7 @@
             <Button x:Name="PrewiousWork" Content="Добавить предыдущую работу" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" Height="29" Width="533"/>
             <Button x:Name="ChooseCompany" Content="Выбрать компанию" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Height="29" Width="533"/>
             <Button x:Name="ChooseDepartment" Content="Выбрать отдел" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="11" VerticalAlignment="Center" Height="29" Width="533"/>
-            <Button x:Name="ChoosePosition" Content="Выбрать должность" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="12" VerticalAlignment="Center" Height="29" Width="533"/>
+            <Button x:Name="ChoosePosition" Content="Выбрать должность" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="12" VerticalAlignment="Center" Height="29" Width="533" Click="ChoosePosition_Click"/>
             <Button x:Name="ChooseProect" Content="Выбрать проект" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="13" VerticalAlignment="Center" Height="29" Width="533"/>
             <DatePicker HorizontalAlignment="Left" Margin="221,11,0,0" Grid.Row="18" VerticalAlignment="Top" Background="Aqua" />
             <!--<ComboBox x:Name="Box" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="20" VerticalAlignment="Center" Width="533" Height="30" MouseEnter="BoxContacts_OnMouseEnter" >

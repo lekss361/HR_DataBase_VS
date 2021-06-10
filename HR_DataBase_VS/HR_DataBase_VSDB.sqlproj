@@ -193,5 +193,6 @@
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\GetAllProjects.sql" />
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\GetProjectByID.sql" />
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\UpdateProjectByID.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\Positions\GetPositionsWithDirectionName.sql" />
   </ItemGroup>
 </Project>
