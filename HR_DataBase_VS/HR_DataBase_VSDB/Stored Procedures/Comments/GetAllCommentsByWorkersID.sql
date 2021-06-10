@@ -6,4 +6,4 @@ AS
     [Comment],
     [Date]
     FROM [Comments]
-    WHERE WorkerID=@Worker
+    WHERE WorkerID = @Worker

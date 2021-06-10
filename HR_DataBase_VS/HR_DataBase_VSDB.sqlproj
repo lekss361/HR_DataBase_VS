@@ -108,7 +108,7 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\DeleteCommentByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\GetAllComments.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\GetAllCommentsByWorkersID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\UpdateAllByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\UpdateAllCommentsByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\DeleteAll.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\AddNewSkillName.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\DeleteByID.sql" />
