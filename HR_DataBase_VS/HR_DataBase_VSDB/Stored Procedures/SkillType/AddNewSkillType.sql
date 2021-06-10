@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddSkillType]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddNewSkillType]
     @Name  NVARCHAR (255)
 AS 
     INSERT INTO [SkillTypes] (Name)

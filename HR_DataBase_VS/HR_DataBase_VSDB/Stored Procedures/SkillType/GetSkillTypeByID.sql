@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[GetSkillTypeByID]
-@SkillTypeID int
+@SkillTypeID	int
 AS 
  SELECT *
  FROM [SkillTypes] 
- WHERE [id]=@SkillTypeID
+ WHERE [id] =@SkillTypeID

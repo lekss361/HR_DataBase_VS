@@ -130,7 +130,7 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\AddNewDivision.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\AddNewPosition.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\GetPositionByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\AddSkillType.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\AddNewSkillType.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\DeleteAllSkillTypes.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\DeleteSkillTypeByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\GetAllSkillTypes.sql" />
