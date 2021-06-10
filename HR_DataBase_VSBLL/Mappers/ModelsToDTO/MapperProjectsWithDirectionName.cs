@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using HR_DataBase_VSBLL.Models;
-using HR_DataBase_VSDAL.Models;
 using HR_DataBase_VSDAL.Dapper;
-using System.Collections;
+using HR_DataBase_VSDAL.Models;
+using System.Collections.Generic;
 
 namespace HR_DataBase_VSBLL.Mappers
-{ 
-   public class MapperProjectsWithDirectionName
+{
+    public class MapperProjectsWithDirectionName
     {
         ProjectsWithDirectionName projectsWithDirectionNameDTO = new ProjectsWithDirectionName();
-        ProjectsWithDirectionName rojectsWithDirectionName = new ProjectsWithDirectionName();
+        //ProjectsWithDirectionName rojectsWithDirectionName = new ProjectsWithDirectionName();
         DapperProjectsWithDirectionName dapper = new DapperProjectsWithDirectionName();
 
         public List<ProjectsWithDirectionName> GetAllProjectsWithDirectionName()

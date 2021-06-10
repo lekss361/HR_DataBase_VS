@@ -101,5 +101,13 @@ namespace HR.SkillMatrix.UI.Pages
             newWindow.Content = addContactsMenu;
             newWindow.Show();
         }
+
+        private void ChoosePosition_Click(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            ListOfPosition listOfPosition = new ListOfPosition(_mainWindow);
+            newWindow.Content = listOfPosition;
+            newWindow.Show();
+        }
     }
 }
