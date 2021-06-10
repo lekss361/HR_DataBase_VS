@@ -3,6 +3,6 @@
 	@Email			nvarchar (255),
 	@Information	nvarchar (255)
 AS
-	INSERT INTO [Contacts]([Phone],[Email],[Information])
-	VALUES (@Phone,@Email,@Information )
+	INSERT INTO [Contacts]([Phone], [Email], [Information])
+	VALUES (@Phone, @Email, @Information )
 	SELECT @@IDENTITY
