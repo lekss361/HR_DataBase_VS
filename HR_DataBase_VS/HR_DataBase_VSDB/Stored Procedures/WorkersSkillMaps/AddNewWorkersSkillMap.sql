@@ -5,3 +5,4 @@ AS
 	INSERT INTO [WorkersSkillMaps]
         ([WorkersID],[SkillsMapsID])
 	VALUES (@WorkerID, @SkillMapsID)
+	SELECT @@IDENTITY

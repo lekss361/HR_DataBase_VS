@@ -9,3 +9,4 @@ AS
 	INSERT INTO [Locations]
         ([Country],[City],[Street],[HouseNumber],[ApartmentNumber],[LocationIndex])
 	VALUES ( @Country, @City, @Street, @HouseNumber, @ApartmentNumber, @LocationIndex)
+	SELECT @@IDENTITY

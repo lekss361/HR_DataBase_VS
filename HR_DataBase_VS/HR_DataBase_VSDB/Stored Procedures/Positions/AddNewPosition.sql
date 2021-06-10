@@ -5,3 +5,4 @@
 AS
 	INSERT [Positions]([Name], [DirectionsID], [DivisionsID])
 	VALUES (@Name, @DirectionsID, @DivisionsID )
+	SELECT @@IDENTITY

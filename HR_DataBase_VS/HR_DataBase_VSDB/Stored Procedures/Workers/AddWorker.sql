@@ -8,5 +8,6 @@
     @ContactID      INT  = null,
     @LocationID     INT  = null
 AS 
-INSERT INTO [Workers] (FirstName, LastName, BirthDay, Education, Sex, Hobby, ContactID, LocationID)
-VALUES(@FirstName, @LastName, @BirthDay, @Education, @Sex, @Hobby, @ContactID, @LocationID)
+    INSERT INTO [Workers] (FirstName, LastName, BirthDay, Education, Sex, Hobby, ContactID, LocationID)
+    VALUES(@FirstName, @LastName, @BirthDay, @Education, @Sex, @Hobby, @ContactID, @LocationID)
+	SELECT @@IDENTITY

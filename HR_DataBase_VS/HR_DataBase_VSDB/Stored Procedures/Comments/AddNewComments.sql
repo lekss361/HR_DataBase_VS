@@ -5,3 +5,4 @@
 AS
 	INSERT [Comments]([WorkersID],[Comment],[Date])
 	VALUES (@Worker,@Comment,@Date)
+	SELECT @@IDENTITY

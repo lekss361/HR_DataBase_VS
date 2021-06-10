@@ -1,7 +1,6 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddDirections]
-    
-    @Name         NVARCHAR (255)           
-             
+    @Name         NVARCHAR (255)
 AS
-	INSERT INTO [Directions]  ([Name])
-	VALUES (@Name )
+	INSERT INTO [Directions]([Name])
+	VALUES (@Name)
+	SELECT @@IDENTITY
