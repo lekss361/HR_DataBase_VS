@@ -73,10 +73,15 @@ namespace HR.SkillMatrix.UI.Pages
         }
         private void BoxProjects_OnInitialized(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void BoxStatuses_OnInitialized(object? sender, EventArgs e)
+        {
+            
+        }
+
+        private void BoxSkill1_OnInitialized(object? sender, EventArgs e)
         {
             
         }
@@ -86,7 +91,17 @@ namespace HR.SkillMatrix.UI.Pages
             
         }
 
+        private void BoxSkill2_OnInitialized(object? sender, EventArgs e)
+        {
+            
+        }
+
         private void BoxLevel2_OnInitialized(object? sender, EventArgs e)
+        {
+            
+        }
+
+        private void BoxSkill3_OnInitialized(object? sender, EventArgs e)
         {
             
         }
@@ -96,19 +111,34 @@ namespace HR.SkillMatrix.UI.Pages
             
         }
 
+        private void BoxSkill4_OnInitialized(object? sender, EventArgs e)
+        {
+            
+        }
+
         private void BoxLevel4_OnInitialized(object? sender, EventArgs e)
+        {
+            
+        }
+
+        private void BoxSkill5_OnInitialized(object? sender, EventArgs e)
         {
             
         }
 
         private void BoxLevel5_OnInitialized(object? sender, EventArgs e)
         {
+           
+        }
+
+        private void BoxSkill6_OnInitialized(object? sender, EventArgs e)
+        {
             
         }
 
         private void BoxLevel6_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
     }
 }
