@@ -1,0 +1,159 @@
+﻿<Page x:Class="HR.SkillMatrix.UI.Pages.SearchForEmployee"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" Width="1280"
+      Title="SearchForEmployee">
+
+    <Grid Background="White" Margin="0,0,0,-200">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="90*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Grid>
+                <Label Content="Поиск сотрудников" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="800" Height="50" FontSize="20" FontWeight="Bold"/>
+                <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="10,10,0,0" Click="Back_Click"/>
+            </Grid>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Grid.Column="0">
+            <StackPanel>
+                <Grid Margin="0,0,0,0" Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="200*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="Фамилия" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="1" Grid.Column="0" Content="Имя" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="2" Grid.Column="0" Content="Отчество" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="3" Grid.Column="0" Content="Компания" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="4" Grid.Column="0" Content="Отдел" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="5" Grid.Column="0" Content="Должность" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="6" Grid.Column="0" Content="Проект" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="7" Grid.Column="0" Content="Статус" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="9" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="10" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="11" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="12" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="13" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="14" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <TextBox x:Name="TextBoxSurname" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="842" Height="50"/>
+                    <TextBox x:Name="TextBoxName" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="842" Height="50"/>
+                    <TextBox x:Name="TextBoxPatronymic" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="842" Height="50"/>
+                    <ComboBox Grid.Row="3" Grid.Column="1" x:Name="BoxCompanies" HorizontalAlignment="Center" VerticalAlignment="Center" Width="842" Height="50" Initialized="BoxCompanies_OnInitialized" >
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать компанию</TextBlock>
+                        </ComboBoxItem>
+                        <!--<Button x:Name="AddCompany" Content="Добавить компанию" Click="AddCompany_OnClick"></Button>-->
+                    </ComboBox>
+                    <ComboBox Grid.Row="4" Grid.Column="1" x:Name="BoxDivisions" HorizontalAlignment="Center" VerticalAlignment="Center" Width="842" Height="50" Initialized="BoxDivisions_OnInitialized" >
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать отдел</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="5" Grid.Column="1" x:Name="BoxPositions" HorizontalAlignment="Center" VerticalAlignment="Center" Width="842" Height="50" Initialized="BoxPositions_OnInitialized" >
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать должность</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="6" Grid.Column="1" x:Name="BoxProjects" HorizontalAlignment="Center" VerticalAlignment="Center" Width="842" Height="50" Initialized="BoxProjects_OnInitialized" >
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать проект</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="7" Grid.Column="1" x:Name="BoxStatuses" HorizontalAlignment="Center" VerticalAlignment="Center" Width="842" Height="50" Initialized="BoxStatuses_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать статус</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="9" Grid.Column="1" x:Name="BoxSkill1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="546" Height="50" Initialized="BoxSkill1_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать навык</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="9" Grid.Column="1" x:Name="BoxLevel1" VerticalAlignment="Center" Height="50" Margin="546,0,0,0" Initialized="BoxLevel1_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать уровень</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="10" Grid.Column="1" x:Name="BoxSkill2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="546" Height="50" Initialized="BoxSkill2_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать навык</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="10" Grid.Column="1" x:Name="BoxLevel2" VerticalAlignment="Center" Height="50" Margin="546,0,0,0" Initialized="BoxLevel2_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать уровень</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="11" Grid.Column="1" x:Name="BoxSkill3" HorizontalAlignment="Left" VerticalAlignment="Center" Width="546" Height="50" Initialized="BoxSkill3_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать навык</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="11" Grid.Column="1" x:Name="BoxLevel3" VerticalAlignment="Center" Height="50" Margin="546,0,0,0" Initialized="BoxLevel3_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать уровень</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="12" Grid.Column="1" x:Name="BoxSkill4" HorizontalAlignment="Left" VerticalAlignment="Center" Width="546" Height="50" Initialized="BoxSkill4_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать навык</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="12" Grid.Column="1" x:Name="BoxLevel4" VerticalAlignment="Center" Height="50" Margin="546,0,0,0" Initialized="BoxLevel4_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать уровень</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="13" Grid.Column="1" x:Name="BoxSkill5" HorizontalAlignment="Left" VerticalAlignment="Center" Width="546" Height="50" Initialized="BoxSkill5_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать навык</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="13" Grid.Column="1" x:Name="BoxLevel5" VerticalAlignment="Center" Height="50" Margin="546,0,0,0" Initialized="BoxLevel5_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать уровень</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="14" Grid.Column="1" x:Name="BoxSkill6" HorizontalAlignment="Left" VerticalAlignment="Center" Width="546" Height="50" Initialized="BoxSkill6_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать навык</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Grid.Row="14" Grid.Column="1" x:Name="BoxLevel6" VerticalAlignment="Center" Height="50" Margin="546,0,0,0" Initialized="BoxLevel6_OnInitialized">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Выбрать уровень</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
