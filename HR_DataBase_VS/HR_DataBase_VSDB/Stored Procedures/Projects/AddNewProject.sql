@@ -5,3 +5,4 @@
 AS
 	INSERT [Projects]([Name],[DirectionsID])
 	VALUES (@Name, @DirectionsID)
+	SELECT @@IDENTITY

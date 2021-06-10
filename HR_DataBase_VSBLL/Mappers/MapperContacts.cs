@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSDAL.Models;
 using HR_DataBase_VSDAL.Dapper;
@@ -34,6 +29,7 @@ namespace HR_DataBase_VSBLL.Mappers
         {
             contactsDTO = MapModelToDTO(model);
             dapper.AddNewContact(contactsDTO);
+            dapper.UpdateNewContact(contactsDTO);
         }
 
         /// <summary>

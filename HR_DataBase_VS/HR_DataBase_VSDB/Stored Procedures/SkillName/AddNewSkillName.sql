@@ -4,3 +4,4 @@
 AS
 	INSERT [SkillNames]([Skill],[SkillTypeID])
 	VALUES (@Skill,@SkillTypeID)
+	SELECT @@IDENTITY
