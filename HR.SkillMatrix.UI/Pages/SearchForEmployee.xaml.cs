@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HR_DataBase_VSBLL.Mappers;
+using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
 using HR_DataBase_VSBLL.Models;
 
 namespace HR.SkillMatrix.UI.Pages
@@ -34,26 +35,80 @@ namespace HR.SkillMatrix.UI.Pages
             _mainWindow.Content = mainMenu;
         }
 
-        private void Companies_OnInitialized(object? sender, EventArgs e)
+        private void BoxCompanies_OnInitialized(object? sender, EventArgs e)
         {
             MapperCompanies mapperCompanies = new MapperCompanies();
-            List<HR_DataBase_VSBLL.Models.Company> sss = mapperCompanies.GetAllCompanies();
-            foreach (var C in sss)
+            List<HR_DataBase_VSBLL.Models.Company> company = mapperCompanies.GetAllCompanies();
+            foreach (var tmp in company)
             {   
-                Companies.Items.Add(C.Name);
+                BoxCompanies.Items.Add(tmp.Name);
             }
 
-            Button addlocations = new Button();
-            addlocations.Height = 100;
-            addlocations.Width = 100;
-            addlocations.Content = "sss";
-            addlocations.Click += AddCompany_OnClick;
+            //Button addlocations = new Button();
+            //addlocations.Height = 100;
+            //addlocations.Width = 100;
+            //addlocations.Content = "sss";
+            //addlocations.Click += AddCompany_OnClick;
         }
 
-        private void AddCompany_OnClick(object sender, RoutedEventArgs e)
+        //private void AddCompany_OnClick(object sender, RoutedEventArgs e)
+        //{
+        //    AddNewCompany addNewCompany = new AddNewCompany(_mainWindow);
+        //    _mainWindow.Content = addNewCompany;
+        //}
+
+        private void BoxDivisions_OnInitialized(object? sender, EventArgs e)
         {
-            AddNewCompany addNewCompany = new AddNewCompany(_mainWindow);
-            _mainWindow.Content = addNewCompany;
+            //MapperDivisions mapperDivisions = new MapperDivisions();
+            //List<HR_DataBase_VSBLL.Models.Divisions> divisions = mapperDivisions();
+            //foreach (var tmp in divisions)
+            //{
+            //    BoxCompanies.Items.Add(tmp.Name);
+            //}
+        }
+
+        private void BoxPositions_OnInitialized(object? sender, EventArgs e)
+        {
+            
+        }
+        private void BoxProjects_OnInitialized(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BoxStatuses_OnInitialized(object? sender, EventArgs e)
+        {
+            
+        }
+
+        private void BoxLevel1_OnInitialized(object? sender, EventArgs e)
+        {
+            
+        }
+
+        private void BoxLevel2_OnInitialized(object? sender, EventArgs e)
+        {
+            
+        }
+
+        private void BoxLevel3_OnInitialized(object? sender, EventArgs e)
+        {
+            
+        }
+
+        private void BoxLevel4_OnInitialized(object? sender, EventArgs e)
+        {
+            
+        }
+
+        private void BoxLevel5_OnInitialized(object? sender, EventArgs e)
+        {
+            
+        }
+
+        private void BoxLevel6_OnInitialized(object? sender, EventArgs e)
+        {
+            
         }
     }
 }
