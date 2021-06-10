@@ -89,11 +89,10 @@
     <Build Include="HR_DataBase_VSDB\Tables\Contacts.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Directions.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Divisions.sql" />
-    <Build Include="HR_DataBase_VSDB\Tables\Employments.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Levels.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Locations.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Positions.sql" />
-    <Build Include="HR_DataBase_VSDB\Tables\Previous_works.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\PreviousWorks.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Projects.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\Requiries.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\SkillNames.sql" />
@@ -191,6 +190,7 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Directions\AddNewDirections.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Projects\GetProjectsWithDirectionName.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\GetDivisionByCompanyID.sql" />
+    <Build Include="HR_DataBase_VSDB\Tables\ProjectMaps.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\AddNewProject.sql" />
