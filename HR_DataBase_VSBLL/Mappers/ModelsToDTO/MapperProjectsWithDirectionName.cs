@@ -13,8 +13,8 @@ namespace HR_DataBase_VSBLL.Mappers
 { 
    public class MapperProjectsWithDirectionName
     {
-        ProjectsWithDirectionName projectsWithDirectionNameDTO = new ProjectsWithDirectionName();
-        ProjectsWithDirectionName rojectsWithDirectionName = new ProjectsWithDirectionName();
+        //ProjectsWithDirectionName projectsWithDirectionNameDTO = new ProjectsWithDirectionName();
+        //ProjectsWithDirectionName rojectsWithDirectionName = new ProjectsWithDirectionName();
         DapperProjectsWithDirectionName dapper = new DapperProjectsWithDirectionName();
 
         public List<ProjectsWithDirectionName> GetAllProjectsWithDirectionName()

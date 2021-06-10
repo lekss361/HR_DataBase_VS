@@ -190,6 +190,7 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps\GetAllWorkersSkillMapsBySkillID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Directions\AddNewDirections.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Projects\GetProjectsWithDirectionName.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\GetDivisionByCompanyID.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\AddNewProject.sql" />
