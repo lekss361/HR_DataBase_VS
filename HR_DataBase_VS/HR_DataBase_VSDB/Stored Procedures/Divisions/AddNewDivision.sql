@@ -7,5 +7,5 @@
     @DirectionsID int
     
 AS
-	INSERT [Divisions]([Name], [CompanyID], [ContactID], [LocationID], [DirectionsID], [Information])
+	INSERT [Divisions]([Name], [CompanyID], [ContactID], [LocationID], [DirectionID], [Information])
 	VALUES (@Name, @CompanyID, @ContactID, @LocationID, @DirectionsID, @Information)

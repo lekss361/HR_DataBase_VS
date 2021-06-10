@@ -1,11 +1,9 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdatePositionBID]
     @id int              ,
     @Name nvarchar (255) ,       
-    @DirectionsID int    ,       
-    @DivisionsID  int   
+    @DirectionID int     
     As
     UPDATE [Positions]
     set [Name] = @Name,
-    [DirectionsID] = @DirectionsID,
-    [DivisionsID] = DivisionsID
+    [DirectionID] = @DirectionID
     WHERE [id] = @id

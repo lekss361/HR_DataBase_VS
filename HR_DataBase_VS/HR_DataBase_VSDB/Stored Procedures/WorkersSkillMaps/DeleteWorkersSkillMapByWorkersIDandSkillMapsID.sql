@@ -3,4 +3,4 @@
     @SkillMapsID int
 AS
 	Delete from [WorkersSkillMaps]
-    WHERE [WorkersID] = @WorkerID and [SkillsMapsID] = @SkillMapsID
+    WHERE [WorkerID] = @WorkerID and [SkillsMapID] = @SkillMapsID

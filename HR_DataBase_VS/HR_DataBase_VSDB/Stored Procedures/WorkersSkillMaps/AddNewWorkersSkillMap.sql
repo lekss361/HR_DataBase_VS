@@ -3,5 +3,5 @@
     @SkillMapsID int
 AS
 	INSERT INTO [WorkersSkillMaps]
-        ([WorkersID],[SkillsMapsID])
+        ([WorkerID],[SkillsMapID])
 	VALUES (@WorkerID, @SkillMapsID)

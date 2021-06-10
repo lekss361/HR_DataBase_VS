@@ -3,4 +3,4 @@
 AS 
  SELECT *
  FROM [WorkersSkillMaps]
- WHERE [SkillsMapsID]=@SkillsMapsID
+ WHERE [SkillsMapID]=@SkillsMapsID

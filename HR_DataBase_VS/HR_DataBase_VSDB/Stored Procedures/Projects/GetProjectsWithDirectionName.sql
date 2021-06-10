@@ -2,4 +2,4 @@
 AS
 SELECT P.Name ,D.Name as DirectionName, P.Information
 FROM [HR_DataBase_VSDB].[Projects] as P,[HR_DataBase_VSDB].[Directions] as D
-WHERE (P.   DirectionsID = D.id)
+WHERE (P.   DirectionID = D.id)
