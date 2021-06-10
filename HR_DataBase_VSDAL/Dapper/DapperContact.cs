@@ -17,7 +17,7 @@ namespace HR_DataBase_VSDAL.Dapper
         /// Делаем запись в БД через хранимую процедуру
         /// </summary>
         /// <param name="contactsDTO"></param>
-        public void AddNewContact(ContactsDTO contactsDTO)
+        public int AddNewContact(ContactsDTO contactsDTO)
         {
             string query = "exec [HR_DataBase_VSDB].[AddContacts]";
             string value =
@@ -27,8 +27,9 @@ namespace HR_DataBase_VSDAL.Dapper
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                connection.Query<ContactsDTO>(@$"{query}{value}");
+                contactsDTO.Id = connection.QueryFirst<int>(@$"{query}{value}");
             }
+            return contactsDTO.Id;
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace HR_DataBase_VSDAL.Dapper
 
             string query = "exec [HR_DataBase_VSDB].[UpdateContactsByID]";
             string value =
-                $"N'{contactsDTO.id}', " +
+                $"N'{contactsDTO.Id}', " +
                 $"N'{contactsDTO.Phone}', " +
                 $"N'{contactsDTO.Email}', " +
                 $"N'{contactsDTO.Information}'";
@@ -95,7 +96,7 @@ namespace HR_DataBase_VSDAL.Dapper
                     new Exception("Всё плохо");
                 }
             }
-            return crntContactDTO.id;
+            return crntContactDTO.Id;
         }
 
     }
