@@ -109,12 +109,12 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\GetAllComments.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\GetAllCommentsByWorkersID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\UpdateAllCommentsByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\DeleteAll.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\DeleteAllSkillNames.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\AddNewSkillName.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\DeleteByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\GetAll.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\GetByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\UpdateByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\DeleteSkillNameByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\GetAllSkillNames.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\GetSkillNameByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\UpdateSkillNameByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Locations\AddLocation.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Locations\DeleteAllLocations.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Locations\DeleteLocationByID.sql" />
