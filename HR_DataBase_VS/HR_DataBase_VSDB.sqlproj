@@ -145,12 +145,12 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\DeletePositionByIndex.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\GetAllPositions.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\UpdateAllPositions.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\AddLevels.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\AddNewLevel.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\DeleteAllLevels.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\DeleteLevelsByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\DeleteLevelByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\GetAllLevels.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\UpdateLevelsByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\GetLevelsByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\UpdateLevelByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Levels\GetLevelByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\AddNewCompany.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\DeleteAllCompanies.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\DeleteCompaniesByID.sql" />
