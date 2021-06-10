@@ -103,10 +103,10 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Base\GetAllWorkersWithLocaionAndContacts.sql" />
     <Build Include="HR_DataBase_VSDB\Security\Schemas\HR_DataBase_VSDB.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Base\GetWorkerWithLocaionAndContactsByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\AddNewComments.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\DeleteAll.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\DeleteByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\GetAll.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\AddNewComment.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\DeleteAllComments.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\DeleteCommentByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\GetAllComments.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\GetAllCommentsByWorkersID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Comments\UpdateAllByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillName\DeleteAll.sql" />
