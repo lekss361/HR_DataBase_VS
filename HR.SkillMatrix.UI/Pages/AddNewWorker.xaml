@@ -75,6 +75,8 @@
             <Button x:Name="ChoosePosition" Content="Выбрать должность" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="13" VerticalAlignment="Center" Height="29" Width="533" Click="ChoosePosition_Click"/>
             <Button x:Name="ChooseProect" Content="Выбрать проект" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="14" VerticalAlignment="Center" Height="29" Width="533"/>
             <Button x:Name="ChooseStatus" Content="Выбрать статус" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="15" VerticalAlignment="Center" Height="29" Width="533"/>
+            <Button x:Name="ChooseProfessionalSkill" Content="Выбрать проф. навык" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="16" VerticalAlignment="Center" Height="29" Width="533" Margin="2" Click="ChooseProfessionalSkill_Click"/>
+            
             <!--<ComboBox x:Name="Box" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="20" VerticalAlignment="Center" Width="533" Height="30" MouseEnter="BoxContacts_OnMouseEnter" >
                 <ComboBoxItem IsSelected="True">    
                     <TextBlock>Выбрать контакт или создать</TextBlock>
