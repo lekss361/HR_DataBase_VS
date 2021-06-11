@@ -2,8 +2,11 @@
     @id             int           ,
     @Name           nvarchar (255),       
     @DirectionID    int     
-    As
-    UPDATE [Positions]
-    set [Name] = @Name,
-        [DirectionID] = @DirectionID
-    WHERE [id] = @id
+As
+    INSERT  [Positions]
+        ([Name], [DirectionID])
+    OUTPUT
+    INSERTED.[id],
+    INSERTED.[Name],
+    INSERTED.[DirectionID]
+  VALUES ( @Name, @DirectionID)

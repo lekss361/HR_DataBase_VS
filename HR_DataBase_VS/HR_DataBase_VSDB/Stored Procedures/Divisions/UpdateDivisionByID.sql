@@ -1,17 +1,20 @@
-﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateDivisionByID]
+﻿/*CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateDivisionByID]
 	@Id				int,
 	@Name			nvarchar (255),
 	@Information	nvarchar (255),
 	@CompanyID		int,   
     @ContactID		int,
     @LocationID		int,
-    @DirectionsID	int
+    @DirectionsID   int
 AS
-	UPDATE [Divisions]
-	SET [Name] = @Name,
-	    [Information] = @Information,
-		[CompanyID] = @CompanyID,
-		[ContactID] = @ContactID,
-		[LocationID] = @LocationID,
-		[DirectionID] = @DirectionsID
-	WHERE [id] = @Id
+    INSERT  [HR_DataBase_VSDB].[Divisions]
+        ([Name], [Information], [CompanyID], [ContactID], [LocationID], [DirectionsID])
+    OUTPUT
+    INSERTED.[Id],
+    INSERTED.[Name],
+    INSERTED.[Information],
+    INSERTED.[CompanyID],
+    INSERTED.[ContactID],
+    INSERTED.[LocationID],
+    INSERTED.[DirectionsID]
+  VALUES (@Name, @Information, @CompanyID, @ContactID, @LocationID, @DirectionsID)*/

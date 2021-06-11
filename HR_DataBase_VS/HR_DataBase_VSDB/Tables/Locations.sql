@@ -6,5 +6,5 @@
     [Street]          NVARCHAR (100) NOT NULL,
     [HouseNumber]     INT            NOT NULL,
     [ApartmentNumber] INT            NOT NULL
-    CONSTRAINT [PK_LOCATION] PRIMARY KEY CLUSTERED ([id] ASC)
+    PRIMARY KEY CLUSTERED ([id] ASC),
 );

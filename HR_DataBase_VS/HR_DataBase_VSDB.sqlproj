@@ -26,6 +26,7 @@
     <DefaultSchema>HR_DataBase_VSDB</DefaultSchema>
     <TargetFrameworkProfile />
     <PermissionSet>UNSAFE</PermissionSet>
+    <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -156,7 +157,7 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\DeleteCompaniesByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\GetAllCompanies.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\GetCompaniesByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\UpdateLevelsByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\UpdateCompaniesByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Contacts\AddContacts.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Contacts\DeleteAllContacts.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Contacts\GetAllContacts.sql" />

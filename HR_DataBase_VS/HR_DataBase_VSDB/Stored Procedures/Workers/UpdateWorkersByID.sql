@@ -9,13 +9,15 @@
     @Sex        NVARCHAR (255) ,
     @Hobby      NVARCHAR (255) 
 AS
-	update [Workers]
-	set [FirstName] = @FirstName,
-	    [LastName] = @LastName,
-	    [BirthDay] = @BirthDay,
-	    [Education] = @Education,
-	    [ContactID] = @ContactID,
-	    [LocationID] = @LocationID,
-	    [Sex] = @Sex,
-	    [Hobby] = @Hobby
-	where [id] = @Id
+	 INSERT  [Workers]
+        ([FirstName], [LastName], [BirthDay], [Education], [ContactID], [LocationID], [Sex], [Hobby])
+    OUTPUT
+    INSERTED.[FirstName],
+    INSERTED.[LastName],
+    INSERTED.[BirthDay],
+    INSERTED.[Education],
+    INSERTED.[ContactID],
+    INSERTED.[LocationID],
+    INSERTED.[Sex],
+    INSERTED.[Hobby]
+  VALUES ( @FirstName, @LastName, @BirthDay, @Education, @ContactID, @LocationID, @Sex, @Hobby)
