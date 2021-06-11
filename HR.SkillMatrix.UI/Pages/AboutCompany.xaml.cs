@@ -35,7 +35,7 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void DataGridDivisions_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            AddLocationMenu aboutCompany = new AddLocationMenu(_mainWindow);
+            AboutDivision aboutCompany = new AboutDivision(_mainWindow,7);
             _mainWindow.Content = aboutCompany;
             DataGrid dg = (DataGrid)sender;
             ////ClientBaseModel item = (ClientBaseModel)dg.CurrentItem;

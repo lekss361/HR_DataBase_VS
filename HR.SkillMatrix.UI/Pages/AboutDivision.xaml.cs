@@ -20,9 +20,35 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AboutDivision : Page
     {
-        public AboutDivision()
+        private readonly MainWindow _mainWindow;
+        public AboutDivision(MainWindow mainWindow, int id)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
+
+           
+        }
+
+      
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonChange_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonCancellation_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
