@@ -50,5 +50,25 @@ namespace HR.SkillMatrix.UI.Pages
         {
 
         }
+
+        private void ButtonCancellation_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonChange_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
