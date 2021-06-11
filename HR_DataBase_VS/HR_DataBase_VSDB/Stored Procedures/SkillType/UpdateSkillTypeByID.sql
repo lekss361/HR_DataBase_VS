@@ -2,6 +2,9 @@
 	@Id			int,
     @Name		NVARCHAR (255) 
 AS
-	update [SkillTypes]
-	set [Name] = @Name
-	WHERE [id] = @Id
+    INSERT  [SkillTypes]
+        ([Name])
+    OUTPUT
+    INSERTED.[Id],
+    INSERTED.[Name]
+    VALUES ( @Name)

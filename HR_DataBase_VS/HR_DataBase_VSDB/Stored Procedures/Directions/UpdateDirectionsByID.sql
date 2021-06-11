@@ -2,6 +2,9 @@
     @Id			INT,
     @Name       NVARCHAR (255) 
 AS
-	update [Directions]
-	set [Name] = @Name	   
-	WHERE [id] = @Id
+    INSERT  [Directions]
+        ([Name])
+    OUTPUT
+    INSERTED.[Id],
+    INSERTED.[Name]
+  VALUES ( @Name)

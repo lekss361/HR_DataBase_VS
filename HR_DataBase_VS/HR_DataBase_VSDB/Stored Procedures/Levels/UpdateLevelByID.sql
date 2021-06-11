@@ -2,6 +2,9 @@
     @Id         INT,
     @Name       NVARCHAR (255) 
 AS
-	update [Levels]
-	set [Name] = @Name	   
-	WHERE [id] = @Id
+    INSERT  [Levels]
+        ([Name])
+    OUTPUT
+    INSERTED.[Id],
+    INSERTED.[Name]
+  VALUES (@Name)

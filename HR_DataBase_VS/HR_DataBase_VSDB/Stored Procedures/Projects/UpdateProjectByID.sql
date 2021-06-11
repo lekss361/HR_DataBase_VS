@@ -3,7 +3,10 @@
 	@Name			nvarchar (255),
 	@DirectionsID	int
 AS
-	UPDATE [Projects]
-	SET [Name] = @Name,
-		[DirectionsID] = @DirectionsID
-	WHERE [id] = @id
+    INSERT  [Projects]
+        ([Name], [DirectionsID])
+    OUTPUT
+    INSERTED.[id],
+    INSERTED.[Name],
+    INSERTED.[DirectionsID],
+  VALUES ( @Name, @DirectionsID)
