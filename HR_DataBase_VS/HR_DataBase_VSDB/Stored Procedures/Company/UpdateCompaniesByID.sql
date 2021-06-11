@@ -13,4 +13,4 @@ AS
     INSERTED.[Information],
     INSERTED.[ContactID],
     INSERTED.[LocationID]
-  VALUES ( @Name, @Information, @ContactID, @LocationID)
+    VALUES ( @Name, @Information, @ContactID, @LocationID)

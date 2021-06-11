@@ -40,37 +40,41 @@
                 <ColumnDefinition Width="120*"/>
                 <ColumnDefinition Width="240*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Фамилия" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29"/>
-            <Label Content="Имя" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="1"/>
-            <Label Content="Пол" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="2"/>
-            <Label Content="Дата рождения" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="3"/>
-            <Label Content="Образрвание" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="4"/>
-            <Label Content="Контакты" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="5"/>
-            <Label Content="Адрес" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="6"/>
-            <Label Content="Предыдущая работа" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="7"/>
-            <Label Content="Хобби" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="8"/>
-            <Label Content="Компания" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="10"/>
-            <Label Content="Отдел" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="11"/>
-            <Label Content="Должность" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="12"/>
-            <Label Content="Проект" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="13"/>
-            <Label Content="Профессиональные навыки" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="14"/>
-            <Label Content="Дополнительные навыки" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="15"/>
-            <TextBox x:Name="LastName" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="30" Grid.Column="1"/>
+            <Label Grid.Row="0" Grid.Column="0" Content="Фамилия" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Имя" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" />
+            <Label Grid.Row="2" Grid.Column="0" Content="Отчество" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" />
+            <Label Content="Пол" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="3"/>
+            <Label Content="Дата рождения" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="4"/>
+            <Label Content="Образрвание" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="5"/>
+            <Label Content="Контакты" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="6"/>
+            <Label Content="Адрес" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="7"/>
+            <Label Content="Предыдущая работа" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="8"/>
+            <Label Content="Хобби" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="9"/>
+            <Label Content="Компания" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="11"/>
+            <Label Content="Отдел" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="12"/>
+            <Label Content="Должность" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="13"/>
+            <Label Content="Проект" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="14"/>
+            <Label Content="Статус" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="15"/>
+            <Label Content="Профессиональные навыки" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="16"/>
+            <Label Content="Дополнительные навыки" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="17"/>
+            <TextBox Grid.Row="0" x:Name="LastName" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="30" Grid.Column="1"/>
             <TextBox x:Name="FirstName" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="29" Grid.Column="1" Grid.Row="1"/>
-            <TextBox x:Name="Education" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="29" Grid.Column="1" Grid.Row="4"/>
-            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="29" Grid.Column="1" Grid.Row="8"/>
-            <TextBox x:Name="Hobby" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="29" Grid.Column="1" Grid.Row="8"/>
-            <DatePicker x:Name="BirthDay" SelectedDate="{x:Static sys:DateTime.Now}" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Grid.Column="1" Height="30" Width="100" DataContext=""/>
-            <RadioButton x:Name="Men" Content="Мужской" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="29" Checked="Men_OnChecked"/>
-            <RadioButton x:Name="Women" Content="Женский" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="76,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="29" Checked="Women_OnChecked"/>
-            <Button x:Name="CreateContact" Content="Добавить контакты" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Height="29" Width="533" Click="CreateContact_Click"/>
-            <Button x:Name="CreateLocation" Content="Добавить адрес" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Height="29" Width="533" Click="CreateLocation_Click"/>
-            <Button x:Name="PrewiousWork" Content="Добавить предыдущую работу" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" Height="29" Width="533"/>
-            <Button x:Name="ChooseCompany" Content="Выбрать компанию" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Height="29" Width="533"/>
-            <Button x:Name="ChooseDepartment" Content="Выбрать отдел" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="11" VerticalAlignment="Center" Height="29" Width="533"/>
-            <Button x:Name="ChoosePosition" Content="Выбрать должность" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="12" VerticalAlignment="Center" Height="29" Width="533" Click="ChoosePosition_Click"/>
-            <Button x:Name="ChooseProect" Content="Выбрать проект" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="13" VerticalAlignment="Center" Height="29" Width="533"/>
-            <DatePicker HorizontalAlignment="Left" Margin="221,11,0,0" Grid.Row="18" VerticalAlignment="Top" Background="Aqua" />
+            <TextBox x:Name="Patronymic" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="29" Grid.Column="1" Grid.Row="2"/>
+            <TextBox x:Name="Education" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="29" Grid.Column="1" Grid.Row="5"/>
+            
+            
+            <TextBox x:Name="Hobby" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="29" Grid.Column="1" Grid.Row="9"/>
+            <DatePicker x:Name="BirthDay" SelectedDate="{x:Static sys:DateTime.Now}" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Grid.Column="1" Height="30" Width="100" DataContext=""/>
+            <RadioButton x:Name="Men" Content="Мужской" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="29" Checked="Men_OnChecked"/>
+            <RadioButton x:Name="Women" Content="Женский" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="76,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="29" Checked="Women_OnChecked"/>
+            <Button x:Name="CreateContact" Content="Добавить контакты" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Height="29" Width="533" Click="CreateContact_Click"/>
+            <Button x:Name="CreateLocation" Content="Добавить адрес" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" Height="29" Width="533" Click="CreateLocation_Click"/>
+            <Button x:Name="PrewiousWork" Content="Добавить предыдущую работу" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Height="29" Width="533"/>
+            <Button x:Name="ChooseCompany" Content="Выбрать компанию" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="11" VerticalAlignment="Center" Height="29" Width="533"/>
+            <Button x:Name="ChooseDepartment" Content="Выбрать отдел" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="12" VerticalAlignment="Center" Height="29" Width="533"/>
+            <Button x:Name="ChoosePosition" Content="Выбрать должность" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="13" VerticalAlignment="Center" Height="29" Width="533" Click="ChoosePosition_Click"/>
+            <Button x:Name="ChooseProect" Content="Выбрать проект" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="14" VerticalAlignment="Center" Height="29" Width="533"/>
+            <Button x:Name="ChooseStatus" Content="Выбрать статус" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="15" VerticalAlignment="Center" Height="29" Width="533"/>
             <!--<ComboBox x:Name="Box" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="20" VerticalAlignment="Center" Width="533" Height="30" MouseEnter="BoxContacts_OnMouseEnter" >
                 <ComboBoxItem IsSelected="True">    
                     <TextBlock>Выбрать контакт или создать</TextBlock>

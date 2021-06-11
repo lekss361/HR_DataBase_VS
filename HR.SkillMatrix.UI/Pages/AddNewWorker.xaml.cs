@@ -43,12 +43,16 @@ namespace HR.SkillMatrix.UI.Pages
 
             worker.LastName = LastName.Text;
             worker.FirstName = FirstName.Text;
+            worker.Patronymic = Patronymic.Text;
             worker.Hobby = Hobby.Text;
             worker.Sex = _sex;
+            worker.StatusID = 1;
             worker.Education = Education.Text;
             worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
             worker.ContactID = 1;
             worker.LocationID = 1;
+            worker.PositionID = 1;
+            worker.DivisionID = 1;
 
             MapperWorker mapper = new MapperWorker();
             mapper.MapToWorkersDTO(worker);
