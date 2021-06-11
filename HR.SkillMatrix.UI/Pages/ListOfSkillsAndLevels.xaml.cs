@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,9 @@ namespace HR.SkillMatrix.UI.Pages
         {
             _mainWindow = mainWindow;
             InitializeComponent();
+
+            MapperSkillName mapperSkillName = new MapperSkillName();
+            DataGridSkillsAndLevels.ItemsSource = mapperSkillName.GetSkillNameById();
         }
 
         private void ButtonSaveSkill_Click(object sender, RoutedEventArgs e)
