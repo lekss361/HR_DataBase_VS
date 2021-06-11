@@ -12,6 +12,4 @@ namespace HR_DataBase_VSDAL.Models
         public string Name { get; set; }
        
     }
-
-
 }

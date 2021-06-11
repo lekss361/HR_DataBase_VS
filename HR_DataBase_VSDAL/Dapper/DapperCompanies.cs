@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using HR_DataBase_VSDAL.DTO;
 using HR_DataBase_VSDAL.Models;
 
 
@@ -36,11 +37,25 @@ namespace HR_DataBase_VSDAL.Dapper
             }
         }
 
+        public List<CompaniesWithContactAndLocationDTO> GetCompaniesWithContactAndLocation()
+        {
+            List<CompaniesWithContactAndLocationDTO> listCompanies = new List<CompaniesWithContactAndLocationDTO>();
+            string query = "exec [HR_DataBase_VSDB].[GetCompaniesWithContactAndLocation]";
+
+            using(IDbConnection connection = new SqlConnection(connectionString))
+            {
+                    listCompanies = connection
+                    .Query<CompaniesWithContactAndLocationDTO>(@$"{query}")
+                    .AsList<CompaniesWithContactAndLocationDTO>();
+            }
+            return listCompanies;
+        }
+
         /// <summary>
         /// Находим запись по ID
         /// </summary>
         /// <returns>DTO записи из БД</returns>
-        
+            
         public List<CompaniesDTO> GetAllCompanies()
         {
             string tmp1 = "exec [HR_DataBase_VSDB].[GetAllCompanies]";
