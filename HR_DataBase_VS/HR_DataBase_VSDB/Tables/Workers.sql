@@ -2,6 +2,7 @@
     [id]         INT            IDENTITY (1, 1) NOT NULL,
     [FirstName]  NVARCHAR (50)  NOT NULL,
     [LastName]   NVARCHAR (50)  NOT NULL,
+    [Patronymic] NVARCHAR (50)  NOT NULL,
     [BirthDay]   DATE           NOT NULL,
     [Sex]        NVARCHAR (20)  NOT NULL,
     [StatusID]   INT            NOT NULL,

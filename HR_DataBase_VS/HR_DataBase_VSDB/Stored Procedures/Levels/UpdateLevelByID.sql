@@ -7,4 +7,4 @@ AS
     OUTPUT
     INSERTED.[Id],
     INSERTED.[Name]
-  VALUES (@Name)
+    VALUES (@Name)
