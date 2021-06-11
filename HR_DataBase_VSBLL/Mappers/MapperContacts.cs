@@ -44,7 +44,7 @@ namespace HR_DataBase_VSBLL.Mappers
         /// <param name="contactsModel">модель с новыми данными</param>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public Contacts UpdateContacts(Contacts contactsModel,int Id)
+        public Contacts UpdateContacts(Contacts contactsModel, int Id)
         {
             ContactsDTO tmpDTOold = new ContactsDTO();
             ContactsDTO tmpDTONew = new ContactsDTO();

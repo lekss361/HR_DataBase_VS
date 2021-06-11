@@ -25,6 +25,7 @@ namespace HR.SkillMatrix.UI.Pages
     {
         private readonly MainWindow _mainWindow;
         private string _sex;
+        public Contacts Contacts=new Contacts();
         public AddNewWorker(MainWindow mainWindow)
         {
             InitializeComponent();
@@ -40,7 +41,11 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            int cid;
             Worker worker = new Worker();
+            
+            MapperContacts mappers = new MapperContacts();
+            cid = mappers.AddNew(Contacts);
 
             worker.LastName = LastName.Text;
             worker.FirstName = FirstName.Text;
@@ -50,7 +55,7 @@ namespace HR.SkillMatrix.UI.Pages
             worker.StatusID = 1;
             worker.Education = Education.Text;
             worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
-            worker.ContactID = 1;
+            worker.ContactID = cid;
             worker.LocationID = 1;
             worker.PositionID = 1;
             worker.DivisionID = 1;
@@ -101,10 +106,9 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void CreateContact_Click(object sender, RoutedEventArgs e)
         {
-            NewWindow newWindow = new NewWindow();
-            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow);
-            newWindow.Content = addContactsMenu;
-            newWindow.Show();
+            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow){ Contacts =this.Contacts};
+            _mainWindow.Content = addContactsMenu;
+            this.Contacts = addContactsMenu.Contacts;
         }
 
         private void ChoosePosition_Click(object sender, RoutedEventArgs e)
