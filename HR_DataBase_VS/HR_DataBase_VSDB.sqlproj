@@ -82,6 +82,7 @@
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Directions" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Statuses" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\PreviousWorks" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="HR_DataBase_VSDB\Tables\Companies.sql" />
@@ -194,6 +195,11 @@
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\GetAllProjects.sql" />
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\GetProjectByID.sql" />
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\UpdateProjectByID.sql" />
-    <None Include="HR_DataBase_VSDB\Stored Procedures\Positions\GetPositionsWithDirectionName.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\PreviousWorks\AddNewPreviousWork.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\PreviousWorks\DeleteAllPreviousWork.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\PreviousWorks\DeletePreviousWorkByID.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\PreviousWorks\GetAllPreviousWorks.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\PreviousWorks\GetPreviousWorkByID.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\PreviousWorks\UpdatePreviousWorkByID.sql" />
   </ItemGroup>
 </Project>

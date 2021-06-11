@@ -113,5 +113,13 @@ namespace HR.SkillMatrix.UI.Pages
             newWindow.Content = listOfPosition;
             newWindow.Show();
         }
+
+        private void PrewiousWork_Click(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            AddPreviousJob addPreviousJob = new AddPreviousJob(_mainWindow);
+            newWindow.Content = addPreviousJob;
+            newWindow.Show();
+        }
     }
 }
