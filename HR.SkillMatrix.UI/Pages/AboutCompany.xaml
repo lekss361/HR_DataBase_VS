@@ -6,22 +6,31 @@
       xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="DepartmentDescription">
+      Title="AboutCompany">
 
-    <Grid Background="#FFDCCFCF">
-        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Top" Width="800" Grid.RowSpan="3">
-            <Button Content="Back" HorizontalAlignment="Left" Height="40" Margin="40,56,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button Content="Edit" HorizontalAlignment="Left" Height="40" Margin="190,56,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button Content="Accept" HorizontalAlignment="Left" Height="40" Margin="340,56,0,0" VerticalAlignment="Top" Width="100"/>
-            <TextBlock HorizontalAlignment="Center" Height="152" Margin="0,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="640" Foreground="#FFFBF9F9" Background="#FFFDF6F6" OpacityMask="#FFE24747"><Run Text="kdfj;lsak"/><Run Text="Е"/><Run Text="fjsfkThe Best CslfjsdlJJLJK"/></TextBlock>
-            <Label Content="MiseryCorp" HorizontalAlignment="Left" Height="30" Margin="80,160,0,0" VerticalAlignment="Top" Width="82" Foreground="#FF4D5EAA" />
-            <Label  Content="About Company"  HorizontalAlignment="Center" Height="40" Margin="0,0,0,0" VerticalAlignment="Top" Width="100" FontFamily="Adobe Caslon Pro Bold"/>
+    <Grid Background="White" Height="440">
+        <Label Content="О компании" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button x:Name="backToCompanyTable" Content="Назад" HorizontalAlignment="Left" Margin="27,39,0,0" VerticalAlignment="Top" Width="75" Click="backToCompanyTable_Click"/>
+        <Button Content="Изменить" HorizontalAlignment="Left" Margin="107,39,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="187,39,0,0" VerticalAlignment="Top" Width="75" />
+        <Button Content="Отменить" HorizontalAlignment="Left" Margin="267,39,0,0" VerticalAlignment="Top" Width="75" />
+
+        <Label Content="О компании" HorizontalAlignment="Center" Margin="338,77,338,0" VerticalAlignment="Top" FontSize="20"/>
+        <Grid HorizontalAlignment="Left" Height="136" Margin="10,131,0,0" VerticalAlignment="Top" Width="780">
+            <TextBox HorizontalAlignment="Left" Height="136" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="780"/>
         </Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height ="90"/>
-            <RowDefinition />
-        </Grid.RowDefinitions>
-
+        <DataGrid x:Name="Divisions" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="158"  Width="780" AutoGenerateColumns="False" Margin="10,272,0,0" MouseLeftButtonDown="DataGridDivisions_MouseLeftButtonDown">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
+                <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название отдела" Width="150" />
+                <DataGridTextColumn Binding ="{Binding Path = DirectionName}"  IsReadOnly="True" Header="Направление" Width="150"/>
+                <DataGridTextColumn Binding ="{Binding Path = Phone}"  IsReadOnly="True" Header="Телефон" Width="120"/>
+                <DataGridTextColumn Binding ="{Binding Path = Email}"  IsReadOnly="True" Header="Почта" Width="120"/>
+                <DataGridTextColumn Binding ="{Binding Path = Country}"  IsReadOnly="True" Header="Город" Width="90"/>
+                <DataGridTextColumn Binding ="{Binding Path = City}" IsReadOnly="True" Header="Страна" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid HorizontalAlignment="Left" Height="158" Margin="10,272,0,0" VerticalAlignment="Top" Width="780"/>
+        <Grid.RowDefinitions></Grid.RowDefinitions>
     </Grid>
 </Page>
