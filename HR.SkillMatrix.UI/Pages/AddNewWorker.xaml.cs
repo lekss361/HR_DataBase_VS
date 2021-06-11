@@ -121,5 +121,26 @@ namespace HR.SkillMatrix.UI.Pages
             newWindow.Content = addPreviousJob;
             newWindow.Show();
         }
+
+        private void ChooseCompany_OnClick(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            ListOfCompanies listOfCompanies = new ListOfCompanies(_mainWindow);
+            newWindow.Content = listOfCompanies;
+            newWindow.Show();
+        }
+
+        private void ChooseProject_Click(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            ListOfProject listOfзListOfProject = new ListOfProject(_mainWindow);
+            newWindow.Content = listOfзListOfProject;
+            newWindow.Show();
+        }
+
+        private void ChooseProject_OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -12,7 +12,7 @@
         <Label Content="Создать новое" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Button x:Name="AddNewWorker" Content="Создать работника" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="200" Height="50" Click="AddNewWorker_Click"/>
         <Button x:Name="AddNewCompany" Content="Создать компанию" HorizontalAlignment="Center" Margin="300,255,300,145" VerticalAlignment="Center" Width="200" Height="50" Click="AddNewCompany_Click"/>
-        <Button x:Name="AddNewDivision" Content="Создать отдел" HorizontalAlignment="Center" Margin="300,145,300,255" VerticalAlignment="Center" Width="200" Height="50"/>
+        <Button x:Name="AddNewDivision" Content="Создать отдел" HorizontalAlignment="Center" Margin="300,145,300,255" VerticalAlignment="Center" Width="200" Height="50" Click="AddNewDivision_Click"/>
         <Button x:Name="AddNewProject" Content="Создать проект" HorizontalAlignment="Center" Margin="0,310,0,0" VerticalAlignment="Center" Width="200" Height="50" Click="AddNewProject_Click"/>
         <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="10,10,0,0" Click="Back_Click"/>
 
