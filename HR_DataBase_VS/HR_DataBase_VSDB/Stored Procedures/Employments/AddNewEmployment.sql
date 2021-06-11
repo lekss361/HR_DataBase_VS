@@ -6,3 +6,4 @@
 AS
 	INSERT [Employments]([WorkerID],[PositionID],[ProjectID],[StatusID])
 	VALUES (@WorkerID, @PositionID, @ProjectID, @StatusID)
+	SELECT @@IDENTITY

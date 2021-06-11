@@ -3,5 +3,6 @@
 	@Comment  nvarchar (255),
 	@Date date
 AS
-	INSERT [Comments]([WorkersID],[Comment],[Date])
+	INSERT [Comments]([WorkerID],[Comment],[Date])
 	VALUES (@Worker,@Comment,@Date)
+	SELECT @@IDENTITY
