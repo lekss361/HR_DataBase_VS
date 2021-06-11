@@ -26,9 +26,13 @@ namespace HR_DataBase_VSBLL.Mappers
                 .ForMember(dest => dest.Education, option => option.MapFrom(source => source.Education))
                 .ForMember(dest => dest.FirstName, option => option.MapFrom(source => source.FirstName))
                 .ForMember(dest => dest.LastName, option => option.MapFrom(source => source.LastName))
+                .ForMember(dest => dest.Patronymic, option => option.MapFrom(source => source.Patronymic))
                 .ForMember(dest => dest.LocationID, option => option.MapFrom(source => source.LocationID))
                 .ForMember(dest => dest.Sex, option => option.MapFrom(source => source.Sex))
-                .ForMember(dest => dest.Hobby, option => option.MapFrom(source => source.Hobby)));
+                .ForMember(dest => dest.StatusID, option => option.MapFrom(source => source.StatusID))
+                .ForMember(dest => dest.Hobby, option => option.MapFrom(source => source.Hobby))
+                .ForMember(dest => dest.PositionID, option => option.MapFrom(source => source.PositionID))
+                .ForMember(dest => dest.DivisionID, option => option.MapFrom(source => source.DivisionID)));
 
             Mapper mapper = new Mapper(config);
             DapperWorker dapper = new DapperWorker();

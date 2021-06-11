@@ -1,12 +1,17 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddWorker]
-    @FirstName      NVARCHAR (255) ,
-    @LastName       NVARCHAR (255) ,
-    @BirthDay       DATE           ,
-    @Education      NVARCHAR (255) ,
-    @Sex            NVARCHAR (255) ,
-    @Hobby          NVARCHAR (255) = null,
+    @FirstName      NVARCHAR (50) ,
+    @LastName       NVARCHAR (50) ,
+    @Patronymic     NVARCHAR (50) ,
+    @BirthDay       DATE          ,
+    @Education      NVARCHAR (100),
+    @Sex            NVARCHAR (20) ,
+    @StatusID       INT,
+    @Hobby          NVARCHAR (50) = null,
     @ContactID      INT  = null,
-    @LocationID     INT  = null
-AS 
-INSERT INTO [Workers] (FirstName, LastName, BirthDay, Education, Sex, Hobby, ContactID, LocationID)
-VALUES(@FirstName, @LastName, @BirthDay, @Education, @Sex, @Hobby, @ContactID, @LocationID)
+    @LocationID     INT  = null,
+    @PositionID     INT  = null,
+    @DivisionID     INT  = null
+AS
+    INSERT INTO [Workers] (FirstName, LastName, Patronymic  , BirthDay, Education, Sex, StatusID, Hobby, ContactID, LocationID, PositionID, DivisionID)
+    VALUES(@FirstName, @LastName, @Patronymic, @BirthDay, @Education, @Sex, @StatusID, @Hobby, @ContactID, @LocationID, @PositionID, @DivisionID)
+	SELECT @@IDENTITY

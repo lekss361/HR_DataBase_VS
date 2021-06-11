@@ -36,8 +36,16 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Companies_Click(object sender, RoutedEventArgs e)
         {
-            ListOfLocation listOfLocation = new ListOfLocation(_mainWindow);
-            _mainWindow.Content = listOfLocation;
+            //ListOfLocation listOfLocation = new ListOfLocation(_mainWindow);
+            //_mainWindow.Content = listOfLocation;
+            ListOfCompanies listOfCompanies = new ListOfCompanies(_mainWindow);
+            _mainWindow.Content = listOfCompanies;
+        }
+
+        private void SearchEmploy_Click(object sender, RoutedEventArgs e)
+        {
+            SearchForEmployee searchForEmployee = new SearchForEmployee(_mainWindow);
+            _mainWindow.Content = searchForEmployee;
         }
     }
 }

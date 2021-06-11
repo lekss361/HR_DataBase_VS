@@ -43,12 +43,16 @@ namespace HR.SkillMatrix.UI.Pages
 
             worker.LastName = LastName.Text;
             worker.FirstName = FirstName.Text;
+            worker.Patronymic = Patronymic.Text;
             worker.Hobby = Hobby.Text;
             worker.Sex = _sex;
+            worker.StatusID = 1;
             worker.Education = Education.Text;
             worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
             worker.ContactID = 1;
             worker.LocationID = 1;
+            worker.PositionID = 1;
+            worker.DivisionID = 1;
 
             MapperWorker mapper = new MapperWorker();
             mapper.MapToWorkersDTO(worker);
@@ -99,6 +103,14 @@ namespace HR.SkillMatrix.UI.Pages
             NewWindow newWindow = new NewWindow();
             AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow);
             newWindow.Content = addContactsMenu;
+            newWindow.Show();
+        }
+
+        private void ChoosePosition_Click(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            ListOfPosition listOfPosition = new ListOfPosition(_mainWindow);
+            newWindow.Content = listOfPosition;
             newWindow.Show();
         }
 

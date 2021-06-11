@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[GetWorkerByID]
-@WorkersID int
+	@WorkersID	int
 AS 
  SELECT *
  FROM [Workers] as W
- WHERE W.[id]=@WorkersID
+ WHERE W.[id] = @WorkersID

@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[AddNewPosition]
-	@Name nvarchar (255),
-	@DirectionsID int,
-	@DivisionsID int
+	@Name			nvarchar (255),
+	@DirectionID	int
 AS
-	INSERT [Positions]([Name], [DirectionsID], [DivisionsID])
-	VALUES (@Name, @DirectionsID, @DivisionsID )
+	INSERT [Positions]([Name], [DirectionID])
+	VALUES (@Name, @DirectionID )
+	SELECT @@IDENTITY

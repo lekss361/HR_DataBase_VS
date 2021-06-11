@@ -3,4 +3,4 @@
 AS 
  SELECT *
  FROM [Locations] 
- WHERE [id]=@id
+ WHERE [id] = @id

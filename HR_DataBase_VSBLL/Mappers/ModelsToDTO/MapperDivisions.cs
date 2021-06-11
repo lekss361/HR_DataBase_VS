@@ -25,7 +25,7 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
             .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
             .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))
             .ForMember(dest => dest.CompanyID, option => option.MapFrom(source => source.CompanyID))
-            .ForMember(dest => dest.ContactID, option => option.MapFrom(source => source.ContactID))           
+            .ForMember(dest => dest.ContactID, option => option.MapFrom(source => source.ContactID))
             .ForMember(dest => dest.LocationID, option => option.MapFrom(source => source.LocationID))
             .ForMember(dest => dest.DirectionsID, option => option.MapFrom(source => source.DirectionsID)));
 

@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateLocationByID]
-    @Id             INT             ,
+    @Id              INT            ,
     @LocationIndex   INT            ,
     @Country         NVARCHAR (255) ,
     @City            NVARCHAR (255) ,
@@ -7,11 +7,14 @@
     @HouseNumber     INT            ,
     @ApartmentNumber INT            
 AS
-	update [Locations]
-	set [LocationIndex]=@LocationIndex,
-	    [Country]=@Country,
-	    [City]=@City,
-	    [Street]=@Street,
-	    [HouseNumber]=@HouseNumber,
-	    [ApartmentNumber]=@ApartmentNumber
-	WHERE [id]=@Id
+    INSERT  [HR_DataBase_VSDB].[Locations]
+        ([LocationIndex], [Country], [City], [Street], [HouseNumber], [ApartmentNumber])
+    OUTPUT
+    INSERTED.[Id],
+    INSERTED.[LocationIndex],
+    INSERTED.[Country],
+    INSERTED.[City],
+    INSERTED.[Street],
+    INSERTED.[HouseNumber],
+    INSERTED.[ApartmentNumber]
+  VALUES (@LocationIndex, @Country, @City, @Street, @HouseNumber, @ApartmentNumber)
