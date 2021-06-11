@@ -11,6 +11,7 @@ namespace HR_DataBase_VSDAL.Dapper
     {
         ContactsDTO contactsDTO;
         List<ContactsDTO> listDTO = new List<ContactsDTO>();
+        int ID;
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
 
         /// <summary>
@@ -27,9 +28,9 @@ namespace HR_DataBase_VSDAL.Dapper
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                contactsDTO.Id = connection.QueryFirst<int>(@$"{query}{value}");
+                ID = connection.QueryFirst<int>(@$"{query}{value}");
             }
-            return contactsDTO.Id;
+            return ID;
         }
 
         /// <summary>
@@ -70,33 +71,28 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <summary>
         /// Изменяем запись в БД через хранимую процедуру
         /// </summary>
-        /// <param name="contactsDTO"></param>
-        public int UpdateNewContact(ContactsDTO contactsDTO)
+        /// <param name="oldContactsDTO"></param>
+        public int UpdateNewContact(ContactsDTO currentContactsDTO, int Id)
         {
-            ContactsDTO crntContactDTO = new ContactsDTO();
-            //crntContactDTO = GetContactByID(contactsDTO.id);
-            crntContactDTO = GetContactByID(2);
-
             string query = "exec [HR_DataBase_VSDB].[UpdateContactsByID]";
             string value =
-                $"N'{contactsDTO.Id}', " +
-                $"N'{contactsDTO.Phone}', " +
-                $"N'{contactsDTO.Email}', " +
-                $"N'{contactsDTO.Information}'";
+                $"N'{Id}', " +
+                $"N'{currentContactsDTO.Phone}', " +
+                $"N'{currentContactsDTO.Email}', " +
+                $"N'{currentContactsDTO.Information}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
-                    crntContactDTO = connection
-                        .QueryFirst<ContactsDTO>(@$"{query}{value}", contactsDTO);
+                    currentContactsDTO = connection.QueryFirst<ContactsDTO>(@$"{query}{value}", Id);
                 }
                 catch
                 {
                     new Exception("Всё плохо");
                 }
             }
-            return crntContactDTO.Id;
+            return currentContactsDTO.Id;
         }
 
     }
