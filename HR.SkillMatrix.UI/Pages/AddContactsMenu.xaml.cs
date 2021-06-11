@@ -42,7 +42,7 @@ namespace HR.SkillMatrix.UI.Pages
             }
 
             MapperContacts mapper = new MapperContacts();
-            mapper.AddNew(contacts);
+            contacts.Id = mapper.AddNew(contacts);
 
             Saved saved = new Saved();
             saved.Show();
