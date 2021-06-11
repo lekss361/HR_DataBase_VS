@@ -29,6 +29,7 @@ namespace HR.SkillMatrix.UI.Pages
         {
             InitializeComponent();
             _mainWindow = mainWindow;
+            ChooseDepartment.IsEnabled = false;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -112,6 +113,35 @@ namespace HR.SkillMatrix.UI.Pages
             ListOfPosition listOfPosition = new ListOfPosition(_mainWindow);
             newWindow.Content = listOfPosition;
             newWindow.Show();
+        }
+
+        private void PrewiousWork_Click(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            AddPreviousJob addPreviousJob = new AddPreviousJob(_mainWindow);
+            newWindow.Content = addPreviousJob;
+            newWindow.Show();
+        }
+
+        private void ChooseCompany_OnClick(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            ListOfCompanies listOfCompanies = new ListOfCompanies(_mainWindow);
+            newWindow.Content = listOfCompanies;
+            newWindow.Show();
+        }
+
+        private void ChooseProject_Click(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            ListOfProject listOfзListOfProject = new ListOfProject(_mainWindow);
+            newWindow.Content = listOfзListOfProject;
+            newWindow.Show();
+        }
+
+        private void ChooseCompany_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            ChooseDepartment.IsEnabled = true;
         }
     }
 }
