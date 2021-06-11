@@ -1,4 +1,4 @@
-﻿/*CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateDivisionByID]
+﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateDivisionByID]
 	@Id				int,
 	@Name			nvarchar (255),
 	@Information	nvarchar (255),
@@ -8,7 +8,7 @@
     @DirectionsID   int
 AS
     INSERT  [HR_DataBase_VSDB].[Divisions]
-        ([Name], [Information], [CompanyID], [ContactID], [LocationID], [DirectionsID])
+        ([Name], [Information], [CompanyID], [ContactID], [LocationID], [DirectionID])
     OUTPUT
     INSERTED.[Id],
     INSERTED.[Name],
@@ -16,5 +16,5 @@ AS
     INSERTED.[CompanyID],
     INSERTED.[ContactID],
     INSERTED.[LocationID],
-    INSERTED.[DirectionsID]
-  VALUES (@Name, @Information, @CompanyID, @ContactID, @LocationID, @DirectionsID)*/
+    INSERTED.[DirectionID]
+    VALUES (@Name, @Information, @CompanyID, @ContactID, @LocationID, @DirectionsID)
