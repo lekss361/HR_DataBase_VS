@@ -29,6 +29,7 @@ namespace HR.SkillMatrix.UI.Pages
         {
             InitializeComponent();
             _mainWindow = mainWindow;
+            ChooseDepartment.IsEnabled = false;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -138,9 +139,9 @@ namespace HR.SkillMatrix.UI.Pages
             newWindow.Show();
         }
 
-        private void ChooseProject_OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        private void ChooseCompany_OnMouseEnter(object sender, MouseEventArgs e)
         {
-
+            ChooseDepartment.IsEnabled = true;
         }
     }
 }
