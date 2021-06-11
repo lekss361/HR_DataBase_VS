@@ -9,8 +9,8 @@
       Title="ListOfCompanies">
 
     <Grid Margin="0,0,0,0">
-        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="1047" Background="White">
-            <DataGrid x:Name="Companies" AutoGenerateColumns="False"  Margin="157,58,153,99">
+        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="1048" Background="White">
+            <DataGrid x:Name="Companies" AutoGenerateColumns="False"  Margin="124,30,123,68">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
                     <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название Компании" Width="150" />
@@ -19,6 +19,8 @@
                     <DataGridTextColumn Binding ="{Binding Path = LocationID}" IsReadOnly="True" Header="Место нахождения" Width="200"/>
                 </DataGrid.Columns>
             </DataGrid>
+            <Button Content="Назад" HorizontalAlignment="Center" Height="28" Margin="0,387,0,0" VerticalAlignment="Top" Width="78" FontSize="16" Click="Button_Click"/>
+            <Label Content="Список Компаний" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="800" FontSize="16" Background="#FF8577C7"/>
         </Grid>
 
     </Grid>

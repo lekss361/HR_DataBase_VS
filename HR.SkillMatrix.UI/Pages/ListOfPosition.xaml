@@ -10,7 +10,7 @@
 
 
 
-    <Grid Background="White">
+    <Grid Background="#FFF0E9E9">
         <DataGrid x:Name="GridPositions" AutoGenerateColumns="False"  Margin="95,70,120,60">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>

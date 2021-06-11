@@ -30,5 +30,10 @@ namespace HR.SkillMatrix.UI.Pages
             Companies.ItemsSource = mapperCompanies.GetAllCompanies();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu mainMenu = new MainMenu(_mainWindow);
+            _mainWindow.Content = mainMenu;
+        }
     }
 }
