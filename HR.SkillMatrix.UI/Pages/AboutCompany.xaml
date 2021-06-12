@@ -57,7 +57,7 @@
 
 
 
-        <DataGrid x:Name="Divisions" VerticalAlignment="Top"  Height="158" Grid.Row="1" AutoGenerateColumns="False" Margin="10,348,0,0" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="880" Grid.RowSpan="2" MouseLeftButtonDown="DataGridDivisions_MouseLeftButtonDown">
+        <DataGrid x:Name="DataGridDivisions" VerticalAlignment="Top"  Height="158" Grid.Row="1" AutoGenerateColumns="False" Margin="10,348,0,0" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="880" Grid.RowSpan="2" MouseLeftButtonDown="DataGridDivisions_MouseLeftButtonDown">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
                 <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название отдела" Width="180" />

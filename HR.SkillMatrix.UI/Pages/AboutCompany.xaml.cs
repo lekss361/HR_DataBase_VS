@@ -30,7 +30,7 @@ namespace HR.SkillMatrix.UI.Pages
             _mainWindow = mainWindow;
 
             MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
-            Divisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(id);
+            DataGridDivisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(id);
             MapperCompany mapperCompany = new MapperCompany();
 
            CompanyWithForeignKeyValue company = mapperCompany.GetCompanyByID(id);
@@ -102,7 +102,8 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-
+            ListOfCompanies listOfCompanies = new ListOfCompanies(_mainWindow);
+            _mainWindow.Content = listOfCompanies;
         }
 
         private void backToCompanyTable_Click(object sender, RoutedEventArgs e)
