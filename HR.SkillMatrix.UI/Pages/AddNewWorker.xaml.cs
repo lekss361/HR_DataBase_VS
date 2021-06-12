@@ -63,8 +63,8 @@ namespace HR.SkillMatrix.UI.Pages
             MapperWorker mapper = new MapperWorker();
             mapper.MapToWorkersDTO(worker);
 
-            //Saved saved = new Saved();
-            //saved.Show();
+            Saved saved = new Saved();
+            saved.Show();
         }
 
         private void CreateLocation_Click(object sender, RoutedEventArgs e)
