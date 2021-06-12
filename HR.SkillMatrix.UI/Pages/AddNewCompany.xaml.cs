@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
 using HR.SkillMatrix.UI.Windows;
+using HR_DataBase_VSBLL.Mappers;
 
 namespace HR.SkillMatrix.UI.Pages
 {
@@ -23,6 +24,8 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddNewCompany : Page
     {
+        public Contacts Contacts;
+        public Location Location;
         private readonly MainWindow _mainWindow;
         public AddNewCompany(MainWindow mainWindow)
         {
@@ -37,14 +40,16 @@ namespace HR.SkillMatrix.UI.Pages
         /// <param name="e"></param>
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-            HR_DataBase_VSBLL.Models.Company companies = new HR_DataBase_VSBLL.Models.Company();
+            MapperCompany mapper = new MapperCompany();
+            MapperContacts mapperContacts = new MapperContacts();
+            MapperLocation mapperLocation = new MapperLocation();
 
+            Company companies = new Company();
             companies.Name = textBoxName.Text;
-            companies.ContactID = 1;
-            companies.LocationID = 1;
+            companies.ContactID = mapperContacts.AddNew(Contacts);
+            companies.LocationID = mapperLocation.AddNewLocation(Location);
             companies.Information = textBoxDescription.Text;
 
-            MapperCompany mapper = new MapperCompany();
             mapper.MapToCompaniesDTO(companies);
 
             Saved saved = new Saved();
@@ -65,18 +70,20 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonAddLocation_Click(object sender, RoutedEventArgs e)
         {
+            Location = new Location();
             NewWindow newWindow = new NewWindow();
-            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow);
+            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow) { Location = this.Location };
             newWindow.Content = locationMenu;
-            newWindow.Show();
+            newWindow.ShowDialog();
         }
 
         private void ButtonAddContact_Click(object sender, RoutedEventArgs e)
         {
+            Contacts = new Contacts();
             NewWindow newWindow = new NewWindow();
-            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow);
+            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow) { Contacts = this.Contacts };
             newWindow.Content = addContactsMenu;
-            newWindow.Show();
+            newWindow.ShowDialog();
         }
     }
 }

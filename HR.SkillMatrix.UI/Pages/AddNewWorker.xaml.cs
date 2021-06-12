@@ -24,11 +24,11 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddNewWorker : Page
     {
-        private readonly MainWindow _mainWindow;
-        private string _sex;
         public Contacts Contacts;
         public Location Location;
         public PreviousWork PreviousWork;
+        private readonly MainWindow _mainWindow;
+        private string _sex;
         public AddNewWorker(MainWindow mainWindow)
         {
             InitializeComponent();
@@ -44,11 +44,12 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            Worker worker = new Worker();
-            
+            MapperWorker mapper = new MapperWorker();
             MapperContacts mapperContacts = new MapperContacts();
             MapperLocation mapperLocation = new MapperLocation();
             MapperPreviousJob mapperPreviousJob = new MapperPreviousJob();
+
+            Worker worker = new Worker();
 
             worker.LastName = LastName.Text;
             worker.FirstName = FirstName.Text;
@@ -63,7 +64,6 @@ namespace HR.SkillMatrix.UI.Pages
             worker.PositionID = 1;
             worker.DivisionID = 1;
 
-            MapperWorker mapper = new MapperWorker();
             PreviousWork.WorkerID = mapper.MapToWorkersDTO(worker);
             mapperPreviousJob.MapToPreviousWorkDTO(PreviousWork);
 
@@ -71,7 +71,7 @@ namespace HR.SkillMatrix.UI.Pages
             saved.Show();
         }
 
-        private void CreateLocation_Click(object sender, RoutedEventArgs e)
+        private void ButtonAddLocation_Click(object sender, RoutedEventArgs e)
         {
             Location = new Location();
             NewWindow newWindow = new NewWindow();
@@ -80,7 +80,7 @@ namespace HR.SkillMatrix.UI.Pages
             newWindow.ShowDialog();
         }
 
-        private void CreateContact_Click(object sender, RoutedEventArgs e)
+        private void ButtonAddContact_Click(object sender, RoutedEventArgs e)
         {
             Contacts = new Contacts();
             NewWindow newWindow = new NewWindow();
