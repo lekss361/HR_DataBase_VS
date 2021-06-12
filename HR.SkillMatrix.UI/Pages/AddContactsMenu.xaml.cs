@@ -52,9 +52,9 @@ namespace HR.SkillMatrix.UI.Pages
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            AddNewWorker addNewWorker = new AddNewWorker(_mainWindow);
-            addNewWorker.Contacts = this.Contacts;
-            _mainWindow.Content = addNewWorker;
+            //AddNewWorker addNewWorker = new AddNewWorker(_mainWindow);
+            //addNewWorker.Contacts = this.Contacts;
+            //_mainWindow.Content = addNewWorker;
         }
     }
 }

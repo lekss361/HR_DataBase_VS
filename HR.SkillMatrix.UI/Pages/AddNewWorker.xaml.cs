@@ -26,6 +26,7 @@ namespace HR.SkillMatrix.UI.Pages
         private readonly MainWindow _mainWindow;
         private string _sex;
         public Contacts Contacts;
+        public Location Location;
         public AddNewWorker(MainWindow mainWindow)
         {
             InitializeComponent();
@@ -41,11 +42,10 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            int cid;
             Worker worker = new Worker();
             
-            MapperContacts mappers = new MapperContacts();
-            cid = mappers.AddNew(Contacts);
+            MapperContacts mapperContacts = new MapperContacts();
+            MapperLocation mapperLocation = new MapperLocation();
 
             worker.LastName = LastName.Text;
             worker.FirstName = FirstName.Text;
@@ -55,8 +55,8 @@ namespace HR.SkillMatrix.UI.Pages
             worker.StatusID = 1;
             worker.Education = Education.Text;
             worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
-            worker.ContactID = cid;
-            worker.LocationID = 1;
+            worker.ContactID = mapperContacts.AddNew(Contacts);
+            worker.LocationID = mapperLocation.AddNewLocation(Location);
             worker.PositionID = 1;
             worker.DivisionID = 1;
 
@@ -69,11 +69,23 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void CreateLocation_Click(object sender, RoutedEventArgs e)
         {
+            Location = new Location();
             NewWindow newWindow = new NewWindow();
-            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow);
+            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow) { Location = this.Location };
             newWindow.Content = locationMenu;
-            newWindow.Show();
+            newWindow.ShowDialog();
         }
+        private void CreateContact_Click(object sender, RoutedEventArgs e)
+        {
+            Contacts = new Contacts();
+            NewWindow newWindow = new NewWindow();
+            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow) { Contacts = this.Contacts };
+            newWindow.Content = addContactsMenu;
+            newWindow.ShowDialog();
+            //_mainWindow.Content = addContactsMenu;
+            //this.Contacts = addContactsMenu.Contacts;
+        }
+
         //private void BoxContacts_OnMouseEnter(object sender, MouseEventArgs e)
         //{
         //    List<int> numbers = new List<int>() { 1, 2, 3, 45 };
@@ -102,14 +114,6 @@ namespace HR.SkillMatrix.UI.Pages
         private void Women_OnChecked(object sender, RoutedEventArgs e)
         {
             _sex = "Женский";
-        }
-
-        private void CreateContact_Click(object sender, RoutedEventArgs e)
-        {
-            Contacts = new Contacts();
-            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow){ Contacts =this.Contacts};
-            _mainWindow.Content = addContactsMenu;
-            //this.Contacts = addContactsMenu.Contacts;
         }
 
         private void ChoosePosition_Click(object sender, RoutedEventArgs e)
