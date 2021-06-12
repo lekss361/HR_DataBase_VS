@@ -35,6 +35,7 @@ namespace HR_DataBase_VSDAL.Dapper
             {
                 _ID = connection.QueryFirst<int>(@$"{_Query}{_Value}");
             }
+            return _ID;
         }
 
         public List<CompaniesWithContactAndLocationDTO> GetCompaniesWithContactAndLocation()
