@@ -13,20 +13,18 @@
     @PositionID INT,
     @DivisionID INT
 AS
-	 INSERT  [Workers]
-        ([FirstName], [LastName], [Patronymic], [BirthDay], [Education], [ContactID], [LocationID], [Sex], [StatusID], [Hobby], [PositionID], [DivisionID])
-    OUTPUT
-    INSERTED.[Id],
-    INSERTED.[FirstName],
-    INSERTED.[LastName],
-    INSERTED.[Patronymic],
-    INSERTED.[BirthDay],
-    INSERTED.[Education],
-    INSERTED.[ContactID],
-    INSERTED.[LocationID],
-    INSERTED.[Sex],
-    INSERTED.[StatusID],
-    INSERTED.[Hobby],
-    INSERTED.[PositionID],
-    INSERTED.[DivisionID]
-  VALUES ( @FirstName, @LastName, @Patronymic, @BirthDay, @Education, @ContactID, @LocationID, @Sex, @StatusID, @Hobby, @PositionID, @DivisionID)
+    UPDATE [Workers]
+    SET
+    [FirstName] =   @FirstName,
+    [LastName] =    @LastName,
+    [Patronymic] =  @Patronymic,
+    [BirthDay] =    @BirthDay,
+    [Education] =   @Education,
+    [ContactID] =   @ContactID,
+    [LocationID] =  @LocationID,
+    [Sex] =         @Sex,
+    [StatusID] =    @StatusID,
+    [Hobby] =       @Hobby,
+    [PositionID] =  @PositionID,
+    [DivisionID] =  @DivisionID
+    WHERE [Id] = @Id

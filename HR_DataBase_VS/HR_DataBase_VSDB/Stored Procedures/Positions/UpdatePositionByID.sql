@@ -1,12 +1,10 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdatePositionByID]
-    @id             int           ,
+    @Id             int           ,
     @Name           nvarchar (255),       
     @DirectionID    int     
 As
-    INSERT  [Positions]
-        ([Name], [DirectionID])
-    OUTPUT
-    INSERTED.[id],
-    INSERTED.[Name],
-    INSERTED.[DirectionID]
-  VALUES ( @Name, @DirectionID)
+    UPDATE [Positions]
+    SET
+    [Name] =        @Name,
+    [DirectionID] = @DirectionID
+    WHERE [Id] = @Id
