@@ -5,15 +5,13 @@
 	@CompanyID		int,   
     @ContactID		int,
     @LocationID		int,
-    @DirectionID   int
+    @DirectionID    int
 AS
     UPDATE [Divisions]
     SET
     [Name] =            @Name,
     [Information] =     @Information,
     [CompanyID] =       @CompanyID,
-    [ContactID] =       @ContactID,
-    [LocationID] =      @LocationID,
     [ContactID] =       @ContactID,
     [LocationID] =      @LocationID,
     [DirectionID] =     @DirectionID
