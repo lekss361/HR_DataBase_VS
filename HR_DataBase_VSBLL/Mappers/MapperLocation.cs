@@ -25,7 +25,7 @@ namespace HR_DataBase_VSBLL.Mappers
         /// </summary>
         /// <param name="ID">LocationID</param>
         /// <returns>LocationDTO</returns>
-        public Location GetLocationByID1(int ID)
+        public Location GetLocationByID(int ID)
         {
             locationDTO = dapper.GetLocationByID(ID);
             return MapLocationDTOToModel(locationDTO);

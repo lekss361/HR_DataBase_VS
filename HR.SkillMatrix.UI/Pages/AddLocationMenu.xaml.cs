@@ -48,9 +48,6 @@ namespace HR.SkillMatrix.UI.Pages
             {
                 Location.LocationIndex = Int32.Parse(textBoxLocationIndex.Text);
             }
-            //MapperLocation mapper = new MapperLocation();
-            //mapper.AddNewLocation(location);
-
             Saved saved = new Saved();
             saved.Show();
         }

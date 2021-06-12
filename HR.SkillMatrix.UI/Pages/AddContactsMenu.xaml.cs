@@ -41,12 +41,6 @@ namespace HR.SkillMatrix.UI.Pages
             {
                 Contacts.Information = textBoxOther.Text;
             }
-
-            
-            
-            //MapperContacts mapper = new MapperContacts();
-            //contacts.Id = mapper.AddNew(contacts);
-
             Saved saved = new Saved();
             saved.Show();
         }
