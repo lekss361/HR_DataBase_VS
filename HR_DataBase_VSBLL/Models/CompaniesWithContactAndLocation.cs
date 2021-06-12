@@ -10,10 +10,10 @@ namespace HR_DataBase_VSBLL.Models
     {
         public string Name { get; set; }
         public string Information { get; set; }
-        public string ContactPhone { get; set; }
-        public string ContactEmail { get; set; }
-        public string LocationCity { get; set; }
-        public string LocationStreet { get; set; }
-        public string LocationHouse { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string City { get; set; }
+        public string Street { get; set; }
+        public string HouseNumber { get; set; }
     }
 }

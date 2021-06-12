@@ -15,11 +15,11 @@
                     <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
                     <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название Компании" Width="150" />
                     <DataGridTextColumn Binding ="{Binding Path = Information}"  IsReadOnly="True" Header="Информация" Width="100"/>
-                    <DataGridTextColumn Binding ="{Binding Path = ContactPhone}"  IsReadOnly="True" Header="Телефон" Width="100"/>
-                    <DataGridTextColumn Binding ="{Binding Path = ContactEmail}" IsReadOnly="True" Header="E-mail" Width="100"/>
-                    <DataGridTextColumn Binding ="{Binding Path = LocationCity}" IsReadOnly="True" Header="Город" Width="120"/>
-                    <DataGridTextColumn Binding ="{Binding Path = LocationStreet}" IsReadOnly="True" Header="Улица" Width="120"/>
-                    <DataGridTextColumn Binding ="{Binding Path = LocationHouse}" IsReadOnly="True" Header="Дом" Width="50"/>
+                    <DataGridTextColumn Binding ="{Binding Path = Phone}"  IsReadOnly="True" Header="Телефон" Width="100"/>
+                    <DataGridTextColumn Binding ="{Binding Path = Email}" IsReadOnly="True" Header="E-mail" Width="100"/>
+                    <DataGridTextColumn Binding ="{Binding Path = City}" IsReadOnly="True" Header="Город" Width="120"/>
+                    <DataGridTextColumn Binding ="{Binding Path = Street}" IsReadOnly="True" Header="Улица" Width="120"/>
+                    <DataGridTextColumn Binding ="{Binding Path = HouseNumber}" IsReadOnly="True" Header="Дом" Width="50"/>
 
                 </DataGrid.Columns>
             </DataGrid>
