@@ -33,7 +33,7 @@ namespace HR.SkillMatrix.UI.Pages
         {
             InitializeComponent();
             _mainWindow = mainWindow;
-            ChooseDepartment.IsEnabled = false;
+            ButtonChooseDepartment.IsEnabled = false;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -88,7 +88,7 @@ namespace HR.SkillMatrix.UI.Pages
             newWindow.Content = addContactsMenu;
             newWindow.ShowDialog();
         }
-        private void PrewiousWork_Click(object sender, RoutedEventArgs e)
+        private void ButtonPrewiousWork_Click(object sender, RoutedEventArgs e)
         {
             PreviousWork = new PreviousWork();
             NewWindow newWindow = new NewWindow();
@@ -127,7 +127,7 @@ namespace HR.SkillMatrix.UI.Pages
             _sex = "Женский";
         }
 
-        private void ChoosePosition_Click(object sender, RoutedEventArgs e)
+        private void ButtonChoosePosition_Click(object sender, RoutedEventArgs e)
         {
             NewWindow newWindow = new NewWindow();
             ListOfPosition listOfPosition = new ListOfPosition(_mainWindow);
@@ -135,7 +135,7 @@ namespace HR.SkillMatrix.UI.Pages
             newWindow.Show();
         }
 
-        private void ChooseCompany_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonChooseCompany_OnClick(object sender, RoutedEventArgs e)
         {
             NewWindow newWindow = new NewWindow();
             ListOfCompanies listOfCompanies = new ListOfCompanies(_mainWindow);
@@ -143,7 +143,7 @@ namespace HR.SkillMatrix.UI.Pages
             newWindow.Show();
         }
 
-        private void ChooseProject_Click(object sender, RoutedEventArgs e)
+        private void ButtonChooseProject_Click(object sender, RoutedEventArgs e)
         {
             NewWindow newWindow = new NewWindow();
             ListOfProject listOfзListOfProject = new ListOfProject(_mainWindow);
@@ -153,7 +153,7 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ChooseCompany_OnMouseEnter(object sender, MouseEventArgs e)
         {
-            ChooseDepartment.IsEnabled = true;
+            ButtonChooseDepartment.IsEnabled = true;
         }
     }
 }
