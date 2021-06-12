@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Dapper;
 using HR_DataBase_VSDAL.Models;
 
@@ -8,8 +12,6 @@ namespace HR_DataBase_VSDAL.Dapper
 {
     public class DapperDivisionByCompany
     {
-        string _Query;
-        string _Value;
         List<DivisionByCompanyDTO> ListDTO = new List<DivisionByCompanyDTO>();
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
 
@@ -18,16 +20,13 @@ namespace HR_DataBase_VSDAL.Dapper
         /// </summary>
         /// <param name="id"></param>
         /// <returns>List DTO записи из БД</returns>
-        public List<DivisionByCompanyDTO> GetDivisionByCompanyID(int CompanyId)
+        public List<DivisionByCompanyDTO> GetDivisionByCompanyID(int id)
         {
-            _Query = $"exec [HR_DataBase_VSDB].[GetDivisionByCompanyID]";
-            _Value =
-                $"N'{CompanyId}'";
-
+            string query = $"exec [HR_DataBase_VSDB].[GetDivisionByCompanyID] @CompanyID={id}";
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 ListDTO = connection
-                    .Query<DivisionByCompanyDTO>(@$"{_Query}")
+                    .Query<DivisionByCompanyDTO>(@$"{query}")
                     .AsList<DivisionByCompanyDTO>();
             }
             return ListDTO;

@@ -8,7 +8,7 @@ using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSDAL.Models;
 using HR_DataBase_VSDAL.Dapper;
 
-namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
+namespace HR_DataBase_VSBLL.Mappers
 {
     public class MapperDivisions
     {
@@ -16,6 +16,10 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
         /// Mapper моделей UI в DTO
         /// </summary>
         /// <param name="divisions"></param>
+        /// 
+        DivisionWithForeignKeyValueDTO divisionWithForeignKeyValueDTO = new DivisionWithForeignKeyValueDTO();
+        DivisionWithForeignKeyValue divisionWithForeignKeyValue = new DivisionWithForeignKeyValue();
+        DivisionDapper dapper = new DivisionDapper();
         public DivisionsDTO MapToDivisionsDTO(Divisions divisions)
         {
             DivisionsDTO divisionsDTO = new DivisionsDTO();
@@ -35,6 +39,42 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
             divisionsDTO = mapper.Map<DivisionsDTO>(divisions);
             dapper.AddNewDivision(divisionsDTO);
             return divisionsDTO;
+        }
+
+
+
+        public DivisionWithForeignKeyValue GetDivisionByID(int id)
+        {
+            divisionWithForeignKeyValueDTO = dapper.GetDivisionByID(id);
+            divisionWithForeignKeyValue  = MapDivisionByIDDTOToModel(divisionWithForeignKeyValueDTO);
+            
+
+            return divisionWithForeignKeyValue;
+        }
+
+        private DivisionWithForeignKeyValue MapDivisionByIDDTOToModel(DivisionWithForeignKeyValueDTO divisionByIDDTO)
+        {
+            DivisionWithForeignKeyValue sda = new DivisionWithForeignKeyValue();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<DivisionWithForeignKeyValueDTO, DivisionWithForeignKeyValue>()
+                .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
+                .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))
+                .ForMember(dest => dest.CompanyName, option => option.MapFrom(source => source.CompanyName))
+                .ForMember(dest => dest.DirectionName, option => option.MapFrom(source => source.DirectionName))
+                .ForMember(dest => dest.Phone, option => option.MapFrom(source => source.Phone))
+                .ForMember(dest => dest.Email, option => option.MapFrom(source => source.Email))
+                .ForMember(dest => dest.ContactInformation, option => option.MapFrom(source => source.ContactInformation))
+                .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
+                .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
+                .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Email))
+                .ForMember(dest => dest.ApartmentNumber, option => option.MapFrom(source => source.ApartmentNumber))
+                .ForMember(dest => dest.HouseNumber, option => option.MapFrom(source => source.HouseNumber))
+                .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex)));
+
+            Mapper mapper = new Mapper(config);
+
+            sda = mapper.Map<DivisionWithForeignKeyValue>(divisionByIDDTO);
+            return sda;
         }
     }
 }

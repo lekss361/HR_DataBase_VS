@@ -1,4 +1,6 @@
 ﻿using HR_DataBase_VSBLL.Mappers;
+using HR_DataBase_VSBLL.Models;
+using HR_DataBase_VSDAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,19 +29,24 @@ namespace HR.SkillMatrix.UI.Pages
             InitializeComponent();
             _mainWindow = mainWindow;
             MapperCompanies mapperCompanies = new MapperCompanies();
-            Companies.ItemsSource = mapperCompanies.GetAllCompaniesWithContactAndLocation();
-
+            DataGridCompanies.ItemsSource = mapperCompanies.GetAllCompanies();
+        }
+        private void DataGridCompanies_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DataGrid dg = (DataGrid)sender;
+            Company item = (Company)dg.CurrentItem;
+            if (item != null)
+            {
+                int id = item.Id;
+                AboutCompany aboutCompany = new AboutCompany(_mainWindow, id);
+                _mainWindow.Content = aboutCompany;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainMenu mainMenu = new MainMenu(_mainWindow);
             _mainWindow.Content = mainMenu;
-        }
-
-        private void Companies_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

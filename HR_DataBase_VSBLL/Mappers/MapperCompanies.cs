@@ -58,6 +58,7 @@ namespace HR_DataBase_VSBLL.Mappers
             List<Company> companies = new List<Company>();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<CompaniesDTO, Company>()
+                .ForMember(dest => dest.Id, option => option.MapFrom(source => source.Id))
                 .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
                 .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))
                 .ForMember(dest => dest.ContactID, option => option.MapFrom(source => source.ContactID))

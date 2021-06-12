@@ -13,7 +13,6 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
     public class MapperPositionsWithDirectionName
     {
         PositionsWithDirectionName positionsWithDirectionNameDTO = new PositionsWithDirectionName();
-
         DapperPositionsWithDirectionName dapper = new DapperPositionsWithDirectionName();
 
         public List<PositionsWithDirectionName> GetAllPositionsWithDirectionName()

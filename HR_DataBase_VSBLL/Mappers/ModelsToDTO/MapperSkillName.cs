@@ -15,8 +15,6 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
     {
         SkillNameDapper dapper = new SkillNameDapper();
 
-
-
         /// <summary>
         /// Mapper моделей UI в DTO
         /// </summary>

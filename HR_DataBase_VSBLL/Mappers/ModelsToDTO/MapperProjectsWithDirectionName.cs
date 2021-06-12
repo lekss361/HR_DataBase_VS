@@ -35,6 +35,5 @@ namespace HR_DataBase_VSBLL.Mappers
             sda = mapper.Map<List<ProjectsWithDirectionName>>(projectsWithDirectionNameDTODtos);
             return sda;
         }
-
     }
 }

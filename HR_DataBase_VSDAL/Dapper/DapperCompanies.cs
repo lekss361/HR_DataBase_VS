@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Dapper;
-using HR_DataBase_VSDAL.DTO;
+using HR_DataBase_VSDAL.DTO;
 using HR_DataBase_VSDAL.Models;
-
 
 namespace HR_DataBase_VSDAL.Dapper
 {
@@ -36,27 +39,28 @@ namespace HR_DataBase_VSDAL.Dapper
                 _ID = connection.QueryFirst<int>(@$"{_Query}{_Value}");
             }
             return _ID;
-        }
-
-        public List<CompaniesWithContactAndLocationDTO> GetCompaniesWithContactAndLocation()
-        {
-            List<CompaniesWithContactAndLocationDTO> listCompanies = new List<CompaniesWithContactAndLocationDTO>();
-            string query = "exec [HR_DataBase_VSDB].[GetCompaniesWithContactAndLocation]";
-
-            using(IDbConnection connection = new SqlConnection(connectionString))
-            {
-                    listCompanies = connection
-                    .Query<CompaniesWithContactAndLocationDTO>(@$"{query}")
-                    .AsList<CompaniesWithContactAndLocationDTO>();
-            }
-            return listCompanies;
-        }
-
+        }
+
+        public List<CompaniesWithContactAndLocationDTO> GetCompaniesWithContactAndLocation()
+        {
+            List<CompaniesWithContactAndLocationDTO> listCompanies = new List<CompaniesWithContactAndLocationDTO>();
+            string query = "exec [HR_DataBase_VSDB].[GetCompaniesWithContactAndLocation]";
+            using(IDbConnection connection = new SqlConnection(connectionString))
+            {
+                listCompanies = connection
+
+                    .Query<CompaniesWithContactAndLocationDTO>(@$"{query}")
+
+                    .AsList<CompaniesWithContactAndLocationDTO>();
+
+            }
+            return listCompanies;
+        }
+
         /// <summary>
         /// Находим запись по ID
         /// </summary>
         /// <returns>DTO записи из БД</returns>
-            
         public List<CompaniesDTO> GetAllCompanies()
         {
             _Query = "exec [HR_DataBase_VSDB].[GetAllCompanies]";
@@ -68,6 +72,19 @@ namespace HR_DataBase_VSDAL.Dapper
                     .AsList<CompaniesDTO>();
             }
             return ListDTO;
+        }
+
+        public CompanyWithForeignKeyValueDTO GetCompanyByID(int id)
+        {
+            CompanyWithForeignKeyValueDTO fullCompaniesWithContactAndLocationByIdDTO = new CompanyWithForeignKeyValueDTO();
+            string tmp1 = $"exec [HR_DataBase_VSDB].[CompanyWithForeignKeyValueById] @ID={id}";
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                fullCompaniesWithContactAndLocationByIdDTO = connection
+                    .Query<CompanyWithForeignKeyValueDTO>(@$"{tmp1}")
+                    .First<CompanyWithForeignKeyValueDTO>();
+            }
+            return fullCompaniesWithContactAndLocationByIdDTO;
         }
     }
 }

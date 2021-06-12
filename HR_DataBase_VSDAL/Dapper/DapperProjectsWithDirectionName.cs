@@ -20,12 +20,11 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <returns>List DTO записи из БД</returns>
         public List<ProjectsWithDirectionNameDTO> GetProjectsWithDirectionName()
         {
-            string tmp1 = "exec [HR_DataBase_VSDB].[GetProjectsWithDirectionName]";
-
+            string query = "exec [HR_DataBase_VSDB].[GetProjectsWithDirectionName]";
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 ListDTO = connection
-                    .Query<ProjectsWithDirectionNameDTO>(@$"{tmp1}")
+                    .Query<ProjectsWithDirectionNameDTO>(@$"{query}")
                     .AsList<ProjectsWithDirectionNameDTO>();
             }
             return ListDTO;

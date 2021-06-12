@@ -14,9 +14,6 @@ namespace HR_DataBase_VSBLL.Mappers
 {
    public class MapperDivisionByCompany
     {
-
-
-
         DapperDivisionByCompany dapper = new DapperDivisionByCompany();
 
         public List<DivisionByCompany> GetDivisionByCompanyID(int id)
@@ -33,6 +30,7 @@ namespace HR_DataBase_VSBLL.Mappers
             List<DivisionByCompany> sda = new List<DivisionByCompany>();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<DivisionByCompanyDTO, DivisionByCompany>()
+                .ForMember(dest => dest.id, option => option.MapFrom(source => source.id))
                 .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
                 .ForMember(dest => dest.DirectionName, option => option.MapFrom(source => source.DirectionName))
                 .ForMember(dest => dest.Phone, option => option.MapFrom(source => source.Phone))

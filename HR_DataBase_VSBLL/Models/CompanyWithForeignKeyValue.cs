@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace HR_DataBase_VSBLL.Models
 {
-    public   class DivisionByCompany
+   public class CompanyWithForeignKeyValue
     {
-        public int id { get; set; }
         public string Name { get; set; }
-        public string DirectionName { get; set; }
+        public string Information { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+        public string ContactInformation { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
-
-        public DivisionByCompany()
-        {
-        }
+        public string Street { get; set; }
+        public string HouseNumber { get; set; }
+        public string ApartmentNumber { get; set; }
+        public string LocationIndex { get; set; }
     }
 }

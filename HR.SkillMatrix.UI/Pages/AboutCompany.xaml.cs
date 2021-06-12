@@ -24,18 +24,81 @@ namespace HR.SkillMatrix.UI.Pages
     public partial class AboutCompany : Page
     {
         private readonly MainWindow _mainWindow;
-        public AboutCompany(MainWindow mainWindow)
+        public AboutCompany(MainWindow mainWindow, int id)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
 
             MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
-            Divisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(2);
+            DataGridDivisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(id);
+            MapperCompany mapperCompany = new MapperCompany();
+
+            CompanyWithForeignKeyValue company = mapperCompany.GetCompanyByID(id);
+
+            TextBoxInformation.Text = company.Information;
+            TextBoxName.Text = company.Name;
+            TextBoxPhone.Text = company.Phone;
+            TextBoxEmail.Text = company.Email;
+            TextBoxContactInformation.Text = company.ContactInformation;
+            TextBoxCountry.Text = company.Country;
+            TextBoxCity.Text = company.City;
+            TextBoxHouseN.Text = company.HouseNumber;
+            TextBoxApartmantN.Text = company.ApartmentNumber;
+            TextBoxIndex.Text = company.LocationIndex;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void DataGridDivisions_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DataGrid dg = (DataGrid)sender;
+            DivisionByCompany item = (DivisionByCompany)dg.CurrentItem;
+            if (item != null)
+            {
+                int id = item.id;
+                AboutDivision aboutDivision = new AboutDivision(_mainWindow, id);
+                _mainWindow.Content = aboutDivision;
+            }
+        }
+
+        private void ButtonCancellation_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+            TextBoxInformation.IsEnabled = false;
+            TextBoxName.IsEnabled = false;
+            TextBoxPhone.IsEnabled = false;
+            TextBoxEmail.IsEnabled = false;
+            TextBoxContactInformation.IsEnabled = false;
+            TextBoxCountry.IsEnabled = false;
+            TextBoxCity.IsEnabled = false;
+            TextBoxHouseN.IsEnabled = false;
+            TextBoxApartmantN.IsEnabled = false;
+            TextBoxIndex.IsEnabled = false;
+        }
+
+        private void ButtonChange_Click(object sender, RoutedEventArgs e)
+        {
+            TextBoxInformation.IsEnabled = true;
+            TextBoxName.IsEnabled = true;
+            TextBoxPhone.IsEnabled = true;
+            TextBoxEmail.IsEnabled = true;
+            TextBoxContactInformation.IsEnabled = true;
+            TextBoxCountry.IsEnabled = true;
+            TextBoxCity.IsEnabled = true;
+            TextBoxHouseN.IsEnabled = true;
+            TextBoxApartmantN.IsEnabled = true;
+            TextBoxIndex.IsEnabled = true;
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void backToCompanyTable_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

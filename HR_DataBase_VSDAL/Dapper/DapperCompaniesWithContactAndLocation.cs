@@ -15,16 +15,13 @@ namespace HR_DataBase_VSDAL.Dapper
     {
         List<CompaniesWithContactAndLocationDTO> ListDTO = new List<CompaniesWithContactAndLocationDTO>();
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
-
         public List<CompaniesWithContactAndLocationDTO> GetCompaniesWithContactAndLocation()
         {
-            string tmp1 = "exec [HR_DataBase_VSDB].[GetCompaniesWithContactAndLocation]";
-
-
+            string query = "exec [HR_DataBase_VSDB].[GetCompaniesWithContactAndLocation]";
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 ListDTO = connection
-                    .Query<CompaniesWithContactAndLocationDTO>(@$"{tmp1}")
+                    .Query<CompaniesWithContactAndLocationDTO>(@$"{query}")
                     .AsList<CompaniesWithContactAndLocationDTO>();
             }
             return ListDTO;
