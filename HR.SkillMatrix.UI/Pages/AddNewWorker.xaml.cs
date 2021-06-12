@@ -25,7 +25,7 @@ namespace HR.SkillMatrix.UI.Pages
     {
         private readonly MainWindow _mainWindow;
         private string _sex;
-        public Contacts Contacts=new Contacts();
+        public Contacts Contacts;
         public AddNewWorker(MainWindow mainWindow)
         {
             InitializeComponent();
@@ -106,9 +106,10 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void CreateContact_Click(object sender, RoutedEventArgs e)
         {
+            Contacts = new Contacts();
             AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow){ Contacts =this.Contacts};
             _mainWindow.Content = addContactsMenu;
-            this.Contacts = addContactsMenu.Contacts;
+            //this.Contacts = addContactsMenu.Contacts;
         }
 
         private void ChoosePosition_Click(object sender, RoutedEventArgs e)
