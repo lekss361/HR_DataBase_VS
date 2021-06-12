@@ -1,0 +1,40 @@
+﻿<Page x:Class="HR.SkillMatrix.UI.Pages.AboutProject"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DepartmentDescription">
+
+    <Grid Background="#FFFFFFFF">
+        <Label Content="Проект" HorizontalAlignment="Left" Height="30" Margin="80,160,0,0" VerticalAlignment="Top" Width="88" Foreground="#FF4D5EAA" />
+        <Label Content="Проект" HorizontalAlignment="Center" Height="30" Margin="80,160,0,0" VerticalAlignment="Top" Width="82" Foreground="#FF4D5EAA" />
+        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Top" Width="800" Grid.RowSpan="3">
+            <Button Content="Назад" HorizontalAlignment="Left" Height="40" Margin="40,56,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Content="Выбрать" HorizontalAlignment="Left" Height="40" Margin="190,56,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Content="Сохранить" HorizontalAlignment="Left" Height="40" Margin="340,56,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Content="Проект" HorizontalAlignment="Left" Height="30" Margin="40,142,0,0" VerticalAlignment="Top" Width="82" Foreground="#FF4D5EAA" />
+            <DataGrid x:Name="Companies" AutoGenerateColumns="False"  Margin="30,190,30,70" SelectionChanged="Companies_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
+                    <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название Проекта" Width="120" />
+                    <DataGridTextColumn Binding ="{Binding Path = Direction}"  IsReadOnly="True" Header="Направление" Width="100"/>
+                    <DataGridTextColumn Binding ="{Binding Path = Information}"  IsReadOnly="True" Header="Информация" Width="100"/>
+                    <DataGridTextColumn Binding ="{Binding Path = Phone}"  IsReadOnly="True" Header="Телефон" Width="80"/>
+                    <DataGridTextColumn Binding ="{Binding Path = Email}" IsReadOnly="True" Header="E-mail" Width="80"/>
+                    <DataGridTextColumn Binding ="{Binding Path = City}" IsReadOnly="True" Header="Город" Width="80"/>
+                    <DataGridTextColumn Binding ="{Binding Path = Street}" IsReadOnly="True" Header="Улица" Width="80"/>
+                    <DataGridTextColumn Binding ="{Binding Path = HouseNumber}" IsReadOnly="True" Header="Дом" Width="50"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height ="90"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+    </Grid>
+</Page>

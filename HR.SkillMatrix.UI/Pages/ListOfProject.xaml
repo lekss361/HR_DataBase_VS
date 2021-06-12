@@ -9,13 +9,19 @@
       Title="ListOfProject">
 
     <Grid Background="White">
-        <DataGrid x:Name="Projects" AutoGenerateColumns="False"  Margin="95,58,117,58">
+        <DataGrid x:Name="Projects" AutoGenerateColumns="False"  Margin="95,102,117,58">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
-                <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название" Width="300" />
-                <DataGridTextColumn Binding ="{Binding Path = DirectionName}"  IsReadOnly="True" Header="Направление" Width="300" />
-                <DataGridTextColumn Binding ="{Binding Path = Information}"  IsReadOnly="True" Header="Информация" Width="300"/>
+                <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название Проекта" Width="120" />
+                <DataGridTextColumn Binding ="{Binding Path = Direction}"  IsReadOnly="True" Header="Направление" Width="120"/>
+                <DataGridTextColumn Binding ="{Binding Path = Information}"  IsReadOnly="True" Header="Информация" Width="120"/>
+                <DataGridTextColumn Binding ="{Binding Path = Phone}"  IsReadOnly="True" Header="Телефон" Width="80"/>
+                <DataGridTextColumn Binding ="{Binding Path = Email}" IsReadOnly="True" Header="E-mail" Width="80"/>
+                <DataGridTextColumn Binding ="{Binding Path = City}" IsReadOnly="True" Header="Город" Width="80"/>
+                <DataGridTextColumn Binding ="{Binding Path = Street}" IsReadOnly="True" Header="Улица" Width="80"/>
+                <DataGridTextColumn Binding ="{Binding Path = HouseNumber}" IsReadOnly="True" Header="Дом" Width="50"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Label  Content="Список Проектов"  HorizontalAlignment="Stretch" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="120" FontFamily="Adobe Caslon Pro Bold" Background="#FFFFFFFF"/>
     </Grid>
 </Page>
