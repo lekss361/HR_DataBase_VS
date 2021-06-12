@@ -9,9 +9,11 @@ namespace HR_DataBase_VSDAL.Dapper
 {
     public class DapperContact
     {
+        int ID;
+        string _Query;
+        string _Value;
         ContactsDTO contactsDTO;
         List<ContactsDTO> listDTO = new List<ContactsDTO>();
-        int ID;
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
 
         /// <summary>
@@ -20,15 +22,15 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <param name="contactsDTO"></param>
         public int AddNewContact(ContactsDTO contactsDTO)
         {
-            string query = "exec [HR_DataBase_VSDB].[AddContacts]";
-            string value =
+            _Query = "exec [HR_DataBase_VSDB].[AddContacts]";
+            _Value =
                 $"N'{contactsDTO.Phone}', " +
                 $"N'{contactsDTO.Email}', " +
                 $"N'{contactsDTO.Information}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                ID = connection.QueryFirst<int>(@$"{query}{value}");
+                ID = connection.QueryFirst<int>(@$"{_Query}{_Value}");
             }
             return ID;
         }
@@ -39,13 +41,13 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <returns>DTO записи из БД</returns>
         public ContactsDTO GetContactByID(int ContactsId)
         {
-            string query = "exec [HR_DataBase_VSDB].[GetContactsByID]";
-            string value =
-                $"N'{ContactsId}'";
+            _Query = "exec [HR_DataBase_VSDB].[GetContactsByID]";
+            _Value =
+               $"N'{ContactsId}'";
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 contactsDTO = connection
-                    .QueryFirst<ContactsDTO>(@$"{query}{value}");
+                    .QueryFirst<ContactsDTO>(@$"{_Query}{_Value}");
             }
             return contactsDTO;
         }
@@ -57,12 +59,12 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <returns>List DTO записи из БД</returns>
         public List<ContactsDTO> GetAllContacts()
         {
-            string query = "exec [HR_DataBase_VSDB].[GetAllContacts]";
+            _Query = "exec [HR_DataBase_VSDB].[GetAllContacts]";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 listDTO = connection
-                    .Query<ContactsDTO>(@$"{query}")
+                    .Query<ContactsDTO>(@$"{_Query}")
                     .AsList<ContactsDTO>();
             }
             return listDTO;
@@ -74,18 +76,18 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <param name="oldContactsDTO"></param>
         public int UpdateNewContact(ContactsDTO currentContactsDTO, int Id)
         {
-            string query = "exec [HR_DataBase_VSDB].[UpdateContactsByID]";
-            string value =
-                $"N'{Id}', " +
-                $"N'{currentContactsDTO.Phone}', " +
-                $"N'{currentContactsDTO.Email}', " +
-                $"N'{currentContactsDTO.Information}'";
+            _Query = "exec [HR_DataBase_VSDB].[UpdateContactsByID]";
+            _Value =
+               $"N'{Id}', " +
+               $"N'{currentContactsDTO.Phone}', " +
+               $"N'{currentContactsDTO.Email}', " +
+               $"N'{currentContactsDTO.Information}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
-                    currentContactsDTO = connection.QueryFirst<ContactsDTO>(@$"{query}{value}", Id);
+                    currentContactsDTO = connection.QueryFirst<ContactsDTO>(@$"{_Query}{_Value}", Id);
                 }
                 catch
                 {
@@ -94,6 +96,5 @@ namespace HR_DataBase_VSDAL.Dapper
             }
             return currentContactsDTO.Id;
         }
-
     }
 }

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dapper;
 using HR_DataBase_VSDAL.Models;
 
@@ -13,7 +9,10 @@ namespace HR_DataBase_VSDAL.Dapper
 {
     public class CompanyDapper
     {
-        //CompaniesDTO companiesDTO;
+        int _ID;
+        string _Query;
+        string _Value;
+        CompaniesDTO companiesDTO;
         List<CompaniesDTO> ListDTO = new List<CompaniesDTO>();
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
 
@@ -22,33 +21,34 @@ namespace HR_DataBase_VSDAL.Dapper
         /// </summary>
         /// <param name="companiesDTO"></param>
         /// <returns></returns>
-
-        public void AddNewCompany(CompaniesDTO companiesDTO)
+        public int AddNewCompany(CompaniesDTO companiesDTO)
         {
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
-            string tmp1 = "exec [HR_DataBase_VSDB].[AddNewCompany]";
-            string tmp2 =
-                $" N'{companiesDTO.Name}', N'{companiesDTO.Information}', N'{companiesDTO.ContactID}', N'{companiesDTO.LocationID}'";
+            _Query = "exec [HR_DataBase_VSDB].[AddNewCompany]";
+            _Value =
+               $" N'{companiesDTO.Name}', " +
+               $"N'{companiesDTO.Information}', " +
+               $"N'{companiesDTO.ContactID}', " +
+               $"N'{companiesDTO.LocationID}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                connection.Query<CompaniesDTO>(@$"{tmp1}{tmp2}");
+                _ID = connection.QueryFirst<int>(@$"{_Query}{_Value}");
             }
+            return _ID;
         }
 
         /// <summary>
         /// Находим запись по ID
         /// </summary>
         /// <returns>DTO записи из БД</returns>
-        
         public List<CompaniesDTO> GetAllCompanies()
         {
-            string tmp1 = "exec [HR_DataBase_VSDB].[GetAllCompanies]";
+            _Query = "exec [HR_DataBase_VSDB].[GetAllCompanies]";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 ListDTO = connection
-                    .Query<CompaniesDTO>(@$"{tmp1}")
+                    .Query<CompaniesDTO>(@$"{_Query}")
                     .AsList<CompaniesDTO>();
             }
             return ListDTO;
