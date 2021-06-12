@@ -29,15 +29,15 @@ namespace HR.SkillMatrix.UI.Pages
             InitializeComponent();
             _mainWindow = mainWindow;
             MapperCompanies mapperCompanies = new MapperCompanies();
-            DataGridCompanies.ItemsSource = mapperCompanies.GetAllCompanies();
+            DataGridCompanies.ItemsSource = mapperCompanies.GetAllCompaniesWithContactAndLocation();
         }
         private void DataGridCompanies_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DataGrid dg = (DataGrid)sender;
-            Company item = (Company)dg.CurrentItem;
+            CompaniesWithContactAndLocation item = (CompaniesWithContactAndLocation)dg.CurrentItem;
             if (item != null)
             {
-                int id = item.Id;
+                int id = item.id;
                 AboutCompany aboutCompany = new AboutCompany(_mainWindow, id);
                 _mainWindow.Content = aboutCompany;
             }

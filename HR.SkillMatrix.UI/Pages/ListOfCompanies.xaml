@@ -13,6 +13,7 @@
             <DataGrid x:Name="DataGridCompanies" AutoGenerateColumns="False"  Margin="157,58,153,99" MouseLeftButtonDown="DataGridCompanies_MouseLeftButtonDown">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
+                    <DataGridTextColumn Binding ="{Binding Path = id}"  IsReadOnly="True" Header="Название Компании" Width="150" Visibility="Hidden" />
                     <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название Компании" Width="150" />
                     <DataGridTextColumn Binding ="{Binding Path = Information}"  IsReadOnly="True" Header="Информация" Width="100"/>
                     <DataGridTextColumn Binding ="{Binding Path = Phone}"  IsReadOnly="True" Header="Телефон" Width="100"/>

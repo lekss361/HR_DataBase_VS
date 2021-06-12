@@ -35,7 +35,6 @@ namespace HR_DataBase_VSBLL.Mappers
             List<CompaniesWithContactAndLocation> companies = MapCompaniesDTOToModelListFull(companiesDTO);
 
             return companies;
-           
         }
         
 
@@ -76,6 +75,7 @@ namespace HR_DataBase_VSBLL.Mappers
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<CompaniesWithContactAndLocationDTO,
                 CompaniesWithContactAndLocation>()
+                .ForMember(dest => dest.id, option => option.MapFrom(source => source.id))
                 .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
                 .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))          
                 .ForMember(dest => dest.Phone, option => option.MapFrom(source => source.Phone))
