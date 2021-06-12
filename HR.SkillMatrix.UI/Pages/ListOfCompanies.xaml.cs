@@ -33,19 +33,14 @@ namespace HR.SkillMatrix.UI.Pages
         }
         private void DataGridCompanies_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
             DataGrid dg = (DataGrid)sender;
-           Company item = (Company)dg.CurrentItem;
+            Company item = (Company)dg.CurrentItem;
             if (item != null)
             {
                 int id = item.Id;
                 AboutCompany aboutCompany = new AboutCompany(_mainWindow, id);
                 _mainWindow.Content = aboutCompany;
-
             }
-
-            
-            
         }
     }
 }

@@ -31,6 +31,7 @@ namespace HR_DataBase_VSDAL.Dapper
                 connection.Query<DivisionsDTO>(@$"{tmp1}{tmp2}");
             }
         }
+
         public DivisionWithForeignKeyValueDTO GetDivisionByID(int id)
         {
             string tmp1 = $"exec [HR_DataBase_VSDB].[GetDivisionByID] @ID={id}";
@@ -42,9 +43,6 @@ namespace HR_DataBase_VSDAL.Dapper
                     .First<DivisionWithForeignKeyValueDTO>();
             }
             return divisionWithForeignKeyValueDTO;
-
-
         }
-
     }
 }

@@ -13,14 +13,8 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="5*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
-
         </Grid.ColumnDefinitions>
-
-
-
-
         <Grid.RowDefinitions>
-
             <RowDefinition Height="15*"></RowDefinition>
             <RowDefinition Height="50*"></RowDefinition>
             <RowDefinition Height="50*"></RowDefinition>
@@ -47,19 +41,16 @@
         <TextBox x:Name="TextBoxName" Grid.Column="2" HorizontalAlignment="Left" Margin="10,9,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="160" IsEnabled="False"/>
         <TextBox x:Name="TextBoxInformation" Grid.Column="2" HorizontalAlignment="Left" Margin="10,279,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="420" Height="60" IsEnabled="False"/>
 
-
-
         <Label Content="О компании" HorizontalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Grid.Column="2" Margin="11,54,0,0" VerticalAlignment="Top" Width="140" Click="ButtonBack_Click" Height="40"/>
         <Button x:Name="ButtonChange" Content="Изменить" HorizontalAlignment="Left" Grid.Column="2" Margin="156,54,0,0" VerticalAlignment="Top" Width="140" Height="40" Click="ButtonChange_Click"/>
         <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Grid.Column="2" Margin="301,54,0,0" VerticalAlignment="Top" Width="140"  Height="40" Click="ButtonSave_Click" />
         <Button x:Name="ButtonCancellation" Content="Отменить" HorizontalAlignment="Left" Grid.Column="2"  Margin="446,54,0,0" VerticalAlignment="Top" Width="140" Height="40" Click="ButtonCancellation_Click" />
 
-
-
-        <DataGrid x:Name="Divisions" VerticalAlignment="Top"  Height="158" Grid.Row="1" AutoGenerateColumns="False" Margin="10,348,0,0" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="880" Grid.RowSpan="2" MouseLeftButtonDown="DataGridDivisions_MouseLeftButtonDown">
+        <DataGrid x:Name="DataGridDivisions" VerticalAlignment="Top"  Height="158" Grid.Row="1" AutoGenerateColumns="False" Margin="10,348,0,0" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="880" Grid.RowSpan="2" MouseLeftButtonDown="DataGridDivisions_MouseLeftButtonDown">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
+                <DataGridTextColumn Binding ="{Binding Path = id}"  IsReadOnly="True" Header="Название отдела" Width="180" Visibility="Hidden" />
                 <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название отдела" Width="180" />
                 <DataGridTextColumn Binding ="{Binding Path = DirectionName}"  IsReadOnly="True" Header="Направление" Width="180"/>
                 <DataGridTextColumn Binding ="{Binding Path = Phone}"  IsReadOnly="True" Header="Телефон" Width="130"/>
@@ -68,7 +59,5 @@
                 <DataGridTextColumn Binding ="{Binding Path = City}" IsReadOnly="True" Header="Город" Width="120"/>
             </DataGrid.Columns>
         </DataGrid>
-
-
     </Grid>
 </Page>

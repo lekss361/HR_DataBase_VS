@@ -67,6 +67,6 @@ namespace HR.SkillMatrix.UI.Pages
 
         }
 
-    
+
     }
 }
