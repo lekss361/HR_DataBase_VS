@@ -10,7 +10,7 @@
 
     <Grid Margin="0,0,0,0">
         <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="1048" Background="White">
-            <DataGrid x:Name="DataGridCompanies" AutoGenerateColumns="False"  Margin="157,58,153,99" MouseLeftButtonDown="DataGridCompanies_MouseLeftButtonDown">
+            <DataGrid x:Name="DataGridCompanies" AutoGenerateColumns="False"  Margin="157,90,153,10" MouseLeftButtonDown="DataGridCompanies_MouseLeftButtonDown">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
                     <DataGridTextColumn Binding ="{Binding Path = id}"  IsReadOnly="True" Header="Название Компании" Width="150" Visibility="Hidden" />
@@ -24,8 +24,10 @@
 
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Content="Назад" HorizontalAlignment="Center" Height="28" Margin="0,387,0,0" VerticalAlignment="Top" Width="78" FontSize="16" Click="Button_Click"/>
             <Label Content="Список Компаний" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="800" FontSize="16" Background="#FF8577C7"/>
+            <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="124,35,0,0" Click="ButtonBack_Click"/>
+            <Button x:Name="ButtonChose" Content="Выбрать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="279,35,0,0" Click="ButtonChose_OnClick"/>
+            <Button x:Name="ButtonOpen" Content="Открыть" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="434,35,0,0" Click="ButtonOpen_OnClick"/>
         </Grid>
 
     </Grid>

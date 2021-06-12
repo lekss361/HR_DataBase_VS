@@ -27,6 +27,7 @@ namespace HR.SkillMatrix.UI.Pages
         public Contacts Contacts;
         public Location Location;
         public PreviousWork PreviousWork;
+        public Company Company;
         private readonly MainWindow _mainWindow;
         private string _sex;
         public AddNewWorker(MainWindow mainWindow)
@@ -62,7 +63,7 @@ namespace HR.SkillMatrix.UI.Pages
             worker.ContactID = mapperContacts.AddNew(Contacts);
             worker.LocationID = mapperLocation.AddNewLocation(Location);
             worker.PositionID = 1;
-            worker.DivisionID = 1;
+            worker.DivisionID = Company.Id;
 
             PreviousWork.WorkerID = mapper.MapToWorkersDTO(worker);
             mapperPreviousJob.MapToPreviousWorkDTO(PreviousWork);
@@ -137,17 +138,18 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonChooseCompany_OnClick(object sender, RoutedEventArgs e)
         {
+            Company = new Company();
             NewWindow newWindow = new NewWindow();
-            ListOfCompanies listOfCompanies = new ListOfCompanies(_mainWindow);
+            ListOfCompanies listOfCompanies = new ListOfCompanies(newWindow) { Company = this.Company };
             newWindow.Content = listOfCompanies;
-            newWindow.Show();
+            newWindow.ShowDialog();
         }
 
         private void ButtonChooseProject_Click(object sender, RoutedEventArgs e)
         {
             NewWindow newWindow = new NewWindow();
-            ListOfProject listOfзListOfProject = new ListOfProject(_mainWindow);
-            newWindow.Content = listOfзListOfProject;
+            ListOfProject listOfListOfProject = new ListOfProject(_mainWindow);
+            newWindow.Content = listOfListOfProject;
             newWindow.Show();
         }
 

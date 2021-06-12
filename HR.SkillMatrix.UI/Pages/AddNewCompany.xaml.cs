@@ -23,6 +23,7 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddNewCompany : Page
     {
+        private PageSwaper _swaper=PageSwaper.GetPageSwaper();
         public Contacts Contacts;
         public Location Location;
         private readonly MainWindow _mainWindow;
@@ -70,6 +71,7 @@ namespace HR.SkillMatrix.UI.Pages
         private void ButtonAddLocation_Click(object sender, RoutedEventArgs e)
         {
             Location = new Location();
+            //_swaper.AddLocationMenu(Location);
             NewWindow newWindow = new NewWindow();
             AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow) { Location = this.Location };
             newWindow.Content = locationMenu;
