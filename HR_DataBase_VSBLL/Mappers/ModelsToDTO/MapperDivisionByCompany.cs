@@ -34,6 +34,7 @@ namespace HR_DataBase_VSBLL.Mappers
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<DivisionByCompanyDTO, DivisionByCompany>()
                 .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
+                .ForMember(dest => dest.id, option => option.MapFrom(source => source.id))
                 .ForMember(dest => dest.DirectionName, option => option.MapFrom(source => source.DirectionName))
                 .ForMember(dest => dest.Phone, option => option.MapFrom(source => source.Phone))
                 .ForMember(dest => dest.Email, option => option.MapFrom(source => source.Email))

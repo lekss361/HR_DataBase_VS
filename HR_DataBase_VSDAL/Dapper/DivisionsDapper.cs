@@ -13,6 +13,8 @@ namespace HR_DataBase_VSDAL.Dapper
 {
     public class DivisionDapper
     {
+        DivisionWithForeignKeyValueDTO divisionWithForeignKeyValueDTO;
+        string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
         /// <summary>
         /// Делаем запись в Базу Данных через хранимую процедуру
         /// </summary>
@@ -20,7 +22,6 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <returns></returns>
         public void AddNewDivision(DivisionsDTO divisionsDTO)
         {
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
             string tmp1 = "exec [HR_DataBase_VSDB].[AddNewDivision]";
             string tmp2 =
                 $" N'{divisionsDTO.Name}', N'{divisionsDTO.Information}', N'{divisionsDTO.CompanyID}', N'{divisionsDTO.ContactID}', N'{divisionsDTO.LocationID}', N'{divisionsDTO.DirectionsID}'";
@@ -30,5 +31,20 @@ namespace HR_DataBase_VSDAL.Dapper
                 connection.Query<DivisionsDTO>(@$"{tmp1}{tmp2}");
             }
         }
+        public DivisionWithForeignKeyValueDTO GetDivisionByID(int id)
+        {
+            string tmp1 = $"exec [HR_DataBase_VSDB].[GetDivisionByID] @ID={id}";
+
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                divisionWithForeignKeyValueDTO = connection
+                    .Query<DivisionWithForeignKeyValueDTO>(@$"{tmp1}")
+                    .First<DivisionWithForeignKeyValueDTO>();
+            }
+            return divisionWithForeignKeyValueDTO;
+
+
+        }
+
     }
 }
