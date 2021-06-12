@@ -5,61 +5,21 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800"
       Title="Company">
 
-    <Grid Background="White" Height="800">
+    <Grid Background="White" Height="440">
+        <Label Content="О компании" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="27,39,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Изменить" HorizontalAlignment="Left" Margin="107,39,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="187,39,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Отменить" HorizontalAlignment="Left" Margin="267,39,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="5*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-
-        </Grid.ColumnDefinitions>
-
-
-
-
-        <Grid.RowDefinitions>
-
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="50*"></RowDefinition>
-            <RowDefinition Height="50*"></RowDefinition>
-        </Grid.RowDefinitions>
-
-        <TextBlock HorizontalAlignment="Left" Margin="5,10,0,0" Grid.Row="1" Grid.Column="1" Text="Название" TextWrapping="NoWrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="5,70,0,0" Grid.Row="1" Grid.Column="1" Text="Телефон" TextWrapping="NoWrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="200,70,0,0" Grid.Row="1" Grid.Column="2" Text="Почта" TextWrapping="NoWrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="5,100,0,0" Grid.Row="1" Grid.Column="1"  Text="Дополнительно" TextWrapping="NoWrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="5,190,0,0" Grid.Row="1" Grid.Column="1" Text="Страна" TextWrapping="NoWrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="200,190,0,0" Grid.Row="1" Grid.Column="2" Text="Город" TextWrapping="NoWrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="5,220,0,0" Grid.Row="1" Grid.Column="1" Text="Номер дома" TextWrapping="NoWrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="200,220,0,0" Grid.Row="1" Grid.Column="2" Text="Офис" TextWrapping="NoWrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="5,250,0,0" Grid.Row="1" Grid.Column="1" Text="Индекс" TextWrapping="NoWrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="5,280,0,0" Grid.Row="1" Grid.Column="1" Text="Информация" TextWrapping="NoWrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBoxIndex" Grid.Column="2" HorizontalAlignment="Left" Margin="10,249,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="160" IsEnabled="False"/>
-        <TextBox x:Name="TextBoxApartmantN" Grid.Column="2" HorizontalAlignment="Left" Margin="270,219,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="160" IsEnabled="False"/>
-        <TextBox x:Name="TextBoxHouseN" Grid.Column="2" HorizontalAlignment="Left" Margin="10,219,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="160" IsEnabled="False"/>
-        <TextBox x:Name="TextBoxCity" Grid.Column="2" HorizontalAlignment="Left" Margin="270,190,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="160" IsEnabled="False"/>
-        <TextBox x:Name="TextBoxCountry" Grid.Column="2" HorizontalAlignment="Left" Margin="10,189,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="160" IsEnabled="False"/>
-        <TextBox x:Name="TextBoxContactInformation" Grid.Column="2" HorizontalAlignment="Left" Margin="10,99,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="420" Height="60" IsEnabled="False"/>
-        <TextBox x:Name="TextBoxEmail" Grid.Column="2" HorizontalAlignment="Left" Margin="270,69,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="160" IsEnabled="False"/>
-        <TextBox x:Name="TextBoxPhone" Grid.Column="2" HorizontalAlignment="Left" Margin="10,69,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="160" IsEnabled="False"/>
-        <TextBox x:Name="TextBoxName" Grid.Column="2" HorizontalAlignment="Left" Margin="10,9,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="160" IsEnabled="False"/>
-        <TextBox x:Name="TextBoxInformation" Grid.Column="2" HorizontalAlignment="Left" Margin="10,279,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="420" Height="60" IsEnabled="False"/>
-
-
-
-        <Label Content="О компании" HorizontalAlignment="Center" Grid.Column="2" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Grid.Column="2" Margin="27,39,0,0" VerticalAlignment="Top" Width="75" Click="ButtonBack_Click"/>
-        <Button x:Name="ButtonChange" Content="Изменить" HorizontalAlignment="Left" Grid.Column="2" Margin="107,39,0,0" VerticalAlignment="Top" Width="75" Click="ButtonChange_Click"/>
-        <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Grid.Column="2" Margin="187,39,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSave_Click" />
-        <Button x:Name="ButtonCancellation" Content="Отменить" HorizontalAlignment="Left" Grid.Column="2"  Margin="267,39,0,0" VerticalAlignment="Top" Width="75" Click="ButtonCancellation_Click" />
-
-
-
-        <DataGrid x:Name="Divisions" VerticalAlignment="Bottom"  Height="158" Grid.Row="2" AutoGenerateColumns="False" Margin="15,0,0,196" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="780">
+        <Label Content="О компании" HorizontalAlignment="Center" Margin="338,77,338,0" VerticalAlignment="Top" FontSize="20"/>
+        <Grid HorizontalAlignment="Left" Height="136" Margin="10,131,0,0" VerticalAlignment="Top" Width="780">
+            <TextBox HorizontalAlignment="Left" Height="136" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="780"/>
+        </Grid>
+        <DataGrid x:Name="Divisions" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="158"  Width="780" AutoGenerateColumns="False" Margin="10,272,0,0">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
                 <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название отдела" Width="150" />
@@ -70,7 +30,7 @@
                 <DataGridTextColumn Binding ="{Binding Path = City}" IsReadOnly="True" Header="Страна" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
-
-
+        <Grid HorizontalAlignment="Left" Height="158" Margin="10,272,0,0" VerticalAlignment="Top" Width="780"/>
+        <Grid.RowDefinitions></Grid.RowDefinitions>
     </Grid>
 </Page>

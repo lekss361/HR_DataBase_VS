@@ -31,37 +31,9 @@ namespace HR.SkillMatrix.UI.Pages
 
             MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
             Divisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(2);
-
-            TextBoxInformation.Text = "информация";
-            TextBoxName.Text = "название";
-            TextBoxPhone.Text = "телефон";
-            TextBoxEmail.Text = "почта";
-            TextBoxContactInformation.Text = "дополнительно";
-            TextBoxCountry.Text = "страна";
-            TextBoxCity.Text = "город";
-            TextBoxHouseN.Text = "номердома";
-            TextBoxApartmantN.Text = "номерофиса";
-            TextBoxIndex.Text = "индекс";
         }
 
-       
-
-        private void ButtonCancellation_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonSave_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonChange_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
