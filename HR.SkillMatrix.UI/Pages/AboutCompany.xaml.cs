@@ -30,7 +30,22 @@ namespace HR.SkillMatrix.UI.Pages
             _mainWindow = mainWindow;
 
             MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
-            Divisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(id);
+            Divisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(2);
+
+
+
+           
+
+            TextBoxInformation.Text = "информация";
+            TextBoxName.Text = "название";
+            TextBoxPhone.Text = "телефон";
+            TextBoxEmail.Text = "почта";
+            TextBoxContactInformation.Text = "дополнительно";
+            TextBoxCountry.Text = "страна";
+            TextBoxCity.Text = "город";
+            TextBoxHouseN.Text = "номердома";
+            TextBoxApartmantN.Text = "номерофиса";
+            TextBoxIndex.Text = "индекс";
         }
 
         private void DataGridDivisions_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -49,6 +64,44 @@ namespace HR.SkillMatrix.UI.Pages
             //}
 
 
+
+        }
+
+        private void ButtonCancellation_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+            TextBoxInformation.IsEnabled = false;
+            TextBoxName.IsEnabled = false;
+            TextBoxPhone.IsEnabled = false;
+            TextBoxEmail.IsEnabled = false;
+            TextBoxContactInformation.IsEnabled = false;
+            TextBoxCountry.IsEnabled = false;
+            TextBoxCity.IsEnabled = false;
+            TextBoxHouseN.IsEnabled = false;
+            TextBoxApartmantN.IsEnabled = false;
+            TextBoxIndex.IsEnabled = false;
+        }
+
+        private void ButtonChange_Click(object sender, RoutedEventArgs e)
+        {
+            TextBoxInformation.IsEnabled = true;
+            TextBoxName.IsEnabled = true;
+            TextBoxPhone.IsEnabled = true;
+            TextBoxEmail.IsEnabled = true;
+            TextBoxContactInformation.IsEnabled = true;
+            TextBoxCountry.IsEnabled = true;
+            TextBoxCity.IsEnabled = true;
+            TextBoxHouseN.IsEnabled = true;
+            TextBoxApartmantN.IsEnabled = true;
+            TextBoxIndex.IsEnabled = true;
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
 
         }
 
