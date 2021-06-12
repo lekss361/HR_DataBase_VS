@@ -77,11 +77,11 @@ namespace HR_DataBase_VSBLL.Mappers
                 CompaniesWithContactAndLocation>()
                 .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
                 .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))          
-                .ForMember(dest => dest.ContactPhone, option => option.MapFrom(source => source.ContactPhone))
-                .ForMember(dest => dest.ContactEmail, option => option.MapFrom(source => source.ContactEmail))
-                .ForMember(dest => dest.LocationCity, option => option.MapFrom(source => source.LocationCity))
-                .ForMember(dest => dest.LocationStreet, option => option.MapFrom(source => source.LocationStreet))
-                .ForMember(dest => dest.LocationHouse, option => option.MapFrom(source => source.LocationHouse)));
+                .ForMember(dest => dest.Phone, option => option.MapFrom(source => source.Phone))
+                .ForMember(dest => dest.Email, option => option.MapFrom(source => source.Email))
+                .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
+                .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Street))
+                .ForMember(dest => dest.HouseNumber, option => option.MapFrom(source => source.HouseNumber)));
 
             Mapper mapper = new Mapper(config); 
             companies = mapper.Map<List<CompaniesWithContactAndLocation>>(companiesWithContactAndLocationDTO);
