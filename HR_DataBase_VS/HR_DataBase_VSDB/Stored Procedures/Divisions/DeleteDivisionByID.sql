@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[DeleteDivisionByID]
-	@id int
+	@Id int
 AS
 	DELETE FROM [Divisions] 
-	WHERE [id] = @id
+	WHERE [id] = @Id

@@ -11,4 +11,4 @@ AS
     [Information] = @Information,
     [ContactID] =   @ContactID,
     [LocationID] =  @LocationID
-    WHERE [Id] = @Id
+    WHERE [id] = @Id

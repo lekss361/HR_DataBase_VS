@@ -9,4 +9,4 @@ AS
     [WorkerID] =    @WorkerID,
     [Comment] =     @Comment,
     [Date] =        @Date
-    WHERE [Id] = @Id
+    WHERE [id] = @Id

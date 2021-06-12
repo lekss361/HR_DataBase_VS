@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[GetDivisionByID]
-	@id int
+	@Id int
 AS
 	SELECT * FROM [Divisions]
-    WHERE [id] = @id
+    WHERE [id] = @Id

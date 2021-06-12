@@ -7,4 +7,4 @@ As
     SET
     [Name] =        @Name,
     [DirectionID] = @DirectionID
-    WHERE [Id] = @Id
+    WHERE [id] = @Id

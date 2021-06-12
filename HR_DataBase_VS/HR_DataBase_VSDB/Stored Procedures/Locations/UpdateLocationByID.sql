@@ -15,4 +15,4 @@ AS
     [Street] =          @Street,
     [HouseNumber] =     @HouseNumber,
     [ApartmentNumber] = @ApartmentNumber
-    WHERE [Id] = @Id
+    WHERE [id] = @Id

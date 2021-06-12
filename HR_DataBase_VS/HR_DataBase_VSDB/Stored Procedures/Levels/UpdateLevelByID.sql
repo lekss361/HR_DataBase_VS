@@ -5,4 +5,4 @@ AS
     UPDATE [Levels]
     SET
     [Name] =   @Name
-    WHERE [Id] = @Id
+    WHERE [id] = @Id

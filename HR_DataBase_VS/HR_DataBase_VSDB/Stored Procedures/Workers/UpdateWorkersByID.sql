@@ -27,4 +27,4 @@ AS
     [Hobby] =       @Hobby,
     [PositionID] =  @PositionID,
     [DivisionID] =  @DivisionID
-    WHERE [Id] = @Id
+    WHERE [id] = @Id

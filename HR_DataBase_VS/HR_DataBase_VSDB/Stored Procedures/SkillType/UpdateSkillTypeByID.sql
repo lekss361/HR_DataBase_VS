@@ -5,4 +5,4 @@ AS
     UPDATE [SkillTypes]
     SET
     [Name] =   @Name
-    WHERE [Id] = @Id
+    WHERE [id] = @Id

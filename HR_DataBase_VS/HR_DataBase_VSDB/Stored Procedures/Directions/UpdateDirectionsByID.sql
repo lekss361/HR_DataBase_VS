@@ -5,4 +5,4 @@ AS
     UPDATE [Directions]
     SET
     [Name] =   @Name
-    WHERE [Id] = @Id
+    WHERE [id] = @Id

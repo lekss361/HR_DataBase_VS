@@ -4,4 +4,4 @@
 AS
     UPDATE [Statuses]
     SET    [Name] = @Name
-    WHERE  [Id] = @Id
+    WHERE  [id] = @Id

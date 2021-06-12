@@ -7,4 +7,4 @@ AS
     SET
     [Skill] =        @Skill,
     [SkillTypeID] =  @SkillTypeID
-    WHERE [Id] = @Id
+    WHERE [id] = @Id
