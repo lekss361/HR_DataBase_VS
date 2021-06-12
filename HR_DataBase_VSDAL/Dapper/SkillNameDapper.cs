@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using Dapper;
 using HR_DataBase_VSDAL.DTO;
@@ -25,7 +26,7 @@ namespace HR_DataBase_VSDAL.Dapper
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                ID = connection.QueryFirst<int>(@$"{tmp1}{tmp2}");
+                ID = connection.QueryFirst<int>(@$"{query}{value}");
             }
             return ID;
         }
