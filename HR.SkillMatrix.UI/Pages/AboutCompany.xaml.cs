@@ -30,7 +30,7 @@ namespace HR.SkillMatrix.UI.Pages
             _mainWindow = mainWindow;
 
             MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
-            Divisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(2);
+            Divisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(id);
 
 
 

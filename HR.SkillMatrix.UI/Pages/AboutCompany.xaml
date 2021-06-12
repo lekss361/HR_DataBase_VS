@@ -57,15 +57,15 @@
 
 
 
-        <DataGrid x:Name="Divisions" VerticalAlignment="Top"  Height="158" Grid.Row="1" AutoGenerateColumns="False" Margin="10,348,0,0" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="880" Grid.RowSpan="2">
+        <DataGrid x:Name="Divisions" VerticalAlignment="Top"  Height="158" Grid.Row="1" AutoGenerateColumns="False" Margin="10,348,0,0" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="880" Grid.RowSpan="2" MouseLeftButtonDown="DataGridDivisions_MouseLeftButtonDown">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
                 <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название отдела" Width="180" />
                 <DataGridTextColumn Binding ="{Binding Path = DirectionName}"  IsReadOnly="True" Header="Направление" Width="180"/>
                 <DataGridTextColumn Binding ="{Binding Path = Phone}"  IsReadOnly="True" Header="Телефон" Width="130"/>
                 <DataGridTextColumn Binding ="{Binding Path = Email}"  IsReadOnly="True" Header="Почта" Width="130"/>
-                <DataGridTextColumn Binding ="{Binding Path = Country}"  IsReadOnly="True" Header="Город" Width="110"/>
-                <DataGridTextColumn Binding ="{Binding Path = City}" IsReadOnly="True" Header="Страна" Width="120"/>
+                <DataGridTextColumn Binding ="{Binding Path = Country}"  IsReadOnly="True" Header="Страна" Width="110"/>
+                <DataGridTextColumn Binding ="{Binding Path = City}" IsReadOnly="True" Header="Город" Width="120"/>
             </DataGrid.Columns>
         </DataGrid>
 
