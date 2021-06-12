@@ -35,7 +35,7 @@ namespace HR_DataBase_VSBLL.Mappers
         {
             List<LocationDTO> locationDtos = dapper.GetAllLocation();
             List<Location> locations = MapLocationDTOToModelList(locationDtos);
-            
+
             return locations;
         }
 
@@ -46,7 +46,7 @@ namespace HR_DataBase_VSBLL.Mappers
         public int AddNewLocation(Location model)
         {
             locationDTO = MapModelToLocationDTO(model);
-            id=dapper.AddNewLocation(locationDTO);
+            id = dapper.AddNewLocation(locationDTO);
             return id;
         }
 
