@@ -2,6 +2,8 @@
 using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSDAL.Models;
 using HR_DataBase_VSDAL.Dapper;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace HR_DataBase_VSBLL.Mappers
 {
@@ -11,6 +13,8 @@ namespace HR_DataBase_VSBLL.Mappers
         ContactsDTO contactsDTO = new ContactsDTO();
         Contacts contactsModel = new Contacts();
         DapperContact dapper = new DapperContact();
+        List<ContactsDTO> ListDTOs = new List<ContactsDTO>();
+        List<Contacts> ListModels = new List<Contacts>();
 
         /// <summary>
         /// поиск данных по ID
@@ -86,6 +90,24 @@ namespace HR_DataBase_VSBLL.Mappers
 
             contactsModel = mapper.Map<Contacts>(contactsDTO);
             return contactsModel;
+        }
+
+        private List<Contacts> MapListDTOToListModel(List<ContactsDTO> ContactsDTO)
+        {
+            List<Contacts> tmp = new List<Contacts>();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<LocationDTO, Location>()
+                .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex))
+                .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
+                .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
+                .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Street))
+                .ForMember(dest => dest.HouseNumber, option => option.MapFrom(source => source.HouseNumber))
+                .ForMember(dest => dest.ApartmentNumber, option => option.MapFrom(source => source.ApartmentNumber)));
+
+            Mapper mapper = new Mapper(config);
+
+            tmp = mapper.Map<List<Contacts>>(ContactsDTO);
+            return tmp;
         }
     }
 }
