@@ -27,8 +27,19 @@ namespace HR.SkillMatrix.UI.Pages
             InitializeComponent();
             _mainWindow = mainWindow;
             MapperCompanies mapperCompanies = new MapperCompanies();
-            Companies.ItemsSource = mapperCompanies.GetAllCompanies();
+            Companies.ItemsSource = mapperCompanies.GetAllCompaniesWithContactAndLocation();
+
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu mainMenu = new MainMenu(_mainWindow);
+            _mainWindow.Content = mainMenu;
+        }
+
+        private void Companies_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
