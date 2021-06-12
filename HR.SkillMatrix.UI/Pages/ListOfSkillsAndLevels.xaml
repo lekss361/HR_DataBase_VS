@@ -1,0 +1,47 @@
+﻿<Page x:Class="HR.SkillMatrix.UI.Pages.ListOfSkillsAndLevels"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListOfSkillsAndLevels">
+
+    <Grid Background="White">
+        <DataGrid x:Name="DataGridSkillsAndLevels" AutoGenerateColumns="False"  Margin="95,70,120,60">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
+                <DataGridTextColumn Binding ="{Binding Path = Skill}"  IsReadOnly="True" Header="Проф. навык" Width="100" />
+                <DataGridTemplateColumn Width="100" Header="Уровень">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox>
+                                <ComboBoxItem IsSelected="True">
+                                    <TextBlock>0</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem IsSelected="True">
+                                    <TextBlock>1</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem IsSelected="True">
+                                    <TextBlock>2</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem IsSelected="True">
+                                    <TextBlock>3</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem IsSelected="True">
+                                    <TextBlock>4</TextBlock>
+                                </ComboBoxItem>
+                            </ComboBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <Label Content="Профессиональные навыки" HorizontalAlignment="Left" Margin="346,5,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonSaveSkill" Content="Сохранить" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="40" Margin="0,0,10,10" Click="ButtonSaveSkill_Click" />
+       
+
+    </Grid>
+</Page>

@@ -155,5 +155,13 @@ namespace HR.SkillMatrix.UI.Pages
         {
             ButtonChooseDepartment.IsEnabled = true;
         }
+
+        private void ChooseProfessionalSkill_Click(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            ListOfSkillsAndLevels listOfPosition = new ListOfSkillsAndLevels(_mainWindow);
+            newWindow.Content = listOfPosition;
+            newWindow.Show();
+        }
     }
 }

@@ -7,11 +7,16 @@ using AutoMapper;
 using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSDAL.Models;
 using HR_DataBase_VSDAL.Dapper;
+using HR_DataBase_VSDAL.DTO;
 
 namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
 {
     public class MapperSkillName
     {
+        SkillNameDapper dapper = new SkillNameDapper();
+
+
+
         /// <summary>
         /// Mapper моделей UI в DTO
         /// </summary>
@@ -30,6 +35,31 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
             skillNameDTO = mapper.Map<SkillNameDTO>(skillName);
             dapper.AddNewSkillName(skillNameDTO);
             return skillNameDTO;
+        }
+
+        public List<SkillNameById> GetSkillNameById()
+        {
+            // Тут номер SkillTypeID
+
+            List<SkillNameByIdDTO> skillNameByIdDTOs = dapper.GetSkillNameByTypeID(1);
+            List<SkillNameById> skillNameById = MapSkillNameByIdDTOToModelList(skillNameByIdDTOs);
+            skillNameByIdDTOs.Clear();
+
+            return skillNameById;
+        }
+
+        private List<SkillNameById> MapSkillNameByIdDTOToModelList (List<SkillNameByIdDTO> skillNameByIdDtos)
+        {
+            List<SkillNameById> sda = new List<SkillNameById>();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<SkillNameByIdDTO, SkillNameById>()
+                .ForMember(dest => dest.Skill, option => option.MapFrom(source => source.Skill))
+                );
+
+            Mapper mapper = new Mapper(config);
+
+            sda = mapper.Map<List<SkillNameById>>(skillNameByIdDtos);
+            return sda;
         }
     }
 }

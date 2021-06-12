@@ -202,5 +202,6 @@
     <None Include="HR_DataBase_VSDB\Stored Procedures\PreviousWorks\GetAllPreviousWorks.sql" />
     <None Include="HR_DataBase_VSDB\Stored Procedures\PreviousWorks\GetPreviousWorkByID.sql" />
     <None Include="HR_DataBase_VSDB\Stored Procedures\PreviousWorks\UpdatePreviousWorkByID.sql" />
+    <None Include="HR_DataBase_VSDB\Stored Procedures\SkillName\GetSkillNameBySkillTypeID.sql" />
   </ItemGroup>
 </Project>
