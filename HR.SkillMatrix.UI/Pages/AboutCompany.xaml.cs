@@ -33,11 +33,7 @@ namespace HR.SkillMatrix.UI.Pages
             DataGridDivisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(id);
             MapperCompany mapperCompany = new MapperCompany();
 
-           CompanyWithForeignKeyValue company = mapperCompany.GetCompanyByID(id);
-
-
-
-           
+            CompanyWithForeignKeyValue company = mapperCompany.GetCompanyByID(id);
 
             TextBoxInformation.Text = company.Information;
             TextBoxName.Text = company.Name;
@@ -53,9 +49,6 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void DataGridDivisions_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
-
-
             DataGrid dg = (DataGrid)sender;
             DivisionByCompany item = (DivisionByCompany)dg.CurrentItem;
             if (item != null)
@@ -63,7 +56,6 @@ namespace HR.SkillMatrix.UI.Pages
                 int id = item.id;
                 AboutDivision aboutDivision = new AboutDivision(_mainWindow, id);
                 _mainWindow.Content = aboutDivision;
-
             }
         }
 

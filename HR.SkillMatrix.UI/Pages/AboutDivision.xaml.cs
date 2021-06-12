@@ -90,6 +90,6 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxCompany.IsEnabled = false;
         }
 
-    
+
     }
 }
