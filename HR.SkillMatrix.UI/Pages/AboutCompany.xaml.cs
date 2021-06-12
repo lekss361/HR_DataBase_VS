@@ -30,22 +30,25 @@ namespace HR.SkillMatrix.UI.Pages
             _mainWindow = mainWindow;
 
             MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
-            Divisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(2);
+            Divisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(id);
+            MapperCompany mapperCompany = new MapperCompany();
+
+           CompanyWithForeignKeyValue company = mapperCompany.GetCompanyByID(id);
 
 
 
            
 
-            TextBoxInformation.Text = "информация";
-            TextBoxName.Text = "название";
-            TextBoxPhone.Text = "телефон";
-            TextBoxEmail.Text = "почта";
-            TextBoxContactInformation.Text = "дополнительно";
-            TextBoxCountry.Text = "страна";
-            TextBoxCity.Text = "город";
-            TextBoxHouseN.Text = "номердома";
-            TextBoxApartmantN.Text = "номерофиса";
-            TextBoxIndex.Text = "индекс";
+            TextBoxInformation.Text = company.Information;
+            TextBoxName.Text = company.Name;
+            TextBoxPhone.Text = company.Phone;
+            TextBoxEmail.Text = company.Email;
+            TextBoxContactInformation.Text = company.ContactInformation;
+            TextBoxCountry.Text = company.Country;
+            TextBoxCity.Text = company.City;
+            TextBoxHouseN.Text = company.HouseNumber;
+            TextBoxApartmantN.Text = company.ApartmentNumber;
+            TextBoxIndex.Text = company.LocationIndex;
         }
 
         private void DataGridDivisions_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

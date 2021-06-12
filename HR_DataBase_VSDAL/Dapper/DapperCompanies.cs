@@ -53,5 +53,24 @@ namespace HR_DataBase_VSDAL.Dapper
             }
             return ListDTO;
         }
+
+
+
+
+        public CompanyWithForeignKeyValueDTO GetCompanyByID(int id)
+        {
+            CompanyWithForeignKeyValueDTO fullCompaniesWithContactAndLocationByIdDTO = new CompanyWithForeignKeyValueDTO();
+            string tmp1 = $"exec [HR_DataBase_VSDB].[CompanyWithForeignKeyValueById] @ID={id}";
+
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                fullCompaniesWithContactAndLocationByIdDTO = connection
+                    .Query<CompanyWithForeignKeyValueDTO>(@$"{tmp1}")
+                    .First<CompanyWithForeignKeyValueDTO>();
+            }
+            return fullCompaniesWithContactAndLocationByIdDTO;
+
+
+        }
     }
 }

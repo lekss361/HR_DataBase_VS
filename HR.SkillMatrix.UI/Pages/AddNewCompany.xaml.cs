@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HR_DataBase_VSBLL.Models;
-using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
+using HR_DataBase_VSBLL.Mappers;
 using HR.SkillMatrix.UI.Windows;
 
 namespace HR.SkillMatrix.UI.Pages
