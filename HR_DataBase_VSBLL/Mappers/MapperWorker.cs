@@ -12,12 +12,14 @@ namespace HR_DataBase_VSBLL.Mappers
 {
     public class MapperWorker
     {
+        int id;
         /// <summary>
         /// Mapper моделей UI в DTO
         /// </summary>
         /// <param name="worker"></param>
-        public WorkersDTO MapToWorkersDTO(Worker worker)
+        public int MapToWorkersDTO(Worker worker)
         {
+
             WorkersDTO workersDTO = new WorkersDTO();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Worker, WorkersDTO>()
@@ -38,8 +40,8 @@ namespace HR_DataBase_VSBLL.Mappers
             DapperWorker dapper = new DapperWorker();
 
             workersDTO = mapper.Map<WorkersDTO>(worker);
-            dapper.AddNewWorker(workersDTO);
-            return workersDTO;
+            id=dapper.AddNewWorker(workersDTO);
+            return id;
         }
     }
 }

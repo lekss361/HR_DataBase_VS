@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dapper;
 using HR_DataBase_VSDAL.DTO;
-using HR_DataBase_VSDAL.Models;
 
 namespace HR_DataBase_VSDAL.Dapper
 {
@@ -30,9 +24,8 @@ namespace HR_DataBase_VSDAL.Dapper
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                connection.Query<PreviousWorkDTO>(@$"{query}{value}");
+                connection.Query<int>(@$"{query}{value}");
             }
         }
-
     }
 }

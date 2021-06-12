@@ -7,14 +7,12 @@
     @HouseNumber     INT            ,
     @ApartmentNumber INT            
 AS
-    INSERT  [HR_DataBase_VSDB].[Locations]
-        ([LocationIndex], [Country], [City], [Street], [HouseNumber], [ApartmentNumber])
-    OUTPUT
-    INSERTED.[Id],
-    INSERTED.[LocationIndex],
-    INSERTED.[Country],
-    INSERTED.[City],
-    INSERTED.[Street],
-    INSERTED.[HouseNumber],
-    INSERTED.[ApartmentNumber]
-  VALUES (@LocationIndex, @Country, @City, @Street, @HouseNumber, @ApartmentNumber)
+    UPDATE [Locations]
+    SET
+    [LocationIndex] =   @LocationIndex,
+    [Country] =         @Country,
+    [City] =            @City,
+    [Street] =          @Street,
+    [HouseNumber] =     @HouseNumber,
+    [ApartmentNumber] = @ApartmentNumber
+    WHERE [Id] = @Id

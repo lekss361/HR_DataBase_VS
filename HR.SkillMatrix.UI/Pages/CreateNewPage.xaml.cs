@@ -50,5 +50,11 @@ namespace HR.SkillMatrix.UI.Pages
             AddNewProject addNewProject = new AddNewProject(_mainWindow);
             _mainWindow.Content = addNewProject;
         }
+
+        private void AddNewDivision_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewDivision addNewDivision = new AddNewDivision(_mainWindow);
+            _mainWindow.Content = addNewDivision;
+        }
     }
 }

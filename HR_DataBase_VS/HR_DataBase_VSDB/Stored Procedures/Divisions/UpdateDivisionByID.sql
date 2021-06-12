@@ -5,16 +5,14 @@
 	@CompanyID		int,   
     @ContactID		int,
     @LocationID		int,
-    @DirectionsID   int
+    @DirectionID    int
 AS
-    INSERT  [HR_DataBase_VSDB].[Divisions]
-        ([Name], [Information], [CompanyID], [ContactID], [LocationID], [DirectionID])
-    OUTPUT
-    INSERTED.[Id],
-    INSERTED.[Name],
-    INSERTED.[Information],
-    INSERTED.[CompanyID],
-    INSERTED.[ContactID],
-    INSERTED.[LocationID],
-    INSERTED.[DirectionID]
-    VALUES (@Name, @Information, @CompanyID, @ContactID, @LocationID, @DirectionsID)
+    UPDATE [Divisions]
+    SET
+    [Name] =            @Name,
+    [Information] =     @Information,
+    [CompanyID] =       @CompanyID,
+    [ContactID] =       @ContactID,
+    [LocationID] =      @LocationID,
+    [DirectionID] =     @DirectionID
+    WHERE [Id] = @Id

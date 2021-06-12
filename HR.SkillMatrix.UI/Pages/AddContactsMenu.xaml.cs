@@ -23,6 +23,7 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddContactsMenu : Page
     {
+        public Contacts Contacts;
         private readonly MainWindow _mainWindow;
         public AddContactsMenu(MainWindow mainWindow)
         {
@@ -32,20 +33,22 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void buttonSave_Click(object sender, RoutedEventArgs e)
         {
-            Contacts contacts = new Contacts();
+            //Contacts contacts = new Contacts();
 
-            contacts.Phone = textBoxPhone.Text;
-            contacts.Email = textBoxMail.Text;
+            Contacts.Phone = textBoxPhone.Text;
+            Contacts.Email = textBoxMail.Text;
             if (!string.IsNullOrEmpty(textBoxOther.Text))
             {
-                contacts.Information = textBoxOther.Text;
+                Contacts.Information = textBoxOther.Text;
             }
-
-            MapperContacts mapper = new MapperContacts();
-            contacts.Id = mapper.AddNew(contacts);
-
             Saved saved = new Saved();
             saved.Show();
+        }
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            //AddNewWorker addNewWorker = new AddNewWorker(_mainWindow);
+            //addNewWorker.Contacts = this.Contacts;
+            //_mainWindow.Content = addNewWorker;
         }
     }
 }

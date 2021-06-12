@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HR.SkillMatrix.UI.Windows;
 using HR_DataBase_VSBLL.Mappers;
+using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
 using HR_DataBase_VSBLL.Models;
 
 namespace HR.SkillMatrix.UI.Pages
@@ -23,12 +24,16 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddNewWorker : Page
     {
+        public Contacts Contacts;
+        public Location Location;
+        public PreviousWork PreviousWork;
         private readonly MainWindow _mainWindow;
         private string _sex;
         public AddNewWorker(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
+            ButtonChooseDepartment.IsEnabled = false;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -39,6 +44,11 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            MapperWorker mapper = new MapperWorker();
+            MapperContacts mapperContacts = new MapperContacts();
+            MapperLocation mapperLocation = new MapperLocation();
+            MapperPreviousJob mapperPreviousJob = new MapperPreviousJob();
+
             Worker worker = new Worker();
 
             worker.LastName = LastName.Text;
@@ -49,25 +59,44 @@ namespace HR.SkillMatrix.UI.Pages
             worker.StatusID = 1;
             worker.Education = Education.Text;
             worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
-            worker.ContactID = 1;
-            worker.LocationID = 1;
+            worker.ContactID = mapperContacts.AddNew(Contacts);
+            worker.LocationID = mapperLocation.AddNewLocation(Location);
             worker.PositionID = 1;
             worker.DivisionID = 1;
 
-            MapperWorker mapper = new MapperWorker();
-            mapper.MapToWorkersDTO(worker);
+            PreviousWork.WorkerID = mapper.MapToWorkersDTO(worker);
+            mapperPreviousJob.MapToPreviousWorkDTO(PreviousWork);
 
-            //Saved saved = new Saved();
-            //saved.Show();
+            Saved saved = new Saved();
+            saved.Show();
         }
 
-        private void CreateLocation_Click(object sender, RoutedEventArgs e)
+        private void ButtonAddLocation_Click(object sender, RoutedEventArgs e)
         {
+            Location = new Location();
             NewWindow newWindow = new NewWindow();
-            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow);
+            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow) { Location = this.Location };
             newWindow.Content = locationMenu;
-            newWindow.Show();
+            newWindow.ShowDialog();
         }
+
+        private void ButtonAddContact_Click(object sender, RoutedEventArgs e)
+        {
+            Contacts = new Contacts();
+            NewWindow newWindow = new NewWindow();
+            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow) { Contacts = this.Contacts };
+            newWindow.Content = addContactsMenu;
+            newWindow.ShowDialog();
+        }
+        private void ButtonPrewiousWork_Click(object sender, RoutedEventArgs e)
+        {
+            PreviousWork = new PreviousWork();
+            NewWindow newWindow = new NewWindow();
+            AddPreviousJob addPreviousJob = new AddPreviousJob(_mainWindow) { PreviousWork = this.PreviousWork };
+            newWindow.Content = addPreviousJob;
+            newWindow.ShowDialog();
+        }
+
         //private void BoxContacts_OnMouseEnter(object sender, MouseEventArgs e)
         //{
         //    List<int> numbers = new List<int>() { 1, 2, 3, 45 };
@@ -98,15 +127,7 @@ namespace HR.SkillMatrix.UI.Pages
             _sex = "Женский";
         }
 
-        private void CreateContact_Click(object sender, RoutedEventArgs e)
-        {
-            NewWindow newWindow = new NewWindow();
-            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow);
-            newWindow.Content = addContactsMenu;
-            newWindow.Show();
-        }
-
-        private void ChoosePosition_Click(object sender, RoutedEventArgs e)
+        private void ButtonChoosePosition_Click(object sender, RoutedEventArgs e)
         {
             NewWindow newWindow = new NewWindow();
             ListOfPosition listOfPosition = new ListOfPosition(_mainWindow);
@@ -114,12 +135,25 @@ namespace HR.SkillMatrix.UI.Pages
             newWindow.Show();
         }
 
-        private void PrewiousWork_Click(object sender, RoutedEventArgs e)
+        private void ButtonChooseCompany_OnClick(object sender, RoutedEventArgs e)
         {
             NewWindow newWindow = new NewWindow();
-            AddPreviousJob addPreviousJob = new AddPreviousJob(_mainWindow);
-            newWindow.Content = addPreviousJob;
+            ListOfCompanies listOfCompanies = new ListOfCompanies(_mainWindow);
+            newWindow.Content = listOfCompanies;
             newWindow.Show();
+        }
+
+        private void ButtonChooseProject_Click(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            ListOfProject listOfзListOfProject = new ListOfProject(_mainWindow);
+            newWindow.Content = listOfзListOfProject;
+            newWindow.Show();
+        }
+
+        private void ChooseCompany_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            ButtonChooseDepartment.IsEnabled = true;
         }
 
         private void ChooseProfessionalSkill_Click(object sender, RoutedEventArgs e)

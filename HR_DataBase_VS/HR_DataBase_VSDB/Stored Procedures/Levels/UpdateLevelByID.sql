@@ -2,9 +2,7 @@
     @Id         INT,
     @Name       NVARCHAR (255) 
 AS
-    INSERT  [Levels]
-        ([Name])
-    OUTPUT
-    INSERTED.[Id],
-    INSERTED.[Name]
-    VALUES (@Name)
+    UPDATE [Levels]
+    SET
+    [Name] =   @Name
+    WHERE [Id] = @Id

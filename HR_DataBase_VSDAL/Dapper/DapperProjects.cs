@@ -8,39 +8,41 @@ namespace HR_DataBase_VSDAL.Dapper
 {
     public class DapperProjects
     {
+        int ID;
+        string _Query;
+        string _Value;
+        ProjectDTO projectDTO;
+        List<ProjectDTO> ListDTO = new List<ProjectDTO>();
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
 
-        ProjectDTO projectDTO;
-
-        List<ProjectDTO> ListDTO = new List<ProjectDTO>();
-
-        public void AddNewProject(ProjectDTO projectDTO)
+        public int AddNewProject(ProjectDTO projectDTO)
         {
-            string query = "exec [HR_DataBase_VSDB].[AddNewProject]";
-            string value =
-                $"N'{projectDTO.Name}', " +
-                $"N'{projectDTO.DirectionsID}', " +
-                $"N'{projectDTO.Information}'";
+            _Query = "exec [HR_DataBase_VSDB].[AddNewProject]";
+            _Value =
+               $"N'{projectDTO.Name}', " +
+               $"N'{projectDTO.DirectionsID}', " +
+               $"N'{projectDTO.Information}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                connection.Query<ContactsDTO>(@$"{query}{value}");
+                ID = connection.QueryFirst<int>(@$"{_Query}{_Value}");
             }
+            return ID;
         }
-        
+
         /// <summary>    
         /// Находим запись по ID
         /// </summary>
         /// <returns>DTO записи из БД</returns>
         public ProjectDTO GetProjectByID(int id)
         {
-            string query = "exec [HR_DataBase_VSDB].[GetProjectByID]";
-            string value =
-                $"N'{id}'";
+            _Query = "exec [HR_DataBase_VSDB].[GetProjectByID]";
+            _Value =
+               $"N'{id}'";
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 projectDTO = connection
-                    .QueryFirst<ProjectDTO>(@$"{query}{value}");
+                    .QueryFirst<ProjectDTO>(@$"{_Query}{_Value}");
             }
             return projectDTO;
         }
@@ -52,12 +54,12 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <returns>List DTO записи из БД</returns>
         public List<ProjectDTO> GetAllProjects()
         {
-            string query = "exec [HR_DataBase_VSDB].[GetAllProjects]";
+            _Query = "exec [HR_DataBase_VSDB].[GetAllProjects]";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 ListDTO = connection
-                    .Query<ProjectDTO>(@$"{query}")
+                    .Query<ProjectDTO>(@$"{_Query}")
                     .AsList<ProjectDTO>();
             }
             return ListDTO;

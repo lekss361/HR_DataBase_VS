@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HR.SkillMatrix.UI.Windows;
+using HR_DataBase_VSBLL.Mappers;
 using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
 
@@ -23,6 +24,10 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddNewDivision : Page
     {
+        public Contacts Contacts;
+        public Location Location;
+        public Directions Directions;
+        public int companyId;
         private readonly MainWindow _mainWindow;
         public AddNewDivision(MainWindow mainWindow)
         {
@@ -32,36 +37,40 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
+            MapperContacts mapperContacts = new MapperContacts();
+            MapperLocation mapperLocation = new MapperLocation();
+            MapperDivisions mapper = new MapperDivisions();
+
             Divisions divisions = new Divisions();
 
             divisions.Name = textBoxName.Text;
             divisions.CompanyID = 1;
-            divisions.ContactID = 1;
-            divisions.LocationID = 1;
+            divisions.ContactID = mapperContacts.AddNew(Contacts);
+            divisions.LocationID = mapperLocation.AddNewLocation(Location);
             divisions.DirectionsID = 1;
             divisions.Information = textBoxDescription.Text;
 
-
-            MapperDivisions mapper = new MapperDivisions();
             mapper.MapToDivisionsDTO(divisions);
 
             Saved saved = new Saved();
             saved.Show();
         }
-       
-
-       
-       
+        private void ButtonAddLocation_Click(object sender, RoutedEventArgs e)
+        {
+            Location = new Location();
+            NewWindow newWindow = new NewWindow();
+            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow) { Location = this.Location };
+            newWindow.Content = locationMenu;
+            newWindow.ShowDialog();
+        }
 
         private void ButtonAddContact_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void ButtonAddLocation_Click(object sender, RoutedEventArgs e)
-        {
-            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow);
-            _mainWindow.Content = locationMenu;
+            Contacts = new Contacts();
+            NewWindow newWindow = new NewWindow();
+            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow) { Contacts = this.Contacts };
+            newWindow.Content = addContactsMenu;
+            newWindow.ShowDialog();
         }
 
         private void ButtonAddDirection_Click(object sender, RoutedEventArgs e)
@@ -69,5 +78,10 @@ namespace HR.SkillMatrix.UI.Pages
 
         }
 
+        private void Back_OnClick(object sender, RoutedEventArgs e)
+        {
+            CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
+            _mainWindow.Content = createNewPage;
+        }
     }
 }

@@ -1,9 +1,5 @@
 ﻿using HR_DataBase_VSDAL.DTO;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Dapper;
@@ -22,12 +18,12 @@ namespace HR_DataBase_VSDAL.Dapper
         /// <returns>ListPositionDTO записи из БД</returns>
         public List<PositionsWithDirectionNameDTO> GetPositionsWithDirectionName()
         {
-            string tmp1 = "exec [HR_DataBase_VSDB].[GetPositionsWithDirectionName]";
+            string _Query = "exec [HR_DataBase_VSDB].[GetPositionsWithDirectionName]";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 ListPositionDTO = connection
-                    .Query<PositionsWithDirectionNameDTO>($@"{tmp1}")
+                    .Query<PositionsWithDirectionNameDTO>($@"{_Query}")
                     .AsList<PositionsWithDirectionNameDTO>();
             }
             return ListPositionDTO;

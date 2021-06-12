@@ -24,6 +24,7 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddLocationMenu : Page
     {
+        public Location Location;
         private readonly MainWindow _mainWindow;
 
         public AddLocationMenu(MainWindow mainWindow)
@@ -38,21 +39,15 @@ namespace HR.SkillMatrix.UI.Pages
         /// <param name="e"></param>
         private void Button_Save(object sender, RoutedEventArgs e)
         {
-            Location location = new Location();
-
-            location.Country = textBoxCountry.Text;
-            location.City = textBoxCity.Text;
-            location.Street = textBoxStreet.Text;
-            location.HouseNumber = Int32.Parse(textBoxHouseNumber.Text);
-            location.ApartmentNumber = Int32.Parse(textBoxApartmentNumber.Text);
+            Location.Country = textBoxCountry.Text;
+            Location.City = textBoxCity.Text;
+            Location.Street = textBoxStreet.Text;
+            Location.HouseNumber = Int32.Parse(textBoxHouseNumber.Text);
+            Location.ApartmentNumber = Int32.Parse(textBoxApartmentNumber.Text);
             if (!string.IsNullOrEmpty(textBoxLocationIndex.Text))
             {
-                location.LocationIndex = Int32.Parse(textBoxLocationIndex.Text);
+                Location.LocationIndex = Int32.Parse(textBoxLocationIndex.Text);
             }
-
-            MapperLocation mapper = new MapperLocation();
-            mapper.AddNewLocation(location);
-
             Saved saved = new Saved();
             saved.Show();
         }

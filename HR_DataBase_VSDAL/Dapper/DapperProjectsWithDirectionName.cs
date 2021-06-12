@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using Dapper;
@@ -13,7 +9,7 @@ namespace HR_DataBase_VSDAL.Dapper
 {
     public class DapperProjectsWithDirectionName
     {
-       // ProjectsWithDirectionNameDTO projectsWithDirectionNameDTO;
+        // ProjectsWithDirectionNameDTO projectsWithDirectionNameDTO;
         List<ProjectsWithDirectionNameDTO> ListDTO = new List<ProjectsWithDirectionNameDTO>();
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
 

@@ -8,6 +8,5 @@
         Title="Saved" Height="200" Width="400">
     <Grid>
         <TextBlock Height="23" Text="Сохранено" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="380" Margin="10,79,10,0"/>
-
     </Grid>
 </Window>

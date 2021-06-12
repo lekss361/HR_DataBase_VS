@@ -15,6 +15,8 @@ namespace HR_DataBase_VSBLL.Mappers
         LocationDTO locationDTO = new LocationDTO();
         Location location = new Location();
         DapperLocation dapper = new DapperLocation();
+
+        int id;
         //List<LocationDTO> locationDtos = new List<LocationDTO>();
         //List<Location> locations = new List<Location>();
 
@@ -23,35 +25,29 @@ namespace HR_DataBase_VSBLL.Mappers
         /// </summary>
         /// <param name="ID">LocationID</param>
         /// <returns>LocationDTO</returns>
-        public LocationDTO GetLocationByID(int ID)
+        public Location GetLocationByID(int ID)
         {
             locationDTO = dapper.GetLocationByID(ID);
-            return locationDTO;
-        }
-
-        public Location GetLocationByID1(int ID)
-        {
-            locationDTO = dapper.GetLocationByID(ID);
-            location = MapLocationDTOToModel(locationDTO);
-            return location;
+            return MapLocationDTOToModel(locationDTO);
         }
 
         public List<Location> GetAllLocation()
         {
             List<LocationDTO> locationDtos = dapper.GetAllLocation();
             List<Location> locations = MapLocationDTOToModelList(locationDtos);
-            locationDtos.Clear();
             
             return locations;
         }
+
         /// <summary>
         /// Добавляем новую запись Location в БД
         /// </summary>
         /// <param name="model"></param>
-        public void AddNewLocation(Location model)
+        public int AddNewLocation(Location model)
         {
             locationDTO = MapModelToLocationDTO(model);
-            dapper.AddNewLocation(locationDTO);
+            id=dapper.AddNewLocation(locationDTO);
+            return id;
         }
 
         /// <summary>
@@ -94,7 +90,7 @@ namespace HR_DataBase_VSBLL.Mappers
 
         private List<Location> MapLocationDTOToModelList(List<LocationDTO> locationDtos)
         {
-            List<Location> sda = new List<Location>();
+            List<Location> tmp = new List<Location>();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<LocationDTO, Location>()
                 .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex))
@@ -106,8 +102,8 @@ namespace HR_DataBase_VSBLL.Mappers
 
             Mapper mapper = new Mapper(config);
 
-            sda = mapper.Map<List<Location>>(locationDtos);
-            return sda;
+            tmp = mapper.Map<List<Location>>(locationDtos);
+            return tmp;
         }
     }
 }
