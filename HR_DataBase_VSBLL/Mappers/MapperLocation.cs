@@ -15,6 +15,8 @@ namespace HR_DataBase_VSBLL.Mappers
         LocationDTO locationDTO = new LocationDTO();
         Location location = new Location();
         DapperLocation dapper = new DapperLocation();
+
+        int id;
         //List<LocationDTO> locationDtos = new List<LocationDTO>();
         //List<Location> locations = new List<Location>();
 
@@ -23,7 +25,7 @@ namespace HR_DataBase_VSBLL.Mappers
         /// </summary>
         /// <param name="ID">LocationID</param>
         /// <returns>LocationDTO</returns>
-        public Location GetLocationByID1(int ID)
+        public Location GetLocationByID(int ID)
         {
             locationDTO = dapper.GetLocationByID(ID);
             return MapLocationDTOToModel(locationDTO);
@@ -41,10 +43,11 @@ namespace HR_DataBase_VSBLL.Mappers
         /// Добавляем новую запись Location в БД
         /// </summary>
         /// <param name="model"></param>
-        public void AddNewLocation(Location model)
+        public int AddNewLocation(Location model)
         {
             locationDTO = MapModelToLocationDTO(model);
-            dapper.AddNewLocation(locationDTO);
+            id=dapper.AddNewLocation(locationDTO);
+            return id;
         }
 
         /// <summary>

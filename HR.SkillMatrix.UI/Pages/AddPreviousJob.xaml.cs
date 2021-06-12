@@ -24,7 +24,7 @@ namespace HR.SkillMatrix.UI.Pages
     public partial class AddPreviousJob : Page
     {
         private readonly MainWindow _mainWindow;
-
+        public PreviousWork PreviousWork;
         public AddPreviousJob(MainWindow mainWindow)
         {
             InitializeComponent();
@@ -37,22 +37,11 @@ namespace HR.SkillMatrix.UI.Pages
         /// <param name="e"></param>
         private void Button_Save_Click(object sender, RoutedEventArgs e)
         {
-            PreviousWork previousWork = new PreviousWork();
-
-            previousWork.WorkerID = 1;
-            previousWork.StartDate = DatePikerStartData.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
-            previousWork.EndDate = DatePikerEndData.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
-            previousWork.Information = textBoxDescription.Text;
-
-            MapperPreviousJob mapper = new MapperPreviousJob();
-            mapper.MapToPreviousJobDTO(previousWork);
-
+            PreviousWork.StartDate = DatePikerStartData.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
+            PreviousWork.EndDate = DatePikerEndData.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
+            PreviousWork.Information = textBoxDescription.Text;
             Saved saved = new Saved();
             saved.Show();
         }
-
-
-
-
     }
 }

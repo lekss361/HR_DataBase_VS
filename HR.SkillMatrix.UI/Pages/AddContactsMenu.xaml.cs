@@ -41,20 +41,14 @@ namespace HR.SkillMatrix.UI.Pages
             {
                 Contacts.Information = textBoxOther.Text;
             }
-
-            
-            
-            //MapperContacts mapper = new MapperContacts();
-            //contacts.Id = mapper.AddNew(contacts);
-
             Saved saved = new Saved();
             saved.Show();
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            AddNewWorker addNewWorker = new AddNewWorker(_mainWindow);
-            addNewWorker.Contacts = this.Contacts;
-            _mainWindow.Content = addNewWorker;
+            //AddNewWorker addNewWorker = new AddNewWorker(_mainWindow);
+            //addNewWorker.Contacts = this.Contacts;
+            //_mainWindow.Content = addNewWorker;
         }
     }
 }
