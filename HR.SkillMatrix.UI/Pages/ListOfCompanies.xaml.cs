@@ -35,7 +35,6 @@ namespace HR.SkillMatrix.UI.Pages
         {
 
             DataGrid dg = (DataGrid)sender;
-            //ClientBaseModel item = (ClientBaseModel)dg.CurrentItem;
            Company item = (Company)dg.CurrentItem;
             if (item != null)
             {

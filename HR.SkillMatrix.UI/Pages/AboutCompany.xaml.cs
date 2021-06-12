@@ -53,21 +53,18 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void DataGridDivisions_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            AboutDivision aboutCompany = new AboutDivision(_mainWindow,7);
-            _mainWindow.Content = aboutCompany;
+
+
+
             DataGrid dg = (DataGrid)sender;
-            ////ClientBaseModel item = (ClientBaseModel)dg.CurrentItem;
-            //Company item = (Company)dg.CurrentItem;
-            //if (item != null)
-            //{
-            //    int id = item.Id;
-            //    AboutCompany aboutCompany = new AboutCompany(_mainWindow, id);
-            //    _mainWindow.Content = aboutCompany;
+            DivisionByCompany item = (DivisionByCompany)dg.CurrentItem;
+            if (item != null)
+            {
+                int id = item.id;
+                AboutDivision aboutDivision = new AboutDivision(_mainWindow, id);
+                _mainWindow.Content = aboutDivision;
 
-            //}
-
-
-
+            }
         }
 
         private void ButtonCancellation_Click(object sender, RoutedEventArgs e)
