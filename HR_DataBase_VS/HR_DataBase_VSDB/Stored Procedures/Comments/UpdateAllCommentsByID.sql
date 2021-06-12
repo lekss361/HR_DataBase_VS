@@ -1,14 +1,12 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[UpdateAllCommentsByID]
-	@id             int,
+	@Id             int,
 	@WorkerID       int,
 	@Comment        nvarchar (255),
 	@Date           date
 AS
-    INSERT [Comments]
-        ([WorkerID], [Comment], [Date])
-    OUTPUT
-    INSERTED.[id],
-    INSERTED.[WorkerID],
-    INSERTED.[Comment],
-    INSERTED.[Date]
-  VALUES ( @WorkerID, @Comment, @Date)
+    UPDATE [Comments]
+    SET
+    [WorkerID] =    @WorkerID,
+    [Comment] =     @Comment,
+    [Date] =        @Date
+    WHERE [Id] = @Id
