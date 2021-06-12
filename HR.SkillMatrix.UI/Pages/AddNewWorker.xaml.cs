@@ -25,10 +25,12 @@ namespace HR.SkillMatrix.UI.Pages
     {
         private readonly MainWindow _mainWindow;
         private string _sex;
+        public Contacts Contacts;
         public AddNewWorker(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
+            ChooseDepartment.IsEnabled = false;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -39,22 +41,30 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            int cid;
             Worker worker = new Worker();
+            
+            MapperContacts mappers = new MapperContacts();
+            cid = mappers.AddNew(Contacts);
 
             worker.LastName = LastName.Text;
             worker.FirstName = FirstName.Text;
+            worker.Patronymic = Patronymic.Text;
             worker.Hobby = Hobby.Text;
             worker.Sex = _sex;
+            worker.StatusID = 1;
             worker.Education = Education.Text;
             worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
-            worker.ContactID = 1;
+            worker.ContactID = cid;
             worker.LocationID = 1;
+            worker.PositionID = 1;
+            worker.DivisionID = 1;
 
             MapperWorker mapper = new MapperWorker();
             mapper.MapToWorkersDTO(worker);
 
-            //Saved saved = new Saved();
-            //saved.Show();
+            Saved saved = new Saved();
+            saved.Show();
         }
 
         private void CreateLocation_Click(object sender, RoutedEventArgs e)
@@ -96,10 +106,10 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void CreateContact_Click(object sender, RoutedEventArgs e)
         {
-            NewWindow newWindow = new NewWindow();
-            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow);
-            newWindow.Content = addContactsMenu;
-            newWindow.Show();
+            Contacts = new Contacts();
+            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow){ Contacts =this.Contacts};
+            _mainWindow.Content = addContactsMenu;
+            //this.Contacts = addContactsMenu.Contacts;
         }
 
         private void ChoosePosition_Click(object sender, RoutedEventArgs e)
@@ -108,6 +118,35 @@ namespace HR.SkillMatrix.UI.Pages
             ListOfPosition listOfPosition = new ListOfPosition(_mainWindow);
             newWindow.Content = listOfPosition;
             newWindow.Show();
+        }
+
+        private void PrewiousWork_Click(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            AddPreviousJob addPreviousJob = new AddPreviousJob(_mainWindow);
+            newWindow.Content = addPreviousJob;
+            newWindow.Show();
+        }
+
+        private void ChooseCompany_OnClick(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            ListOfCompanies listOfCompanies = new ListOfCompanies(_mainWindow);
+            newWindow.Content = listOfCompanies;
+            newWindow.Show();
+        }
+
+        private void ChooseProject_Click(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            ListOfProject listOfзListOfProject = new ListOfProject(_mainWindow);
+            newWindow.Content = listOfзListOfProject;
+            newWindow.Show();
+        }
+
+        private void ChooseCompany_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            ChooseDepartment.IsEnabled = true;
         }
     }
 }

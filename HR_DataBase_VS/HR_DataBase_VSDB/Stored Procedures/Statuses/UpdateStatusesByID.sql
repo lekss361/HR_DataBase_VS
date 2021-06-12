@@ -2,9 +2,6 @@
 	@Id			int,
     @Name		NVARCHAR (255) 
 AS
-    INSERT  [Statuses]
-        ([Name])
-    OUTPUT
-    INSERTED.[Id],
-    INSERTED.[Name]
-  VALUES ( @Name)
+    UPDATE [Statuses]
+    SET    [Name] = @Name
+    WHERE  [Id] = @Id

@@ -3,4 +3,4 @@ AS
 SELECT Pos.Name, D.Name as DirectionName
 FROM [HR_DataBase_VSDB].[Positions] as Pos,
 	[HR_DataBase_VSDB].[Directions] as D
-WHERE (Pos.DirectionsID = D.id)
+WHERE (Pos.DirectionID = D.id)

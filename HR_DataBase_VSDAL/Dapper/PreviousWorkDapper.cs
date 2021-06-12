@@ -1,30 +1,32 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using Dapper;
-using HR_DataBase_VSDAL.Models;
-
+using HR_DataBase_VSDAL.DTO;
 
 namespace HR_DataBase_VSDAL.Dapper
 {
-    public class DivisionDapper
+    public class PreviousWorkDapper
     {
         int ID;
 
         /// <summary>
         /// Делаем запись в Базу Данных через хранимую процедуру
         /// </summary>
-        /// <param name="divisionDTO"></param>
+        /// <param name="previousJobDTO"></param>
         /// <returns></returns>
-        public int AddNewDivision(DivisionsDTO divisionsDTO)
+        public int AddPreviousWork(PreviousWorkDTO previousJobDTO)
         {
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
-            string tmp1 = "exec [HR_DataBase_VSDB].[AddNewDivision]";
-            string tmp2 =
-                $" N'{divisionsDTO.Name}', N'{divisionsDTO.Information}', N'{divisionsDTO.CompanyID}', N'{divisionsDTO.ContactID}', N'{divisionsDTO.LocationID}', N'{divisionsDTO.DirectionsID}'";
+            string query = "exec [HR_DataBase_VSDB].[AddNewPreviousWork]";
+            string value =
+                $"N'{previousJobDTO.WorkerID}', " +
+                $"N'{previousJobDTO.StartDate}', " +
+                $"N'{previousJobDTO.EndDate}', " +
+                $"N'{previousJobDTO.Information}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                ID = connection.QueryFirst<int>(@$"{tmp1}{tmp2}");
+                ID = connection.QueryFirst<int>(@$"{query}{value}");
             }
             return ID;
         }

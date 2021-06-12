@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace HR.SkillMatrix.UI.Pages
 {
     /// <summary>
-    /// Interaction logic for PreviousJob.xaml
+    /// Interaction logic for AboutDivision.xaml
     /// </summary>
-    public partial class PreviousJob : Page
+    public partial class AboutDivision : Page
     {
-        public PreviousJob()
+        public AboutDivision()
         {
             InitializeComponent();
         }

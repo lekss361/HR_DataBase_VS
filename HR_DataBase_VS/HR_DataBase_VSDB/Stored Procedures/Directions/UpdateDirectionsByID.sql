@@ -2,9 +2,7 @@
     @Id			INT,
     @Name       NVARCHAR (255) 
 AS
-    INSERT  [Directions]
-        ([Name])
-    OUTPUT
-    INSERTED.[Id],
-    INSERTED.[Name]
-  VALUES ( @Name)
+    UPDATE [Directions]
+    SET
+    [Name] =   @Name
+    WHERE [Id] = @Id

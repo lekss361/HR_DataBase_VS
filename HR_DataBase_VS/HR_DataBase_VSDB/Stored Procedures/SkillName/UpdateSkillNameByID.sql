@@ -3,10 +3,8 @@
 	@Skill			nvarchar (255),
 	@SkillTypeID	int
 AS
-    INSERT  [SkillNames]
-        ([Skill], [SkillTypeID])
-    OUTPUT
-    INSERTED.[Id],
-    INSERTED.[Skill],
-    INSERTED.[SkillTypeID]
-    VALUES (@Skill, @SkillTypeID)
+    UPDATE [SkillNames]
+    SET
+    [Skill] =        @Skill,
+    [SkillTypeID] =  @SkillTypeID
+    WHERE [Id] = @Id
