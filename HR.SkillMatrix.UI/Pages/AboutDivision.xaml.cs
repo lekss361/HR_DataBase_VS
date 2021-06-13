@@ -23,7 +23,6 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AboutDivision : Page
     {
-        public CompanyWithForeignKeyValue Company;
         int divisionId;
         private Location location = new Location();
         private Contacts contact = new Contacts();
@@ -66,7 +65,7 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-            AboutCompany aboutCompany = new AboutCompany(_mainWindow, Company.id);
+            AboutCompany aboutCompany = new AboutCompany(_mainWindow, division.CompanyID);
             _mainWindow.Content = aboutCompany;
         }
 

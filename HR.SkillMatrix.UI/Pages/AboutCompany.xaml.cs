@@ -60,7 +60,7 @@ namespace HR.SkillMatrix.UI.Pages
                 Company = new CompanyWithForeignKeyValue();
                 Company.id = _id;
                 int id = item.id;
-                AboutDivision aboutDivision = new AboutDivision(_mainWindow, id){ Company = this.Company };
+                AboutDivision aboutDivision = new AboutDivision(_mainWindow, id);
                 _mainWindow.Content = aboutDivision;
             }
         }
