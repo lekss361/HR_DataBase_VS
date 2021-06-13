@@ -94,22 +94,22 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-            //location.City = TextBoxCity.Text;
-            //location.LocationIndex = Int32.Parse(TextBoxIndex.Text);
-            //location.Country = TextBoxCountry.Text;
-            //location.ApartmentNumber = Int32.Parse(TextBoxApartmantN.Text);
-            //location.HouseNumber = Int32.Parse(TextBoxHouseN.Text);
-            //location.Street = "DefaultStreet";
+            location.City = TextBoxCity.Text;
+            location.LocationIndex = Int32.Parse(TextBoxIndex.Text);
+            location.Country = TextBoxCountry.Text;
+            location.ApartmentNumber = Int32.Parse(TextBoxApartmantN.Text);
+            location.HouseNumber = Int32.Parse(TextBoxHouseN.Text);
+            location.Street = "DefaultStreet";
 
-            //MapperLocation locationMapper = new MapperLocation();
-            //locationMapper.UpdateLocationByid(location, location.id);
+            MapperLocation locationMapper = new MapperLocation();
+            locationMapper.UpdateLocationByid(location, location.id);
 
-            //contact.Phone = TextBoxPhone.Text;
-            //contact.Information = TextBoxContactInformation.Text;
-            //contact.Email = TextBoxEmail.Text;
+            contact.Phone = TextBoxPhone.Text;
+            contact.Information = TextBoxContactInformation.Text;
+            contact.Email = TextBoxEmail.Text;
 
-            //MapperContacts contactMapper = new MapperContacts();
-            //contactMapper.UpdateContacts(contact, contact.id);
+            MapperContacts contactMapper = new MapperContacts();
+            contactMapper.UpdateContacts(contact, contact.id);
 
             division.Name = TextBoxName.Text;
             division.Information = TextBoxInformation.Text;

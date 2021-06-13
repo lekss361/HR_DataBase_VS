@@ -80,21 +80,21 @@ namespace HR_DataBase_VSDAL.Dapper
             _Value =
                $"@id ='{id}', " +
                $"@Phone ='{currentContactsDTO.Phone}', " +
-               $"@Email'={currentContactsDTO.Email}', " +
+               $"@Email='{currentContactsDTO.Email}', " +
                $"@Information ='{currentContactsDTO.Information}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
-                    currentContactsDTO = connection.QueryFirstOrDefault<ContactsDTO>(@$"{_Query}{_Value}", id);
+                    ID = connection.QueryFirstOrDefault<int>(@$"{_Query}{_Value}");
                 }
                 catch
                 {
                     new Exception("Всё плохо");
                 }
             }
-            return currentContactsDTO.id;
+            return ID;
         }
     }
 }
