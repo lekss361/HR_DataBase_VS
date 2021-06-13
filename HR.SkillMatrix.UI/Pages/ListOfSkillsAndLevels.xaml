@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="720" d:DesignWidth="1200"
       Title="ListOfSkillsAndLevels">
 
     <Grid Background="White">
@@ -38,10 +38,11 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        
+
         <Label Content="Навыки" HorizontalAlignment="Left" Margin="346,5,0,0" VerticalAlignment="Top"/>
         <Button x:Name="ButtonSaveSkill" Content="Сохранить" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="40" Margin="0,0,10,10" Click="ButtonSaveSkill_Click" />
-       
+        <Button x:Name="ButtonAddSkill" Content="Добавить навык" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="40" Margin="0,0,120,10" Click="ButtonSaveSkill_Click" />
+
 
     </Grid>
 </Page>
