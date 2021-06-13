@@ -173,10 +173,19 @@ namespace HR.SkillMatrix.UI.Pages
             newWindow.Show();
         }
 
-        private void ChooseProfessionalSkill_Click(object sender, RoutedEventArgs e)
+        private void ChooseHardSkill_Click(object sender, RoutedEventArgs e)
+        {
+            CreateSkillDatagrid(1);
+        }
+        private void ChooseSoftSkill_OnClick(object sender, RoutedEventArgs e)
+        {
+            CreateSkillDatagrid(2);
+        }
+
+        private void CreateSkillDatagrid(int skilltypeId)
         {
             NewWindow newWindow = new NewWindow();
-            ListOfSkillsAndLevels listOfPosition = new ListOfSkillsAndLevels(_mainWindow,1);
+            ListOfSkillsAndLevels listOfPosition = new ListOfSkillsAndLevels(_mainWindow, skilltypeId);
             newWindow.Content = listOfPosition;
             newWindow.Show();
         }
@@ -190,4 +199,4 @@ namespace HR.SkillMatrix.UI.Pages
             newWindow.ShowDialog();
         }
     }
-}
+}   
