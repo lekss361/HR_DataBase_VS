@@ -23,9 +23,6 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Label Content="Список отделов компании" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="800" FontSize="16" Background="#FF8577C7"/>
-            <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="124,35,0,0" Click="ButtonBack_Click"/>
-            <Button x:Name="ButtonChose" Content="Выбрать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="279,35,0,0" Click="ButtonChose_OnClick"/>
-            <Button x:Name="ButtonOpen" Content="Открыть" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="434,35,0,0" Click="ButtonOpen_OnClick"/>
         </Grid>
     </Grid>
 </Page>

@@ -25,16 +25,21 @@ namespace HR.SkillMatrix.UI.Pages
     {
         public Contacts Contacts;
         private readonly MainWindow _mainWindow;
+        private readonly NewWindow _newWindow;
         public AddContactsMenu(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
         }
 
+        public AddContactsMenu(NewWindow newWindow)
+        {
+            InitializeComponent();
+            _newWindow = newWindow;
+        }
+
         private void buttonSave_Click(object sender, RoutedEventArgs e)
         {
-            //Contacts contacts = new Contacts();
-
             Contacts.Phone = textBoxPhone.Text;
             Contacts.Email = textBoxMail.Text;
             if (!string.IsNullOrEmpty(textBoxOther.Text))
@@ -42,13 +47,9 @@ namespace HR.SkillMatrix.UI.Pages
                 Contacts.Information = textBoxOther.Text;
             }
             Saved saved = new Saved();
-            saved.Show();
-        }
-        private void Back_Click(object sender, RoutedEventArgs e)
-        {
-            //AddNewWorker addNewWorker = new AddNewWorker(_mainWindow);
-            //addNewWorker.Contacts = this.Contacts;
-            //_mainWindow.Content = addNewWorker;
+            saved.ShowDialog();
+
+            _newWindow.Close();
         }
     }
 }

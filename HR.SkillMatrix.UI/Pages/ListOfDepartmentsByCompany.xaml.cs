@@ -42,22 +42,6 @@ namespace HR.SkillMatrix.UI.Pages
             MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
             DataGridDivisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(_companyId);
         }
-        private void ButtonBack_Click(object sender, RoutedEventArgs e)
-        {
-            //MainMenu mainMenu = new MainMenu(_mainWindow);
-            //_mainWindow.Content = mainMenu;
-        }
-
-        private void ButtonOpen_OnClick(object sender, RoutedEventArgs e)
-        {
-            //AboutCompany aboutCompany = new AboutCompany(_mainWindow, _companyId);
-            //_mainWindow.Content = aboutCompany;
-        }
-
-        private void ButtonChose_OnClick(object sender, RoutedEventArgs e)
-        {
-            _newWindow.Close();
-        }
 
         private void DataGridDivisions_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -68,6 +52,7 @@ namespace HR.SkillMatrix.UI.Pages
                 _divisionId = item.id;
             }
             DivisionByCompany.id = _divisionId;
+            _newWindow.Close();
         }
     }
 }

@@ -19,7 +19,6 @@
             <TextBox x:Name="textBoxPhone" HorizontalAlignment="Left" Margin="208,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Height="37" FontSize="22" UndoLimit="10"/>
             <TextBox x:Name="textBoxMail" HorizontalAlignment="Left" Margin="208,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="555" Height="37" FontSize="22" UndoLimit="50"/>
             <TextBox x:Name="textBoxOther" HorizontalAlignment="Left" Margin="208,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="555" Height="129.5" FontSize="22" Grid.RowSpan="3"/>
-            <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="425,371,0,0" Click="Back_Click"/>
         </Grid>
     </Grid>
 </Page>

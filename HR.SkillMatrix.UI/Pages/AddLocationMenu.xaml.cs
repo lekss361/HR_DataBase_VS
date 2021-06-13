@@ -26,11 +26,17 @@ namespace HR.SkillMatrix.UI.Pages
     {
         public Location Location;
         private readonly MainWindow _mainWindow;
+        private readonly NewWindow _newWindow;
 
         public AddLocationMenu(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
+        }
+        public AddLocationMenu(NewWindow newWindow)
+        {
+            InitializeComponent();
+            _newWindow = newWindow;
         }
         public AddLocationMenu( )
         {
@@ -52,8 +58,11 @@ namespace HR.SkillMatrix.UI.Pages
             {
                 Location.LocationIndex = Int32.Parse(textBoxLocationIndex.Text);
             }
+
             Saved saved = new Saved();
-            saved.Show();
+            saved.ShowDialog();
+
+            _newWindow.Close();
         }
     }
 }
