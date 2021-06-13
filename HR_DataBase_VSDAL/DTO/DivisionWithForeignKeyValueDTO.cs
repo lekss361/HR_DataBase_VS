@@ -8,7 +8,10 @@ namespace HR_DataBase_VSDAL.Models
 {
    public class DivisionWithForeignKeyValueDTO
     {
-
+        public int CompanyID { get; set; }
+        public int DirectionId { get; set; }
+        public int ContactID { get; set; }
+        public int LocationID { get; set; }
         public string Name { get; set; }
         public string Information { get; set; }
         public string CompanyName { get; set; }
@@ -22,6 +25,7 @@ namespace HR_DataBase_VSDAL.Models
         public int ApartmentNumber { get; set; }
         public int HouseNumber { get; set; }
         public int LocationIndex { get; set; }
+        
 
 
     }

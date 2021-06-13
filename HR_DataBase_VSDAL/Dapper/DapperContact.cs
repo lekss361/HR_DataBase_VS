@@ -74,20 +74,20 @@ namespace HR_DataBase_VSDAL.Dapper
         /// Изменяем запись в БД через хранимую процедуру
         /// </summary>
         /// <param name="oldContactsDTO"></param>
-        public int UpdateNewContact(ContactsDTO currentContactsDTO, int Id)
+        public int UpdateNewContact(ContactsDTO currentContactsDTO, int id)
         {
             _Query = "exec [HR_DataBase_VSDB].[UpdateContactsByID]";
             _Value =
-               $"N'{Id}', " +
-               $"N'{currentContactsDTO.Phone}', " +
-               $"N'{currentContactsDTO.Email}', " +
-               $"N'{currentContactsDTO.Information}'";
+               $"@id ='{id}', " +
+               $"@Phone ='{currentContactsDTO.Phone}', " +
+               $"@Email'={currentContactsDTO.Email}', " +
+               $"@Information ='{currentContactsDTO.Information}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
-                    currentContactsDTO = connection.QueryFirst<ContactsDTO>(@$"{_Query}{_Value}", Id);
+                    currentContactsDTO = connection.QueryFirstOrDefault<ContactsDTO>(@$"{_Query}{_Value}", id);
                 }
                 catch
                 {

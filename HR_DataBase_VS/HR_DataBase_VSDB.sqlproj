@@ -71,7 +71,6 @@
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\SkillName" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Locations" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Workers" />
-    <Folder Include="HR_DataBase_VSDB\Stored Procedures\Divisions" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Positions" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\SkillMap" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\SkillType" />
@@ -83,6 +82,7 @@
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Statuses" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\PreviousWorks" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\Divisions" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="HR_DataBase_VSDB\Tables\Companies.sql" />
@@ -129,7 +129,6 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\GetAllWorkers.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\GetWorkerByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\UpdateWorkersByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\AddNewDivision.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\AddNewPosition.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\GetPositionByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\AddNewSkillType.sql" />
@@ -138,11 +137,6 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\GetAllSkillTypes.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\GetSkillTypeByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\SkillType\UpdateSkillTypeByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\DeleteAllDivisions.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\DeleteDivisionByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\GetAllDivisions.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\GetDivisioinByID.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\UpdateDivisionByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\DeleteAllPositions.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\DeletePositionByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\GetAllPositions.sql" />
@@ -185,11 +179,17 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps\GetAllWorkerSkillMapsBySkillID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Directions\AddNewDirections.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Projects\GetProjectsWithDirectionName.sql" />
-    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\GetDivisionByCompanyID.sql" />
     <Build Include="HR_DataBase_VSDB\Tables\ProjectMaps.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\CompanyWithForeignKeyValueById.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\GetCompaniesWithContactAndLocation.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\GetPositionsWithDirectionName.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\AddNewDivision.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\DeleteAllDivisions.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\DeleteDivisionByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\GetAllDivisions.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\GetDivisioinByID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\GetDivisionByCompanyID.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\UpdateDivisionByID.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\AddNewProject.sql" />

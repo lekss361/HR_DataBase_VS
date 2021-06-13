@@ -19,7 +19,9 @@ namespace HR_DataBase_VSBLL.Mappers
         /// 
         DivisionWithForeignKeyValueDTO divisionWithForeignKeyValueDTO = new DivisionWithForeignKeyValueDTO();
         DivisionWithForeignKeyValue divisionWithForeignKeyValue = new DivisionWithForeignKeyValue();
-        DivisionDapper dapper = new DivisionDapper();
+        DivisionsDTO divisionsDTO = new DivisionsDTO();
+        DapperDivision dapper = new DapperDivision();
+
         public DivisionsDTO MapToDivisionsDTO(Divisions divisions)
         {
             DivisionsDTO divisionsDTO = new DivisionsDTO();
@@ -34,11 +36,18 @@ namespace HR_DataBase_VSBLL.Mappers
             .ForMember(dest => dest.DirectionsID, option => option.MapFrom(source => source.DirectionsID)));
 
             Mapper mapper = new Mapper(config);
-            DivisionDapper dapper = new DivisionDapper();
+            DapperDivision dapper = new DapperDivision();
 
             divisionsDTO = mapper.Map<DivisionsDTO>(divisions);
-            dapper.AddNewDivision(divisionsDTO);
+           
             return divisionsDTO;
+        }
+
+        public int UpdateDivisionByid(Divisions model, int id)
+        {
+            divisionsDTO = MapToDivisionsDTO(model);
+            id = dapper.UpdateDivisoonsById(divisionsDTO, id);
+            return id;
         }
 
 
@@ -52,11 +61,17 @@ namespace HR_DataBase_VSBLL.Mappers
             return divisionWithForeignKeyValue;
         }
 
+
+
         private DivisionWithForeignKeyValue MapDivisionByIDDTOToModel(DivisionWithForeignKeyValueDTO divisionByIDDTO)
         {
             DivisionWithForeignKeyValue sda = new DivisionWithForeignKeyValue();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<DivisionWithForeignKeyValueDTO, DivisionWithForeignKeyValue>()
+                .ForMember(dest => dest.CompanyID, option => option.MapFrom(source => source.CompanyID))
+                .ForMember(dest => dest.DirectionId, option => option.MapFrom(source => source.DirectionId))
+                .ForMember(dest => dest.ContactID, option => option.MapFrom(source => source.ContactID))
+                .ForMember(dest => dest.LocationID, option => option.MapFrom(source => source.LocationID))
                 .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
                 .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))
                 .ForMember(dest => dest.CompanyName, option => option.MapFrom(source => source.CompanyName))

@@ -7,9 +7,11 @@ using HR_DataBase_VSDAL.Models;
 
 namespace HR_DataBase_VSDAL.Dapper
 {
-    public class DivisionDapper
+    public class DapperDivision
     {
         DivisionWithForeignKeyValueDTO divisionWithForeignKeyValueDTO;
+        string _Query;
+        string _Value;
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
         int ID;
         /// <summary>
@@ -42,5 +44,25 @@ namespace HR_DataBase_VSDAL.Dapper
             }
             return divisionWithForeignKeyValueDTO;
         }
+
+        public int UpdateDivisoonsById(DivisionsDTO divisionsDTO, int id)
+        {
+            _Query = "exec [HR_DataBase_VSDB].[UpdateDivisionByID]";
+            _Value =
+               $"@Id = '{id}', " +
+               $"@Name = '{divisionsDTO.Name}', " +
+               $"@Information = '{divisionsDTO.Information}', " +
+               $"@CompanyID = '{divisionsDTO.CompanyID}', " +
+               $"@ContactID ='{divisionsDTO.ContactID}', " +
+               $"@LocationID ='{divisionsDTO.LocationID}', " +
+               $"@DirectionID ='{divisionsDTO.DirectionsID}'";
+
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                ID = connection.QueryFirstOrDefault<int>(@$"{_Query}{_Value}");
+            }
+            return ID;
+        }
+
     }
 }
