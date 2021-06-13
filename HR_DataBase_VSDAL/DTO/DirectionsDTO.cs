@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace HR_DataBase_VSDAL.Models
 {
     public class DirectionsDTO
-    {        
+    {
+        public int id { get; set; }
         public string Name { get; set; }
     }
 }

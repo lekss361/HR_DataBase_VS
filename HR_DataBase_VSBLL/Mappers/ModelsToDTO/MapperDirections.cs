@@ -21,16 +21,33 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
             DirectionsDTO directionsDTO = new DirectionsDTO();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Directions, DirectionsDTO>()
-
-            .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name)));
-
-
+                .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name)));
             Mapper mapper = new Mapper(config);
             DirectionsDapper dapper = new DirectionsDapper();
 
             directionsDTO = mapper.Map<DirectionsDTO>(directions);
             dapper.AddNewDirections(directionsDTO);
             return directionsDTO;
+        }
+        public List<Directions> MapToDirectionsModel(List<DirectionsDTO> directionsDTO)
+        {
+            List<Directions> directions = new List<Directions>();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<DirectionsDTO, Directions>());
+            Mapper mapper = new Mapper(config);
+            DirectionsDapper dapper = new DirectionsDapper();
+
+            directions = mapper.Map<List<Directions>>(directionsDTO);
+            dapper.GetAllDirections();
+            return directions;
+        }
+
+        public List<Directions> GetAllLocation()
+        {
+            DirectionsDapper dapper = new DirectionsDapper();
+            List<DirectionsDTO> directionsDTO = dapper.GetAllDirections();
+            List<Directions> directions = MapToDirectionsModel(directionsDTO);
+            return directions;
         }
     }
 }

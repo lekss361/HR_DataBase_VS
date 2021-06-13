@@ -23,7 +23,7 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AddNewProject : Page
     {
-        
+        public Directions Directions;
         private readonly MainWindow _mainWindow;
         public AddNewProject(MainWindow mainWindow)
         {
@@ -36,7 +36,7 @@ namespace HR.SkillMatrix.UI.Pages
             Project project  = new Project();
 
             project.Name = textBoxName.Text;
-            project.DirectionsID = Int32.Parse(textBoxDirection.Text);
+            project.DirectionsID = Directions.id;
             if (!string.IsNullOrEmpty(textBoxInformation.Text))
             {
                 project.Information = textBoxInformation.Text;
@@ -53,6 +53,15 @@ namespace HR.SkillMatrix.UI.Pages
         {
             CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
             _mainWindow.Content = createNewPage;
+        }
+
+        private void ButtonAddDirection_Click(object sender, RoutedEventArgs e)
+        {
+            Directions = new Directions();
+            NewWindow newWindow = new NewWindow();
+            ListOfDirections listOfDirections = new ListOfDirections(newWindow) { Directions = this.Directions };
+            newWindow.Content = listOfDirections;
+            newWindow.ShowDialog();
         }
     }
 }
