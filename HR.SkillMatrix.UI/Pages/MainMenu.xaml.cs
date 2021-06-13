@@ -47,5 +47,11 @@ namespace HR.SkillMatrix.UI.Pages
             SearchForEmployee searchForEmployee = new SearchForEmployee(_mainWindow);
             _mainWindow.Content = searchForEmployee;
         }
+
+        private void Projects_OnClick(object sender, RoutedEventArgs e)
+        {
+            ListOfProject listOfProject = new ListOfProject(_mainWindow);
+            _mainWindow.Content = listOfProject;
+        }
     }
 }
