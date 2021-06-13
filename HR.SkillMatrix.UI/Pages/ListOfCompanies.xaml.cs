@@ -50,7 +50,6 @@ namespace HR.SkillMatrix.UI.Pages
             {
                 id = item.id;
             }
-
             Company.Id = id;
         }
 

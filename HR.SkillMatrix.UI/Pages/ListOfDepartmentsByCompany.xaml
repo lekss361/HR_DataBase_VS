@@ -1,0 +1,31 @@
+﻿<Page x:Class="HR.SkillMatrix.UI.Pages.ListOfDepartmentsByCompany"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListOfDepartmentsByCompany">
+
+    <Grid Margin="0,0,0,0">
+        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="1048" Background="White">
+            <DataGrid x:Name="DataGridDivisions" AutoGenerateColumns="False"  Margin="157,90,153,10" MouseLeftButtonDown="DataGridDivisions_OnMouseLeftButtonDown">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
+                    <DataGridTextColumn Binding ="{Binding Path = id}"  IsReadOnly="True" Header="Название отдела" Width="180" Visibility="Hidden" />
+                    <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название отдела" Width="180" />
+                    <DataGridTextColumn Binding ="{Binding Path = DirectionName}"  IsReadOnly="True" Header="Направление" Width="180"/>
+                    <DataGridTextColumn Binding ="{Binding Path = Phone}"  IsReadOnly="True" Header="Телефон" Width="130"/>
+                    <DataGridTextColumn Binding ="{Binding Path = Email}"  IsReadOnly="True" Header="Почта" Width="130"/>
+                    <DataGridTextColumn Binding ="{Binding Path = Country}"  IsReadOnly="True" Header="Страна" Width="110"/>
+                    <DataGridTextColumn Binding ="{Binding Path = City}" IsReadOnly="True" Header="Город" Width="120"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label Content="Список отделов компании" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="800" FontSize="16" Background="#FF8577C7"/>
+            <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="124,35,0,0" Click="ButtonBack_Click"/>
+            <Button x:Name="ButtonChose" Content="Выбрать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="279,35,0,0" Click="ButtonChose_OnClick"/>
+            <Button x:Name="ButtonOpen" Content="Открыть" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="434,35,0,0" Click="ButtonOpen_OnClick"/>
+        </Grid>
+    </Grid>
+</Page>

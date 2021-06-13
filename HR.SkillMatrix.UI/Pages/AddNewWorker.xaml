@@ -69,8 +69,8 @@
             <Button x:Name="ButtonAddContact" Content="Добавить контакты" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Height="29" Width="533" Click="ButtonAddContact_Click"/>
             <Button x:Name="ButtonAddLocation" Content="Добавить адрес" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" Height="29" Width="533" Click="ButtonAddLocation_Click"/>
             <Button x:Name="ButtonPrewiousWork" Content="Добавить предыдущую работу" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Height="29" Width="533" Click="ButtonPrewiousWork_Click"/>
-            <Button x:Name="ButtonChooseCompany" Content="Выбрать компанию" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="11" VerticalAlignment="Center" Height="29" Width="533" Click="ButtonChooseCompany_OnClick" MouseEnter="ChooseCompany_OnMouseEnter"/>
-            <Button x:Name="ButtonChooseDepartment" Content="Выбрать отдел" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="12" VerticalAlignment="Center" Height="29" Width="533">
+            <Button x:Name="ButtonChooseCompany" Content="Выбрать компанию" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="11" VerticalAlignment="Center" Height="29" Width="533" Click="ButtonChooseCompany_OnClick" />
+            <Button x:Name="ButtonChooseDepartment" Content="Выбрать отдел" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="12" VerticalAlignment="Center" Height="29" Width="533" Click="ButtonChooseDepartment_Click" >
                 <!--<Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="IsEnabled" Value="True" />

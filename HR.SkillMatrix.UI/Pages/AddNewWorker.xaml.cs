@@ -28,12 +28,13 @@ namespace HR.SkillMatrix.UI.Pages
         public Location Location;
         public PreviousWork PreviousWork;
         public Company Company;
+        public DivisionByCompany DivisionByCompany;
         private readonly MainWindow _mainWindow;
         private string _sex;
         public AddNewWorker(MainWindow mainWindow)
         {
             InitializeComponent();
-            _mainWindow = mainWindow;
+            _mainWindow = mainWindow; 
             ButtonChooseDepartment.IsEnabled = false;
         }
 
@@ -63,7 +64,7 @@ namespace HR.SkillMatrix.UI.Pages
             worker.ContactID = mapperContacts.AddNew(Contacts);
             worker.LocationID = mapperLocation.AddNewLocation(Location);
             worker.PositionID = 1;
-            worker.DivisionID = Company.Id;
+            worker.DivisionID = DivisionByCompany.id;
 
             PreviousWork.WorkerID = mapper.MapToWorkersDTO(worker);
             mapperPreviousJob.MapToPreviousWorkDTO(PreviousWork);
@@ -143,6 +144,10 @@ namespace HR.SkillMatrix.UI.Pages
             ListOfCompanies listOfCompanies = new ListOfCompanies(newWindow) { Company = this.Company };
             newWindow.Content = listOfCompanies;
             newWindow.ShowDialog();
+            if (Company.Id > 0)
+            {
+                ButtonChooseDepartment.IsEnabled = true;
+            }
         }
 
         private void ButtonChooseProject_Click(object sender, RoutedEventArgs e)
@@ -153,17 +158,21 @@ namespace HR.SkillMatrix.UI.Pages
             newWindow.Show();
         }
 
-        private void ChooseCompany_OnMouseEnter(object sender, MouseEventArgs e)
-        {
-            ButtonChooseDepartment.IsEnabled = true;
-        }
-
         private void ChooseProfessionalSkill_Click(object sender, RoutedEventArgs e)
         {
             NewWindow newWindow = new NewWindow();
             ListOfSkillsAndLevels listOfPosition = new ListOfSkillsAndLevels(_mainWindow);
             newWindow.Content = listOfPosition;
             newWindow.Show();
+        }
+
+        private void ButtonChooseDepartment_Click(object sender, RoutedEventArgs e)
+        {
+            DivisionByCompany = new DivisionByCompany();
+            NewWindow newWindow = new NewWindow();
+            ListOfDepartmentsByCompany listOfDepartmentsByCompany = new ListOfDepartmentsByCompany(newWindow, Company.Id) { DivisionByCompany = this.DivisionByCompany };
+            newWindow.Content = listOfDepartmentsByCompany;
+            newWindow.ShowDialog();
         }
     }
 }
