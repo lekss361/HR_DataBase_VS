@@ -8,6 +8,7 @@ namespace HR_DataBase_VSDAL.DTO
 {
     public class PositionsWithDirectionNameDTO
     {
+        public int id { get; set; }
         public string Name { get; set; }
         public string DirectionName { get; set; }
     }

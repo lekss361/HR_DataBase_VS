@@ -94,7 +94,7 @@ namespace HR_DataBase_VSDAL.Dapper
                     new Exception("Всё плохо");
                 }
             }
-            return currentContactsDTO.Id;
+            return currentContactsDTO.id;
         }
     }
 }
