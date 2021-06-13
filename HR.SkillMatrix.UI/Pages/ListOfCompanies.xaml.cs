@@ -39,6 +39,7 @@ namespace HR.SkillMatrix.UI.Pages
         {
             InitializeComponent();
             _newWindow = newWindow;
+            ButtonBack.Visibility = Visibility.Hidden;
             MapperCompanies mapperCompanies = new MapperCompanies();
             DataGridCompanies.ItemsSource = mapperCompanies.GetAllCompaniesWithContactAndLocation();
         }
@@ -51,9 +52,15 @@ namespace HR.SkillMatrix.UI.Pages
                 id = item.id;
             }
 
-            if (Company != null)
+            if (_mainWindow != null)
+            {
+                AboutCompany aboutCompany = new AboutCompany(_mainWindow, id);
+                _mainWindow.Content = aboutCompany;
+            }
+            if (_newWindow != null)
             {
                 Company.Id = id;
+                _newWindow.Close();
             }
         }
 
@@ -61,17 +68,6 @@ namespace HR.SkillMatrix.UI.Pages
         {
             MainMenu mainMenu = new MainMenu(_mainWindow);
             _mainWindow.Content = mainMenu;
-        }
-
-        private void ButtonOpen_OnClick(object sender, RoutedEventArgs e)
-        {
-            AboutCompany aboutCompany = new AboutCompany(_mainWindow, id);
-            _mainWindow.Content = aboutCompany;
-        }
-
-        private void ButtonChose_OnClick(object sender, RoutedEventArgs e)
-        {
-            _newWindow.Close();
         }
     }
 }
