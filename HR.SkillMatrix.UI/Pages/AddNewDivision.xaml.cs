@@ -26,6 +26,7 @@ namespace HR.SkillMatrix.UI.Pages
     {
         public Contacts Contacts;
         public Location Location;
+        public Company Company;
         public Directions Directions;
         public int companyId;
         private readonly MainWindow _mainWindow;
@@ -44,7 +45,7 @@ namespace HR.SkillMatrix.UI.Pages
             Divisions divisions = new Divisions();
 
             divisions.Name = textBoxName.Text;
-            divisions.CompanyID = 1;
+            divisions.CompanyID = Company.Id;
             divisions.ContactID = mapperContacts.AddNew(Contacts);
             divisions.LocationID = mapperLocation.AddNewLocation(Location);
             divisions.DirectionsID = 1;
@@ -82,6 +83,15 @@ namespace HR.SkillMatrix.UI.Pages
         {
             CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
             _mainWindow.Content = createNewPage;
+        }
+
+        private void ButtonChooseCompany_OnClick(object sender, RoutedEventArgs e)
+        {
+            Company = new Company();
+            NewWindow newWindow = new NewWindow();
+            ListOfCompanies listOfCompanies = new ListOfCompanies(newWindow) { Company = this.Company };
+            newWindow.Content = listOfCompanies;
+            newWindow.ShowDialog();
         }
     }
 }
