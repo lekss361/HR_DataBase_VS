@@ -29,6 +29,7 @@ namespace HR.SkillMatrix.UI.Pages
         public PreviousWork PreviousWork;
         public Company Company;
         public DivisionByCompany DivisionByCompany;
+        public PositionsWithDirectionName PositionsWithDirectionName;
         private readonly MainWindow _mainWindow;
         private string _sex;
         public AddNewWorker(MainWindow mainWindow)
@@ -63,7 +64,7 @@ namespace HR.SkillMatrix.UI.Pages
             worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
             worker.ContactID = mapperContacts.AddNew(Contacts);
             worker.LocationID = mapperLocation.AddNewLocation(Location);
-            worker.PositionID = 1;
+            worker.PositionID = PositionsWithDirectionName.id;
             worker.DivisionID = DivisionByCompany.id;
 
             PreviousWork.WorkerID = mapper.MapToWorkersDTO(worker);
@@ -131,8 +132,9 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonChoosePosition_Click(object sender, RoutedEventArgs e)
         {
+            PositionsWithDirectionName = new PositionsWithDirectionName();
             NewWindow newWindow = new NewWindow();
-            ListOfPosition listOfPosition = new ListOfPosition(_mainWindow);
+            ListOfPosition listOfPosition = new ListOfPosition(newWindow){ PositionsWithDirectionName =this.PositionsWithDirectionName };
             newWindow.Content = listOfPosition;
             newWindow.Show();
         }
