@@ -10,16 +10,17 @@
 
     <Grid Background="White">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.75*"></ColumnDefinition>
+            <ColumnDefinition Width="0.99*"></ColumnDefinition>
             <ColumnDefinition Width="1.25*"></ColumnDefinition>
             <ColumnDefinition Width="5*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="0.01*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="12*"></RowDefinition>
             <RowDefinition Height="50*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
         </Grid.RowDefinitions>
+
 
         <TextBlock HorizontalAlignment="Left" Margin="5,10,0,0" Grid.Row="1" Grid.Column="1" Text="Название" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="5,50,0,0" Grid.Row="1" Grid.Column="1" Text="Компания" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
@@ -47,10 +48,10 @@
         <TextBox x:Name="TextBoxName" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="231" IsEnabled="False" FontSize="18" Height="25"/>
         <TextBox x:Name="TextBoxInformation" Grid.Column="2" HorizontalAlignment="Left" Margin="10,360,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="605" Height="80" IsEnabled="False" FontSize="18"/>
 
-        <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Margin="5,33,0,0" VerticalAlignment="Top" Width="140" Click="ButtonBack_Click" Height="40" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Button x:Name="ButtonChange" Content="Изменить" HorizontalAlignment="Left" Grid.Column="1" Margin="155,33,0,0" VerticalAlignment="Top" Width="140" Height="40" Grid.ColumnSpan="2" Click="ButtonChange_Click"/>
-        <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Grid.Column="1" Margin="305,33,0,0" VerticalAlignment="Top" Width="140"  Height="40" Grid.ColumnSpan="2" Click="ButtonSave_Click" />
-        <Button x:Name="ButtonCancellation" Content="Отменить" HorizontalAlignment="Left" Grid.Column="1" Margin="455,33,0,0" VerticalAlignment="Top" Width="140" Height="40" Grid.ColumnSpan="2" Click="ButtonCancellation_Click" />
+        <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="140" Click="ButtonBack_Click" Height="40" Grid.Column="2"/>
+        <Button x:Name="ButtonChange" Content="Изменить" HorizontalAlignment="Left" Grid.Column="2" Margin="160,61,0,0" VerticalAlignment="Top" Width="140" Height="40" Click="ButtonChange_Click"/>
+        <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Grid.Column="2" Margin="310,61,0,0" VerticalAlignment="Top" Width="140"  Height="40" Click="ButtonSave_Click" />
+        <Button x:Name="ButtonCancellation" Content="Отменить" HorizontalAlignment="Left" Grid.Column="2" Margin="460,61,0,0" VerticalAlignment="Top" Width="140" Height="40" Click="ButtonCancellation_Click" />
 
 
     </Grid>

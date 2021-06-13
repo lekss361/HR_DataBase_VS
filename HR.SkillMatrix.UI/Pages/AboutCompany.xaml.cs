@@ -42,6 +42,7 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxContactInformation.Text = company.ContactInformation;
             TextBoxCountry.Text = company.Country;
             TextBoxCity.Text = company.City;
+            TextBoxStreet.Text = company.Street;
             TextBoxHouseN.Text = company.HouseNumber;
             TextBoxApartmantN.Text = company.ApartmentNumber;
             TextBoxIndex.Text = company.LocationIndex;
@@ -73,6 +74,7 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxContactInformation.IsEnabled = false;
             TextBoxCountry.IsEnabled = false;
             TextBoxCity.IsEnabled = false;
+            TextBoxStreet.IsEnabled = false;
             TextBoxHouseN.IsEnabled = false;
             TextBoxApartmantN.IsEnabled = false;
             TextBoxIndex.IsEnabled = false;
@@ -87,7 +89,8 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxContactInformation.IsEnabled = true;
             TextBoxCountry.IsEnabled = true;
             TextBoxCity.IsEnabled = true;
-            TextBoxHouseN.IsEnabled = true;
+            TextBoxStreet.IsEnabled = false;
+            TextBoxHouseN.IsEnabled = false;
             TextBoxApartmantN.IsEnabled = true;
             TextBoxIndex.IsEnabled = true;
         }
