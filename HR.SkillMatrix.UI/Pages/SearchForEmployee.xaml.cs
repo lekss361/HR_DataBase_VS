@@ -23,6 +23,8 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class SearchForEmployee : Page
     {
+        Worker worker = new Worker();
+        List<Worker> workers = new List<Worker>();
         private readonly MainWindow _mainWindow;
         public SearchForEmployee(MainWindow mainWindow)
         {
@@ -40,7 +42,7 @@ namespace HR.SkillMatrix.UI.Pages
             MapperCompanies mapperCompanies = new MapperCompanies();
             List<HR_DataBase_VSBLL.Models.Company> company = mapperCompanies.GetAllCompanies();
             foreach (var tmp in company)
-            {   
+            {
                 BoxCompanies.Items.Add(tmp.Name);
             }
 
@@ -69,76 +71,119 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void BoxPositions_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
         private void BoxProjects_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void BoxStatuses_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void BoxSkill1_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void BoxLevel1_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void BoxSkill2_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void BoxLevel2_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void BoxSkill3_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void BoxLevel3_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void BoxSkill4_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void BoxLevel4_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void BoxSkill5_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void BoxLevel5_OnInitialized(object? sender, EventArgs e)
         {
-           
+
         }
 
         private void BoxSkill6_OnInitialized(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void BoxLevel6_OnInitialized(object? sender, EventArgs e)
         {
 
+        }
+
+        private void TextBoxSurname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TextBoxSurname.Text))
+            {
+                worker.LastName = TextBoxSurname.Text;
+            }
+        }
+
+        private void TextBoxName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TextBoxName.Text))
+            {
+                worker.FirstName = TextBoxName.Text;
+            }
+        }
+
+        private void TextBoxPatronymic_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TextBoxPatronymic.Text))
+            {
+                worker.Patronymic = TextBoxPatronymic.Text;
+            }
+        }
+
+        private void BoxCompanies_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //if (BoxCompanies.SelectedItem != null)
+            //{
+            //    worker = TextBoxPatronymic.Text;
+            //}
+        }
+
+        private void Find_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TextBoxSurname.Text) ||
+                !string.IsNullOrEmpty(TextBoxName.Text) ||
+                !string.IsNullOrEmpty(TextBoxPatronymic.Text))
+            {
+                MapperWorker mapper = new MapperWorker();
+                workers = mapper.SearchWorkersBySameParams(worker);
+            }
         }
     }
 }
