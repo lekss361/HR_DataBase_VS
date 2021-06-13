@@ -23,17 +23,20 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AboutCompany : Page
     {
+        public CompanyWithForeignKeyValue Company;
+        private int _id;
         private readonly MainWindow _mainWindow;
         public AboutCompany(MainWindow mainWindow, int id)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
+            _id = id;
 
             MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
             DataGridDivisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(id);
             MapperCompany mapperCompany = new MapperCompany();
 
-            CompanyWithForeignKeyValue company = mapperCompany.GetCompanyByID(id);
+            CompanyWithForeignKeyValue company = mapperCompany.GetCompanyByID(_id);
 
             TextBoxInformation.Text = company.Information;
             TextBoxName.Text = company.Name;
@@ -54,8 +57,10 @@ namespace HR.SkillMatrix.UI.Pages
             DivisionByCompany item = (DivisionByCompany)dg.CurrentItem;
             if (item != null)
             {
+                Company = new CompanyWithForeignKeyValue();
+                Company.id = _id;
                 int id = item.id;
-                AboutDivision aboutDivision = new AboutDivision(_mainWindow, id);
+                AboutDivision aboutDivision = new AboutDivision(_mainWindow, id){ Company = this.Company };
                 _mainWindow.Content = aboutDivision;
             }
         }
