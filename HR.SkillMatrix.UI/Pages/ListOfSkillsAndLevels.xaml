@@ -9,7 +9,7 @@
       Title="ListOfSkillsAndLevels">
 
     <Grid Background="White">
-        <DataGrid x:Name="DataGridSkillsAndLevels" AutoGenerateColumns="False"  Margin="95,70,120,60">
+        <DataGrid x:Name="DataGridSkillsAndLevels" AutoGenerateColumns="False"  Margin="95,70,120,60" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
                 <DataGridTextColumn Binding ="{Binding Path = Skill}"  IsReadOnly="True" Header="Проф. навык" Width="100" />

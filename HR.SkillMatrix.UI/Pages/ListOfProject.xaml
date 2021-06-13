@@ -5,16 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
       mc:Ignorable="d" 
-         d:DesignHeight="450" d:DesignWidth="1200"
+      d:DesignHeight="450" d:DesignWidth="1200"
       Title="ListOfProject">
 
     <Grid Background="White">
-        <DataGrid x:Name="Projects" AutoGenerateColumns="False"  Margin="95,58,117,58">
+        <DataGrid x:Name="Projects" AutoGenerateColumns="False"  Margin="95,58,117,58" IsReadOnly="True" >
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
-                <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название" Width="300" />
-                <DataGridTextColumn Binding ="{Binding Path = DirectionName}"  IsReadOnly="True" Header="Направление" Width="300" />
-                <DataGridTextColumn Binding ="{Binding Path = Information}"  IsReadOnly="True" Header="Информация" Width="300"/>
+                <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название" />
+                <DataGridTextColumn Binding ="{Binding Path = DirectionName}"  IsReadOnly="True" Header="Направление" />
+                <DataGridTextColumn Binding ="{Binding Path = Information}"  IsReadOnly="True" Header="Информация" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

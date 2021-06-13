@@ -50,7 +50,11 @@ namespace HR.SkillMatrix.UI.Pages
             {
                 id = item.id;
             }
-            Company.Id = id;
+
+            if (Company != null)
+            {
+                Company.Id = id;
+            }
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)

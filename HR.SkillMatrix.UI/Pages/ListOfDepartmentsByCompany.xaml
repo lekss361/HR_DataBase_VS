@@ -10,7 +10,7 @@
 
     <Grid Margin="0,0,0,0">
         <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="1048" Background="White">
-            <DataGrid x:Name="DataGridDivisions" AutoGenerateColumns="False"  Margin="157,90,153,10" MouseLeftButtonDown="DataGridDivisions_OnMouseLeftButtonDown">
+            <DataGrid x:Name="DataGridDivisions" AutoGenerateColumns="False"  Margin="157,90,153,10" MouseLeftButtonDown="DataGridDivisions_OnMouseLeftButtonDown" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
                     <DataGridTextColumn Binding ="{Binding Path = id}"  IsReadOnly="True" Header="Название отдела" Width="180" Visibility="Hidden" />
