@@ -32,6 +32,8 @@ namespace HR.SkillMatrix.UI.Pages
             _mainWindow = mainWindow;
             InitializeComponent();
             FillDataGrid();
+            ButtonSave.Visibility = Visibility.Hidden;
+            ButtonCancel.Visibility = Visibility.Hidden;
         }
 
         public ListOfProject(NewWindow newWindow)
@@ -39,6 +41,7 @@ namespace HR.SkillMatrix.UI.Pages
             _newWindow = newWindow;
             InitializeComponent();
             FillDataGrid();
+            ButtonBack.Visibility = Visibility.Hidden;
         }
 
         private void FillDataGrid()
@@ -49,39 +52,54 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void DataGridProjects_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            DataGrid dg = (DataGrid)sender;
-            ProjectsWithDirectionName item = (ProjectsWithDirectionName)dg.CurrentItem;
-            if (item != null)
+            if (_newWindow!=null)
             {
-                int count=0;
-                foreach (var a  in ProjectsId)
+                DataGrid dg = (DataGrid)sender;
+                ProjectsWithDirectionName item = (ProjectsWithDirectionName)dg.CurrentItem;
+                if (item != null)
                 {
-                    if (a == item.id)
+                    int count=0;
+                    foreach (var a  in ProjectsId)
                     {
-                        count++;
+                        if (a == item.id)
+                        {
+                            count++;
+                        }
+                    }
+
+                    if (count == 0)
+                    {
+                        ProjectsId.Add(item.id);
+                        MessageBox.Show($@"Выбрано {item.Name}");
                     }
                 }
-
-                if (count == 0)
-                {
-                    ProjectsId.Add(item.id);
-                    MessageBox.Show($@"Выбрано {item.Name}");
-                }
+                LabelCount.Content = ($@"Всего выбранно {ProjectsId.Count}");
             }
-            LabelCount.Content = ($@"Всего выбранно {ProjectsId.Count}");
         }
 
         private void ButtonCancel_OnClick(object sender, RoutedEventArgs e)
         {
-            ProjectsId.Clear();
-            MessageBox.Show($@"Не сохранено");
-            _newWindow.Close();
+            if (_newWindow != null)
+            {
+                ProjectsId.Clear();
+                MessageBox.Show($@"Не сохранено");
+                _newWindow.Close();
+            }
+            
         }
 
         private void ButtonSave_OnClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($@"Сохранено");
-            _newWindow.Close();
+            if (_newWindow != null)
+            {
+                MessageBox.Show($@"Сохранено");
+                _newWindow.Close();
+            }
+        }
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu mainMenu = new MainMenu(_mainWindow);
+            _mainWindow.Content = mainMenu;
         }
     }
 }

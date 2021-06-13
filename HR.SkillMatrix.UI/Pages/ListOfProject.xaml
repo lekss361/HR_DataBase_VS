@@ -20,5 +20,6 @@
         <Label Content="Список проектов" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="1280" Height="85" FontSize="20"/>
         <Button x:Name="ButtonCancel" Content="Отменить и закрыть" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="10,10,0,0" Click="ButtonCancel_OnClick"/>
         <Button x:Name="ButtonSave" Content="Сохранить и закрыть" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="165,10,0,0" Click="ButtonSave_OnClick"/>
+        <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="10,10,0,0" Click="ButtonBack_Click"/>
     </Grid>
 </Page>
