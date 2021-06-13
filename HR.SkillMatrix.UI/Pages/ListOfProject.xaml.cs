@@ -34,6 +34,7 @@ namespace HR.SkillMatrix.UI.Pages
             FillDataGrid();
             ButtonSave.Visibility = Visibility.Hidden;
             ButtonCancel.Visibility = Visibility.Hidden;
+            LabelCount.Visibility = Visibility.Hidden;
         }
 
         public ListOfProject(NewWindow newWindow)
