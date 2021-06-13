@@ -32,16 +32,14 @@ namespace HR.SkillMatrix.UI.Pages
         {
             InitializeComponent();
             _mainWindow = mainWindow;
-            MapperCompanies mapperCompanies = new MapperCompanies();
-            DataGridCompanies.ItemsSource = mapperCompanies.GetAllCompaniesWithContactAndLocation();
+            FillDataGrid();
         }
         public ListOfCompanies(NewWindow newWindow)
         {
             InitializeComponent();
             _newWindow = newWindow;
             ButtonBack.Visibility = Visibility.Hidden;
-            MapperCompanies mapperCompanies = new MapperCompanies();
-            DataGridCompanies.ItemsSource = mapperCompanies.GetAllCompaniesWithContactAndLocation();
+            FillDataGrid();
         }
         private void DataGridCompanies_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -60,6 +58,8 @@ namespace HR.SkillMatrix.UI.Pages
             if (_newWindow != null)
             {
                 Company.Id = id;
+                Saved saved = new Saved();
+                saved.ShowDialog();
                 _newWindow.Close();
             }
         }
@@ -68,6 +68,12 @@ namespace HR.SkillMatrix.UI.Pages
         {
             MainMenu mainMenu = new MainMenu(_mainWindow);
             _mainWindow.Content = mainMenu;
+        }
+
+        private void FillDataGrid()
+        {
+            MapperCompanies mapperCompanies = new MapperCompanies();
+            DataGridCompanies.ItemsSource = mapperCompanies.GetAllCompaniesWithContactAndLocation();
         }
     }
 }

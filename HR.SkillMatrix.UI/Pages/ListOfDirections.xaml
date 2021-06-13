@@ -1,0 +1,21 @@
+﻿<Page x:Class="HR.SkillMatrix.UI.Pages.ListOfDirections"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListOfDirections">
+
+    <Grid Background="White">
+
+        <DataGrid x:Name="DataGridDirections" AutoGenerateColumns="False"  Margin="100,60,100,60" IsReadOnly="True" MouseLeftButtonDown="DataGridDirections_OnMouseLeftButtonDown">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding ="{Binding Path = id}"  IsReadOnly="True" Header="Название" Width="600" Visibility="Hidden" />
+                <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название" Width="600" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Направления" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="40" Width="800"/>
+    </Grid>
+</Page>

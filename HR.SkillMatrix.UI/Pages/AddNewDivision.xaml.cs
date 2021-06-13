@@ -48,7 +48,7 @@ namespace HR.SkillMatrix.UI.Pages
             divisions.CompanyID = Company.Id;
             divisions.ContactID = mapperContacts.AddNew(Contacts);
             divisions.LocationID = mapperLocation.AddNewLocation(Location);
-            divisions.DirectionsID = 1;
+            divisions.DirectionsID = Directions.id;
             divisions.Information = textBoxDescription.Text;
 
             mapper.MapToDivisionsDTO(divisions);
@@ -76,7 +76,11 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonAddDirection_Click(object sender, RoutedEventArgs e)
         {
-
+            Directions = new Directions();
+            NewWindow newWindow = new NewWindow();
+            ListOfDirections listOfDirections = new ListOfDirections(newWindow) { Directions = this.Directions };
+            newWindow.Content = listOfDirections;
+            newWindow.ShowDialog();
         }
 
         private void Back_OnClick(object sender, RoutedEventArgs e)

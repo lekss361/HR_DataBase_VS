@@ -170,8 +170,8 @@ namespace HR.SkillMatrix.UI.Pages
         {
             DivisionByCompany = new DivisionByCompany();
             NewWindow newWindow = new NewWindow();
-            ListOfDepartmentsByCompany listOfDepartmentsByCompany = new ListOfDepartmentsByCompany(newWindow, Company.Id) { DivisionByCompany = this.DivisionByCompany };
-            newWindow.Content = listOfDepartmentsByCompany;
+            ListOfDivisionsByCompany listOfDivisionsByCompany = new ListOfDivisionsByCompany(newWindow, Company.Id) { DivisionByCompany = this.DivisionByCompany };
+            newWindow.Content = listOfDivisionsByCompany;
             newWindow.ShowDialog();
         }
     }
