@@ -49,9 +49,8 @@ namespace HR.SkillMatrix.UI.Pages
             DivisionByCompany item = (DivisionByCompany)dg.CurrentItem;
             if (item != null)
             {
-                _divisionId = item.id;
+                DivisionByCompany.id = item.id;
             }
-            DivisionByCompany.id = _divisionId;
             _newWindow.Close();
             Saved saved = new Saved();
             saved.ShowDialog();

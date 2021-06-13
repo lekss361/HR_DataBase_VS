@@ -5,17 +5,20 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="1200"
+      d:DesignHeight="720" d:DesignWidth="1280"
       Title="ListOfProject">
 
     <Grid Background="White">
-        <DataGrid x:Name="Projects" AutoGenerateColumns="False"  Margin="95,58,117,58" IsReadOnly="True" >
+        <DataGrid x:Name="DataGridProjects" AutoGenerateColumns="False"  Margin="0,100,0,50" IsReadOnly="True" MouseLeftButtonDown="DataGridProjects_OnMouseLeftButtonDown">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
                 <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Название" />
                 <DataGridTextColumn Binding ="{Binding Path = DirectionName}"  IsReadOnly="True" Header="Направление" />
                 <DataGridTextColumn Binding ="{Binding Path = Information}"  IsReadOnly="True" Header="Информация" />
             </DataGrid.Columns>
         </DataGrid>
+        <Label x:Name="LabelCount" Content="Всего выбранно 0" HorizontalAlignment="Left" Margin="974,27,0,0" VerticalAlignment="Top" Height="50" Width="180" FontSize="15"/>
+        <Label Content="Список проектов" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="1280" Height="85" FontSize="20"/>
+        <Button x:Name="ButtonCancel" Content="Отменить и закрыть" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="10,10,0,0" Click="ButtonCancel_OnClick"/>
+        <Button x:Name="ButtonSave" Content="Сохранить и закрыть" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="165,10,0,0" Click="ButtonSave_OnClick"/>
     </Grid>
 </Page>

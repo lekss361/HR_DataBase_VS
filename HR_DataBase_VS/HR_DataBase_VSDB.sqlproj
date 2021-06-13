@@ -83,6 +83,7 @@
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\Statuses" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\WorkersSkillMaps" />
     <Folder Include="HR_DataBase_VSDB\Stored Procedures\PreviousWorks" />
+    <Folder Include="HR_DataBase_VSDB\Stored Procedures\ProjectMaps" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="HR_DataBase_VSDB\Tables\Companies.sql" />
@@ -190,6 +191,7 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\CompanyWithForeignKeyValueById.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Company\GetCompaniesWithContactAndLocation.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Positions\GetPositionsWithDirectionName.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\ProjectMaps\AddNewProjectsMapByWorkerId.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\AddNewProject.sql" />
