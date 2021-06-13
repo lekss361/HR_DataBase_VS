@@ -5,11 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="ListOfCompanies">
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="ListOfCompanies" MinHeight="450" MinWidth="800">
 
-    <Grid Margin="0,0,0,0">
-        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="1048" Background="White">
+    <Grid Background="White">
+        <Grid >
             <DataGrid x:Name="DataGridCompanies" AutoGenerateColumns="False"  Margin="157,90,153,10" MouseLeftButtonDown="DataGridCompanies_MouseLeftButtonDown" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
@@ -24,7 +24,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Label Content="Список Компаний" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="800" FontSize="16" Background="#FF8577C7"/>
-            <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="124,35,0,0" Click="ButtonBack_Click"/>
+            <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="10,10,0,0" Click="ButtonBack_Click"/>
         </Grid>
     </Grid>
 </Page>
