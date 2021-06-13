@@ -6,18 +6,49 @@
       xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page1" Height="221" Width= "437">
+      Title="AddSkillMenu">
 
 
 
     <Grid Background="White">
-        <Label Content="Добавить меню навыков" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="10"/>
-        <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Margin="142,29,0,0" VerticalAlignment="Top" Width="110" Height="40" Click="Save_Click"/>
-        <Button Content="Закрыть" HorizontalAlignment="Left"   Margin="15,29,0,0" VerticalAlignment="Top" Width="110" Height="40"/>
-        <TextBox x:Name="textBoxNewSkill" HorizontalAlignment="Left" Height="26" Margin="15,82,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Новый навык" VerticalAlignment="Top" Width="401"/>
-        <TextBox HorizontalAlignment="Left" Height="83" Margin="15,122,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Описание нового навыка" VerticalAlignment="Top" Width="401"/>
-        <RadioButton x:Name="SoftSkill" Content="SoftSkill" HorizontalAlignment="Left" Margin="268,49,0,0" VerticalAlignment="Top" IsChecked="True" GroupName="SkillType" Checked="SoftSkill_Checked"/>
-        <RadioButton x:Name="HardSkill" Content="HardSkill" HorizontalAlignment="Left" Margin="342,49,0,0" VerticalAlignment="Top" GroupName="SkillType" Checked="HardSkill_Checked"/>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="6*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="0.8*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+            <TextBox x:Name="textBoxNewSkill" HorizontalAlignment="Left" Height="26"  Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="401"/>
+            <TextBox HorizontalAlignment="Left" Height="83" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="401"/>
+            <RadioButton x:Name="SoftSkill" Content="SoftSkill" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" Margin="50,10,0,0" VerticalAlignment="Top" IsChecked="True" GroupName="SkillType" Checked="SoftSkill_Checked"/>
+            <RadioButton x:Name="HardSkill" Content="HardSkill" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" Margin="150,10,0,0" VerticalAlignment="Top" GroupName="SkillType" Checked="HardSkill_Checked"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Text="Новый навык" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="128"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Text="Описание нового навыка" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="128" Height="57"/>
+        </Grid>
+        <Label Content="Добавить меню навыков" HorizontalAlignment="Left" Margin="180,2,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Margin="42,40,0,0" VerticalAlignment="Top" Width="110" Height="40" Click="Save_Click" Grid.Column="1"/>
+        <Button Content="Закрыть" HorizontalAlignment="Left"   Margin="15,39,0,0" VerticalAlignment="Top" Width="110" Height="40" Grid.ColumnSpan="2"/>
+
 
 
     </Grid>
