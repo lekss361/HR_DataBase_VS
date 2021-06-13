@@ -29,15 +29,15 @@
         <TextBlock HorizontalAlignment="Left" Margin="260,90,0,0" Grid.Row="1" Grid.Column="2" Text="Почта" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="260,50,0,0" Grid.Row="1" Grid.Column="2" Text="Направление" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="5,240,0,0" Grid.Row="1" Grid.Column="1" Text="Страна" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="5,280,0,0" Grid.Row="1" Grid.Column="1" Text="Номер дома" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="5,280,0,0" Grid.Row="1" Grid.Column="1" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"><Run Language="ru-ru" Text="Улица"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="260,240,0,0" Grid.Row="1" Grid.Column="2" Text="Город" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="260,280,0,0" Grid.Row="1" Grid.Column="2" Text="Офис" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,320,0,0" Grid.Row="1" Grid.Column="1" Text="Индекс" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="260,280,0,0" Grid.Row="1" Grid.Column="2" Text="Номер дома" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,320,0,0" Grid.Row="1" Grid.Column="1" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"><Run Language="ru-ru" Text="Офис"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="10,360,0,0" Grid.Row="1" Grid.Column="1" Text="Информация" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Отдел"  Grid.Column="2" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBoxIndex" Grid.Column="2" HorizontalAlignment="Left" Margin="10,320,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="231" IsEnabled="False" FontSize="18" Height="25"/>
-        <TextBox x:Name="TextBoxApartmantN" Grid.Column="2" HorizontalAlignment="Left" Margin="384,280,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="231" IsEnabled="False" FontSize="18" Height="25"/>
-        <TextBox x:Name="TextBoxHouseN" Grid.Column="2" HorizontalAlignment="Left" Margin="10,280,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="231" IsEnabled="False" FontSize="18" Height="25"/>
+        <TextBox x:Name="TextBoxApartmantN" Grid.Column="2" HorizontalAlignment="Left" Margin="10,320,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="231" IsEnabled="False" FontSize="18" Height="25"/>
+        <TextBox x:Name="TextBoxHouseN" Grid.Column="2" HorizontalAlignment="Left" Margin="384,280,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="231" IsEnabled="False" FontSize="18" Height="25"/>
+        <TextBox x:Name="TextBoxStreet" Grid.Column="2" HorizontalAlignment="Left" Margin="10,280,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="231" IsEnabled="False" FontSize="18" Height="25"/>
         <TextBox x:Name="TextBoxCity" Grid.Column="2" HorizontalAlignment="Left" Margin="384,240,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="231" IsEnabled="False" FontSize="18" Height="25"/>
         <TextBox x:Name="TextBoxCountry" Grid.Column="2" HorizontalAlignment="Left" Margin="10,240,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="231" IsEnabled="False" FontSize="18" Height="25"/>
         <TextBox x:Name="TextBoxContactInformation" Grid.Column="2" HorizontalAlignment="Left" Margin="10,130,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="605" Height="80" IsEnabled="False" FontSize="18"/>
@@ -52,6 +52,8 @@
         <Button x:Name="ButtonChange" Content="Изменить" HorizontalAlignment="Left" Grid.Column="2" Margin="160,61,0,0" VerticalAlignment="Top" Width="140" Height="40" Click="ButtonChange_Click"/>
         <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Grid.Column="2" Margin="310,61,0,0" VerticalAlignment="Top" Width="140"  Height="40" Click="ButtonSave_Click" />
         <Button x:Name="ButtonCancellation" Content="Отменить" HorizontalAlignment="Left" Grid.Column="2" Margin="460,61,0,0" VerticalAlignment="Top" Width="140" Height="40" Click="ButtonCancellation_Click" />
+        <TextBox x:Name="TextBoxIndex" Grid.Column="2" HorizontalAlignment="Left" Margin="384,319,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="231" IsEnabled="False" FontSize="18" Height="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="260,320,0,0" Grid.Row="1" Grid.Column="2" Text="Индекс" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
 
 
     </Grid>

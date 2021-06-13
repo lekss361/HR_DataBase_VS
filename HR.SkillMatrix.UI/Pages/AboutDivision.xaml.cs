@@ -32,6 +32,7 @@ namespace HR.SkillMatrix.UI.Pages
             MapperDivisions mapperDivisionById = new MapperDivisions();
             DivisionWithForeignKeyValue divisionWithForeignKeyValue = mapperDivisionById.GetDivisionByID(id);
             TextBoxCity.Text = divisionWithForeignKeyValue.City;
+            TextBoxStreet.Text = divisionWithForeignKeyValue.Street;
             TextBoxIndex.Text = divisionWithForeignKeyValue.LocationIndex.ToString();
             TextBoxApartmantN.Text = divisionWithForeignKeyValue.ApartmentNumber.ToString();
             TextBoxHouseN.Text = divisionWithForeignKeyValue.HouseNumber.ToString();
@@ -62,6 +63,7 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxContactInformation.IsEnabled = true;
             TextBoxCountry.IsEnabled = true;
             TextBoxCity.IsEnabled = true;
+            TextBoxStreet.IsEnabled = true;
             TextBoxHouseN.IsEnabled = true;
             TextBoxApartmantN.IsEnabled = true;
             TextBoxIndex.IsEnabled = true;
@@ -83,6 +85,7 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxContactInformation.IsEnabled = false;
             TextBoxCountry.IsEnabled = false;
             TextBoxCity.IsEnabled = false;
+            TextBoxStreet.IsEnabled = false;
             TextBoxHouseN.IsEnabled = false;
             TextBoxApartmantN.IsEnabled = false;
             TextBoxIndex.IsEnabled = false;

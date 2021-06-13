@@ -89,14 +89,18 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxContactInformation.IsEnabled = true;
             TextBoxCountry.IsEnabled = true;
             TextBoxCity.IsEnabled = true;
-            TextBoxStreet.IsEnabled = false;
-            TextBoxHouseN.IsEnabled = false;
+            TextBoxStreet.IsEnabled = true;
+            TextBoxHouseN.IsEnabled = true;
             TextBoxApartmantN.IsEnabled = true;
             TextBoxIndex.IsEnabled = true;
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
+
+            ListOfCompanies listOfCompanies = new ListOfCompanies(_mainWindow);
+            _mainWindow.Content = listOfCompanies;
+
 
         }
 
