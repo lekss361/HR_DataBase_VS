@@ -56,5 +56,11 @@ namespace HR.SkillMatrix.UI.Pages
             AddNewDivision addNewDivision = new AddNewDivision(_mainWindow);
             _mainWindow.Content = addNewDivision;
         }
+
+        private void AddNewDirection_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewDirections addNewDirections = new AddNewDirections(_mainWindow);
+            _mainWindow.Content = addNewDirections;
+        }
     }
 }

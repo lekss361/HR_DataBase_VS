@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace HR_DataBase_VSDAL.DTO
 {
-    public class SkillNameByIdDTO
+    public class ProjectMapsDTO
     {
-        public int Id { get; set; }
-
-        public string Skill { get; set; }
+        public int WorkerID { get; set; }
+        public int ProjectID { get; set; }
     }
 }

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace HR_DataBase_VSBLL.Models
 {
     public class Directions
-    {        
+    {
+        public int id { get; set; }
         public string Name { get; set; }
-      
 
         public Directions()
         {

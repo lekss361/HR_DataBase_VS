@@ -50,15 +50,11 @@ namespace HR_DataBase_VSBLL.Mappers
         /// <returns></returns>
         public Contacts UpdateContacts(Contacts contactsModel, int Id)
         {
-            ContactsDTO tmpDTOold = new ContactsDTO();
-            ContactsDTO tmpDTONew = new ContactsDTO();
-            Contacts tmpModel = new Contacts();
+            contactsDTO = MapModelToDTO(contactsModel);
+            dapper.UpdateNewContact(contactsDTO, Id);
+            contactsModel = MapDTOToModel(contactsDTO);
 
-            tmpDTONew = MapModelToDTO(contactsModel);
-            dapper.UpdateNewContact(tmpDTONew, Id);
-            tmpModel = MapDTOToModel(tmpDTONew);
-
-            return tmpModel;
+            return contactsModel;
         }
 
         /// <summary>
@@ -81,7 +77,7 @@ namespace HR_DataBase_VSBLL.Mappers
         private Contacts MapDTOToModel(ContactsDTO contactsDTO)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<ContactsDTO, Contacts>()
-            .ForMember(dest => dest.Id, option => option.MapFrom(source => source.Id))
+            .ForMember(dest => dest.id, option => option.MapFrom(source => source.id))
             .ForMember(dest => dest.Phone, option => option.MapFrom(source => source.Phone))
             .ForMember(dest => dest.Email, option => option.MapFrom(source => source.Email))
             .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information)));

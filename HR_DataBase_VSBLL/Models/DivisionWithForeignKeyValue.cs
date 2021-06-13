@@ -8,6 +8,10 @@ namespace HR_DataBase_VSBLL.Models
 {
    public class DivisionWithForeignKeyValue
     {
+        public int CompanyID { get; set; }
+        public int DirectionId { get; set; }
+        public int ContactID { get; set; }
+        public int LocationID { get; set; }
         public string Name { get; set; }
         public string Information { get; set; }
         public string CompanyName { get; set; }

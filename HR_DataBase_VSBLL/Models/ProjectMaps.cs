@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace HR_DataBase_VSBLL.Models
 {
-    public class SkillNameById
+    public class ProjectMaps
     {
-        public int Id { get; set; }
-        public string Skill { get; set; }
-
-        public SkillNameById()
-        {
-
-        }
+        public int WorkerID { get; set; }
+        public int ProjectID { get; set; }
     }
 }

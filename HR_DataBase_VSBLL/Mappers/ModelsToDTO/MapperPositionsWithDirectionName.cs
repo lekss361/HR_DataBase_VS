@@ -29,6 +29,7 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
             List<PositionsWithDirectionName> sda = new List<PositionsWithDirectionName>();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<PositionsWithDirectionNameDTO, PositionsWithDirectionName>()
+                .ForMember(dest => dest.id, option => option.MapFrom(source => source.id))
                 .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
                 .ForMember(dest => dest.DirectionName, option => option.MapFrom(source => source.DirectionName)));
 

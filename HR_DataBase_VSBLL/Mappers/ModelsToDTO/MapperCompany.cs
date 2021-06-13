@@ -62,7 +62,7 @@ namespace HR_DataBase_VSBLL.Mappers
                 .ForMember(dest => dest.ContactInformation, option => option.MapFrom(source => source.ContactInformation))
                 .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
                 .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
-                .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Email))
+                .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Street))
                 .ForMember(dest => dest.ApartmentNumber, option => option.MapFrom(source => source.ApartmentNumber))
                 .ForMember(dest => dest.HouseNumber, option => option.MapFrom(source => source.HouseNumber))
                 .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex)));

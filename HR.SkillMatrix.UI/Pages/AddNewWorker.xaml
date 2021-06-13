@@ -56,12 +56,12 @@
             <Label Grid.Column="0" Content="Статус" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="15"/>
             <Label Grid.Column="0" Content="Профессиональные навыки" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="16"/>
             <Label Grid.Column="0" Content="Дополнительные навыки" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="267" Height="29" Grid.Row="17"/>
-            
+
             <TextBox Grid.Row="0" x:Name="LastName" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="30" Grid.Column="1"/>
             <TextBox x:Name="FirstName" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="29" Grid.Column="1" Grid.Row="1"/>
             <TextBox x:Name="Patronymic" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="29" Grid.Column="1" Grid.Row="2"/>
             <TextBox x:Name="Education" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="29" Grid.Column="1" Grid.Row="5"/>
-            
+
             <TextBox x:Name="Hobby" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="533" Height="29" Grid.Column="1" Grid.Row="9"/>
             <DatePicker x:Name="BirthDay" SelectedDate="{x:Static sys:DateTime.Now}" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Grid.Column="1" Height="30" Width="100" DataContext=""/>
             <RadioButton x:Name="Men" Content="Мужской" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="29" Checked="Men_OnChecked"/>
@@ -84,8 +84,8 @@
             </Button>
             <Button x:Name="ButtonChoosePosition" Content="Выбрать должность" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="13" VerticalAlignment="Center" Height="29" Width="533" Click="ButtonChoosePosition_Click"/>
             <Button x:Name="ButtonChooseProject" Content="Выбрать проект" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="14" VerticalAlignment="Center" Height="29" Width="533" Click="ButtonChooseProject_Click"/>
-                <Button x:Name="ChooseStatus" Content="Выбрать статус" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="15" VerticalAlignment="Center" Height="29" Width="533"/>
-            <Button x:Name="ChooseProfessionalSkill" Content="Выбрать проф. навык" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="16" VerticalAlignment="Center" Height="29" Width="533" Margin="2" Click="ChooseProfessionalSkill_Click"/>
+            <Button x:Name="ChooseStatus" Content="Выбрать статус" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="15" VerticalAlignment="Center" Height="29" Width="533"/>
+            <Button x:Name="ChooseProfessionalSkill" Content="Выбрать проф. навык" HorizontalContentAlignment="Left" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="16" VerticalAlignment="Center" Height="29" Width="533" Click="ChooseProfessionalSkill_Click"/>
             <!--<ComboBox x:Name="Box" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="20" VerticalAlignment="Center" Width="533" Height="30" MouseEnter="BoxContacts_OnMouseEnter" >
                 <ComboBoxItem IsSelected="True">    
                     <TextBlock>Выбрать контакт или создать</TextBlock>

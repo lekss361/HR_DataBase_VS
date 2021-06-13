@@ -51,6 +51,17 @@ namespace HR_DataBase_VSBLL.Mappers
         }
 
         /// <summary>
+        /// Изменяем запись Location в БД по Id
+        /// </summary>
+        /// <param name="model"></param>
+        public int UpdateLocationByid(Location model,int id)
+        {
+            locationDTO = MapModelToLocationDTO(model);
+            id = dapper.UpdateLocationById(locationDTO,id);
+            return id;
+        }
+
+        /// <summary>
         /// Mapper моделей UI в DTO
         /// </summary>
         /// <param name="location"></param>
@@ -76,6 +87,7 @@ namespace HR_DataBase_VSBLL.Mappers
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<LocationDTO, Location>()
                 .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex))
+                .ForMember(dest => dest.id, option => option.MapFrom(source => source.id))
                 .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
                 .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
                 .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Street))

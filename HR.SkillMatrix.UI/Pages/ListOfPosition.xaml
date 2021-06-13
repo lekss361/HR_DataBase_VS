@@ -11,9 +11,10 @@
 
 
     <Grid Background="#FFF0E9E9">
-        <DataGrid x:Name="GridPositions" AutoGenerateColumns="False"  Margin="95,70,120,60" IsReadOnly="True">
+        <DataGrid x:Name="DataGridPositions" AutoGenerateColumns="False"  Margin="95,70,120,60" IsReadOnly="True" MouseLeftButtonDown="DataGridPositions_OnMouseLeftButtonDown">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
+                <!--<DataGridTextColumn Binding ="{Binding Path = id}"  IsReadOnly="True" Header="Позиции" Width="100" Visibility="Hidden" />-->
                 <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="Позиции" Width="100" />
                 <DataGridTextColumn Binding ="{Binding Path = DirectionName}"  IsReadOnly="True" Header="Направление" Width="100"/>
             </DataGrid.Columns>

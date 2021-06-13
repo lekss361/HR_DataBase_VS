@@ -73,7 +73,7 @@ namespace HR.SkillMatrix.UI.Pages
             Location = new Location();
             //_swaper.AddLocationMenu(Location);
             NewWindow newWindow = new NewWindow();
-            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow) { Location = this.Location };
+            AddLocationMenu locationMenu = new AddLocationMenu(newWindow) { Location = this.Location };
             newWindow.Content = locationMenu;
             newWindow.ShowDialog();
         }
@@ -82,7 +82,7 @@ namespace HR.SkillMatrix.UI.Pages
         {
             Contacts = new Contacts();
             NewWindow newWindow = new NewWindow();
-            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow) { Contacts = this.Contacts };
+            AddContactsMenu addContactsMenu = new AddContactsMenu(newWindow) { Contacts = this.Contacts };
             newWindow.Content = addContactsMenu;
             newWindow.ShowDialog();
         }

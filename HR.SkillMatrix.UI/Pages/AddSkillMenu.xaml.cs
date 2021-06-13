@@ -23,36 +23,34 @@ namespace HR.SkillMatrix.UI.Pages
     public partial class AddSkillMenu : Page
     {
         private readonly MainWindow _mainWindow;
-        private int skillType;
+        private int _skillType;
         public AddSkillMenu(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
-            skillType = 1;
+            _skillType = 1;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            SkillName skillName = new SkillName();
+            SkillNameWithType skillName = new SkillNameWithType();
 
-            skillName.Skill = textBoxNewSkill.Text;
-            
-            skillName.SkillTypeID = skillType;
+            skillName.SkillName = textBoxNewSkill.Text;
+
+            skillName.SkillTypeID = _skillType;
 
             MapperSkillName mapper = new MapperSkillName();
             mapper.MapToSkillNameDTO(skillName);
         }
 
-
-
         private void SoftSkill_Checked(object sender, RoutedEventArgs e)
         {
-            skillType = 1;
+            _skillType = 2;
         }
 
         private void HardSkill_Checked(object sender, RoutedEventArgs e)
         {
-            skillType = 2;
+            _skillType = 1;
         }
     }
 }

@@ -13,42 +13,49 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HR.SkillMatrix.UI.Windows;
-using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSBLL.Mappers;
+using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
+using HR_DataBase_VSBLL.Models;
 
 namespace HR.SkillMatrix.UI.Pages
 {
     /// <summary>
-    /// Interaction logic for AddContactsMenu.xaml
+    /// Interaction logic for ListOfDirections.xaml
     /// </summary>
-    public partial class AddContactsMenu : Page
+    public partial class ListOfDirections : Page
     {
-        public Contacts Contacts;
+        public Directions Directions;
         private readonly MainWindow _mainWindow;
         private readonly NewWindow _newWindow;
-        public AddContactsMenu(MainWindow mainWindow)
+        public ListOfDirections(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
+            FillDataGrid();
         }
-
-        public AddContactsMenu(NewWindow newWindow)
+        public ListOfDirections(NewWindow newWindow)
         {
             InitializeComponent();
             _newWindow = newWindow;
+            FillDataGrid();
         }
 
-        private void buttonSave_Click(object sender, RoutedEventArgs e)
+        private void FillDataGrid()
         {
-            Contacts.Phone = textBoxPhone.Text;
-            Contacts.Email = textBoxMail.Text;
-            if (!string.IsNullOrEmpty(textBoxOther.Text))
+            MapperDirections mapperDirections = new MapperDirections();
+            DataGridDirections.ItemsSource = mapperDirections.GetAllDirections();
+        }
+
+        private void DataGridDirections_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DataGrid dg = (DataGrid)sender;
+            Directions item = (Directions)dg.CurrentItem;
+            if (item != null)
             {
-                Contacts.Information = textBoxOther.Text;
+                Directions.id = item.id;
             }
             Saved saved = new Saved();
             saved.ShowDialog();
-
             _newWindow.Close();
         }
     }

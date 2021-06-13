@@ -10,62 +10,50 @@ namespace HR_DataBase_VSDAL.Dapper
 {
     public class SkillNameDapper
     {
-        int ID;
-
+        int Id;
+        private List<SkillNameWithTypeDTO> skillNameWithTypeDTO = new List<SkillNameWithTypeDTO>();
+        private string _query;
+        private string _value;
+        string _connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
         /// <summary>
         /// Делаем запись в Базу Данных через хранимую процедуру
         /// </summary>
         /// <param name="SkillNameDTO"></param>
         /// <returns></returns>
-        public int AddNewSkillName(SkillNameDTO SkillNameDTO)
+        public int AddNewSkillName(SkillNameWithTypeDTO SkillNameDTO)
         {
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
-
-            string query = "exec [HR_DataBase_VSDB].[AddNewSkillName]";
-            string value = $" N'{SkillNameDTO.Skill}', N'{SkillNameDTO.SkillTypeID}'";
-
-            using (IDbConnection connection = new SqlConnection(connectionString))
+            _query = "exec [HR_DataBase_VSDB].[AddNewSkillName]";
+            _value = $" N'{SkillNameDTO.SkillName}', N'{SkillNameDTO.SkillType}'";
+            using (IDbConnection connection = new SqlConnection(_connectionString))
             {
-                ID = connection.QueryFirst<int>(@$"{query}{value}");
+                Id = connection.QueryFirst<int>(@$"{_query}{_value}");
             }
-            return ID;
+            return Id;
         }
 
-
-
-        //public void GetSkillNameByTypeID(int idSkillType)
-        //{
-        //    string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
-
-        //    string query = "exec [HR_DataBase_VSDB].[GetSkillNameBySkillTypeID]";
-        //    string value = $" N'{idSkillType}'";
-
-        //    using (IDbConnection connection = new SqlConnection(connectionString))
-        //    {
-        //        connection.Query<SkillNameByIdDTO>(@$"{query}{value}");
-        //    }
-
-        //}
-
-
-        List<SkillNameByIdDTO> ListSkilNameDTO = new List<SkillNameByIdDTO>();
-
-        public List<SkillNameByIdDTO> GetSkillNameByTypeID(int idSkillType)
+        public List<SkillNameWithTypeDTO> GetSkillNameByTypeId(int id)
         {
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
-
-            string query = "exec [HR_DataBase_VSDB].[GetSkillNameBySkillTypeID]";
-            string value = $" N'{idSkillType}'";
-
-            using (IDbConnection connection = new SqlConnection(connectionString))
+            _connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
+            _query = $"exec [HR_DataBase_VSDB].[GetSkillNameBySkillTypeID] @SkillTypeID={id}";
+            using (IDbConnection connection = new SqlConnection(_connectionString))
             {
-                ListSkilNameDTO = connection
-                    .Query<SkillNameByIdDTO>($@"{query}{value}")
-                    .AsList<SkillNameByIdDTO>();
+                skillNameWithTypeDTO = connection
+                    .Query<SkillNameWithTypeDTO>($@"{_query}")
+                    .AsList<SkillNameWithTypeDTO>();
             }
-            return ListSkilNameDTO;
+            return skillNameWithTypeDTO;
+        }
 
-
+        public List<SkillNameWithTypeDTO> GetSkillNameByAllType()
+        {
+            _query = "exec [HR_DataBase_VSDB].[GetAllSkillNames]";
+            using (IDbConnection connection = new SqlConnection(_connectionString))
+            {
+                skillNameWithTypeDTO = connection
+                    .Query<SkillNameWithTypeDTO>($@"{_query}")
+                    .AsList<SkillNameWithTypeDTO>();
+            }
+            return skillNameWithTypeDTO;
         }
     }
 }

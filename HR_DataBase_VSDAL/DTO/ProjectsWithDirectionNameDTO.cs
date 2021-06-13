@@ -8,6 +8,7 @@ namespace HR_DataBase_VSDAL.Models
 {
    public class ProjectsWithDirectionNameDTO
     {
+        public int id { get; set; }
         public string Name { get; set; }
         public string DirectionName { get; set; }
         public string Information { get; set; }

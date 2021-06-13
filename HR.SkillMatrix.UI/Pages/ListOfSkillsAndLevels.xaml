@@ -12,7 +12,10 @@
         <DataGrid x:Name="DataGridSkillsAndLevels" AutoGenerateColumns="False"  Margin="95,70,120,60" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
-                <DataGridTextColumn Binding ="{Binding Path = Skill}"  IsReadOnly="True" Header="Проф. навык" Width="100" />
+                <DataGridTextColumn Binding ="{Binding Path = Id}"  IsReadOnly="True" Header="Проф. навык" Width="100" />
+                <DataGridTextColumn Binding ="{Binding Path = SkillTypeID}"  IsReadOnly="True" Header="Проф. навык" Width="100" />
+                <DataGridTextColumn Binding ="{Binding Path = SkillName}"  IsReadOnly="True" Header="Проф. навык" Width="100" />
+                <DataGridTextColumn Binding ="{Binding Path = SkillType}"  IsReadOnly="True" Header="Проф. навык" Width="100" />
                 <DataGridTemplateColumn Width="100" Header="Уровень">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -39,7 +42,7 @@
             </DataGrid.Columns>
         </DataGrid>
         
-        <Label Content="Профессиональные навыки" HorizontalAlignment="Left" Margin="346,5,0,0" VerticalAlignment="Top"/>
+        <Label Content="Навыки" HorizontalAlignment="Left" Margin="346,5,0,0" VerticalAlignment="Top"/>
         <Button x:Name="ButtonSaveSkill" Content="Сохранить" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="40" Margin="0,0,10,10" Click="ButtonSaveSkill_Click" />
        
 

@@ -16,8 +16,6 @@ namespace HR_DataBase_VSBLL.Mappers
         {
             List<ProjectsWithDirectionNameDTO> projectsWithDirectionNameDTODtos = dapper.GetProjectsWithDirectionName();
             List<ProjectsWithDirectionName> projectsWithDirectionName = MapProjectsWithDirectionNameDTOToModelList(projectsWithDirectionNameDTODtos);
-            projectsWithDirectionNameDTODtos.Clear();
-
             return projectsWithDirectionName;
         }
 
@@ -27,6 +25,7 @@ namespace HR_DataBase_VSBLL.Mappers
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<ProjectsWithDirectionNameDTO, ProjectsWithDirectionName>()
                 .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
+                .ForMember(dest => dest.id, option => option.MapFrom(source => source.id))
                 .ForMember(dest => dest.DirectionName, option => option.MapFrom(source => source.DirectionName))
                 .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information)));
 

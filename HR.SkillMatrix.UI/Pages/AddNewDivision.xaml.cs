@@ -26,6 +26,7 @@ namespace HR.SkillMatrix.UI.Pages
     {
         public Contacts Contacts;
         public Location Location;
+        public Company Company;
         public Directions Directions;
         public int companyId;
         private readonly MainWindow _mainWindow;
@@ -44,10 +45,10 @@ namespace HR.SkillMatrix.UI.Pages
             Divisions divisions = new Divisions();
 
             divisions.Name = textBoxName.Text;
-            divisions.CompanyID = 1;
+            divisions.CompanyID = Company.Id;
             divisions.ContactID = mapperContacts.AddNew(Contacts);
             divisions.LocationID = mapperLocation.AddNewLocation(Location);
-            divisions.DirectionsID = 1;
+            divisions.DirectionsID = Directions.id;
             divisions.Information = textBoxDescription.Text;
 
             mapper.MapToDivisionsDTO(divisions);
@@ -59,7 +60,7 @@ namespace HR.SkillMatrix.UI.Pages
         {
             Location = new Location();
             NewWindow newWindow = new NewWindow();
-            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow) { Location = this.Location };
+            AddLocationMenu locationMenu = new AddLocationMenu(newWindow) { Location = this.Location };
             newWindow.Content = locationMenu;
             newWindow.ShowDialog();
         }
@@ -68,20 +69,33 @@ namespace HR.SkillMatrix.UI.Pages
         {
             Contacts = new Contacts();
             NewWindow newWindow = new NewWindow();
-            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow) { Contacts = this.Contacts };
+            AddContactsMenu addContactsMenu = new AddContactsMenu(newWindow) { Contacts = this.Contacts };
             newWindow.Content = addContactsMenu;
             newWindow.ShowDialog();
         }
 
         private void ButtonAddDirection_Click(object sender, RoutedEventArgs e)
         {
-
+            Directions = new Directions();
+            NewWindow newWindow = new NewWindow();
+            ListOfDirections listOfDirections = new ListOfDirections(newWindow) { Directions = this.Directions };
+            newWindow.Content = listOfDirections;
+            newWindow.ShowDialog();
         }
 
         private void Back_OnClick(object sender, RoutedEventArgs e)
         {
             CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
             _mainWindow.Content = createNewPage;
+        }
+
+        private void ButtonChooseCompany_OnClick(object sender, RoutedEventArgs e)
+        {
+            Company = new Company();
+            NewWindow newWindow = new NewWindow();
+            ListOfCompanies listOfCompanies = new ListOfCompanies(newWindow) { Company = this.Company };
+            newWindow.Content = listOfCompanies;
+            newWindow.ShowDialog();
         }
     }
 }

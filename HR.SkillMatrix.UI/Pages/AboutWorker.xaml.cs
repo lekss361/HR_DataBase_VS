@@ -16,13 +16,13 @@ using System.Windows.Shapes;
 namespace HR.SkillMatrix.UI.Pages
 {
     /// <summary>
-    /// Interaction logic for EmployeeProfile.xaml
+    /// Interaction logic for AboutWorker.xaml
     /// </summary>
-    public partial class EmployeeProfile : Page
+    public partial class AboutWorker : Page
     {
         private readonly MainWindow _mainWindow;
 
-        public EmployeeProfile(MainWindow mainWindow)
+        public AboutWorker(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;

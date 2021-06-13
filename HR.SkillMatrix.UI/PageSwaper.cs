@@ -24,11 +24,11 @@ namespace HR.SkillMatrix.UI
         private AddNewProject _addNewProject;
         private AddNewStatus _addNewStatus;
         private AddNewWorker _addNewWorker;
-        private AddPreviousJob _addPreviousJob;
+        private AddNewPreviousJob _addNewPreviousJob;
         private AddSkillMenu _addSkillMenu;
         private CreateNewPage _createNewPage;
         private DepartmentDescription _departmentDescription;
-        private EmployeeProfile _employeeProfile;
+        private AboutWorker _aboutWorker;
         private ListOfCompanies _listOfCompanies;
         private ListOfLocation _listOfLocation;
         private ListOfPosition _listOfPosition;

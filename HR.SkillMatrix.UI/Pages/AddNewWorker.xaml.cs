@@ -29,6 +29,9 @@ namespace HR.SkillMatrix.UI.Pages
         public PreviousWork PreviousWork;
         public Company Company;
         public DivisionByCompany DivisionByCompany;
+        public PositionsWithDirectionName PositionsWithDirectionName;
+        public ProjectMaps ProjectMaps;
+        public List<int> ProjectsId;
         private readonly MainWindow _mainWindow;
         private string _sex;
         public AddNewWorker(MainWindow mainWindow)
@@ -50,9 +53,9 @@ namespace HR.SkillMatrix.UI.Pages
             MapperContacts mapperContacts = new MapperContacts();
             MapperLocation mapperLocation = new MapperLocation();
             MapperPreviousJob mapperPreviousJob = new MapperPreviousJob();
+            MapperProjectMaps mapperProjectMaps = new MapperProjectMaps();
 
             Worker worker = new Worker();
-
             worker.LastName = LastName.Text;
             worker.FirstName = FirstName.Text;
             worker.Patronymic = Patronymic.Text;
@@ -63,11 +66,21 @@ namespace HR.SkillMatrix.UI.Pages
             worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
             worker.ContactID = mapperContacts.AddNew(Contacts);
             worker.LocationID = mapperLocation.AddNewLocation(Location);
-            worker.PositionID = 1;
+            worker.PositionID = PositionsWithDirectionName.id;
             worker.DivisionID = DivisionByCompany.id;
 
-            PreviousWork.WorkerID = mapper.MapToWorkersDTO(worker);
+            int workerId = mapper.MapToWorkersDTO(worker);
+            PreviousWork.WorkerID = workerId;
             mapperPreviousJob.MapToPreviousWorkDTO(PreviousWork);
+
+            ProjectMaps = new ProjectMaps();
+            ProjectMaps.WorkerID = workerId;
+
+            foreach (var a in ProjectsId)
+            {
+                ProjectMaps.ProjectID = a;
+                mapperProjectMaps.AddNewProjectMaps(ProjectMaps);
+            }
 
             Saved saved = new Saved();
             saved.Show();
@@ -77,7 +90,7 @@ namespace HR.SkillMatrix.UI.Pages
         {
             Location = new Location();
             NewWindow newWindow = new NewWindow();
-            AddLocationMenu locationMenu = new AddLocationMenu(_mainWindow) { Location = this.Location };
+            AddLocationMenu locationMenu = new AddLocationMenu(newWindow) { Location = this.Location };
             newWindow.Content = locationMenu;
             newWindow.ShowDialog();
         }
@@ -86,7 +99,7 @@ namespace HR.SkillMatrix.UI.Pages
         {
             Contacts = new Contacts();
             NewWindow newWindow = new NewWindow();
-            AddContactsMenu addContactsMenu = new AddContactsMenu(_mainWindow) { Contacts = this.Contacts };
+            AddContactsMenu addContactsMenu = new AddContactsMenu(newWindow) { Contacts = this.Contacts };
             newWindow.Content = addContactsMenu;
             newWindow.ShowDialog();
         }
@@ -94,8 +107,8 @@ namespace HR.SkillMatrix.UI.Pages
         {
             PreviousWork = new PreviousWork();
             NewWindow newWindow = new NewWindow();
-            AddPreviousJob addPreviousJob = new AddPreviousJob(_mainWindow) { PreviousWork = this.PreviousWork };
-            newWindow.Content = addPreviousJob;
+            AddNewPreviousJob addNewPreviousJob = new AddNewPreviousJob(newWindow) { PreviousWork = this.PreviousWork };
+            newWindow.Content = addNewPreviousJob;
             newWindow.ShowDialog();
         }
 
@@ -131,8 +144,9 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonChoosePosition_Click(object sender, RoutedEventArgs e)
         {
+            PositionsWithDirectionName = new PositionsWithDirectionName();
             NewWindow newWindow = new NewWindow();
-            ListOfPosition listOfPosition = new ListOfPosition(_mainWindow);
+            ListOfPosition listOfPosition = new ListOfPosition(newWindow){ PositionsWithDirectionName =this.PositionsWithDirectionName };
             newWindow.Content = listOfPosition;
             newWindow.Show();
         }
@@ -152,8 +166,9 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonChooseProject_Click(object sender, RoutedEventArgs e)
         {
+            ProjectsId = new List<int>();
             NewWindow newWindow = new NewWindow();
-            ListOfProject listOfListOfProject = new ListOfProject(_mainWindow);
+            ListOfProject listOfListOfProject = new ListOfProject(newWindow){ ProjectsId = this.ProjectsId };
             newWindow.Content = listOfListOfProject;
             newWindow.Show();
         }
@@ -161,7 +176,7 @@ namespace HR.SkillMatrix.UI.Pages
         private void ChooseProfessionalSkill_Click(object sender, RoutedEventArgs e)
         {
             NewWindow newWindow = new NewWindow();
-            ListOfSkillsAndLevels listOfPosition = new ListOfSkillsAndLevels(_mainWindow);
+            ListOfSkillsAndLevels listOfPosition = new ListOfSkillsAndLevels(_mainWindow,1);
             newWindow.Content = listOfPosition;
             newWindow.Show();
         }
@@ -170,8 +185,8 @@ namespace HR.SkillMatrix.UI.Pages
         {
             DivisionByCompany = new DivisionByCompany();
             NewWindow newWindow = new NewWindow();
-            ListOfDepartmentsByCompany listOfDepartmentsByCompany = new ListOfDepartmentsByCompany(newWindow, Company.Id) { DivisionByCompany = this.DivisionByCompany };
-            newWindow.Content = listOfDepartmentsByCompany;
+            ListOfDivisionsByCompany listOfDivisionsByCompany = new ListOfDivisionsByCompany(newWindow, Company.Id) { DivisionByCompany = this.DivisionByCompany };
+            newWindow.Content = listOfDivisionsByCompany;
             newWindow.ShowDialog();
         }
     }

@@ -1,47 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HR.SkillMatrix.UI.Windows;
+using HR_DataBase_VSBLL.Models;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using HR.SkillMatrix.UI.Windows;
-using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
-using HR_DataBase_VSBLL.Models;
 
 namespace HR.SkillMatrix.UI.Pages
 {
     /// <summary>
     /// Interaction logic for PreviousJob.xaml
     /// </summary>
-    public partial class AddPreviousJob : Page
+    public partial class AddNewPreviousJob : Page
     {
         private readonly MainWindow _mainWindow;
+        private readonly NewWindow _newWindow;
         public PreviousWork PreviousWork;
-        public AddPreviousJob(MainWindow mainWindow)
+        public AddNewPreviousJob(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
+        }
+        public AddNewPreviousJob(NewWindow newWindow)
+        {
+            InitializeComponent();
+            _newWindow = newWindow;
         }
         /// <summary>
         /// кнопка "Сохранить"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button_Save_Click(object sender, RoutedEventArgs e)
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
             PreviousWork.StartDate = DatePikerStartData.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
             PreviousWork.EndDate = DatePikerEndData.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
             PreviousWork.Information = textBoxDescription.Text;
             Saved saved = new Saved();
             saved.Show();
+            _newWindow.Close();
         }
     }
 }

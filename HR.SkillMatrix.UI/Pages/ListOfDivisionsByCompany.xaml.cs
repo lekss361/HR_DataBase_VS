@@ -19,21 +19,21 @@ using HR_DataBase_VSBLL.Models;
 namespace HR.SkillMatrix.UI.Pages
 {
     /// <summary>
-    /// Interaction logic for ListOfDepartmentsByCompany.xaml
+    /// Interaction logic for ListOfDivisionsByCompany.xaml
     /// </summary>
-    public partial class ListOfDepartmentsByCompany : Page
+    public partial class ListOfDivisionsByCompany : Page
     {
         private int _companyId;
         private int _divisionId;
         private readonly MainWindow _mainWindow;
         private readonly NewWindow _newWindow;
         public DivisionByCompany DivisionByCompany;
-        public ListOfDepartmentsByCompany(MainWindow mainWindow)
+        public ListOfDivisionsByCompany(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
         }
-        public ListOfDepartmentsByCompany(NewWindow newWindow, int companyCompanyId)
+        public ListOfDivisionsByCompany(NewWindow newWindow, int companyCompanyId)
         {
             InitializeComponent();
             _newWindow = newWindow;
@@ -42,22 +42,6 @@ namespace HR.SkillMatrix.UI.Pages
             MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
             DataGridDivisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(_companyId);
         }
-        private void ButtonBack_Click(object sender, RoutedEventArgs e)
-        {
-            //MainMenu mainMenu = new MainMenu(_mainWindow);
-            //_mainWindow.Content = mainMenu;
-        }
-
-        private void ButtonOpen_OnClick(object sender, RoutedEventArgs e)
-        {
-            //AboutCompany aboutCompany = new AboutCompany(_mainWindow, _companyId);
-            //_mainWindow.Content = aboutCompany;
-        }
-
-        private void ButtonChose_OnClick(object sender, RoutedEventArgs e)
-        {
-            _newWindow.Close();
-        }
 
         private void DataGridDivisions_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -65,9 +49,11 @@ namespace HR.SkillMatrix.UI.Pages
             DivisionByCompany item = (DivisionByCompany)dg.CurrentItem;
             if (item != null)
             {
-                _divisionId = item.id;
+                DivisionByCompany.id = item.id;
             }
-            DivisionByCompany.id = _divisionId;
+            _newWindow.Close();
+            Saved saved = new Saved();
+            saved.ShowDialog();
         }
     }
 }
