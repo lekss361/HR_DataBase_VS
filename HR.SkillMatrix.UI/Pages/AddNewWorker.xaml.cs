@@ -176,7 +176,7 @@ namespace HR.SkillMatrix.UI.Pages
         private void ChooseProfessionalSkill_Click(object sender, RoutedEventArgs e)
         {
             NewWindow newWindow = new NewWindow();
-            ListOfSkillsAndLevels listOfPosition = new ListOfSkillsAndLevels(_mainWindow);
+            ListOfSkillsAndLevels listOfPosition = new ListOfSkillsAndLevels(_mainWindow,1);
             newWindow.Content = listOfPosition;
             newWindow.Show();
         }

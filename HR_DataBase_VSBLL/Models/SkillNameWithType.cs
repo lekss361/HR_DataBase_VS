@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace HR_DataBase_VSBLL.Models
 {
-    public class SkillNameById
+    public class SkillNameWithType
     {
         public int Id { get; set; }
-        public string Skill { get; set; }
-
-        public SkillNameById()
-        {
-
-        }
+        public int SkillTypeID { get; set; }
+        public string SkillName { get; set; }
+        public string SkillType { get; set; }
     }
 }

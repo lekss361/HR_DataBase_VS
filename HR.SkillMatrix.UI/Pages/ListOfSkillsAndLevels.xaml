@@ -12,7 +12,10 @@
         <DataGrid x:Name="DataGridSkillsAndLevels" AutoGenerateColumns="False"  Margin="95,70,120,60" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
-                <DataGridTextColumn Binding ="{Binding Path = Skill}"  IsReadOnly="True" Header="Проф. навык" Width="100" />
+                <DataGridTextColumn Binding ="{Binding Path = Id}"  IsReadOnly="True" Header="Проф. навык" Width="100" />
+                <DataGridTextColumn Binding ="{Binding Path = SkillTypeID}"  IsReadOnly="True" Header="Проф. навык" Width="100" />
+                <DataGridTextColumn Binding ="{Binding Path = SkillName}"  IsReadOnly="True" Header="Проф. навык" Width="100" />
+                <DataGridTextColumn Binding ="{Binding Path = SkillType}"  IsReadOnly="True" Header="Проф. навык" Width="100" />
                 <DataGridTemplateColumn Width="100" Header="Уровень">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

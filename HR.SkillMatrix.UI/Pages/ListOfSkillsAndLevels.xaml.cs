@@ -22,13 +22,12 @@ namespace HR.SkillMatrix.UI.Pages
     public partial class ListOfSkillsAndLevels : Page
     {
         private readonly MainWindow _mainWindow;
-        public ListOfSkillsAndLevels(MainWindow mainWindow)
+        public ListOfSkillsAndLevels(MainWindow mainWindow,int id)
         {
             _mainWindow = mainWindow;
             InitializeComponent();
-
             MapperSkillName mapperSkillName = new MapperSkillName();
-            DataGridSkillsAndLevels.ItemsSource = mapperSkillName.GetSkillNameById();
+            DataGridSkillsAndLevels.ItemsSource = mapperSkillName.GetSkillNameByTypeId(id);
         }
 
         private void ButtonSaveSkill_Click(object sender, RoutedEventArgs e)
