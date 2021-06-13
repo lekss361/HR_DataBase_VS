@@ -43,7 +43,7 @@ namespace HR.SkillMatrix.UI.Pages
         private void FillDataGrid()
         {
             MapperDirections mapperDirections = new MapperDirections();
-            DataGridDirections.ItemsSource = mapperDirections.GetAllLocation();
+            DataGridDirections.ItemsSource = mapperDirections.GetAllDirections();
         }
 
         private void DataGridDirections_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

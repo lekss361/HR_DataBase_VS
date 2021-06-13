@@ -30,6 +30,8 @@ namespace HR.SkillMatrix.UI.Pages
         public Company Company;
         public DivisionByCompany DivisionByCompany;
         public PositionsWithDirectionName PositionsWithDirectionName;
+        public ProjectMaps ProjectMaps;
+        public List<int> ProjectsId;
         private readonly MainWindow _mainWindow;
         private string _sex;
         public AddNewWorker(MainWindow mainWindow)
@@ -51,9 +53,9 @@ namespace HR.SkillMatrix.UI.Pages
             MapperContacts mapperContacts = new MapperContacts();
             MapperLocation mapperLocation = new MapperLocation();
             MapperPreviousJob mapperPreviousJob = new MapperPreviousJob();
+            MapperProjectMaps mapperProjectMaps = new MapperProjectMaps();
 
             Worker worker = new Worker();
-
             worker.LastName = LastName.Text;
             worker.FirstName = FirstName.Text;
             worker.Patronymic = Patronymic.Text;
@@ -67,8 +69,18 @@ namespace HR.SkillMatrix.UI.Pages
             worker.PositionID = PositionsWithDirectionName.id;
             worker.DivisionID = DivisionByCompany.id;
 
-            PreviousWork.WorkerID = mapper.MapToWorkersDTO(worker);
+            int workerId = mapper.MapToWorkersDTO(worker);
+            PreviousWork.WorkerID = workerId;
             mapperPreviousJob.MapToPreviousWorkDTO(PreviousWork);
+
+            ProjectMaps = new ProjectMaps();
+            ProjectMaps.WorkerID = workerId;
+
+            foreach (var a in ProjectsId)
+            {
+                ProjectMaps.ProjectID = a;
+                mapperProjectMaps.AddNewProjectMaps(ProjectMaps);
+            }
 
             Saved saved = new Saved();
             saved.Show();
@@ -154,8 +166,9 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonChooseProject_Click(object sender, RoutedEventArgs e)
         {
+            ProjectsId = new List<int>();
             NewWindow newWindow = new NewWindow();
-            ListOfProject listOfListOfProject = new ListOfProject(_mainWindow);
+            ListOfProject listOfListOfProject = new ListOfProject(newWindow){ ProjectsId = this.ProjectsId };
             newWindow.Content = listOfListOfProject;
             newWindow.Show();
         }

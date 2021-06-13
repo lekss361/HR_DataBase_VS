@@ -42,7 +42,7 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
             return directions;
         }
 
-        public List<Directions> GetAllLocation()
+        public List<Directions> GetAllDirections()
         {
             DirectionsDapper dapper = new DirectionsDapper();
             List<DirectionsDTO> directionsDTO = dapper.GetAllDirections();
