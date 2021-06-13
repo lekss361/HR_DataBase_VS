@@ -32,6 +32,7 @@ namespace HR.SkillMatrix.UI.Pages
             MapperDivisions mapperDivisionById = new MapperDivisions();
             DivisionWithForeignKeyValue divisionWithForeignKeyValue = mapperDivisionById.GetDivisionByID(id);
             TextBoxCity.Text = divisionWithForeignKeyValue.City;
+            TextBoxStreet.Text = divisionWithForeignKeyValue.Street;
             TextBoxIndex.Text = divisionWithForeignKeyValue.LocationIndex.ToString();
             TextBoxApartmantN.Text = divisionWithForeignKeyValue.ApartmentNumber.ToString();
             TextBoxHouseN.Text = divisionWithForeignKeyValue.HouseNumber.ToString();
@@ -49,12 +50,25 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-
+            //AboutCompany aboutCompany = new AboutCompany(_mainWindow);
+            //_mainWindow.Content = aboutCompany;
         }
 
         private void ButtonChange_Click(object sender, RoutedEventArgs e)
         {
-
+            TextBoxInformation.IsEnabled = true;
+            TextBoxName.IsEnabled = true;
+            TextBoxPhone.IsEnabled = true;
+            TextBoxEmail.IsEnabled = true;
+            TextBoxContactInformation.IsEnabled = true;
+            TextBoxCountry.IsEnabled = true;
+            TextBoxCity.IsEnabled = true;
+            TextBoxStreet.IsEnabled = true;
+            TextBoxHouseN.IsEnabled = true;
+            TextBoxApartmantN.IsEnabled = true;
+            TextBoxIndex.IsEnabled = true;
+            TextBoxDivision.IsEnabled = true;
+            TextBoxCompany.IsEnabled = true;
         }
 
         private void ButtonCancellation_Click(object sender, RoutedEventArgs e)
@@ -64,7 +78,19 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-
+            TextBoxInformation.IsEnabled = false;
+            TextBoxName.IsEnabled = false;
+            TextBoxPhone.IsEnabled = false;
+            TextBoxEmail.IsEnabled = false;
+            TextBoxContactInformation.IsEnabled = false;
+            TextBoxCountry.IsEnabled = false;
+            TextBoxCity.IsEnabled = false;
+            TextBoxStreet.IsEnabled = false;
+            TextBoxHouseN.IsEnabled = false;
+            TextBoxApartmantN.IsEnabled = false;
+            TextBoxIndex.IsEnabled = false;
+            TextBoxDivision.IsEnabled = false;
+            TextBoxCompany.IsEnabled = false;
         }
 
 
