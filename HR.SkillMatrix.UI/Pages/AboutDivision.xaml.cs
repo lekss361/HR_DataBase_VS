@@ -35,16 +35,15 @@ namespace HR.SkillMatrix.UI.Pages
             _mainWindow = mainWindow;
 
             divisionId = id;
-            
+
             DivisionWithForeignKeyValue divisionWithForeignKeyValue = mapperDivision.GetDivisionByID(divisionId);
-            
+
             TextBoxCity.Text = divisionWithForeignKeyValue.City;
             TextBoxStreet.Text = divisionWithForeignKeyValue.Street;
             TextBoxIndex.Text = divisionWithForeignKeyValue.LocationIndex.ToString();
             TextBoxApartmantN.Text = divisionWithForeignKeyValue.ApartmentNumber.ToString();
             TextBoxHouseN.Text = divisionWithForeignKeyValue.HouseNumber.ToString();
             TextBoxCountry.Text = divisionWithForeignKeyValue.Country;
-
             TextBoxContactInformation.Text = divisionWithForeignKeyValue.ContactInformation;
             TextBoxEmail.Text = divisionWithForeignKeyValue.Email;
             TextBoxPhone.Text = divisionWithForeignKeyValue.Phone;
@@ -62,9 +61,7 @@ namespace HR.SkillMatrix.UI.Pages
             division.ContactID = divisionWithForeignKeyValue.ContactID;
             division.DirectionsID = divisionWithForeignKeyValue.DirectionId;
             division.LocationID = divisionWithForeignKeyValue.LocationID;
-         }
-
-
+        }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
@@ -130,11 +127,6 @@ namespace HR.SkillMatrix.UI.Pages
             division.Information = TextBoxInformation.Text;
 
             mapperDivision.UpdateDivisionByid(division,divisionId);
-
-
-
         }
-
-
     }
 }
