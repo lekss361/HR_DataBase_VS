@@ -6,14 +6,37 @@
       xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MainMenu">
+      Title="MainMenu" MinHeight="450" MinWidth="800">
 
     <Grid Background="White">
-        <Button x:Name="SearchEmploy" Content="Поиск сотрудника" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Height="50" Width="120" Click="SearchEmploy_Click" />
-        <Button x:Name="Create" Content="Создать..." HorizontalAlignment="Center" Margin="0,131,0,0" VerticalAlignment="Top" Height="50" Width="120" Click="Create_Click" />
-        <Button x:Name="Statistic" Content="Статистика?" HorizontalAlignment="Center" Margin="0,182,0,0" VerticalAlignment="Top" Height="50" Width="120" />
-        <Button x:Name="Companies" Content="Компании" HorizontalAlignment="Center" Margin="0,233,0,0" VerticalAlignment="Top" Height="50" Width="120" Click="Companies_Click" />
-        <Button x:Name="Projects" Content="Проекты" HorizontalAlignment="Center" Margin="0,284,0,0" VerticalAlignment="Top" Height="50" Width="120" Click="Projects_OnClick" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+        <Button x:Name="SearchEmploy"  Grid.Row="0" Content="Поиск сотрудника" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Height="50" Width="200" Click="SearchEmploy_Click" />
+        <Button x:Name="Create"   Grid.Row="1" Content="Создать..." HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Height="50" Width="200" Click="Create_Click" />
+        <Button x:Name="Statistic" Grid.Row="2" Content="Статистика?" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Height="50" Width="200" />
+        <Button x:Name="Companies"  Grid.Row="3"  Content="Компании" HorizontalAlignment="Center" VerticalAlignment="Top" Height="50" Width="200" Click="Companies_Click" Margin="0,0,0,0" />
+        <Button x:Name="Projects"  Grid.Row="4"  Content="Проекты" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Height="50" Width="200" Click="Projects_OnClick" />
+            
+            
+        </Grid>
+
 
     </Grid>
 </Page>
