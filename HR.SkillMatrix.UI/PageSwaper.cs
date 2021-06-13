@@ -24,7 +24,7 @@ namespace HR.SkillMatrix.UI
         private AddNewProject _addNewProject;
         private AddNewStatus _addNewStatus;
         private AddNewWorker _addNewWorker;
-        private AddPreviousJob _addPreviousJob;
+        private AddNewPreviousJob _addNewPreviousJob;
         private AddSkillMenu _addSkillMenu;
         private CreateNewPage _createNewPage;
         private DepartmentDescription _departmentDescription;

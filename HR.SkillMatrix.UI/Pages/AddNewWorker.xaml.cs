@@ -107,8 +107,8 @@ namespace HR.SkillMatrix.UI.Pages
         {
             PreviousWork = new PreviousWork();
             NewWindow newWindow = new NewWindow();
-            AddPreviousJob addPreviousJob = new AddPreviousJob(_mainWindow) { PreviousWork = this.PreviousWork };
-            newWindow.Content = addPreviousJob;
+            AddNewPreviousJob addNewPreviousJob = new AddNewPreviousJob(newWindow) { PreviousWork = this.PreviousWork };
+            newWindow.Content = addNewPreviousJob;
             newWindow.ShowDialog();
         }
 
