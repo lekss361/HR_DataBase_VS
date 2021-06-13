@@ -30,9 +30,8 @@
             </Grid.RowDefinitions>
         <Button x:Name="SearchEmploy"  Grid.Row="0" Content="Поиск сотрудника"  Click="SearchEmploy_Click" />
         <Button x:Name="Create"   Grid.Row="1" Content="Создать..." Click="Create_Click" />
-        <Button x:Name="Statistic" Grid.Row="2" Content="Статистика?"   />
-        <Button x:Name="Companies"  Grid.Row="3"  Content="Компании"   Click="Companies_Click"  />
-        <Button x:Name="Projects"  Grid.Row="4"  Content="Проекты"   Click="Projects_OnClick" />
+            <Button x:Name="Companies"  Grid.Row="2"  Content="Компании"   Click="Companies_Click"  />
+        <Button x:Name="Projects"  Grid.Row="3"  Content="Проекты"   Click="Projects_OnClick" />
             
             
         </Grid>

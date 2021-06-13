@@ -9,10 +9,10 @@
       Title="AddContactsMenu">
 
     <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
-        <Grid Background="#FFD8DAE9">
+        <Grid Background="White">
             <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="800" Background="#FF7F74C1"/>
             <TextBlock HorizontalAlignment="Center" Text="Контакты" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="84" FontSize="18"/>
-            <Button x:Name="buttonSave" Content="Сохранить" HorizontalAlignment="Left" Height="58" Margin="599,367,0,0" VerticalAlignment="Top" Width="164" Background="#FF8690C9" FontSize="18" Click="buttonSave_Click"/>
+            <Button x:Name="buttonSave" Content="Сохранить" HorizontalAlignment="Left" Height="58" Margin="599,367,0,0" VerticalAlignment="Top" Width="164"  FontSize="18" Click="buttonSave_Click"/>
             <TextBlock HorizontalAlignment="Left" Margin="51,75,0,0" Text="Телефон" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="152" FontSize="22"/>
             <TextBlock HorizontalAlignment="Left" Margin="51,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="152" FontSize="22"><Run Text="Mail"/><LineBreak/><Run/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Margin="51,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="152" FontSize="22"><Run Language="ru-ru" Text="Другое"/><LineBreak/><Run Language="ru-ru"/><LineBreak/><Run/></TextBlock>
