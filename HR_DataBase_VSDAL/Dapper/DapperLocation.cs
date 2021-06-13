@@ -40,6 +40,29 @@ namespace HR_DataBase_VSDAL.Dapper
         }
 
         /// <summary>
+        /// Изменяем запись в БД через хранимую процедуру по Id
+        /// </summary>
+        /// <param name="locationDTO"></param>
+        public int UpdateLocationById(LocationDTO locationDTO,int id)
+        {
+            _Query = "exec [HR_DataBase_VSDB].[UpdateLocationByID]";
+            _Value =
+               $"@Id = '{id}', " +
+               $"@LocationIndex = '{locationDTO.LocationIndex}', " +
+               $"@Country = '{locationDTO.Country}', " +
+               $"@City = '{locationDTO.City}', " +
+               $"@Street ='{locationDTO.Street}', " +
+               $"@HouseNumber ='{locationDTO.HouseNumber}', " +
+               $"@ApartmentNumber ='{locationDTO.ApartmentNumber}'";
+
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                ID = connection.QueryFirstOrDefault<int>(@$"{_Query}{_Value}");
+            }
+            return ID;
+        }
+
+        /// <summary>
         /// Находим запись по ID
         /// </summary>
         /// <returns>DTO записи из БД</returns>

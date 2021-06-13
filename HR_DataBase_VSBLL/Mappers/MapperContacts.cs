@@ -50,15 +50,11 @@ namespace HR_DataBase_VSBLL.Mappers
         /// <returns></returns>
         public Contacts UpdateContacts(Contacts contactsModel, int Id)
         {
-            ContactsDTO tmpDTOold = new ContactsDTO();
-            ContactsDTO tmpDTONew = new ContactsDTO();
-            Contacts tmpModel = new Contacts();
+            contactsDTO = MapModelToDTO(contactsModel);
+            dapper.UpdateNewContact(contactsDTO, Id);
+            contactsModel = MapDTOToModel(contactsDTO);
 
-            tmpDTONew = MapModelToDTO(contactsModel);
-            dapper.UpdateNewContact(tmpDTONew, Id);
-            tmpModel = MapDTOToModel(tmpDTONew);
-
-            return tmpModel;
+            return contactsModel;
         }
 
         /// <summary>
