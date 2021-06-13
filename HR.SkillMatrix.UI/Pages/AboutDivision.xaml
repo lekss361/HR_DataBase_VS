@@ -25,7 +25,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="5,10,0,0" Grid.Row="1" Grid.Column="1" Text="Название" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="5,50,0,0" Grid.Row="1" Grid.Column="1" Text="Компания" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="5,90,0,0" Grid.Row="1" Grid.Column="1" Text="Телефон" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="5,130,0,0" Grid.Row="1" Grid.Column="1"  Text="Дополнительно" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="5,130,0,0" Grid.Row="1" Grid.Column="1"  Text="Дополнительные контакты " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2" Width="220"/>
         <TextBlock HorizontalAlignment="Left" Margin="260,90,0,0" Grid.Row="1" Grid.Column="2" Text="Почта" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="260,50,0,0" Grid.Row="1" Grid.Column="2" Text="Направление" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="5,240,0,0" Grid.Row="1" Grid.Column="1" Text="Страна" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
@@ -33,7 +33,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="260,240,0,0" Grid.Row="1" Grid.Column="2" Text="Город" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="260,280,0,0" Grid.Row="1" Grid.Column="2" Text="Номер дома" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="5,320,0,0" Grid.Row="1" Grid.Column="1" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"><Run Language="ru-ru" Text="Офис"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="5,360,0,0" Grid.Row="1" Grid.Column="1" Text="Информация" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="5,360,0,0" Grid.Row="1" Grid.Column="1" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="18" Width="205"><Run Text="Информация"/><Run Text=" об"/><Run Text=" о"/><Run Language="ru-ru" Text="тделе"/></TextBlock>
         <Label Content="Отдел"  Grid.Column="2" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" FontSize="20"/>
         <TextBox x:Name="TextBoxApartmantN" Grid.Column="2" HorizontalAlignment="Left" Margin="10,320,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="231" IsEnabled="False" FontSize="18" Height="25"/>
         <TextBox x:Name="TextBoxHouseN" Grid.Column="2" HorizontalAlignment="Left" Margin="384,280,0,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Width="231" IsEnabled="False" FontSize="18" Height="25"/>
