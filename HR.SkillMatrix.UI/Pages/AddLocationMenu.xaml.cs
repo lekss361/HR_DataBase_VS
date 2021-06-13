@@ -32,6 +32,10 @@ namespace HR.SkillMatrix.UI.Pages
             InitializeComponent();
             _mainWindow = mainWindow;
         }
+        public AddLocationMenu( )
+        {
+            InitializeComponent();
+        }
         /// <summary>
         /// кнопка "Сохранить"
         /// </summary>
