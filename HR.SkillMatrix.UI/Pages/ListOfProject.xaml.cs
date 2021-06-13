@@ -85,7 +85,6 @@ namespace HR.SkillMatrix.UI.Pages
                 MessageBox.Show($@"Не сохранено");
                 _newWindow.Close();
             }
-            
         }
 
         private void ButtonSave_OnClick(object sender, RoutedEventArgs e)

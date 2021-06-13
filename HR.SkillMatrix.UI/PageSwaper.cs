@@ -28,7 +28,7 @@ namespace HR.SkillMatrix.UI
         private AddSkillMenu _addSkillMenu;
         private CreateNewPage _createNewPage;
         private DepartmentDescription _departmentDescription;
-        private EmployeeProfile _employeeProfile;
+        private AboutWorker _aboutWorker;
         private ListOfCompanies _listOfCompanies;
         private ListOfLocation _listOfLocation;
         private ListOfPosition _listOfPosition;

@@ -39,7 +39,7 @@
             </DataGrid.Columns>
         </DataGrid>
         
-        <Label Content="Профессиональные навыки" HorizontalAlignment="Left" Margin="346,5,0,0" VerticalAlignment="Top"/>
+        <Label Content="Навыки" HorizontalAlignment="Left" Margin="346,5,0,0" VerticalAlignment="Top"/>
         <Button x:Name="ButtonSaveSkill" Content="Сохранить" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="40" Margin="0,0,10,10" Click="ButtonSaveSkill_Click" />
        
 
