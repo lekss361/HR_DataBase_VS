@@ -29,6 +29,13 @@ namespace HR.SkillMatrix.UI.Pages
             MapperSkillName mapperSkillName = new MapperSkillName();
             DataGridSkillsAndLevels.ItemsSource = mapperSkillName.GetSkillNameByTypeId(id);
         }
+        public ListOfSkillsAndLevels(MainWindow mainWindow)
+        {
+            _mainWindow = mainWindow;
+            InitializeComponent();
+            MapperSkillName mapperSkillName = new MapperSkillName();
+            DataGridSkillsAndLevels.ItemsSource = mapperSkillName.GetSkillNameByAllType();
+        }
 
         private void ButtonSaveSkill_Click(object sender, RoutedEventArgs e)
         {
