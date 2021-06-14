@@ -10,7 +10,7 @@
 
 
 
-    <Grid Background="#FFF0E9E9">
+    <Grid Background="White">
         <DataGrid x:Name="DataGridPositions" AutoGenerateColumns="False"  Margin="95,70,120,60" IsReadOnly="True" MouseLeftButtonDown="DataGridPositions_OnMouseLeftButtonDown">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
@@ -19,7 +19,7 @@
                 <DataGridTextColumn Binding ="{Binding Path = DirectionName}"  IsReadOnly="True" Header="Направление" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Все должности" HorizontalAlignment="Left" Margin="346,5,0,0" VerticalAlignment="Top"/>
+        <Label Content="Все должности" HorizontalAlignment="Left" Margin="346,5,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="50" Margin="10,10,0,0" Click="ButtonBack_Click" />
         
     </Grid>

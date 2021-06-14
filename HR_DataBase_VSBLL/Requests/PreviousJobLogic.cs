@@ -10,10 +10,10 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
         private PreviousWorkDapper dapper = new PreviousWorkDapper();
         private PreviousWorkDTO previousJobDTO = new PreviousWorkDTO();
 
-        public int AddPreviousWork(PreviousWork previousJob)
+        public void AddPreviousWork(PreviousWork previousJob)
         {
             previousJobDTO = mappersController.MapPreviousWorkmodelToDTO(previousJob);
-            return dapper.AddPreviousWork(previousJobDTO);
+            dapper.AddPreviousWork(previousJobDTO);
         }
     }
 }

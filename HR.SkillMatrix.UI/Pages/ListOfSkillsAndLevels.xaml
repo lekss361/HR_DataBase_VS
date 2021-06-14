@@ -9,7 +9,7 @@
       Title="ListOfSkillsAndLevels">
 
     <Grid Background="White">
-        <DataGrid x:Name="DataGridSkillsAndLevels" AutoGenerateColumns="False"  Margin="95,70,120,60" IsReadOnly="True">
+        <DataGrid x:Name="DataGridSkillsAndLevels" AutoGenerateColumns="False"  Margin="95,70,120,60" IsReadOnly="True" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding ="{Binding Path = Id}"  IsReadOnly="True" Header="id" Width="100" Visibility="Hidden" />
                 <DataGridTextColumn Binding ="{Binding Path = SkillTypeID}"  IsReadOnly="True" Header="SkillTypeID" Width="100" Visibility="Hidden" />
@@ -41,9 +41,9 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Label Content="Навыки" HorizontalAlignment="Left" Margin="346,5,0,0" VerticalAlignment="Top"/>
+        <Label Content="Навыки" HorizontalAlignment="Center"  VerticalAlignment="Top" FontSize="20"/>
         <Button x:Name="ButtonSaveSkill" Content="Сохранить" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="40" Margin="0,0,10,10" Click="ButtonSaveSkill_Click" />
-        <Button x:Name="ButtonAddSkill" Content="Добавить навык" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="40" Margin="0,0,120,10" Click="ButtonSaveSkill_Click" />
+        <Button x:Name="ButtonAddSkill" Content="Добавить навык" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="40" Margin="0,0,120,10" Click="ButtonAddSkill_Click"  />
 
 
     </Grid>

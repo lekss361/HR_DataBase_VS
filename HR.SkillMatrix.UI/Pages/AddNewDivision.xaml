@@ -18,18 +18,18 @@
                 <RowDefinition Height="150*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="102"/>
+                <ColumnDefinition Width="130"/>
                 <ColumnDefinition Width="317*"/>
                 <ColumnDefinition Width="325*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Название" VerticalAlignment="Top"  Height="39" Width="102"/>
-            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Выбрать компанию" VerticalAlignment="Top" Height="29" Width="102" Grid.Row="1"/>
-            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Контакты" VerticalAlignment="Top" Height="29" Width="102" Grid.Row="2"/>
-            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Локация" VerticalAlignment="Top"  Height="75" Width="102" Grid.Row="3" Grid.RowSpan="2"/>
-            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Направление" VerticalAlignment="Top" Height="75" Width="102" Grid.Row="4" Margin="0,1,0,0" Grid.RowSpan="2"/>
-            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Описание" VerticalAlignment="Top"  Height="75" Width="102" Grid.Row="5" Margin="0,10,0,0"/>
-            <TextBox x:Name="textBoxName" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="496" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="textBoxDescription" Grid.Column="1" HorizontalAlignment="Left" Height="122" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="622" Grid.Row="5" Grid.ColumnSpan="2"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Название" VerticalAlignment="Top"  Height="39" Width="102" FontSize="18"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Выбрать компанию" VerticalAlignment="Top" Height="29" Width="102" Grid.Row="1" FontSize="18"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Контакты" VerticalAlignment="Top" Height="29" Width="102" Grid.Row="2" FontSize="18"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Локация" VerticalAlignment="Top"  Height="75" Width="102" Grid.Row="3" Grid.RowSpan="2" FontSize="18"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Направление" VerticalAlignment="Top" Height="30" Width="130" Grid.Row="4" Margin="14,0,0,0" FontSize="18" Grid.ColumnSpan="2"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Описание" VerticalAlignment="Top"  Height="75" Width="102" Grid.Row="5" Margin="0,10,0,0" FontSize="18"/>
+            <TextBox x:Name="textBoxName" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="580" Grid.ColumnSpan="3"/>
+            <TextBox x:Name="textBoxDescription" Grid.Column="1" HorizontalAlignment="Left" Height="122" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="580" Grid.Row="5" Grid.ColumnSpan="3" FontSize="18"/>
             <Button x:Name="ButtonChooseCompany" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="100" Click="ButtonChooseCompany_OnClick" />
             <Button x:Name="ButtonAddLocation" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Top" Height="30" Width="100" Click="ButtonAddLocation_Click" />
             <Button x:Name="ButtonAddContact" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="100" Click="ButtonAddContact_Click"  />
@@ -43,9 +43,9 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="ButtonSave" Content="Сохранить" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="50" Grid.ColumnSpan="2" Margin="5,0,0,0" Click="ButtonSave_Click"  />
+            <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Center" Width="140" Height="40"  Click="Back_OnClick"/>
+            <Button x:Name="ButtonSave" Content="Сохранить" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="140" Height="40" Grid.ColumnSpan="2" Margin="0,0,0,0" Click="ButtonSave_Click"  />
         </Grid>
-        <Label Content="Добавить отдел" HorizontalAlignment="Left" Margin="346,5,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Margin="28,36,0,0" Click="Back_OnClick"/>
+        <Label Content="Добавить отдел" HorizontalAlignment="Left" Margin="346,5,0,0" VerticalAlignment="Top" FontSize="20"/>
     </Grid>
 </Page>

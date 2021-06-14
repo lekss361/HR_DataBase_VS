@@ -41,5 +41,11 @@ namespace HR.SkillMatrix.UI.Pages
         {
 
         }
+
+        private void ButtonAddSkill_Click(object sender, RoutedEventArgs e)
+        {
+            AddSkillMenu addSkillMenu = new AddSkillMenu(_mainWindow);
+            _mainWindow.Content = addSkillMenu;
+        }
     }
 }

@@ -16,10 +16,10 @@
             <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
         <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Margin="142,29,0,0" VerticalAlignment="Top" Width="110" Height="40" Click="ButtonSave_Click" />
-        <Button x:Name="ButtonClose" Content="Закрыть" HorizontalAlignment="Left"   Margin="15,29,0,0" VerticalAlignment="Top" Width="110" Height="40"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Название" VerticalAlignment="Top"  Height="19" Width="66" Margin="19,20,0,0" Grid.Row="1"/>
-        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="17" Margin="85,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319" Grid.Row="1"/>
-        <Label Content="Направление" HorizontalAlignment="Left" Margin="222,-2,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left"   Margin="15,29,0,0" VerticalAlignment="Top" Width="110" Height="40" Click="ButtonBack_Click"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Название" VerticalAlignment="Top"  Height="25" Width="85" Margin="19,20,0,0" Grid.Row="1" FontSize="18"/>
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="17" Margin="104,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319" Grid.Row="1" FontSize="18"/>
+        <Label Content="Направление" HorizontalAlignment="Center" Margin="0,-8,0,0" VerticalAlignment="Top" FontSize="20"/>
     </Grid>
 
 

@@ -8,7 +8,7 @@ namespace HR_DataBase_VSDAL.Models
 {
     public class StatusesDTO
     {
-        //public int StatusesID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

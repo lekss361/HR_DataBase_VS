@@ -1,0 +1,22 @@
+﻿<Page x:Class="HR.SkillMatrix.UI.Pages.ListOfStatuses"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR.SkillMatrix.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListOfStatuses">
+
+    <Grid Background="White">
+        <Grid >
+            <DataGrid x:Name="DataGridStatuses" AutoGenerateColumns="False"  Margin="157,90,153,10" MouseLeftButtonDown="DataGridStatuses_OnMouseLeftButtonDown" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding ="{Binding Path = id}"  IsReadOnly="True" Header="id" Width="150" Visibility="Hidden" />
+                    <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="статус" Width="150" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label Content="Список статусов" HorizontalAlignment="Center" Height="41" VerticalAlignment="Top" FontSize="20" />
+        </Grid>
+    </Grid>
+</Page>
