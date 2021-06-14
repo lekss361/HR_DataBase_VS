@@ -15,11 +15,18 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
         private StatusesDTO statusesDTO = new StatusesDTO();
         private MappersController mappersController = new MappersController();
         private StatusesDapper dapper = new StatusesDapper();
+        private Statuses statuses = new Statuses();
 
         public int AddNewStatuses(Statuses statuses)
         {
             statusesDTO = mappersController.MapStatusesModelsToDTO(statuses);
             return dapper.AddNewStatuses(statusesDTO);
+        }
+        public List<Statuses> GetAllStatuses()
+        {
+            List<StatusesDTO> statusesDTO = dapper.GetAllStatuses();
+            List<Statuses> statuses = mappersController.MapStatusesDTOToModels(statusesDTO);
+            return statuses;
         }
     }
 }

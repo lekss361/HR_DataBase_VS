@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using Dapper;
 using HR_DataBase_VSDAL.Models;
@@ -26,6 +27,16 @@ namespace HR_DataBase_VSDAL.Dapper
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 return connection.QueryFirst<int>(@$"{_Query}{_Value}");
+            }
+        }
+        public List<StatusesDTO> GetAllStatuses()
+        {
+            _Query = "exec [HR_DataBase_VSDB].[GetAllStatuses]";
+
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                return connection.Query<StatusesDTO>(@$"{_Query}")
+                    .AsList<StatusesDTO>(); ;
             }
         }
     }
