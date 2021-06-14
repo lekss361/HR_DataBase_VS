@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HR.SkillMatrix.UI.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR_DataBase_VSBLL.Models;
 
 namespace HR.SkillMatrix.UI.Pages
 {
@@ -20,9 +22,24 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class SearchResult : Page
     {
-        public SearchResult()
+        private readonly MainWindow _mainWindow;
+        private readonly NewWindow _newWindow;
+        public SearchResult(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
+        }
+        public SearchResult(NewWindow newWindow, List<Worker> workers)
+        {
+            InitializeComponent();
+            int a=workers.Count;
+            _newWindow = newWindow;
+            DataGridSeacrhResults.ItemsSource = workers;
+        }
+
+        private void UIElement_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            
         }
     }
 }
