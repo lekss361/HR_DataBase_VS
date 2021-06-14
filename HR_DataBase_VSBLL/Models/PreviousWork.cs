@@ -17,5 +17,14 @@ namespace HR_DataBase_VSBLL.Models
         public PreviousWork()
         {
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is PreviousWork work &&
+                   WorkerID == work.WorkerID &&
+                   StartDate == work.StartDate &&
+                   EndDate == work.EndDate &&
+                   Information == work.Information;
+        }
     }
 }

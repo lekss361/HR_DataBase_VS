@@ -12,5 +12,14 @@ namespace HR_DataBase_VSBLL.Models
         public int SkillTypeID { get; set; }
         public string SkillName { get; set; }
         public string SkillType { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is SkillNameWithType type &&
+                   Id == type.Id &&
+                   SkillTypeID == type.SkillTypeID &&
+                   SkillName == type.SkillName &&
+                   SkillType == type.SkillType;
+        }
     }
 }

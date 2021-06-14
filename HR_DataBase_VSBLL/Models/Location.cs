@@ -19,5 +19,17 @@ namespace HR_DataBase_VSBLL.Models
         public Location()
         {
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Location location &&
+                   id == location.id &&
+                   LocationIndex == location.LocationIndex &&
+                   Country == location.Country &&
+                   City == location.City &&
+                   Street == location.Street &&
+                   HouseNumber == location.HouseNumber &&
+                   ApartmentNumber == location.ApartmentNumber;
+        }
     }
 }

@@ -21,5 +21,23 @@ namespace HR_DataBase_VSBLL.Models
         public int? PositionID { get; set; }
         public int? DivisionID { get; set; }
         public string? Hobby { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Worker worker &&
+                   Id == worker.Id &&
+                   FirstName == worker.FirstName &&
+                   LastName == worker.LastName &&
+                   Patronymic == worker.Patronymic &&
+                   BirthDay == worker.BirthDay &&
+                   Education == worker.Education &&
+                   ContactID == worker.ContactID &&
+                   LocationID == worker.LocationID &&
+                   Sex == worker.Sex &&
+                   StatusID == worker.StatusID &&
+                   PositionID == worker.PositionID &&
+                   DivisionID == worker.DivisionID &&
+                   Hobby == worker.Hobby;
+        }
     }
 }

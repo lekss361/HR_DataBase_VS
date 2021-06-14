@@ -12,4 +12,14 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0"/>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HR_DataBase_VSBLL\HR_DataBase_VSBLL.csproj" />
+    <ProjectReference Include="..\HR_DataBase_VSDAL\HR_DataBase_VSDAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Expected\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

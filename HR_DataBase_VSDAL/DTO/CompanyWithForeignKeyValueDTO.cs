@@ -22,5 +22,24 @@ namespace HR_DataBase_VSDAL.Models
         public string HouseNumber { get; set; }
         public string ApartmentNumber { get; set; }
         public string LocationIndex { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is CompanyWithForeignKeyValueDTO dTO &&
+                   id == dTO.id &&
+                   ContactID == dTO.ContactID &&
+                   LocationID == dTO.LocationID &&
+                   Name == dTO.Name &&
+                   Information == dTO.Information &&
+                   Phone == dTO.Phone &&
+                   Email == dTO.Email &&
+                   ContactInformation == dTO.ContactInformation &&
+                   Country == dTO.Country &&
+                   City == dTO.City &&
+                   Street == dTO.Street &&
+                   HouseNumber == dTO.HouseNumber &&
+                   ApartmentNumber == dTO.ApartmentNumber &&
+                   LocationIndex == dTO.LocationIndex;
+        }
     }
 }

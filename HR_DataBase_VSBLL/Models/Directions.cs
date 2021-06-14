@@ -14,5 +14,12 @@ namespace HR_DataBase_VSBLL.Models
         public Directions()
         {
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Directions directions &&
+                   id == directions.id &&
+                   Name == directions.Name;
+        }
     }
 }
