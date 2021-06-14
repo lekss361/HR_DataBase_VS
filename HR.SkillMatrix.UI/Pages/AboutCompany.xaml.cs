@@ -31,7 +31,6 @@ namespace HR.SkillMatrix.UI.Pages
         private Company company = new Company();
         private readonly MainWindow _mainWindow;
         MapperCompany mapperCompany = new MapperCompany();
-        MapperCompanies mapperCompanies = new MapperCompanies();
         public AboutCompany(MainWindow mainWindow, int id)
         {
             InitializeComponent();
@@ -116,7 +115,7 @@ namespace HR.SkillMatrix.UI.Pages
             company.Name = TextBoxName.Text;
             company.Information = TextBoxInformation.Text;
 
-            mapperCompanies.UpdateCompanyByid(company, _currentCompanyId);
+            mapperCompany.UpdateCompanyByid(company, _currentCompanyId);
         }
 
         private void ButtonChange_Click(object sender, RoutedEventArgs e)
@@ -136,11 +135,8 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-
             ListOfCompanies listOfCompanies = new ListOfCompanies(_mainWindow);
             _mainWindow.Content = listOfCompanies;
-
-
         }
 
         private void backToCompanyTable_Click(object sender, RoutedEventArgs e)

@@ -71,8 +71,8 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void FillDataGrid()
         {
-            MapperCompanies mapperCompanies = new MapperCompanies();
-            DataGridCompanies.ItemsSource = mapperCompanies.GetAllCompaniesWithContactAndLocation();
+            MapperCompany mapperCompany = new MapperCompany();
+            DataGridCompanies.ItemsSource = mapperCompany.GetAllCompaniesWithContactAndLocation();
         }
     }
 }

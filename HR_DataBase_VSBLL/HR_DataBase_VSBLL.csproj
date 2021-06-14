@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Requests\" />
+    <Folder Include="Mappers\" />
   </ItemGroup>
 
 </Project>
