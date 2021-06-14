@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR.SkillMatrix.UI.Windows;
 using HR_DataBase_VSBLL.Mappers;
 using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
 using HR_DataBase_VSBLL.Models;
@@ -23,122 +24,108 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class SearchForEmployee : Page
     {
+        public Contacts Contacts;
+        public Location Location;
+        public PreviousWork PreviousWork;
+        public Company Company;
+        public DivisionByCompany DivisionByCompany;
+        public PositionsWithDirectionName PositionsWithDirectionName;
+        public ProjectMaps ProjectMaps;
+        public List<int> ProjectsId;
+        Worker worker = new Worker();
+        List<Worker> workers = new List<Worker>();
         private readonly MainWindow _mainWindow;
         public SearchForEmployee(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
+            ButtonChooseDepartment.IsEnabled = false;
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             MainMenu mainMenu = new MainMenu(_mainWindow);
             _mainWindow.Content = mainMenu;
         }
-
-        private void BoxCompanies_OnInitialized(object? sender, EventArgs e)
+        private void TextBoxSurname_TextChanged(object sender, TextChangedEventArgs e)
         {
-            MapperCompanies mapperCompanies = new MapperCompanies();
-            List<HR_DataBase_VSBLL.Models.Company> company = mapperCompanies.GetAllCompanies();
-            foreach (var tmp in company)
-            {   
-                BoxCompanies.Items.Add(tmp.Name);
+            if (!string.IsNullOrEmpty(TextBoxSurname.Text))
+            {
+                worker.LastName = TextBoxSurname.Text;
             }
-
-            //Button addlocations = new Button();
-            //addlocations.Height = 100;
-            //addlocations.Width = 100;
-            //addlocations.Content = "sss";
-            //addlocations.Click += AddCompany_OnClick;
         }
 
-        //private void AddCompany_OnClick(object sender, RoutedEventArgs e)
-        //{
-        //    AddNewCompany addNewCompany = new AddNewCompany(_mainWindow);
-        //    _mainWindow.Content = addNewCompany;
-        //}
-
-        private void BoxDivisions_OnInitialized(object? sender, EventArgs e)
+        private void TextBoxName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //MapperDivisions mapperDivisions = new MapperDivisions();
-            //List<HR_DataBase_VSBLL.Models.Divisions> divisions = mapperDivisions();
-            //foreach (var tmp in divisions)
-            //{
-            //    BoxCompanies.Items.Add(tmp.Name);
-            //}
+            if (!string.IsNullOrEmpty(TextBoxName.Text))
+            {
+                worker.FirstName = TextBoxName.Text;
+            }
         }
 
-        private void BoxPositions_OnInitialized(object? sender, EventArgs e)
+        private void TextBoxPatronymic_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
-        }
-        private void BoxProjects_OnInitialized(object? sender, EventArgs e)
-        {
-            
-        }
-
-        private void BoxStatuses_OnInitialized(object? sender, EventArgs e)
-        {
-            
+            if (!string.IsNullOrEmpty(TextBoxPatronymic.Text))
+            {
+                worker.Patronymic = TextBoxPatronymic.Text;
+            }
         }
 
-        private void BoxSkill1_OnInitialized(object? sender, EventArgs e)
+        private void ButtonChooseCompany_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            Company = new Company();
+            NewWindow newWindow = new NewWindow();
+            ListOfCompanies listOfCompanies = new ListOfCompanies(newWindow) { Company = this.Company };
+            newWindow.Content = listOfCompanies;
+            newWindow.ShowDialog();
+            if (Company.Id > 0)
+            {
+                ButtonChooseDepartment.IsEnabled = true;
+            }
         }
 
-        private void BoxLevel1_OnInitialized(object? sender, EventArgs e)
+        private void ButtonChooseDepartment_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            DivisionByCompany = new DivisionByCompany();
+            NewWindow newWindow = new NewWindow();
+            ListOfDivisionsByCompany listOfDivisionsByCompany = new ListOfDivisionsByCompany(newWindow, Company.Id) { DivisionByCompany = this.DivisionByCompany };
+            newWindow.Content = listOfDivisionsByCompany;
+            newWindow.ShowDialog();
+            worker.DivisionID = DivisionByCompany.id;
         }
 
-        private void BoxSkill2_OnInitialized(object? sender, EventArgs e)
+        private void ButtonChoosePosition_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            PositionsWithDirectionName = new PositionsWithDirectionName();
+            NewWindow newWindow = new NewWindow();
+            ListOfPosition listOfPosition = new ListOfPosition(newWindow) { PositionsWithDirectionName = this.PositionsWithDirectionName };
+            newWindow.Content = listOfPosition;
+            newWindow.Show();
+            worker.PositionID = PositionsWithDirectionName.id;
         }
 
-        private void BoxLevel2_OnInitialized(object? sender, EventArgs e)
+        private void Find_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (!string.IsNullOrEmpty(TextBoxSurname.Text) ||
+                !string.IsNullOrEmpty(TextBoxName.Text) ||
+                !string.IsNullOrEmpty(TextBoxPatronymic.Text))
+            {
+                MapperWorker mapper = new MapperWorker();
+                workers = mapper.SearchWorkersBySameParams(worker);
+            }
         }
 
-        private void BoxSkill3_OnInitialized(object? sender, EventArgs e)
+        private void ButtonChooseProject_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            ProjectsId = new List<int>();
+            NewWindow newWindow = new NewWindow();
+            ListOfProject listOfListOfProject = new ListOfProject(newWindow) { ProjectsId = this.ProjectsId };
+            newWindow.Content = listOfListOfProject;
+            newWindow.Show();
         }
 
-        private void BoxLevel3_OnInitialized(object? sender, EventArgs e)
-        {
-            
-        }
-
-        private void BoxSkill4_OnInitialized(object? sender, EventArgs e)
-        {
-            
-        }
-
-        private void BoxLevel4_OnInitialized(object? sender, EventArgs e)
+        private void ButtonChooseStatus_OnClick(object sender, RoutedEventArgs e)
         {
             
-        }
-
-        private void BoxSkill5_OnInitialized(object? sender, EventArgs e)
-        {
-            
-        }
-
-        private void BoxLevel5_OnInitialized(object? sender, EventArgs e)
-        {
-           
-        }
-
-        private void BoxSkill6_OnInitialized(object? sender, EventArgs e)
-        {
-            
-        }
-
-        private void BoxLevel6_OnInitialized(object? sender, EventArgs e)
-        {
-
         }
     }
 }
