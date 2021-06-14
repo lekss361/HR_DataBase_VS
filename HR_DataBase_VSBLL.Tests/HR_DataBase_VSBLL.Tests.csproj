@@ -18,10 +18,4 @@
     <ProjectReference Include="..\HR_DataBase_VSBLL\HR_DataBase_VSBLL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Expected\" />
-    <Folder Include="Models\" />
-    <Folder Include="Requests\" />
-  </ItemGroup>
-
 </Project>
