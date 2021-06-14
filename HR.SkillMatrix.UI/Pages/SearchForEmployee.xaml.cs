@@ -34,7 +34,7 @@ namespace HR.SkillMatrix.UI.Pages
         public Statuses Statuses;
         public List<int> ProjectsId;
         Worker worker = new Worker();
-        List<Worker> workers = new List<Worker>();
+        public List<Worker> workers = new List<Worker>();
         private readonly MainWindow _mainWindow;
         public SearchForEmployee(MainWindow mainWindow)
         {
@@ -99,7 +99,7 @@ namespace HR.SkillMatrix.UI.Pages
             NewWindow newWindow = new NewWindow();
             ListOfPosition listOfPosition = new ListOfPosition(newWindow) { PositionsWithDirectionName = this.PositionsWithDirectionName };
             newWindow.Content = listOfPosition;
-            newWindow.Show();
+            newWindow.ShowDialog();
             
         }
 
@@ -109,11 +109,27 @@ namespace HR.SkillMatrix.UI.Pages
             //    !string.IsNullOrEmpty(TextBoxName.Text) ||
             //    !string.IsNullOrEmpty(TextBoxPatronymic.Text))
             {
+                //workers = new List<Worker>();
                 WorkerLogic mapper = new WorkerLogic();
-                worker.StatusID = Statuses.Id;
-                worker.PositionID = PositionsWithDirectionName.id;
-                worker.DivisionID = DivisionByCompany.id;
+                if (Statuses!=null)
+                {
+                    worker.StatusID = Statuses.Id;
+                }
+                if (PositionsWithDirectionName != null)
+                {
+                    worker.PositionID = PositionsWithDirectionName.id;
+                }
+                if (DivisionByCompany != null)
+                {
+                    worker.DivisionID = DivisionByCompany.id;
+                }
+
                 workers = mapper.SearchWorkersBySameParams(worker);
+                
+                NewWindow newWindow = new NewWindow();
+                SearchResult searchResult = new SearchResult(newWindow, workers);
+                newWindow.Content = searchResult;
+                newWindow.ShowDialog();
             }
         }
 
@@ -123,7 +139,7 @@ namespace HR.SkillMatrix.UI.Pages
             NewWindow newWindow = new NewWindow();
             ListOfProject listOfListOfProject = new ListOfProject(newWindow) { ProjectsId = this.ProjectsId };
             newWindow.Content = listOfListOfProject;
-            newWindow.Show();
+            newWindow.ShowDialog();
         }
 
         private void ButtonChooseStatus_OnClick(object sender, RoutedEventArgs e)
@@ -132,7 +148,7 @@ namespace HR.SkillMatrix.UI.Pages
             NewWindow newWindow = new NewWindow();
             ListOfStatuses listOfStatuses = new ListOfStatuses(newWindow) { Statuses = this.Statuses };
             newWindow.Content = listOfStatuses;
-            newWindow.Show();
+            newWindow.ShowDialog();
         }
 
         private void Men_OnChecked(object sender, RoutedEventArgs e)
