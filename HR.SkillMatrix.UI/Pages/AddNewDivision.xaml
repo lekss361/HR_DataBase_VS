@@ -28,7 +28,7 @@
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Локация" VerticalAlignment="Top"  Height="75" Width="102" Grid.Row="3" Grid.RowSpan="2" FontSize="18"/>
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Направление" VerticalAlignment="Top" Height="30" Width="130" Grid.Row="4" Margin="14,0,0,0" FontSize="18" Grid.ColumnSpan="2"/>
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Описание" VerticalAlignment="Top"  Height="75" Width="102" Grid.Row="5" Margin="0,10,0,0" FontSize="18"/>
-            <TextBox x:Name="textBoxName" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="580" Grid.ColumnSpan="3"/>
+            <TextBox x:Name="textBoxName" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="580" Grid.ColumnSpan="3" FontSize="18"/>
             <TextBox x:Name="textBoxDescription" Grid.Column="1" HorizontalAlignment="Left" Height="122" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="580" Grid.Row="5" Grid.ColumnSpan="3" FontSize="18"/>
             <Button x:Name="ButtonChooseCompany" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="100" Click="ButtonChooseCompany_OnClick" />
             <Button x:Name="ButtonAddLocation" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Top" Height="30" Width="100" Click="ButtonAddLocation_Click" />

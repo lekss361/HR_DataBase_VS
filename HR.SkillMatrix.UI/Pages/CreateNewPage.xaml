@@ -30,6 +30,7 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
                 <Button Grid.Row="0" x:Name="AddNewWorker" Content="Создать работника"  Click="AddNewWorker_Click" FontSize="20"/>
@@ -37,6 +38,7 @@
                 <Button Grid.Row="2" x:Name="AddNewDivision" Content="Создать отдел"  Click="AddNewDivision_Click" FontSize="20"/>
                 <Button Grid.Row="3" x:Name="AddNewProject" Content="Создать проект"  Click="AddNewProject_Click" FontSize="20"/>
                 <Button Grid.Row="4" x:Name="AddNewDirection" Content="Создать направление"  Click="AddNewDirection_Click" FontSize="20"/>
+                <Button Grid.Row="5" x:Name="AddNewPosition" Content="Создать Должность"  Click="AddNewPosition_Click" FontSize="20"/>
 
             </Grid>
         </Grid>
