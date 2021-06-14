@@ -105,9 +105,9 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Find_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(TextBoxSurname.Text) ||
-                !string.IsNullOrEmpty(TextBoxName.Text) ||
-                !string.IsNullOrEmpty(TextBoxPatronymic.Text))
+            //if (!string.IsNullOrEmpty(TextBoxSurname.Text) ||
+            //    !string.IsNullOrEmpty(TextBoxName.Text) ||
+            //    !string.IsNullOrEmpty(TextBoxPatronymic.Text))
             {
                 WorkerLogic mapper = new WorkerLogic();
                 workers = mapper.SearchWorkersBySameParams(worker);
@@ -126,6 +126,16 @@ namespace HR.SkillMatrix.UI.Pages
         private void ButtonChooseStatus_OnClick(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void Men_OnChecked(object sender, RoutedEventArgs e)
+        {
+            worker.Sex = "Мужской";
+        }
+
+        private void Women_OnChecked(object sender, RoutedEventArgs e)
+        {
+            worker.Sex = "Женский";
         }
     }
 }

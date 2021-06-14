@@ -72,6 +72,10 @@
                     <Button x:Name="ButtonChoosePosition" Grid.Row="5" Grid.Column="1" Content="Выбрать должность" HorizontalContentAlignment="Left" Click="ButtonChoosePosition_OnClick"/>
                     <Button x:Name="ButtonChooseProject" Grid.Row="6" Grid.Column="1" Content="Выбрать проект" HorizontalContentAlignment="Left" Click="ButtonChooseProject_OnClick"/>
                     <Button x:Name="ButtonChooseStatus" Grid.Row="7" Grid.Column="1" Content="Выбрать статус" HorizontalContentAlignment="Left" Click="ButtonChooseStatus_OnClick"/>
+                    <Label Grid.Row="8" Grid.Column="0" Content="Пол" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <RadioButton Grid.Row="8" Grid.Column="1" Content="Любой" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="132"/>
+                    <RadioButton x:Name="Men" Grid.Row="8" Grid.Column="1" Content="Мужской" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="132" Margin="132,0,0,0" Checked="Men_OnChecked"/>
+                    <RadioButton x:Name="Women" Grid.Row="8" Grid.Column="1" Content="Женский" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="132" Margin="264,0,0,0" Checked="Women_OnChecked"/>
 
                     <!--<ComboBox Grid.Row="9" Grid.Column="1" x:Name="BoxSkill1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="546" Height="50" Initialized="BoxSkill1_OnInitialized">
                         <ComboBoxItem IsSelected="True">
