@@ -50,7 +50,7 @@ namespace HR_DataBase_VSBLL.Mappers
 
         public int UpdateCompanyByid(Company model, int id)
         {
-            companiesDTO = mappersController.MapModelToCompaniesDTO(model);
+            companiesDTO = mappersController.MapCompaniesModelToDTO(model);
             id = dapper.UpdateCompanyByid(companiesDTO, id);
             return id;
         }

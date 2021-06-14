@@ -31,7 +31,7 @@ namespace HR_DataBase_VSBLL.Mappers
         public List<Location> GetAllLocation()
         {
             List<LocationDTO> locationDtos = dapper.GetAllLocation();
-            List<Location> locations = mappersController.MapLocationsDTOToModel(locationDtos);
+            List<Location> locations = mappersController.MapLocationDTOToModel(locationDtos);
 
             return locations;
         }

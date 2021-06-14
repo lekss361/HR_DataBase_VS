@@ -43,19 +43,6 @@ namespace HR_DataBase_VSBLL
             return mapper.Map<List<Company>>(companies);
         }
 
-        public CompaniesDTO MapModelToCompaniesDTO(Company company)
-        {
-            Mapper mapper = new Mapper(new MapperConfiguration(
-                cfg => cfg.CreateMap<Company, CompaniesDTO>()));
-            return mapper.Map<CompaniesDTO>(company);
-        }
-        public List<Contacts> MapContactsDTOToModel(List<ContactsDTO> Contacts)
-        {
-            Mapper mapper = new Mapper(new MapperConfiguration(
-                cfg => cfg.CreateMap<LocationDTO, Location>()));
-            return mapper.Map<List<Contacts>>(Contacts);
-        }
-
         public Contacts MapContactsDTOToModel(ContactsDTO contacts)
         {
             Mapper mapper = new Mapper(new MapperConfiguration(
@@ -94,7 +81,6 @@ namespace HR_DataBase_VSBLL
         {
             Mapper mapper = new Mapper(new MapperConfiguration(
                 cfg => cfg.CreateMap<Divisions, DivisionsDTO>()));
-
             return mapper.Map<DivisionsDTO>(divisions);
         }
 
@@ -119,7 +105,7 @@ namespace HR_DataBase_VSBLL
             return mapper.Map<Location>(location);
         }
 
-        public List<Location> MapLocationsDTOToModel(List<LocationDTO> locations)
+        public List<Location> MapLocationDTOToModel(List<LocationDTO> locations)
         {
             Mapper mapper = new Mapper(new MapperConfiguration(
                 cfg => cfg.CreateMap<LocationDTO, Location>()));
