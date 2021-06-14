@@ -39,7 +39,7 @@ namespace HR.SkillMatrix.UI.Pages
 
             skillName.SkillTypeID = _skillType;
 
-            MapperSkillName mapper = new MapperSkillName();
+            SkillNameLogic mapper = new SkillNameLogic();
             mapper.MapToSkillNameDTO(skillName);
         }
 

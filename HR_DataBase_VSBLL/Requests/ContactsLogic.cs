@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace HR_DataBase_VSBLL.Mappers
 {
-    public class MapperContacts
+    public class ContactsLogic
     {
         int ID;
         ContactsDTO contactsDTO = new ContactsDTO();

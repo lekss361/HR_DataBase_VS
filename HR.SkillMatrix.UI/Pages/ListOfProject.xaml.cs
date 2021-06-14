@@ -47,7 +47,7 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void FillDataGrid()
         {
-            MapperProjectsWithDirectionName mapperProjectsWithDirectionName = new MapperProjectsWithDirectionName();
+            ProjectsWithDirectionNameLogic mapperProjectsWithDirectionName = new ProjectsWithDirectionNameLogic();
             DataGridProjects.ItemsSource = mapperProjectsWithDirectionName.GetAllProjectsWithDirectionName();
         }
 

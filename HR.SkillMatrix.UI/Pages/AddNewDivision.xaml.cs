@@ -38,9 +38,9 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-            MapperContacts mapperContacts = new MapperContacts();
-            MapperLocation mapperLocation = new MapperLocation();
-            MapperDivisions mapper = new MapperDivisions();
+            ContactsLogic mapperContacts = new ContactsLogic();
+            LocationLogic mapperLocation = new LocationLogic();
+            DivisionsLogic mapper = new DivisionsLogic();
 
             Divisions divisions = new Divisions();
 

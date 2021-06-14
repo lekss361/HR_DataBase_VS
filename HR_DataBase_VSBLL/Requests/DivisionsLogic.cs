@@ -10,7 +10,7 @@ using HR_DataBase_VSDAL.Dapper;
 
 namespace HR_DataBase_VSBLL.Mappers
 {
-    public class MapperDivisions
+    public class DivisionsLogic
     {
         /// <summary>
         /// Mapper моделей UI в DTO

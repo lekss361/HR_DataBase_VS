@@ -10,7 +10,7 @@ using HR_DataBase_VSDAL.Dapper;
 
 namespace HR_DataBase_VSBLL.Mappers
 {
-    public class MapperLocation
+    public class LocationLogic
     {
         LocationDTO locationDTO = new LocationDTO();
         Location location = new Location();

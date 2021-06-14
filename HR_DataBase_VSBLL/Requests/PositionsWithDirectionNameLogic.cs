@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
 {
-    public class MapperPositionsWithDirectionName
+    public class PositionsWithDirectionNameLogic
     {
         PositionsWithDirectionName positionsWithDirectionNameDTO = new PositionsWithDirectionName();
         DapperPositionsWithDirectionName dapper = new DapperPositionsWithDirectionName();

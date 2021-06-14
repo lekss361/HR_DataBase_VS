@@ -42,7 +42,7 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void FillDataGrid()
         {
-            MapperDirections mapperDirections = new MapperDirections();
+            DirectionsLogic mapperDirections = new DirectionsLogic();
             DataGridDirections.ItemsSource = mapperDirections.GetAllDirections();
         }
 

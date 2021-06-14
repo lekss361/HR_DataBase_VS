@@ -26,14 +26,14 @@ namespace HR.SkillMatrix.UI.Pages
         {
             _mainWindow = mainWindow;
             InitializeComponent();
-            MapperSkillName mapperSkillName = new MapperSkillName();
+            SkillNameLogic mapperSkillName = new SkillNameLogic();
             DataGridSkillsAndLevels.ItemsSource = mapperSkillName.GetSkillNameByTypeId(id);
         }
         public ListOfSkillsAndLevels(MainWindow mainWindow)
         {
             _mainWindow = mainWindow;
             InitializeComponent();
-            MapperSkillName mapperSkillName = new MapperSkillName();
+            SkillNameLogic mapperSkillName = new SkillNameLogic();
             DataGridSkillsAndLevels.ItemsSource = mapperSkillName.GetSkillNameByAllType();
         }
 

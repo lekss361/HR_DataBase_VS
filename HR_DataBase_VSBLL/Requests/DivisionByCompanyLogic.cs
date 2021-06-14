@@ -12,7 +12,7 @@ using System.Collections;
 
 namespace HR_DataBase_VSBLL.Mappers
 {
-   public class MapperDivisionByCompany
+   public class DivisionByCompanyLogic
     {
         DapperDivisionByCompany dapper = new DapperDivisionByCompany();
 

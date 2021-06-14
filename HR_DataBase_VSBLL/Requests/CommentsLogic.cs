@@ -5,7 +5,7 @@ using AutoMapper;
 
 namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
 {
-    public class MapperComments
+    public class CommentsLogic
     {
         CommentsDTO commentsDTO = new CommentsDTO();
         DapperComments dapper = new DapperComments();

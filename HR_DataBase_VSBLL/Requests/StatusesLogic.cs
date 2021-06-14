@@ -10,7 +10,7 @@ using HR_DataBase_VSDAL.Dapper;
 
 namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
 {
-    public class MapperStatuses
+    public class StatusesLogic
     {
 
 

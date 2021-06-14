@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace HR_DataBase_VSBLL.Mappers
 {
-    public class MapperProjectsWithDirectionName
+    public class ProjectsWithDirectionNameLogic
     {
         ProjectsWithDirectionName projectsWithDirectionNameDTO = new ProjectsWithDirectionName();
         //ProjectsWithDirectionName rojectsWithDirectionName = new ProjectsWithDirectionName();

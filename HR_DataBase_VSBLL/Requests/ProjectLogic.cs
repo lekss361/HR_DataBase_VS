@@ -5,7 +5,7 @@ using AutoMapper;
 
 namespace HR_DataBase_VSBLL.Mappers
 {
-    public class MapperProject
+    public class ProjectLogic
     {
         ProjectDTO projectDTO = new ProjectDTO();
         DapperProjects dapper = new DapperProjects();

@@ -10,7 +10,7 @@ using HR_DataBase_VSDAL.Models;
 
 namespace HR_DataBase_VSBLL.Mappers
 {
-    public class MapperWorker
+    public class WorkerLogic
     {
         int Id;
 

@@ -30,7 +30,7 @@ namespace HR.SkillMatrix.UI.Pages
         {
             InitializeComponent();
             _mainWindow = mainWindow;
-            MapperLocation mapperLocation = new MapperLocation();
+            LocationLogic mapperLocation = new LocationLogic();
             Companies.ItemsSource = mapperLocation.GetAllLocation();
         }
 

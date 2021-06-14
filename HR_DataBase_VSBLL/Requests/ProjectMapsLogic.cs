@@ -11,7 +11,7 @@ using HR_DataBase_VSDAL.Models;
 
 namespace HR_DataBase_VSBLL.Mappers
 {
-    public class MapperProjectMaps
+    public class ProjectMapsLogic
     {
         ProjectMapsDTO projectMapsDTO = new ProjectMapsDTO();
         DapperProjectMaps dapperProjectMaps = new DapperProjectMaps();

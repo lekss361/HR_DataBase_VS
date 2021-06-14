@@ -49,11 +49,11 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            MapperWorker mapper = new MapperWorker();
-            MapperContacts mapperContacts = new MapperContacts();
-            MapperLocation mapperLocation = new MapperLocation();
-            MapperPreviousJob mapperPreviousJob = new MapperPreviousJob();
-            MapperProjectMaps mapperProjectMaps = new MapperProjectMaps();
+            WorkerLogic mapper = new WorkerLogic();
+            ContactsLogic mapperContacts = new ContactsLogic();
+            LocationLogic mapperLocation = new LocationLogic();
+            PreviousJobLogic mapperPreviousJob = new PreviousJobLogic();
+            ProjectMapsLogic mapperProjectMaps = new ProjectMapsLogic();
 
             Worker worker = new Worker();
             worker.LastName = LastName.Text;

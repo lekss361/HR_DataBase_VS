@@ -11,7 +11,7 @@ using HR_DataBase_VSDAL.DTO;
 
 namespace HR_DataBase_VSBLL.Mappers
 {
-    public class MapperCompany
+    public class CompanyLogic
     {
         CompaniesDTO companiesDTO = new CompaniesDTO();
         Company company = new Company();

@@ -11,7 +11,7 @@ using HR_DataBase_VSDAL.DTO;
 
 namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
 {
-    public class MapperPreviousJob
+    public class PreviousJobLogic
     {
         /// <summary>
         /// Mapper моделей UI в DTO

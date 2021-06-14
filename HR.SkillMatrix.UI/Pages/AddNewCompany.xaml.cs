@@ -40,9 +40,9 @@ namespace HR.SkillMatrix.UI.Pages
         /// <param name="e"></param>
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-            MapperCompany mapper = new MapperCompany();
-            MapperContacts mapperContacts = new MapperContacts();
-            MapperLocation mapperLocation = new MapperLocation();
+            CompanyLogic mapper = new CompanyLogic();
+            ContactsLogic mapperContacts = new ContactsLogic();
+            LocationLogic mapperLocation = new LocationLogic();
 
             Company companies = new Company();
             companies.Name = textBoxName.Text;

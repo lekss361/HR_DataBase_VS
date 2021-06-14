@@ -11,7 +11,7 @@ using HR_DataBase_VSDAL.DTO;
 
 namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
 {
-    public class MapperSkillName
+    public class SkillNameLogic
     {
         SkillNameDapper dapper = new SkillNameDapper();
         SkillNameWithTypeDTO skillNameWithTypeDto = new SkillNameWithTypeDTO();

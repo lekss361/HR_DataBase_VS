@@ -42,7 +42,7 @@ namespace HR.SkillMatrix.UI.Pages
                 project.Information = textBoxInformation.Text;
             }
 
-            MapperProject mapper = new MapperProject();
+            ProjectLogic mapper = new ProjectLogic();
             mapper.AddNew(project);
 
             Saved saved = new Saved();

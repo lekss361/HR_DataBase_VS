@@ -41,7 +41,7 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void FillDataGrid()
         {
-            MapperPositionsWithDirectionName mapperPositionsWithDirectionName = new MapperPositionsWithDirectionName();
+            PositionsWithDirectionNameLogic mapperPositionsWithDirectionName = new PositionsWithDirectionNameLogic();
             DataGridPositions.ItemsSource = mapperPositionsWithDirectionName.GetAllPositionsWithDirectionName();
         }
 

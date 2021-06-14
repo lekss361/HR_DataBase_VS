@@ -28,7 +28,7 @@ namespace HR.SkillMatrix.UI.Pages
         private Contacts contact = new Contacts();
         private Divisions division = new Divisions();
         private readonly MainWindow _mainWindow;
-        MapperDivisions mapperDivision = new MapperDivisions();
+        DivisionsLogic mapperDivision = new DivisionsLogic();
         public AboutDivision(MainWindow mainWindow, int id)
         {
             InitializeComponent();
@@ -114,14 +114,14 @@ namespace HR.SkillMatrix.UI.Pages
             location.HouseNumber = Int32.Parse(TextBoxHouseN.Text);
             location.Street = TextBoxStreet.Text;
 
-            MapperLocation locationMapper = new MapperLocation();
+            LocationLogic locationMapper = new LocationLogic();
             locationMapper.UpdateLocationByid(location, location.id);
 
             contact.Phone = TextBoxPhone.Text;
             contact.Information = TextBoxContactInformation.Text;
             contact.Email = TextBoxEmail.Text;
 
-            MapperContacts contactMapper = new MapperContacts();
+            ContactsLogic contactMapper = new ContactsLogic();
             contactMapper.UpdateContacts(contact, contact.id);
 
             division.Name = TextBoxName.Text;
