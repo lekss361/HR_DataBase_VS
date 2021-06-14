@@ -15,7 +15,7 @@ namespace HR_DataBase_VSBLL.Mappers
     public class MapperCompanies
     {
         CompaniesDTO companiesDTO = new CompaniesDTO();
-        //Company company = new Company();
+        Company company = new Company();
         CompanyDapper dapper = new CompanyDapper();
 
         public List<Company> GetAllCompanies()
@@ -36,7 +36,13 @@ namespace HR_DataBase_VSBLL.Mappers
 
             return companies;
         }
-        
+        public int UpdateCompanyByid(Company model, int id)
+        {
+            companiesDTO = MapModelToCompaniesDTO(model);
+            id = dapper.UpdateCompanyByid(companiesDTO, id);
+            return id;
+        }
+
 
         private CompaniesDTO MapModelToCompaniesDTO(Company companies)
         {

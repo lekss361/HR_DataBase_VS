@@ -1,8 +1,11 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[CompanyWithForeignKeyValueById]
 @id int 
 AS
-SELECT C.[Name], C.[Information], Con.Phone, Con.Email, Con.Information as ContactInformation, L.City, L.Street, L.Country, L.ApartmentNumber, L.LocationIndex, L.HouseNumber
-FROM [Companies] as C
-left join [Contacts] as Con on C.ContactID=Con.[id]
-left join [Locations] as L on C.LocationID=L.[id]
-WHERE (C.id = @id)
+SELECT
+Com.id, Com.[Name], Com.[Information],
+Con.Id AS ContactID,Con.Phone, Con.Email, Con.Information as ContactInformation,
+L.Id AS LocationID, L.City, L.Street, L.Country, L.ApartmentNumber, L.LocationIndex, L.HouseNumber
+FROM [HR_DataBase_VSDB].[Companies] as Com
+left join [HR_DataBase_VSDB].[Contacts] as Con on (Com.ContactID=Con.id)
+left join [HR_DataBase_VSDB].[Locations] as L on Com.LocationID=L.[id]
+WHERE (Com.id = @id)

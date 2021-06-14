@@ -55,6 +55,8 @@ namespace HR_DataBase_VSBLL.Mappers
             CompanyWithForeignKeyValue sda = new CompanyWithForeignKeyValue();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<CompanyWithForeignKeyValueDTO, CompanyWithForeignKeyValue>()
+                .ForMember(dest => dest.ContactID, option => option.MapFrom(source => source.ContactID))
+                .ForMember(dest => dest.LocationID, option => option.MapFrom(source => source.LocationID))
                 .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
                 .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))              
                 .ForMember(dest => dest.Phone, option => option.MapFrom(source => source.Phone))

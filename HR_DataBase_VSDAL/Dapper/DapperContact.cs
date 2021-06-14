@@ -78,10 +78,10 @@ namespace HR_DataBase_VSDAL.Dapper
         {
             _Query = "exec [HR_DataBase_VSDB].[UpdateContactsByID]";
             _Value =
-               $"@id ='{id}', " +
-               $"@Phone ='{currentContactsDTO.Phone}', " +
-               $"@Email='{currentContactsDTO.Email}', " +
-               $"@Information ='{currentContactsDTO.Information}'";
+               $"N'{id}', " +
+               $"N'{currentContactsDTO.Phone}', " +
+               $"N'{currentContactsDTO.Email}', " +
+               $"N'{currentContactsDTO.Information}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
