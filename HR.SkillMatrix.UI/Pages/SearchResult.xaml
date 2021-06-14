@@ -28,6 +28,12 @@
                             <DataGridTextColumn Binding ="{Binding Path = LastName}"  IsReadOnly="True" Header="Фамилия" />
                             <DataGridTextColumn Binding ="{Binding Path = Education}"  IsReadOnly="True" Header="Образование" />
                             <DataGridTextColumn Binding ="{Binding Path = Sex}"  IsReadOnly="True" Header="Пол" />
+                            <DataGridTextColumn Binding ="{Binding Path = CompanyName}"  IsReadOnly="True" Header="Компания" />
+                            <DataGridTextColumn Binding ="{Binding Path = DivisionName}"  IsReadOnly="True" Header="Отдел" />
+                            <DataGridTextColumn Binding ="{Binding Path = Phone}"  IsReadOnly="True" Header="Телефон" />
+                            <DataGridTextColumn Binding ="{Binding Path = Email}"  IsReadOnly="True" Header="Почта" />
+                            <DataGridTextColumn Binding ="{Binding Path = Country}"  IsReadOnly="True" Header="Страна" />
+                            <DataGridTextColumn Binding ="{Binding Path = City}"  IsReadOnly="True" Header="Город" />
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

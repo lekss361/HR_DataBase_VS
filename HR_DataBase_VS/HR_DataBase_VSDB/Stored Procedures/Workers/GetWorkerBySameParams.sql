@@ -12,8 +12,8 @@
     @PositionID INT,
     @DivisionID INT
 AS
- SELECT *
- FROM [HR_DataBase_VSDB].[Workers]
+ SELECT W.id
+ FROM [HR_DataBase_VSDB].[Workers] as W
  WHERE ([FirstName] = @FirstName
      OR [LastName] = @LastName
      OR [Patronymic] = @Patronymic
