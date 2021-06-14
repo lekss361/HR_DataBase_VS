@@ -10,6 +10,7 @@ namespace HR_DataBase_VSBLL.Mappers
         private WorkersDTO workersDTO = new WorkersDTO();
         private List<WorkersDTO> listWorkersDTOs = new List<WorkersDTO>();
         private DapperWorker dapper = new DapperWorker();
+        private WorkerWithForeignKeyValueDTO workerWithForeignKeyValueDTO= new WorkerWithForeignKeyValueDTO();
         private MappersController mappersController = new MappersController();
 
         public int AddNewWorker(Worker worker)
@@ -23,6 +24,13 @@ namespace HR_DataBase_VSBLL.Mappers
             workersDTO = mappersController.MapWorkerModelToDTO(worker);
             listWorkersDTOs = dapper.SearchWorkerBySameParam(workersDTO);
             return mappersController.MapWorkersDTOToModels(listWorkersDTOs);
+        }
+
+        public WorkerWithForeignKeyValue GetWorkerByID(int id)
+        {
+            workerWithForeignKeyValueDTO = dapper.GetWorkerWithForeignKeyValueByID(id);
+            return mappersController
+                .MapWorkerWithForeignKeyValueDTOToModel(workerWithForeignKeyValueDTO);
         }
     }
 }

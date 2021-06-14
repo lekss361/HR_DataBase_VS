@@ -180,5 +180,12 @@ namespace HR_DataBase_VSBLL
                 cfg => cfg.CreateMap<WorkersDTO, Worker>()));
             return mapper.Map<List<Worker>>(workers);
         }
+
+        public WorkerWithForeignKeyValue MapWorkerWithForeignKeyValueDTOToModel(WorkerWithForeignKeyValueDTO division)
+        {
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<WorkerWithForeignKeyValueDTO, WorkerWithForeignKeyValue>()));
+            return mapper.Map<WorkerWithForeignKeyValue>(division);
+        }
     }
 }

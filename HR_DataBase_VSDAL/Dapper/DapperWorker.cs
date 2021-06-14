@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using Dapper;
+using System.Linq;
 using HR_DataBase_VSDAL.Models;
 
 namespace HR_DataBase_VSDAL.Dapper
@@ -12,6 +13,7 @@ namespace HR_DataBase_VSDAL.Dapper
         string _Value;
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
         List<WorkersDTO> WorkersDTOs = new List<WorkersDTO>();
+        WorkerWithForeignKeyValueDTO workerWithForeignKeyValueDTO;
 
         /// <summary>
         /// Делаем запись в Базу Данных через хранимую процедуру
@@ -68,6 +70,19 @@ namespace HR_DataBase_VSDAL.Dapper
                     .AsList<WorkersDTO>();
             }
             return WorkersDTOs;
+        }
+
+        public WorkerWithForeignKeyValueDTO GetWorkerWithForeignKeyValueByID(int id)
+        {
+            string query = $"exec [HR_DataBase_VSDB].[GetAllWorkerInformationByID] @ID={id}";
+
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                workerWithForeignKeyValueDTO = connection
+                    .Query<WorkerWithForeignKeyValueDTO>(@$"{query}")
+                    .First<WorkerWithForeignKeyValueDTO>();
+            }
+            return workerWithForeignKeyValueDTO;
         }
     }
 }
