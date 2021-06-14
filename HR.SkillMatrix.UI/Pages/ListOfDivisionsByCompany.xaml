@@ -22,7 +22,7 @@
                     <DataGridTextColumn Binding ="{Binding Path = City}" IsReadOnly="True" Header="Город" Width="120"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Label Content="Список отделов компании" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="800" FontSize="16" Background="#FF8577C7"/>
+            <Label Content="Список отделов компании" HorizontalAlignment="Center" Height="33" VerticalAlignment="Top"  FontSize="20" />
         </Grid>
     </Grid>
 </Page>

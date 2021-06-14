@@ -42,5 +42,11 @@ namespace HR.SkillMatrix.UI.Pages
             Saved saved = new Saved();
             saved.Show();
         }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
+            _mainWindow.Content = createNewPage;
+        }
     }
 }

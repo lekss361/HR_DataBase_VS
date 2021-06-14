@@ -9,18 +9,19 @@
       Title="AddNewProject">
 
     <Grid>
-        <Grid HorizontalAlignment="Center" Height="1000" VerticalAlignment="Center" Width="1600" Background="#FFD8DAE9">
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="30" Margin="0,275,0,0" VerticalAlignment="Top" Width="800" Background="#FF7F74C1">
-                <TextBlock HorizontalAlignment="Left" Height="25" Margin="235,0,0,0" Text="Новый проект" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" TextAlignment="Center" RenderTransformOrigin="0.485,1.391" FontSize="18"/>
-            </Border>
-            <Button Content="Назад" HorizontalAlignment="Left" Height="42" Margin="650,639,0,0" VerticalAlignment="Top" Width="150" Click="buttonBack" FontSize="18"/>
-            <Button Content="Сохранить" HorizontalAlignment="Left" Height="42" Margin="932,639,0,0" VerticalAlignment="Top" Width="150" Click="buttonSave" FontSize="18"/>
+        <Grid HorizontalAlignment="Center" Height="1000" VerticalAlignment="Center" Width="1600" Background="White">
+
+            <TextBlock HorizontalAlignment="Left" Height="25" Margin="235,0,0,0" Text="Новый проект" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" TextAlignment="Center" RenderTransformOrigin="0.485,1.391" FontSize="20"/>
+
+            <Button Content="Назад" HorizontalAlignment="Left" Height="40" Margin="415,321,0,0" VerticalAlignment="Top" Width="140" Click="buttonBack" FontSize="18"/>
+            <Button Content="Сохранить" HorizontalAlignment="Left" Height="40" Margin="560,321,0,0" VerticalAlignment="Top" Width="140" Click="buttonSave" FontSize="18"/>
             <TextBlock HorizontalAlignment="Left" Height="30" Margin="456,403,0,0" Text="Название проекта" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" FontSize="18"/>
             <TextBlock HorizontalAlignment="Left" Height="30" Margin="456,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" FontSize="18"><Run Language="ru-ru" Text="Направление"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Height="30" Margin="456,487,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="18" Text="Информация  проекту"/>
-            <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="40" Margin="647,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" FontSize="14"/>
-            <TextBox x:Name="textBoxInformation" HorizontalAlignment="Left" Height="101" Margin="647,496,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" FontSize="14"/>
+            <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="40" Margin="647,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" FontSize="18"/>
+            <TextBox x:Name="textBoxInformation" HorizontalAlignment="Left" Height="101" Margin="647,496,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" FontSize="18"/>
             <Button x:Name="ButtonAddDirection" Content="Добавить" HorizontalAlignment="Left" Margin="650,455,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="ButtonAddDirection_Click"  />
+            <Label Content="Добавить проект" HorizontalAlignment="Left" Margin="725,285,0,0" VerticalAlignment="Top" FontSize="20"/>
         </Grid>
 
     </Grid>

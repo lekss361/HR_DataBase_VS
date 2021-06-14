@@ -44,7 +44,8 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
         {
-
+            CreateNewPage createNewPage = new CreateNewPage(_mainWindow);
+            _mainWindow.Content = createNewPage;
         }
     }
 }

@@ -16,7 +16,7 @@
                     <DataGridTextColumn Binding ="{Binding Path = Name}"  IsReadOnly="True" Header="статус" Width="150" />
                 </DataGrid.Columns>
             </DataGrid>
-            <Label Content="Список статусов" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="800" FontSize="16" Background="#FF8577C7"/>
+            <Label Content="Список статусов" HorizontalAlignment="Center" Height="41" VerticalAlignment="Top" FontSize="20" />
         </Grid>
     </Grid>
 </Page>
