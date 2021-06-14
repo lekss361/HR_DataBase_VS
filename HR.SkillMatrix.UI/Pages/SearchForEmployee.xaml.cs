@@ -109,7 +109,7 @@ namespace HR.SkillMatrix.UI.Pages
                 !string.IsNullOrEmpty(TextBoxName.Text) ||
                 !string.IsNullOrEmpty(TextBoxPatronymic.Text))
             {
-                MapperWorker mapper = new MapperWorker();
+                WorkerLogic mapper = new WorkerLogic();
                 workers = mapper.SearchWorkersBySameParams(worker);
             }
         }

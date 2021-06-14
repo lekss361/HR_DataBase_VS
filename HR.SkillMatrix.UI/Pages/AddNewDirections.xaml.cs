@@ -36,8 +36,8 @@ namespace HR.SkillMatrix.UI.Pages
             Directions directions = new Directions();
             directions.Name = textBoxName.Text;
 
-            MapperDirections mapper = new MapperDirections();
-            mapper.MapToDirectionsDTO(directions);
+            DirectionsLogic mapper = new DirectionsLogic();
+            mapper.AddDirections(directions);
 
             Saved saved = new Saved();
             saved.Show();

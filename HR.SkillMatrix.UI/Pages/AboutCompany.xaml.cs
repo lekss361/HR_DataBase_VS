@@ -30,15 +30,14 @@ namespace HR.SkillMatrix.UI.Pages
         public CompanyWithForeignKeyValue Company;
         private Company company = new Company();
         private readonly MainWindow _mainWindow;
-        MapperCompany mapperCompany = new MapperCompany();
-        MapperCompanies mapperCompanies = new MapperCompanies();
+        CompanyLogic mapperCompany = new CompanyLogic();
         public AboutCompany(MainWindow mainWindow, int id)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
             _currentCompanyId = id;
 
-            MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
+            DivisionByCompanyLogic mapperDivisionByCompany = new DivisionByCompanyLogic();
             DataGridDivisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(id);
             
 
@@ -103,20 +102,20 @@ namespace HR.SkillMatrix.UI.Pages
             location.HouseNumber = Int32.Parse(TextBoxHouseN.Text);
             location.Street = TextBoxStreet.Text;
 
-            MapperLocation locationMapper = new MapperLocation();
+            LocationLogic locationMapper = new LocationLogic();
             locationMapper.UpdateLocationByid(location, location.id);
 
             contact.Phone = TextBoxPhone.Text;
             contact.Information = TextBoxContactInformation.Text;
             contact.Email = TextBoxEmail.Text;
 
-            MapperContacts contactMapper = new MapperContacts();
+            ContactsLogic contactMapper = new ContactsLogic();
             contactMapper.UpdateContacts(contact, contact.id);
 
             company.Name = TextBoxName.Text;
             company.Information = TextBoxInformation.Text;
 
-            mapperCompanies.UpdateCompanyByid(company, _currentCompanyId);
+            mapperCompany.UpdateCompanyByid(company, _currentCompanyId);
         }
 
         private void ButtonChange_Click(object sender, RoutedEventArgs e)
@@ -136,11 +135,8 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-
             ListOfCompanies listOfCompanies = new ListOfCompanies(_mainWindow);
             _mainWindow.Content = listOfCompanies;
-
-
         }
 
         private void backToCompanyTable_Click(object sender, RoutedEventArgs e)

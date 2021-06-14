@@ -35,8 +35,8 @@ namespace HR.SkillMatrix.UI.Pages
             Statuses statuses = new Statuses();
             statuses.Name = textBoxName.Text;
 
-            MapperStatuses mapper = new MapperStatuses();
-            mapper.MapToStatusesDTO(statuses);
+            StatusesLogic mapper = new StatusesLogic();
+            mapper.AddNewStatuses(statuses);
 
             Saved saved = new Saved();
             saved.Show();

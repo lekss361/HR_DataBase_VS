@@ -40,17 +40,17 @@ namespace HR.SkillMatrix.UI.Pages
         /// <param name="e"></param>
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-            MapperCompany mapper = new MapperCompany();
-            MapperContacts mapperContacts = new MapperContacts();
-            MapperLocation mapperLocation = new MapperLocation();
+            CompanyLogic mapper = new CompanyLogic();
+            ContactsLogic mapperContacts = new ContactsLogic();
+            LocationLogic mapperLocation = new LocationLogic();
 
             Company companies = new Company();
             companies.Name = textBoxName.Text;
-            companies.ContactID = mapperContacts.AddNew(Contacts);
+            companies.ContactID = mapperContacts.AddContacts(Contacts);
             companies.LocationID = mapperLocation.AddNewLocation(Location);
             companies.Information = textBoxDescription.Text;
 
-            mapper.MapToCompaniesDTO(companies);
+            mapper.AddNewCompany(companies);
 
             Saved saved = new Saved();
             saved.Show();

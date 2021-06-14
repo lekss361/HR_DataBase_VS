@@ -39,8 +39,8 @@ namespace HR.SkillMatrix.UI.Pages
 
             skillName.SkillTypeID = _skillType;
 
-            MapperSkillName mapper = new MapperSkillName();
-            mapper.MapToSkillNameDTO(skillName);
+            SkillNameLogic mapper = new SkillNameLogic();
+            mapper.AddNewSkillName(skillName);
         }
 
         private void SoftSkill_Checked(object sender, RoutedEventArgs e)

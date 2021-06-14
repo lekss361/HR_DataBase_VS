@@ -49,11 +49,11 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            MapperWorker mapper = new MapperWorker();
-            MapperContacts mapperContacts = new MapperContacts();
-            MapperLocation mapperLocation = new MapperLocation();
-            MapperPreviousJob mapperPreviousJob = new MapperPreviousJob();
-            MapperProjectMaps mapperProjectMaps = new MapperProjectMaps();
+            WorkerLogic mapper = new WorkerLogic();
+            ContactsLogic mapperContacts = new ContactsLogic();
+            LocationLogic mapperLocation = new LocationLogic();
+            PreviousJobLogic mapperPreviousJob = new PreviousJobLogic();
+            ProjectMapsLogic mapperProjectMaps = new ProjectMapsLogic();
 
             Worker worker = new Worker();
             worker.LastName = LastName.Text;
@@ -64,14 +64,14 @@ namespace HR.SkillMatrix.UI.Pages
             worker.StatusID = 1;
             worker.Education = Education.Text;
             worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
-            worker.ContactID = mapperContacts.AddNew(Contacts);
+            worker.ContactID = mapperContacts.AddContacts(Contacts);
             worker.LocationID = mapperLocation.AddNewLocation(Location);
             worker.PositionID = PositionsWithDirectionName.id;
             worker.DivisionID = DivisionByCompany.id;
 
-            int workerId = mapper.MapToWorkersDTO(worker);
+            int workerId = mapper.AddNewWorker(worker);
             PreviousWork.WorkerID = workerId;
-            mapperPreviousJob.MapToPreviousWorkDTO(PreviousWork);
+            mapperPreviousJob.AddPreviousWork(PreviousWork);
 
             ProjectMaps = new ProjectMaps();
             ProjectMaps.WorkerID = workerId;

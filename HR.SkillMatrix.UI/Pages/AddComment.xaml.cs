@@ -36,7 +36,7 @@ namespace HR.SkillMatrix.UI.Pages
                 comments.Comment = textBoxComment.Text;
             }
 
-            MapperComments mapper = new MapperComments();
+            CommentsLogic mapper = new CommentsLogic();
             mapper.AddNewComments(comments);
 
             Saved saved = new Saved();

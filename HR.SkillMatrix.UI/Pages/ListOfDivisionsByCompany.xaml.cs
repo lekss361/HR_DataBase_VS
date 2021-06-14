@@ -39,7 +39,7 @@ namespace HR.SkillMatrix.UI.Pages
             _newWindow = newWindow;
             _companyId = companyCompanyId;
 
-            MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
+            DivisionByCompanyLogic mapperDivisionByCompany = new DivisionByCompanyLogic();
             DataGridDivisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(_companyId);
         }
 
