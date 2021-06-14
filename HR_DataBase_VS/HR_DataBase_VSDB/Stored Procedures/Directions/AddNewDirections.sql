@@ -3,3 +3,4 @@
 AS
 	INSERT INTO [Directions] ([Name])
 	VALUES (@Name)
+	SELECT @@IDENTITY
