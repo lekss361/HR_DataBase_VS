@@ -54,7 +54,7 @@ namespace HR.SkillMatrix.UI.Pages
             divisions.DirectionsID = Directions.id;
             divisions.Information = textBoxDescription.Text;
 
-            mappersController.MapDivisionsModelToDTO(divisions);
+            mapper.AddNewDivision(divisions);
 
             Saved saved = new Saved();
             saved.Show();

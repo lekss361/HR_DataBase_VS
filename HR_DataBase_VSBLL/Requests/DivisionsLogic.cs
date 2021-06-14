@@ -11,6 +11,12 @@ namespace HR_DataBase_VSBLL.Mappers
         private DivisionsDTO divisionsDTO = new DivisionsDTO();
         private DivisionWithForeignKeyValueDTO divisionWithKeyDTO = new DivisionWithForeignKeyValueDTO();
 
+        public int AddNewDivision(Divisions model)
+        {
+            divisionsDTO = mappersController.MapDivisionsModelToDTO(model);
+            return dapper.AddNewDivision(divisionsDTO);
+        }
+
         public int UpdateDivisionByid(Divisions model, int id)
         {
             divisionsDTO = mappersController.MapDivisionsModelToDTO(model);
