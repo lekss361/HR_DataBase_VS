@@ -47,13 +47,13 @@ namespace HR_DataBase_VSDAL.Dapper
         {
             _Query = "exec [HR_DataBase_VSDB].[UpdateLocationByID]";
             _Value =
-               $"@Id = '{id}', " +
-               $"@LocationIndex = '{locationDTO.LocationIndex}', " +
-               $"@Country = '{locationDTO.Country}', " +
-               $"@City = '{locationDTO.City}', " +
-               $"@Street ='{locationDTO.Street}', " +
-               $"@HouseNumber ='{locationDTO.HouseNumber}', " +
-               $"@ApartmentNumber ='{locationDTO.ApartmentNumber}'";
+               $"N'{id}', " +
+               $"N'{locationDTO.LocationIndex}', " +
+               $"N'{locationDTO.Country}', " +
+               $"N'{locationDTO.City}', " +
+               $"N'{locationDTO.Street}', " +
+               $"N'{locationDTO.HouseNumber}', " +
+               $"N'{locationDTO.ApartmentNumber}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {

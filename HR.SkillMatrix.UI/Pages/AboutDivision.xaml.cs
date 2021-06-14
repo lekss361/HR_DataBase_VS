@@ -23,7 +23,7 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AboutDivision : Page
     {
-        int divisionId;
+        int _currentDivisionId;
         private Location location = new Location();
         private Contacts contact = new Contacts();
         private Divisions division = new Divisions();
@@ -34,9 +34,9 @@ namespace HR.SkillMatrix.UI.Pages
             InitializeComponent();
             _mainWindow = mainWindow;
 
-            divisionId = id;
+            _currentDivisionId = id;
 
-            DivisionWithForeignKeyValue divisionWithForeignKeyValue = mapperDivision.GetDivisionByID(divisionId);
+            DivisionWithForeignKeyValue divisionWithForeignKeyValue = mapperDivision.GetDivisionByID(_currentDivisionId);
 
             TextBoxCity.Text = divisionWithForeignKeyValue.City;
             TextBoxStreet.Text = divisionWithForeignKeyValue.Street;
@@ -106,12 +106,13 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxIndex.IsEnabled = false;
             TextBoxDivision.IsEnabled = false;
             TextBoxCompany.IsEnabled = false;
+
             location.City = TextBoxCity.Text;
             location.LocationIndex = Int32.Parse(TextBoxIndex.Text);
             location.Country = TextBoxCountry.Text;
             location.ApartmentNumber = Int32.Parse(TextBoxApartmantN.Text);
             location.HouseNumber = Int32.Parse(TextBoxHouseN.Text);
-            location.Street = "DefaultStreet";
+            location.Street = TextBoxStreet.Text;
 
             MapperLocation locationMapper = new MapperLocation();
             locationMapper.UpdateLocationByid(location, location.id);
@@ -126,7 +127,7 @@ namespace HR.SkillMatrix.UI.Pages
             division.Name = TextBoxName.Text;
             division.Information = TextBoxInformation.Text;
 
-            mapperDivision.UpdateDivisionByid(division,divisionId);
+            mapperDivision.UpdateDivisionByid(division,_currentDivisionId);
         }
     }
 }

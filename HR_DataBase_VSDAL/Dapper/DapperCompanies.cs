@@ -29,7 +29,7 @@ namespace HR_DataBase_VSDAL.Dapper
         {
             _Query = "exec [HR_DataBase_VSDB].[AddNewCompany]";
             _Value =
-               $" N'{companiesDTO.Name}', " +
+               $"N'{companiesDTO.Name}', " +
                $"N'{companiesDTO.Information}', " +
                $"N'{companiesDTO.ContactID}', " +
                $"N'{companiesDTO.LocationID}'";
@@ -37,6 +37,28 @@ namespace HR_DataBase_VSDAL.Dapper
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 _ID = connection.QueryFirst<int>(@$"{_Query}{_Value}");
+            }
+            return _ID;
+        }
+
+        /// <summary>
+        /// Изменяем запись в БД через хранимую процедуру по ID
+        /// </summary>
+        /// <param name="companiesDTO"></param>
+        /// <returns></returns>
+        public int UpdateCompanyByid(CompaniesDTO companiesDTO,int id)
+        {
+            _Query = "exec [HR_DataBase_VSDB].[UpdateCompaniesByID]";
+            _Value =
+               $"N'{id}', " +
+               $"N'{companiesDTO.Name}', " +
+               $"N'{companiesDTO.Information}', " +
+               $"N'{companiesDTO.ContactID}', " +
+               $"N'{companiesDTO.LocationID}'";
+
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                _ID = connection.QueryFirstOrDefault<int>(@$"{_Query}{_Value}");
             }
             return _ID;
         }
@@ -82,7 +104,7 @@ namespace HR_DataBase_VSDAL.Dapper
             {
                 fullCompaniesWithContactAndLocationByIdDTO = connection
                     .Query<CompanyWithForeignKeyValueDTO>(@$"{tmp1}")
-                    .First<CompanyWithForeignKeyValueDTO>();
+                    .FirstOrDefault<CompanyWithForeignKeyValueDTO>();
             }
             return fullCompaniesWithContactAndLocationByIdDTO;
         }

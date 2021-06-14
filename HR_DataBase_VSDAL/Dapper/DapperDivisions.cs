@@ -49,13 +49,13 @@ namespace HR_DataBase_VSDAL.Dapper
         {
             _Query = "exec [HR_DataBase_VSDB].[UpdateDivisionByID]";
             _Value =
-               $"@Id = '{id}', " +
-               $"@Name = '{divisionsDTO.Name}', " +
-               $"@Information = '{divisionsDTO.Information}', " +
-               $"@CompanyID = '{divisionsDTO.CompanyID}', " +
-               $"@ContactID ='{divisionsDTO.ContactID}', " +
-               $"@LocationID ='{divisionsDTO.LocationID}', " +
-               $"@DirectionID ='{divisionsDTO.DirectionsID}'";
+               $"N'{id}', " +
+               $"N'{divisionsDTO.Name}', " +
+               $"N'{divisionsDTO.Information}', " +
+               $"N'{divisionsDTO.CompanyID}', " +
+               $"N'{divisionsDTO.ContactID}', " +
+               $"N'{divisionsDTO.LocationID}', " +
+               $"N'{divisionsDTO.DirectionsID}'";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {

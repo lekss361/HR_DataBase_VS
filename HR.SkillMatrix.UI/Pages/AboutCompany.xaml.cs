@@ -23,32 +23,44 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class AboutCompany : Page
     {
+        
+        private int _currentCompanyId;
+        private Location location = new Location();
+        private Contacts contact = new Contacts();
         public CompanyWithForeignKeyValue Company;
-        private int _id;
+        private Company company = new Company();
         private readonly MainWindow _mainWindow;
+        MapperCompany mapperCompany = new MapperCompany();
+        MapperCompanies mapperCompanies = new MapperCompanies();
         public AboutCompany(MainWindow mainWindow, int id)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
-            _id = id;
+            _currentCompanyId = id;
 
             MapperDivisionByCompany mapperDivisionByCompany = new MapperDivisionByCompany();
             DataGridDivisions.ItemsSource = mapperDivisionByCompany.GetDivisionByCompanyID(id);
-            MapperCompany mapperCompany = new MapperCompany();
+            
 
-            CompanyWithForeignKeyValue company = mapperCompany.GetCompanyByID(_id);
+            CompanyWithForeignKeyValue companyWithForeignKeyValue = mapperCompany.GetCompanyByID(_currentCompanyId);
 
-            TextBoxInformation.Text = company.Information;
-            TextBoxName.Text = company.Name;
-            TextBoxPhone.Text = company.Phone;
-            TextBoxEmail.Text = company.Email;
-            TextBoxContactInformation.Text = company.ContactInformation;
-            TextBoxCountry.Text = company.Country;
-            TextBoxCity.Text = company.City;
-            TextBoxStreet.Text = company.Street;
-            TextBoxHouseN.Text = company.HouseNumber;
-            TextBoxApartmantN.Text = company.ApartmentNumber;
-            TextBoxIndex.Text = company.LocationIndex;
+            TextBoxInformation.Text = companyWithForeignKeyValue.Information;
+            TextBoxName.Text = companyWithForeignKeyValue.Name;
+            TextBoxPhone.Text = companyWithForeignKeyValue.Phone;
+            TextBoxEmail.Text = companyWithForeignKeyValue.Email;
+            TextBoxContactInformation.Text = companyWithForeignKeyValue.ContactInformation;
+            TextBoxCountry.Text = companyWithForeignKeyValue.Country;
+            TextBoxCity.Text = companyWithForeignKeyValue.City;
+            TextBoxStreet.Text = companyWithForeignKeyValue.Street;
+            TextBoxHouseN.Text = companyWithForeignKeyValue.HouseNumber;
+            TextBoxApartmantN.Text = companyWithForeignKeyValue.ApartmentNumber;
+            TextBoxIndex.Text = companyWithForeignKeyValue.LocationIndex;
+
+            location.id = companyWithForeignKeyValue.LocationID;
+            contact.id = companyWithForeignKeyValue.ContactID;
+
+            company.ContactID = companyWithForeignKeyValue.ContactID;
+            company.LocationID = companyWithForeignKeyValue.LocationID;
         }
 
         private void DataGridDivisions_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -58,7 +70,7 @@ namespace HR.SkillMatrix.UI.Pages
             if (item != null)
             {
                 Company = new CompanyWithForeignKeyValue();
-                Company.id = _id;
+                Company.id = _currentCompanyId;
                 int id = item.id;
                 AboutDivision aboutDivision = new AboutDivision(_mainWindow, id);
                 _mainWindow.Content = aboutDivision;
@@ -83,6 +95,28 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxHouseN.IsEnabled = false;
             TextBoxApartmantN.IsEnabled = false;
             TextBoxIndex.IsEnabled = false;
+
+            location.City = TextBoxCity.Text;
+            location.LocationIndex = Int32.Parse(TextBoxIndex.Text);
+            location.Country = TextBoxCountry.Text;
+            location.ApartmentNumber = Int32.Parse(TextBoxApartmantN.Text);
+            location.HouseNumber = Int32.Parse(TextBoxHouseN.Text);
+            location.Street = TextBoxStreet.Text;
+
+            MapperLocation locationMapper = new MapperLocation();
+            locationMapper.UpdateLocationByid(location, location.id);
+
+            contact.Phone = TextBoxPhone.Text;
+            contact.Information = TextBoxContactInformation.Text;
+            contact.Email = TextBoxEmail.Text;
+
+            MapperContacts contactMapper = new MapperContacts();
+            contactMapper.UpdateContacts(contact, contact.id);
+
+            company.Name = TextBoxName.Text;
+            company.Information = TextBoxInformation.Text;
+
+            mapperCompanies.UpdateCompanyByid(company, _currentCompanyId);
         }
 
         private void ButtonChange_Click(object sender, RoutedEventArgs e)
