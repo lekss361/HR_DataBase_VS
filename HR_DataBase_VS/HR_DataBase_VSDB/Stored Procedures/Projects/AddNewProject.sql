@@ -3,6 +3,6 @@
 	@DirectionID	int,
 	@Information	nvarchar (255)
 AS
-	INSERT [Projects]([Name], [DirectionID])
-	VALUES (@Name, @DirectionID)
+	INSERT [Projects]([Name], [DirectionID], [Information])
+	VALUES (@Name, @DirectionID,@Information)
 	SELECT @@IDENTITY
