@@ -106,12 +106,20 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void Find_Click(object sender, RoutedEventArgs e)
         {
-            //if (!string.IsNullOrEmpty(TextBoxSurname.Text) ||
-            //    !string.IsNullOrEmpty(TextBoxName.Text) ||
-            //    !string.IsNullOrEmpty(TextBoxPatronymic.Text))
             {
-                //workers = new List<Worker>();
                 WorkerLogic mapper = new WorkerLogic();
+                if (!string.IsNullOrEmpty(TextBoxName.Text))
+                {
+                    worker.FirstName = TextBoxName.Text;
+                }
+                if (!string.IsNullOrEmpty(TextBoxSurname.Text))
+                {
+                    worker.LastName = TextBoxSurname.Text;
+                }
+                if (!string.IsNullOrEmpty(TextBoxPatronymic.Text))
+                {
+                    worker.Patronymic = TextBoxPatronymic.Text;
+                }
                 if (Statuses!=null)
                 {
                     worker.StatusID = Statuses.Id;
