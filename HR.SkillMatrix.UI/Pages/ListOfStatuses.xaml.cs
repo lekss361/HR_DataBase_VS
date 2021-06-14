@@ -25,7 +25,13 @@ namespace HR.SkillMatrix.UI.Pages
     public partial class ListOfStatuses : Page
     {
         public Statuses Statuses;
+        private readonly MainWindow _mainWindow;
         private readonly NewWindow _newWindow;
+        public ListOfStatuses(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            _mainWindow = mainWindow;
+        }
         public ListOfStatuses(NewWindow newWindow)
         {
             InitializeComponent();

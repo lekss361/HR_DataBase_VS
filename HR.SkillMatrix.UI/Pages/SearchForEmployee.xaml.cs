@@ -91,7 +91,6 @@ namespace HR.SkillMatrix.UI.Pages
             ListOfDivisionsByCompany listOfDivisionsByCompany = new ListOfDivisionsByCompany(newWindow, Company.Id) { DivisionByCompany = this.DivisionByCompany };
             newWindow.Content = listOfDivisionsByCompany;
             newWindow.ShowDialog();
-            worker.DivisionID = DivisionByCompany.id;
         }
 
         private void ButtonChoosePosition_OnClick(object sender, RoutedEventArgs e)
@@ -101,7 +100,7 @@ namespace HR.SkillMatrix.UI.Pages
             ListOfPosition listOfPosition = new ListOfPosition(newWindow) { PositionsWithDirectionName = this.PositionsWithDirectionName };
             newWindow.Content = listOfPosition;
             newWindow.Show();
-            worker.PositionID = PositionsWithDirectionName.id;
+            
         }
 
         private void Find_Click(object sender, RoutedEventArgs e)
@@ -111,6 +110,9 @@ namespace HR.SkillMatrix.UI.Pages
             //    !string.IsNullOrEmpty(TextBoxPatronymic.Text))
             {
                 WorkerLogic mapper = new WorkerLogic();
+                worker.StatusID = Statuses.Id;
+                worker.PositionID = PositionsWithDirectionName.id;
+                worker.DivisionID = DivisionByCompany.id;
                 workers = mapper.SearchWorkersBySameParams(worker);
             }
         }
@@ -131,7 +133,6 @@ namespace HR.SkillMatrix.UI.Pages
             ListOfStatuses listOfStatuses = new ListOfStatuses(newWindow) { Statuses = this.Statuses };
             newWindow.Content = listOfStatuses;
             newWindow.Show();
-            worker.StatusID = Statuses.Id;
         }
 
         private void Men_OnChecked(object sender, RoutedEventArgs e)
