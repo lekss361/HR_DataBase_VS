@@ -2,399 +2,196 @@
 using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSDAL.DTO;
 using HR_DataBase_VSDAL.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HR_DataBase_VSBLL
 {
     public class MappersController
     {
-        private CompaniesDTO companiesDTO;
-        private Contacts contactsModel;
-        private ContactsDTO contactsDTO;
-        private List<Directions> directions;
-        private Location location;
-        private LocationDTO locationDTO;
-        private ProjectDTO projectDTO;
-        private ProjectMapsDTO projectMapsDTO;
-        private List<SkillNameWithType> skillNameWithTypes;
-        private SkillNameWithTypeDTO skillNameWithTypeDto;
-        private StatusesDTO statusesDTO;
-        private List<WorkersDTO> workersDTOs;
-
-        /// <summary>
-        /// Map'им модели в DTO
-        /// </summary>
-        /// <param name="model"></param>
-        public CommentsDTO MapModelToDTO(Comments model)
+        public CommentsDTO MapCommentsModelToDTO(Comments comments)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Comments, CommentsDTO>());
-            Mapper mapper = new Mapper(config);
-            return mapper.Map<CommentsDTO>(model);
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<Comments, CommentsDTO>()));
+            return mapper.Map<CommentsDTO>(comments);
         }
 
-        public CompaniesDTO MapToCompaniesDTO(Company company)
+        public CompaniesDTO MapCompaniesModelToDTO(Company company)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Company, CompaniesDTO>());
-            Mapper mapper = new Mapper(config);
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<Company, CompaniesDTO>()));
             return mapper.Map<CompaniesDTO>(company);
         }
 
-        public CompanyWithForeignKeyValue MapCompanyByIDDTOToModel(CompanyWithForeignKeyValueDTO companyByIDDTO)
+        public CompanyWithForeignKeyValue MapCompanyWithForeignKeyValueDTOToModel(CompanyWithForeignKeyValueDTO company)
         {
-            CompanyWithForeignKeyValue sda = new CompanyWithForeignKeyValue();
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<CompanyWithForeignKeyValueDTO, CompanyWithForeignKeyValue>());
-
-            Mapper mapper = new Mapper(config);
-
-            sda = mapper.Map<CompanyWithForeignKeyValue>(companyByIDDTO);
-            return sda;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<CompanyWithForeignKeyValueDTO, CompanyWithForeignKeyValue>()));
+            return mapper.Map<CompanyWithForeignKeyValue>(company);
         }
 
-        public List<CompaniesWithContactAndLocation> MapCompaniesDTOToModelListFull(List<CompaniesWithContactAndLocationDTO> companiesWithContactAndLocationDTO)
+        public List<CompaniesWithContactAndLocation> MapCompaniesWithContactAndLocationDTODTOToModel(List<CompaniesWithContactAndLocationDTO> companiesWithContactAndLocationDTO)
         {
-            List<CompaniesWithContactAndLocation> companies = new List<CompaniesWithContactAndLocation>();
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<CompaniesWithContactAndLocationDTO,
-                CompaniesWithContactAndLocation>());
-
-            Mapper mapper = new Mapper(config);
-            companies = mapper.Map<List<CompaniesWithContactAndLocation>>(companiesWithContactAndLocationDTO);
-            return companies;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<CompaniesWithContactAndLocationDTO, CompaniesWithContactAndLocation>()));
+            return mapper.Map<List<CompaniesWithContactAndLocation>>(companiesWithContactAndLocationDTO);
         }
 
-        public List<Company> MapCompaniesDTOToModelList(List<CompaniesDTO> companiesDTO)
+        public List<Company> MapCompaniesDTOToModel(List<CompaniesDTO> companies)
         {
-            List<Company> companies = new List<Company>();
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<CompaniesDTO, Company>()
-                .ForMember(dest => dest.Id, option => option.MapFrom(source => source.Id))
-                .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
-                .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))
-                .ForMember(dest => dest.ContactID, option => option.MapFrom(source => source.ContactID))
-                .ForMember(dest => dest.LocationID, option => option.MapFrom(source => source.LocationID)));
-
-            Mapper mapper = new Mapper(config);
-
-            companies = mapper.Map<List<Company>>(companiesDTO);
-            return companies;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<CompaniesDTO, Company>()));
+            return mapper.Map<List<Company>>(companies);
         }
 
-        public CompaniesDTO MapModelToCompaniesDTO(Company companies)
+        public CompaniesDTO MapModelToCompaniesDTO(Company company)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Company, CompaniesDTO>()
-            .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
-            .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))
-            .ForMember(dest => dest.ContactID, option => option.MapFrom(source => source.ContactID))
-            .ForMember(dest => dest.LocationID, option => option.MapFrom(source => source.LocationID)));
-
-            Mapper mapper = new Mapper(config);
-
-            companiesDTO = mapper.Map<CompaniesDTO>(companies);
-            return companiesDTO;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<Company, CompaniesDTO>()));
+            return mapper.Map<CompaniesDTO>(company);
         }
-        public List<Contacts> MapListDTOToListModel(List<ContactsDTO> ContactsDTO)
+        public List<Contacts> MapContactsDTOToModel(List<ContactsDTO> Contacts)
         {
-            List<Contacts> tmp = new List<Contacts>();
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<LocationDTO, Location>()
-                .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex))
-                .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
-                .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
-                .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Street))
-                .ForMember(dest => dest.HouseNumber, option => option.MapFrom(source => source.HouseNumber))
-                .ForMember(dest => dest.ApartmentNumber, option => option.MapFrom(source => source.ApartmentNumber)));
-
-            Mapper mapper = new Mapper(config);
-
-            tmp = mapper.Map<List<Contacts>>(ContactsDTO);
-            return tmp;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<LocationDTO, Location>()));
+            return mapper.Map<List<Contacts>>(Contacts);
         }
 
-        public Contacts MapDTOToModel(ContactsDTO contactsDTO)
+        public Contacts MapContactsDTOToModel(ContactsDTO contacts)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<ContactsDTO, Contacts>()
-            .ForMember(dest => dest.id, option => option.MapFrom(source => source.id))
-            .ForMember(dest => dest.Phone, option => option.MapFrom(source => source.Phone))
-            .ForMember(dest => dest.Email, option => option.MapFrom(source => source.Email))
-            .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information)));
-
-            Mapper mapper = new Mapper(config);
-
-            contactsModel = mapper.Map<Contacts>(contactsDTO);
-            return contactsModel;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<ContactsDTO, Contacts>()));
+            return mapper.Map<Contacts>(contacts);
         }
 
-        public ContactsDTO MapModelToDTO(Contacts modelContacts)
+        public ContactsDTO MapContactsModelToDTO(Contacts contacts)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Contacts, ContactsDTO>()
-            .ForMember(dest => dest.Phone, option => option.MapFrom(source => source.Phone))
-            .ForMember(dest => dest.Email, option => option.MapFrom(source => source.Email))
-            .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information)));
-
-            Mapper mapper = new Mapper(config);
-
-            contactsDTO = mapper.Map<ContactsDTO>(modelContacts);
-            return contactsDTO;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<Contacts, ContactsDTO>()));
+            return mapper.Map<ContactsDTO>(contacts);
         }
 
-        public DirectionsDTO MapToDirectionsDTO(Directions directions)
+        public DirectionsDTO MapDirectionsModelToDTO(Directions directions)
         {
-            DirectionsDTO directionsDTO = new DirectionsDTO();
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Directions, DirectionsDTO>()
-                .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name)));
-            Mapper mapper = new Mapper(config);
-
-            directionsDTO = mapper.Map<DirectionsDTO>(directions);
-            return directionsDTO;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<Directions, DirectionsDTO>()));
+            return mapper.Map<DirectionsDTO>(directions);
         }
-        public List<Directions> MapToDirectionsModel(List<DirectionsDTO> directionsDTO)
+        public List<Directions> MapDirectionsDTOToModel(List<DirectionsDTO> directions)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<DirectionsDTO, Directions>());
-            Mapper mapper = new Mapper(config);
-
-            directions = mapper.Map<List<Directions>>(directionsDTO);
-            return directions;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<DirectionsDTO, Directions>()));
+            return mapper.Map<List<Directions>>(directions);
         }
 
-        public List<DivisionByCompany> MapDivisionByCompanyDTOToModelList(List<DivisionByCompanyDTO> divisionByCompanyDTODtos)
+        public List<DivisionByCompany> MapDivisionByCompanyDTOToModel(List<DivisionByCompanyDTO> divisionByCompany)
         {
-            List<DivisionByCompany> sda = new List<DivisionByCompany>();
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<DivisionByCompanyDTO, DivisionByCompany>()
-                .ForMember(dest => dest.id, option => option.MapFrom(source => source.id))
-                .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
-                .ForMember(dest => dest.DirectionName, option => option.MapFrom(source => source.DirectionName))
-                .ForMember(dest => dest.Phone, option => option.MapFrom(source => source.Phone))
-                .ForMember(dest => dest.Email, option => option.MapFrom(source => source.Email))
-                .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
-                .ForMember(dest => dest.City, option => option.MapFrom(source => source.City)));
-
-            Mapper mapper = new Mapper(config);
-
-            sda = mapper.Map<List<DivisionByCompany>>(divisionByCompanyDTODtos);
-            return sda;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<DivisionByCompanyDTO, DivisionByCompany>()));
+            return mapper.Map<List<DivisionByCompany>>(divisionByCompany);
         }
 
-        public DivisionsDTO MapToDivisionsDTO(Divisions divisions)
+        public DivisionsDTO MapDivisionsModelToDTO(Divisions divisions)
         {
-            DivisionsDTO divisionsDTO = new DivisionsDTO();
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<Divisions, DivisionsDTO>()));
 
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Divisions, DivisionsDTO>()
-
-            .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
-            .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))
-            .ForMember(dest => dest.CompanyID, option => option.MapFrom(source => source.CompanyID))
-            .ForMember(dest => dest.ContactID, option => option.MapFrom(source => source.ContactID))
-            .ForMember(dest => dest.LocationID, option => option.MapFrom(source => source.LocationID))
-            .ForMember(dest => dest.DirectionsID, option => option.MapFrom(source => source.DirectionsID)));
-
-            Mapper mapper = new Mapper(config);
-
-            divisionsDTO = mapper.Map<DivisionsDTO>(divisions);
-
-            return divisionsDTO;
+            return mapper.Map<DivisionsDTO>(divisions);
         }
 
-        public DivisionWithForeignKeyValue MapDivisionByIDDTOToModel(DivisionWithForeignKeyValueDTO divisionByIDDTO)
+        public DivisionWithForeignKeyValue MapDivisionWithForeignKeyValueDTOToModel(DivisionWithForeignKeyValueDTO division)
         {
-            DivisionWithForeignKeyValue sda = new DivisionWithForeignKeyValue();
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<DivisionWithForeignKeyValueDTO, DivisionWithForeignKeyValue>()
-                .ForMember(dest => dest.CompanyID, option => option.MapFrom(source => source.CompanyID))
-                .ForMember(dest => dest.DirectionId, option => option.MapFrom(source => source.DirectionId))
-                .ForMember(dest => dest.ContactID, option => option.MapFrom(source => source.ContactID))
-                .ForMember(dest => dest.LocationID, option => option.MapFrom(source => source.LocationID))
-                .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
-                .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))
-                .ForMember(dest => dest.CompanyName, option => option.MapFrom(source => source.CompanyName))
-                .ForMember(dest => dest.DirectionName, option => option.MapFrom(source => source.DirectionName))
-                .ForMember(dest => dest.Phone, option => option.MapFrom(source => source.Phone))
-                .ForMember(dest => dest.Email, option => option.MapFrom(source => source.Email))
-                .ForMember(dest => dest.ContactInformation, option => option.MapFrom(source => source.ContactInformation))
-                .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
-                .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
-                .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Email))
-                .ForMember(dest => dest.ApartmentNumber, option => option.MapFrom(source => source.ApartmentNumber))
-                .ForMember(dest => dest.HouseNumber, option => option.MapFrom(source => source.HouseNumber))
-                .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex)));
-
-            Mapper mapper = new Mapper(config);
-
-            sda = mapper.Map<DivisionWithForeignKeyValue>(divisionByIDDTO);
-            return sda;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<DivisionWithForeignKeyValueDTO, DivisionWithForeignKeyValue>()));
+            return mapper.Map<DivisionWithForeignKeyValue>(division);
         }
 
-        public LocationDTO MapModelToLocationDTO(Location location)
+        public LocationDTO MapLocationModelToDTO(Location location)
         {
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Location, LocationDTO>()
-            .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex))
-            .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
-            .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
-            .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Street))
-            .ForMember(dest => dest.HouseNumber, option => option.MapFrom(source => source.HouseNumber))
-            .ForMember(dest => dest.ApartmentNumber, option => option.MapFrom(source => source.ApartmentNumber)));
-
-            Mapper mapper = new Mapper(config);
-
-            locationDTO = mapper.Map<LocationDTO>(location);
-            return locationDTO;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<Location, LocationDTO>()));
+            return mapper.Map<LocationDTO>(location);
         }
 
-        public Location MapLocationDTOToModel(LocationDTO locationDTO)
+        public Location MapLocationDTOToModel(LocationDTO location)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<LocationDTO, Location>()
-                .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex))
-                .ForMember(dest => dest.id, option => option.MapFrom(source => source.id))
-                .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
-                .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
-                .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Street))
-                .ForMember(dest => dest.HouseNumber, option => option.MapFrom(source => source.HouseNumber))
-                .ForMember(dest => dest.ApartmentNumber, option => option.MapFrom(source => source.ApartmentNumber)));
-
-            Mapper mapper = new Mapper(config);
-
-            location = mapper.Map<Location>(locationDTO);
-            return location;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<LocationDTO, Location>()));
+            return mapper.Map<Location>(location);
         }
 
-        public List<Location> MapLocationDTOToModelList(List<LocationDTO> locationDtos)
+        public List<Location> MapLocationsDTOToModel(List<LocationDTO> locations)
         {
-            List<Location> tmp = new List<Location>();
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<LocationDTO, Location>()
-                .ForMember(dest => dest.LocationIndex, option => option.MapFrom(source => source.LocationIndex))
-                .ForMember(dest => dest.Country, option => option.MapFrom(source => source.Country))
-                .ForMember(dest => dest.City, option => option.MapFrom(source => source.City))
-                .ForMember(dest => dest.Street, option => option.MapFrom(source => source.Street))
-                .ForMember(dest => dest.HouseNumber, option => option.MapFrom(source => source.HouseNumber))
-                .ForMember(dest => dest.ApartmentNumber, option => option.MapFrom(source => source.ApartmentNumber)));
-
-            Mapper mapper = new Mapper(config);
-
-            tmp = mapper.Map<List<Location>>(locationDtos);
-            return tmp;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<LocationDTO, Location>()));
+            return mapper.Map<List<Location>>(locations);
         }
 
-        public List<PositionsWithDirectionName> MapPositionsWithDirectionNameDTOToModelList(List<PositionsWithDirectionNameDTO> positionsWithDirectionNameDTODtos)
+        public List<PositionsWithDirectionName> MapPositionsWithDirectionNameDTOToModel(List<PositionsWithDirectionNameDTO> positionsWithDirectionNames)
         {
-            List<PositionsWithDirectionName> sda = new List<PositionsWithDirectionName>();
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<PositionsWithDirectionNameDTO, PositionsWithDirectionName>()
-                .ForMember(dest => dest.id, option => option.MapFrom(source => source.id))
-                .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
-                .ForMember(dest => dest.DirectionName, option => option.MapFrom(source => source.DirectionName)));
-
-            Mapper mapper = new Mapper(config);
-
-            sda = mapper.Map<List<PositionsWithDirectionName>>(positionsWithDirectionNameDTODtos);
-            return sda;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<PositionsWithDirectionNameDTO, PositionsWithDirectionName>()));
+            return mapper.Map<List<PositionsWithDirectionName>>(positionsWithDirectionNames);
         }
 
-        public PreviousWorkDTO MapToPreviousWorkDTO(PreviousWork previousJob)
+        public PreviousWorkDTO MapPreviousWorkmodelToDTO(PreviousWork previousWork)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<PreviousWork, PreviousWorkDTO>()
-                .ForMember(dest => dest.WorkerID, option => option.MapFrom(source => source.WorkerID))
-                .ForMember(dest => dest.StartDate, option => option.MapFrom(source => source.StartDate))
-                .ForMember(dest => dest.EndDate, option => option.MapFrom(source => source.EndDate))
-                .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information))
-            );
-
-            Mapper mapper = new Mapper(config);
-            return mapper.Map<PreviousWorkDTO>(previousJob);
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<PreviousWork, PreviousWorkDTO>()));
+            return mapper.Map<PreviousWorkDTO>(previousWork);
         }
-        public ProjectDTO MapModelToDTO(Project model)
+        public ProjectDTO MapProjectModelToDTO(Project project)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Project, ProjectDTO>()
-            .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
-            .ForMember(dest => dest.DirectionsID, option => option.MapFrom(source => source.DirectionsID))
-            .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information)));
-
-            Mapper mapper = new Mapper(config);
-
-            projectDTO = mapper.Map<ProjectDTO>(model);
-            return projectDTO;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<Project, ProjectDTO>()));
+            return mapper.Map<ProjectDTO>(project);
         }
 
-        public ProjectMapsDTO MapToDirectionsDTO(ProjectMaps projectMaps)
+        public ProjectMapsDTO MapProjectMapsModelsToDTO(ProjectMaps projectMaps)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<ProjectMaps, ProjectMapsDTO>());
-            Mapper mapper = new Mapper(config);
-            projectMapsDTO = mapper.Map<ProjectMapsDTO>(projectMaps);
-            return projectMapsDTO;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<ProjectMaps, ProjectMapsDTO>()));
+            return mapper.Map<ProjectMapsDTO>(projectMaps);
         }
 
-        public List<ProjectsWithDirectionName> MapProjectsWithDirectionNameDTOToModelList(List<ProjectsWithDirectionNameDTO> projectsWithDirectionNameDTODtos)
+        public List<ProjectsWithDirectionName> MapProjectsWithDirectionNameDTOToModel(List<ProjectsWithDirectionNameDTO> projectsWithDirectionNames)
         {
-            List<ProjectsWithDirectionName> sda = new List<ProjectsWithDirectionName>();
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<ProjectsWithDirectionNameDTO, ProjectsWithDirectionName>()
-                .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name))
-                .ForMember(dest => dest.id, option => option.MapFrom(source => source.id))
-                .ForMember(dest => dest.DirectionName, option => option.MapFrom(source => source.DirectionName))
-                .ForMember(dest => dest.Information, option => option.MapFrom(source => source.Information)));
-
-            Mapper mapper = new Mapper(config);
-
-            sda = mapper.Map<List<ProjectsWithDirectionName>>(projectsWithDirectionNameDTODtos);
-            return sda;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<ProjectsWithDirectionNameDTO, ProjectsWithDirectionName>()));
+            return mapper.Map<List<ProjectsWithDirectionName>>(projectsWithDirectionNames);
         }
 
-        public List<SkillNameWithType> MapSkillNameByIdDTOToModelList(List<SkillNameWithTypeDTO> skillNameByIdDtos)
+        public List<SkillNameWithType> MapSkillNameWithTypeDTOToModel(List<SkillNameWithTypeDTO> skillNameWithTypes)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<SkillNameWithTypeDTO, SkillNameWithType>());
-            Mapper mapper = new Mapper(config);
-            skillNameWithTypes = mapper.Map<List<SkillNameWithType>>(skillNameByIdDtos);
-            return skillNameWithTypes;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<SkillNameWithTypeDTO, SkillNameWithType>()));
+            return mapper.Map<List<SkillNameWithType>>(skillNameWithTypes);
         }
 
-        public SkillNameWithTypeDTO MapToSkillNameDTO(SkillNameWithType skillName)
+        public SkillNameWithTypeDTO MapSkillNameWithTypeModelToDTO(SkillNameWithType skillNameWithType)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<SkillNameWithType, SkillNameWithTypeDTO>());
-            Mapper mapper = new Mapper(config);
-            skillNameWithTypeDto = mapper.Map<SkillNameWithTypeDTO>(skillName);
-            return skillNameWithTypeDto;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<SkillNameWithType, SkillNameWithTypeDTO>()));
+            return mapper.Map<SkillNameWithTypeDTO>(skillNameWithType);
         }
 
-        public StatusesDTO MapToStatusesDTO(Statuses statuses)
+        public StatusesDTO MapStatusesModelsToDTO(Statuses statuses)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Statuses, StatusesDTO>()
-            .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name)));
-
-            Mapper mapper = new Mapper(config);
-
-            statusesDTO = mapper.Map<StatusesDTO>(statuses);
-            return statusesDTO;
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<Statuses, StatusesDTO>()));
+            return mapper.Map<StatusesDTO>(statuses);
         }
 
-        public WorkersDTO MapToWorkersDTO(Worker worker)
+        public WorkersDTO MapWorkerModelToDTO(Worker worker)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Worker, WorkersDTO>());
-
-            Mapper mapper = new Mapper(config);
-
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<Worker, WorkersDTO>()));
             return mapper.Map<WorkersDTO>(worker);
         }
 
-        public WorkersDTO MapWorkerModelToWorkerDTO(Worker worker)
+        public List<Worker> MapWorkersDTOToModels(List<WorkersDTO> workers)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Worker, WorkersDTO>());
-
-            Mapper mapper = new Mapper(config);
-
-            return mapper.Map<WorkersDTO>(worker);
-        }
-
-        public List<Worker> MapListWorkersDTOToListWorkers(List<WorkersDTO> workers)
-        {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<WorkersDTO, Worker>());
-            Mapper mapper = new Mapper(config);
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<WorkersDTO, Worker>()));
             return mapper.Map<List<Worker>>(workers);
         }
     }

@@ -22,7 +22,7 @@ namespace HR_DataBase_VSBLL.Mappers
         /// <param name="companies"></param>
         public CompaniesDTO AddNewCompany(Company companies)
         {
-            companiesDTO = mappersController.MapToCompaniesDTO(companies);
+            companiesDTO = mappersController.MapCompaniesModelToDTO(companies);
             dapper.AddNewCompany(companiesDTO);
             return companiesDTO;
         }
@@ -30,21 +30,21 @@ namespace HR_DataBase_VSBLL.Mappers
         public CompanyWithForeignKeyValue GetCompanyByID(int id)
         {
             fullCompaniesWithContactAndLocationByIdDTO = dapper.GetCompanyByID(id);
-            fullCompaniesWithContactAndLocationById = mappersController.MapCompanyByIDDTOToModel(fullCompaniesWithContactAndLocationByIdDTO);
+            fullCompaniesWithContactAndLocationById = mappersController.MapCompanyWithForeignKeyValueDTOToModel(fullCompaniesWithContactAndLocationByIdDTO);
             return fullCompaniesWithContactAndLocationById;
         }
 
         public List<Company> GetAllCompanies()
         {
             List<CompaniesDTO> companiesDTO = dapper.GetAllCompanies();
-            List<Company> companies = mappersController.MapCompaniesDTOToModelList(companiesDTO);
+            List<Company> companies = mappersController.MapCompaniesDTOToModel(companiesDTO);
             return companies;
         }
 
         public List<CompaniesWithContactAndLocation> GetAllCompaniesWithContactAndLocation()
         {
             List<CompaniesWithContactAndLocationDTO> companiesDTO = dapper.GetCompaniesWithContactAndLocation();
-            List<CompaniesWithContactAndLocation> companies = mappersController.MapCompaniesDTOToModelListFull(companiesDTO);
+            List<CompaniesWithContactAndLocation> companies = mappersController.MapCompaniesWithContactAndLocationDTODTOToModel(companiesDTO);
             return companies;
         }
 

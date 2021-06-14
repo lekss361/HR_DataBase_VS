@@ -23,7 +23,7 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
         /// <param name="previousJob"></param>
         public int AddPreviousWork(PreviousWork previousJob)
         {
-            previousJobDTO = mappersController.MapToPreviousWorkDTO(previousJob);
+            previousJobDTO = mappersController.MapPreviousWorkmodelToDTO(previousJob);
             return dapper.AddPreviousWork(previousJobDTO);
         }
     }

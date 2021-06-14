@@ -12,7 +12,7 @@ namespace HR_DataBase_VSBLL.Mappers
 
         public void AddNewProjectMaps(ProjectMaps projectMaps)
         {
-            projectMapsDTO = mappersController.MapToDirectionsDTO(projectMaps);
+            projectMapsDTO = mappersController.MapProjectMapsModelsToDTO(projectMaps);
             dapperProjectMaps.AddNewProjectMaps(projectMapsDTO);
         }
     }

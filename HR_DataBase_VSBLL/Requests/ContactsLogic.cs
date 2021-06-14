@@ -23,7 +23,7 @@ namespace HR_DataBase_VSBLL.Mappers
         public Contacts GetByID(int ID)
         {
             contactsDTO = dapper.GetContactByID(ID);
-            contactsModel = mappersController.MapDTOToModel(contactsDTO);
+            contactsModel = mappersController.MapContactsDTOToModel(contactsDTO);
             return contactsModel;
         }
 
@@ -33,7 +33,7 @@ namespace HR_DataBase_VSBLL.Mappers
         /// <param name="contactsModel">Модель</param>
         public int AddNew(Contacts contactsModel)
         {
-            contactsDTO = mappersController.MapModelToDTO(contactsModel);
+            contactsDTO = mappersController.MapContactsModelToDTO(contactsModel);
             ID = dapper.AddNewContact(contactsDTO);
             return ID;
         }
@@ -46,9 +46,9 @@ namespace HR_DataBase_VSBLL.Mappers
         /// <returns></returns>
         public Contacts UpdateContacts(Contacts contactsModel, int Id)
         {
-            contactsDTO = mappersController.MapModelToDTO(contactsModel);
+            contactsDTO = mappersController.MapContactsModelToDTO(contactsModel);
             dapper.UpdateNewContact(contactsDTO, Id);
-            contactsModel = mappersController.MapDTOToModel(contactsDTO);
+            contactsModel = mappersController.MapContactsDTOToModel(contactsDTO);
             return contactsModel;
         }
     }

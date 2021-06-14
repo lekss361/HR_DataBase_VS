@@ -13,7 +13,7 @@ namespace HR_DataBase_VSBLL.Mappers
         public List<ProjectsWithDirectionName> GetAllProjectsWithDirectionName()
         {
             List<ProjectsWithDirectionNameDTO> projectsWithDirectionNameDTODtos = dapper.GetProjectsWithDirectionName();
-            List<ProjectsWithDirectionName> projectsWithDirectionName = mappersController.MapProjectsWithDirectionNameDTOToModelList(projectsWithDirectionNameDTODtos);
+            List<ProjectsWithDirectionName> projectsWithDirectionName = mappersController.MapProjectsWithDirectionNameDTOToModel(projectsWithDirectionNameDTODtos);
             return projectsWithDirectionName;
         }
     }

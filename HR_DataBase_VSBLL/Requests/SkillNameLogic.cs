@@ -19,7 +19,7 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<SkillNameWithType, SkillNameWithTypeDTO>());
             Mapper mapper = new Mapper(config);
-            skillNameWithTypeDto = mappersController.MapToSkillNameDTO(skillName);
+            skillNameWithTypeDto = mappersController.MapSkillNameWithTypeModelToDTO(skillName);
             dapper.AddNewSkillName(skillNameWithTypeDto);
             return skillNameWithTypeDto;
         }
@@ -28,14 +28,14 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
         {
             _id = id;
             skillNameWithTypeDTO = dapper.GetSkillNameByTypeId(_id);
-            skillNameWithTypes = mappersController.MapSkillNameByIdDTOToModelList(skillNameWithTypeDTO);
+            skillNameWithTypes = mappersController.MapSkillNameWithTypeDTOToModel(skillNameWithTypeDTO);
             return skillNameWithTypes;
         }
 
         public List<SkillNameWithType> GetSkillNameByAllType()
         {
             skillNameWithTypeDTO = dapper.GetSkillNameByAllType();
-            skillNameWithTypes = mappersController.MapSkillNameByIdDTOToModelList(skillNameWithTypeDTO);
+            skillNameWithTypes = mappersController.MapSkillNameWithTypeDTOToModel(skillNameWithTypeDTO);
             return skillNameWithTypes;
         }
 

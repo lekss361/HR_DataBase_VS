@@ -15,15 +15,15 @@ namespace HR_DataBase_VSBLL.Mappers
 
         public int AddNewWorker(Worker worker)
         {
-            workersDTO = mappersController.MapToWorkersDTO(worker);
+            workersDTO = mappersController.MapWorkerModelToDTO(worker);
             return dapper.AddNewWorker(workersDTO);
         }
 
         public List<Worker> SearchWorkersBySameParams(Worker worker)
         {
-            workersDTO = mappersController.MapWorkerModelToWorkerDTO(worker);
+            workersDTO = mappersController.MapWorkerModelToDTO(worker);
             listWorkersDTOs = dapper.SearchWorkerBySameParam(workersDTO);
-            listWorkers = mappersController.MapListWorkersDTOToListWorkers(listWorkersDTOs);
+            listWorkers = mappersController.MapWorkersDTOToModels(listWorkersDTOs);
             return listWorkers;
         }
     }

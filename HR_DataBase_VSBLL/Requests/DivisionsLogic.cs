@@ -14,7 +14,7 @@ namespace HR_DataBase_VSBLL.Mappers
 
         public int UpdateDivisionByid(Divisions model, int id)
         {
-            divisionsDTO = mappersController.MapToDivisionsDTO(model);
+            divisionsDTO = mappersController.MapDivisionsModelToDTO(model);
             id = dapper.UpdateDivisoonsById(divisionsDTO, id);
             return id;
         }
@@ -22,7 +22,7 @@ namespace HR_DataBase_VSBLL.Mappers
         public DivisionWithForeignKeyValue GetDivisionByID(int id)
         {
             divisionWithForeignKeyValueDTO = dapper.GetDivisionByID(id);
-            divisionWithForeignKeyValue  = mappersController.MapDivisionByIDDTOToModel(divisionWithForeignKeyValueDTO);
+            divisionWithForeignKeyValue  = mappersController.MapDivisionWithForeignKeyValueDTOToModel(divisionWithForeignKeyValueDTO);
             return divisionWithForeignKeyValue;
         }
     }

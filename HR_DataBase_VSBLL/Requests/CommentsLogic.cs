@@ -27,7 +27,7 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
         /// <param name="model"></param>
         public void AddNewComments(Comments model)
         {
-            commentsDTO = mappersController.MapModelToDTO(model);
+            commentsDTO = mappersController.MapCommentsModelToDTO(model);
             dapper.AddNewComments(commentsDTO);
         }
     }

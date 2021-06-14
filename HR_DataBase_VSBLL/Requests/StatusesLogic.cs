@@ -18,7 +18,7 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
 
         public StatusesDTO AddNewStatuses(Statuses statuses)
         {
-            statusesDTO = mappersController.MapToStatusesDTO(statuses);
+            statusesDTO = mappersController.MapStatusesModelsToDTO(statuses);
             dapper.AddNewStatuses(statusesDTO);
             return statusesDTO;
         }

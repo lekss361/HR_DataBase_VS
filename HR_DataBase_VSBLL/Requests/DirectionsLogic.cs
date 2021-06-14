@@ -28,7 +28,7 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
                 .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name)));
             Mapper mapper = new Mapper(config);
 
-            directionsDTO = mappersController.MapToDirectionsDTO(directions);
+            directionsDTO = mappersController.MapDirectionsModelToDTO(directions);
             dapper.AddNewDirections(directionsDTO);
             return directionsDTO;
         }
@@ -36,7 +36,7 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
         public List<Directions> GetAllDirections()
         {
             List<DirectionsDTO> directionsDTO = dapper.GetAllDirections();
-            List<Directions> directions = mappersController.MapToDirectionsModel(directionsDTO);
+            List<Directions> directions = mappersController.MapDirectionsDTOToModel(directionsDTO);
             return directions;
         }
     }

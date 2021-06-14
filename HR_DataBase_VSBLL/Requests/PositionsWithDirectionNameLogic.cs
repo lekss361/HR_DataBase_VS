@@ -14,7 +14,7 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
         public List<PositionsWithDirectionName> GetAllPositionsWithDirectionName()
         {
             List<PositionsWithDirectionNameDTO> positionsWithDirectionNameDTODtos = dapper.GetPositionsWithDirectionName();
-            List<PositionsWithDirectionName> positionsWithDirectionName = mappersController.MapPositionsWithDirectionNameDTOToModelList(positionsWithDirectionNameDTODtos);
+            List<PositionsWithDirectionName> positionsWithDirectionName = mappersController.MapPositionsWithDirectionNameDTOToModel(positionsWithDirectionNameDTODtos);
             positionsWithDirectionNameDTODtos.Clear();
 
             return positionsWithDirectionName;

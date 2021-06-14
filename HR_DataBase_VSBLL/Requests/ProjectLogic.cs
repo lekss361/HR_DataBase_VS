@@ -28,7 +28,7 @@ namespace HR_DataBase_VSBLL.Mappers
         /// <param name="model">Модель</param>
         public void AddNew(Project model)
         {
-            projectDTO = mappersController.MapModelToDTO(model);
+            projectDTO = mappersController.MapProjectModelToDTO(model);
             dapper.AddNewProject(projectDTO);
         }
     }

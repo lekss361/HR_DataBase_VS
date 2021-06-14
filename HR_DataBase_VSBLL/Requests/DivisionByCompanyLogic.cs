@@ -20,7 +20,7 @@ namespace HR_DataBase_VSBLL.Mappers
         public List<DivisionByCompany> GetDivisionByCompanyID(int id)
         {
             List<DivisionByCompanyDTO> divisionByCompanyDTODtos = dapper.GetDivisionByCompanyID(id);
-            List<DivisionByCompany> divisionByCompany = mappersController.MapDivisionByCompanyDTOToModelList(divisionByCompanyDTODtos);
+            List<DivisionByCompany> divisionByCompany = mappersController.MapDivisionByCompanyDTOToModel(divisionByCompanyDTODtos);
             return divisionByCompany;
         }
     }

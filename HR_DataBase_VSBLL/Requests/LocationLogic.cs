@@ -31,7 +31,7 @@ namespace HR_DataBase_VSBLL.Mappers
         public List<Location> GetAllLocation()
         {
             List<LocationDTO> locationDtos = dapper.GetAllLocation();
-            List<Location> locations = mappersController.MapLocationDTOToModelList(locationDtos);
+            List<Location> locations = mappersController.MapLocationsDTOToModel(locationDtos);
 
             return locations;
         }
@@ -42,7 +42,7 @@ namespace HR_DataBase_VSBLL.Mappers
         /// <param name="model"></param>
         public int AddNewLocation(Location model)
         {
-            locationDTO = mappersController.MapModelToLocationDTO(model);
+            locationDTO = mappersController.MapLocationModelToDTO(model);
             id = dapper.AddNewLocation(locationDTO);
             return id;
         }
@@ -53,7 +53,7 @@ namespace HR_DataBase_VSBLL.Mappers
         /// <param name="model"></param>
         public int UpdateLocationByid(Location model,int id)
         {
-            locationDTO = mappersController.MapModelToLocationDTO(model);
+            locationDTO = mappersController.MapLocationModelToDTO(model);
             id = dapper.UpdateLocationById(locationDTO,id);
             return id;
         }
