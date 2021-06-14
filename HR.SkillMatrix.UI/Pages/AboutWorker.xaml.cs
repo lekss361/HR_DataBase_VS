@@ -55,6 +55,29 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxLocationIndex.Text = workerWithForeignKeyValue.LocationIndex.ToString();
             TextBoxEducation.Text = workerWithForeignKeyValue.Education;
             TextBoxHobby.Text = workerWithForeignKeyValue.Hobby;
+
+            location.id =(Int32)workerWithForeignKeyValue.LocationID;
+            contact.id = (Int32)workerWithForeignKeyValue.ContactID;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            location.City = TextBoxCity.Text;
+            location.LocationIndex = Int32.Parse(TextBoxLocationIndex.Text);
+            location.Country = TextBoxCountry.Text;
+            location.ApartmentNumber = Int32.Parse(TextBoxApartmentN.Text);
+            location.HouseNumber = Int32.Parse(TextBoxHousN.Text);
+            location.Street = TextBoxStreet.Text;
+
+            LocationLogic locationMapper = new LocationLogic();
+            locationMapper.UpdateLocationByid(location, location.id);
+
+            contact.Phone = TextBoxPhone.Text;
+            contact.Information = TextBoxContactInformation.Text;
+            contact.Email = TextBoxEmail.Text;
+
+            ContactsLogic contactMapper = new ContactsLogic();
+            contactMapper.UpdateContacts(contact, contact.id);
         }
     }
 }
