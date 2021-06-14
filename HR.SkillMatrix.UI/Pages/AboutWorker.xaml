@@ -50,7 +50,7 @@
 
         <Label Content="О сотруднике " FontSize="20" HorizontalAlignment="Center" Grid.ColumnSpan="7" Grid.Row="0" VerticalAlignment="Center"/>
 
-                <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Grid.Column="1"  Margin="0,0,0,0" VerticalAlignment="Center" Width="140" Height="40" Grid.ColumnSpan="5"  Grid.Row="1"/>
+                <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Grid.Column="1"  Margin="0,0,0,0" VerticalAlignment="Center" Width="140" Height="40" Grid.ColumnSpan="5"  Grid.Row="1" Click="ButtonBack_Click"/>
                 <Button x:Name="ButtonChange" Content="Редактировать" HorizontalAlignment="Left" Margin="150,0,0,0" VerticalAlignment="Center" Width="140" Height="40" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="1" Click="ButtonChange_Click" />
                 <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Margin="300,0,0,0"  VerticalAlignment="Center" Width="140" Height="40"  Grid.Column="1" Grid.ColumnSpan="5"  Grid.Row="1" Click="ButtonSave_Click"/>
                 <Button x:Name="ButtonSaveCom" Content="Добавить комментарий" HorizontalAlignment="Left"  Margin="450,0,0,0" VerticalAlignment="Center" Width="140" Grid.Column="1" Height="40" Grid.ColumnSpan="5"  Grid.Row="1"/>
