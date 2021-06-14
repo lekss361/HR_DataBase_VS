@@ -31,6 +31,7 @@ namespace HR.SkillMatrix.UI.Pages
         public DivisionByCompany DivisionByCompany;
         public PositionsWithDirectionName PositionsWithDirectionName;
         public ProjectMaps ProjectMaps;
+        public Statuses Statuses;
         public List<int> ProjectsId;
         Worker worker = new Worker();
         List<Worker> workers = new List<Worker>();
@@ -125,7 +126,12 @@ namespace HR.SkillMatrix.UI.Pages
 
         private void ButtonChooseStatus_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            Statuses = new Statuses();
+            NewWindow newWindow = new NewWindow();
+            ListOfStatuses listOfStatuses = new ListOfStatuses(newWindow) { Statuses = this.Statuses };
+            newWindow.Content = listOfStatuses;
+            newWindow.Show();
+            worker.StatusID = Statuses.Id;
         }
 
         private void Men_OnChecked(object sender, RoutedEventArgs e)
@@ -137,5 +143,23 @@ namespace HR.SkillMatrix.UI.Pages
         {
             worker.Sex = "Женский";
         }
+
+        //private void BoxStatuses_OnInitialized(object? sender, EventArgs e)
+        //{
+        //    StatusesLogic StatusesLogic = new StatusesLogic();
+        //    List<Statuses> statuses = StatusesLogic.GetAllStatuses();
+        //    foreach (var tmp in statuses)
+        //    {
+        //        BoxStatuses.Items.Add(tmp.Id + " " + tmp.Name);
+        //    }
+        //}
+
+        //private void BoxStatuses_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    var s = BoxStatuses.Items;
+        //    //ComboBox dg = (ComboBox)sender;
+        //    //Statuses item = (Statuses)dg.SelectedItem;
+        //    //worker.StatusID = item.Id;
+        //}
     }
 }
