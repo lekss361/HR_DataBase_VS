@@ -165,6 +165,12 @@ namespace HR_DataBase_VSBLL
             Mapper mapper = new Mapper(new MapperConfiguration(
                 cfg => cfg.CreateMap<Statuses, StatusesDTO>()));
             return mapper.Map<StatusesDTO>(statuses);
+        } 
+        public List<Statuses> MapStatusesDTOToModels(List<StatusesDTO> statusesDTO)
+        {
+            Mapper mapper = new Mapper(new MapperConfiguration(
+                cfg => cfg.CreateMap<StatusesDTO, Statuses>()));
+            return mapper.Map<List<Statuses>>(statusesDTO);
         }
 
         public WorkersDTO MapWorkerModelToDTO(Worker worker)

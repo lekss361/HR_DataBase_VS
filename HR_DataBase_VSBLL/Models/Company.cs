@@ -13,8 +13,5 @@ namespace HR_DataBase_VSBLL.Models
         public string Information { get; set; }
         public int ContactID { get; set; }
         public int LocationID { get; set; }
-        
-
-       
     }
 }

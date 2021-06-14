@@ -31,6 +31,7 @@ namespace HR.SkillMatrix.UI.Pages
         public DivisionByCompany DivisionByCompany;
         public PositionsWithDirectionName PositionsWithDirectionName;
         public ProjectMaps ProjectMaps;
+        public Statuses Statuses;
         public List<int> ProjectsId;
         private readonly MainWindow _mainWindow;
         private string _sex;
@@ -61,7 +62,7 @@ namespace HR.SkillMatrix.UI.Pages
             worker.Patronymic = Patronymic.Text;
             worker.Hobby = Hobby.Text;
             worker.Sex = _sex;
-            worker.StatusID = 1;
+            worker.StatusID = Statuses.Id;
             worker.Education = Education.Text;
             worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
             worker.ContactID = mapperContacts.AddContacts(Contacts);
@@ -177,6 +178,16 @@ namespace HR.SkillMatrix.UI.Pages
             ListOfDivisionsByCompany listOfDivisionsByCompany = new ListOfDivisionsByCompany(newWindow, Company.Id) { DivisionByCompany = this.DivisionByCompany };
             newWindow.Content = listOfDivisionsByCompany;
             newWindow.ShowDialog();
+        }
+
+        private void ChooseStatus_Click(object sender, RoutedEventArgs e)
+        {
+            Statuses = new Statuses();
+            NewWindow newWindow = new NewWindow();
+            ListOfStatuses listOfStatuses = new ListOfStatuses(newWindow) { Statuses = this.Statuses };
+            newWindow.Content = listOfStatuses;
+            newWindow.Show();
+            int a = Statuses.Id;
         }
     }
 }   
