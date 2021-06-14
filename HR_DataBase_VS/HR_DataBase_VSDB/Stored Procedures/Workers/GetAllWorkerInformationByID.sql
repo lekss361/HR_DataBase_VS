@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [HR_DataBase_VSDB].[GetAllWorkerInformationByID]
-	@Id int
+  @Id int
 AS
  SELECT
  W.id, W.FirstName,W.LastName,W.Patronymic,W.BirthDay,W.Sex,W.Education,W.Hobby,W.ContactID,W.LocationID,W.StatusID,W.PositionID,W.DivisionID,
