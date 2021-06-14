@@ -25,9 +25,8 @@ namespace HR_DataBase_VSDAL.Dapper
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
-                ID = connection.QueryFirst<int>(@$"{_Query}{_Value}");
+                return connection.QueryFirst<int>(@$"{_Query}{_Value}");
             }
-            return ID;
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using AutoMapper;
 using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSDAL.Models;
 using HR_DataBase_VSDAL.Dapper;
@@ -9,29 +8,24 @@ namespace HR_DataBase_VSBLL.Mappers
 {
     public class CompanyLogic
     {
-        CompaniesDTO companiesDTO = new CompaniesDTO();
-        Company company = new Company();
-        CompanyWithForeignKeyValue fullCompaniesWithContactAndLocationById = new CompanyWithForeignKeyValue();
-        CompanyWithForeignKeyValueDTO fullCompaniesWithContactAndLocationByIdDTO = new CompanyWithForeignKeyValueDTO();
-        CompanyDapper dapper = new CompanyDapper();
-        MappersController mappersController = new MappersController();
+        private CompaniesDTO companiesDTO = new CompaniesDTO();
+        private CompanyWithForeignKeyValue companyWhisKey = new CompanyWithForeignKeyValue();
+        private CompanyWithForeignKeyValueDTO companyWhisKeyDTO = new CompanyWithForeignKeyValueDTO();
+        private CompanyDapper dapper = new CompanyDapper();
+        private MappersController mappersController = new MappersController();
 
-        /// <summary>
-        /// Mapper моделей UI в DTO
-        /// </summary>
-        /// <param name="companies"></param>
-        public CompaniesDTO AddNewCompany(Company companies)
+        public int AddNewCompany(Company company)
         {
-            companiesDTO = mappersController.MapCompaniesModelToDTO(companies);
-            dapper.AddNewCompany(companiesDTO);
-            return companiesDTO;
+            companiesDTO = mappersController.MapCompaniesModelToDTO(company);
+            return dapper.AddNewCompany(companiesDTO);
         }
 
         public CompanyWithForeignKeyValue GetCompanyByID(int id)
         {
-            fullCompaniesWithContactAndLocationByIdDTO = dapper.GetCompanyByID(id);
-            fullCompaniesWithContactAndLocationById = mappersController.MapCompanyWithForeignKeyValueDTOToModel(fullCompaniesWithContactAndLocationByIdDTO);
-            return fullCompaniesWithContactAndLocationById;
+            companyWhisKeyDTO = dapper.GetCompanyByID(id);
+            companyWhisKey = mappersController
+                .MapCompanyWithForeignKeyValueDTOToModel(companyWhisKeyDTO);
+            return companyWhisKey;
         }
 
         public List<Company> GetAllCompanies()
@@ -51,8 +45,7 @@ namespace HR_DataBase_VSBLL.Mappers
         public int UpdateCompanyByid(Company model, int id)
         {
             companiesDTO = mappersController.MapCompaniesModelToDTO(model);
-            id = dapper.UpdateCompanyByid(companiesDTO, id);
-            return id;
+            return dapper.UpdateCompanyByid(companiesDTO, id);
         }
     }
 }

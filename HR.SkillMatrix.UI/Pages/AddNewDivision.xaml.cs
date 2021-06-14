@@ -49,7 +49,7 @@ namespace HR.SkillMatrix.UI.Pages
 
             divisions.Name = textBoxName.Text;
             divisions.CompanyID = Company.Id;
-            divisions.ContactID = mapperContacts.AddNew(Contacts);
+            divisions.ContactID = mapperContacts.AddContacts(Contacts);
             divisions.LocationID = mapperLocation.AddNewLocation(Location);
             divisions.DirectionsID = Directions.id;
             divisions.Information = textBoxDescription.Text;

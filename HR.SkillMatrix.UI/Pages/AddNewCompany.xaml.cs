@@ -46,7 +46,7 @@ namespace HR.SkillMatrix.UI.Pages
 
             Company companies = new Company();
             companies.Name = textBoxName.Text;
-            companies.ContactID = mapperContacts.AddNew(Contacts);
+            companies.ContactID = mapperContacts.AddContacts(Contacts);
             companies.LocationID = mapperLocation.AddNewLocation(Location);
             companies.Information = textBoxDescription.Text;
 

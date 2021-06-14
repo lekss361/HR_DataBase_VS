@@ -7,17 +7,13 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
 {
     public class PositionsWithDirectionNameLogic
     {
-        PositionsWithDirectionName positionsWithDirectionNameDTO = new PositionsWithDirectionName();
-        DapperPositionsWithDirectionName dapper = new DapperPositionsWithDirectionName();
-        MappersController mappersController = new MappersController();
+        private DapperPositionsWithDirectionName dapper = new DapperPositionsWithDirectionName();
+        private MappersController mappersController = new MappersController();
 
         public List<PositionsWithDirectionName> GetAllPositionsWithDirectionName()
         {
             List<PositionsWithDirectionNameDTO> positionsWithDirectionNameDTODtos = dapper.GetPositionsWithDirectionName();
-            List<PositionsWithDirectionName> positionsWithDirectionName = mappersController.MapPositionsWithDirectionNameDTOToModel(positionsWithDirectionNameDTODtos);
-            positionsWithDirectionNameDTODtos.Clear();
-
-            return positionsWithDirectionName;
+            return mappersController.MapPositionsWithDirectionNameDTOToModel(positionsWithDirectionNameDTODtos);
         }
     }
 }

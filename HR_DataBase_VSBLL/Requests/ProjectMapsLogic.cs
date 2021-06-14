@@ -6,9 +6,9 @@ namespace HR_DataBase_VSBLL.Mappers
 {
     public class ProjectMapsLogic
     {
-        ProjectMapsDTO projectMapsDTO = new ProjectMapsDTO();
-        DapperProjectMaps dapperProjectMaps = new DapperProjectMaps();
-        MappersController mappersController = new MappersController();
+        private ProjectMapsDTO projectMapsDTO = new ProjectMapsDTO();
+        private DapperProjectMaps dapperProjectMaps = new DapperProjectMaps();
+        private MappersController mappersController = new MappersController();
 
         public void AddNewProjectMaps(ProjectMaps projectMaps)
         {

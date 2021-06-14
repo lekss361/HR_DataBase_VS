@@ -6,24 +6,22 @@ namespace HR_DataBase_VSBLL.Mappers
 {
     public class DivisionsLogic
     {
-        MappersController mappersController = new MappersController();
-        DivisionWithForeignKeyValueDTO divisionWithForeignKeyValueDTO = new DivisionWithForeignKeyValueDTO();
-        DivisionWithForeignKeyValue divisionWithForeignKeyValue = new DivisionWithForeignKeyValue();
-        DivisionsDTO divisionsDTO = new DivisionsDTO();
-        DapperDivision dapper = new DapperDivision();
+        private DapperDivision dapper = new DapperDivision();
+        private MappersController mappersController = new MappersController();
+        private DivisionsDTO divisionsDTO = new DivisionsDTO();
+        private DivisionWithForeignKeyValueDTO divisionWithKeyDTO = new DivisionWithForeignKeyValueDTO();
 
         public int UpdateDivisionByid(Divisions model, int id)
         {
             divisionsDTO = mappersController.MapDivisionsModelToDTO(model);
-            id = dapper.UpdateDivisoonsById(divisionsDTO, id);
-            return id;
+            return dapper.UpdateDivisoonsById(divisionsDTO, id);
         }
 
         public DivisionWithForeignKeyValue GetDivisionByID(int id)
         {
-            divisionWithForeignKeyValueDTO = dapper.GetDivisionByID(id);
-            divisionWithForeignKeyValue  = mappersController.MapDivisionWithForeignKeyValueDTOToModel(divisionWithForeignKeyValueDTO);
-            return divisionWithForeignKeyValue;
+            divisionWithKeyDTO = dapper.GetDivisionByID(id);
+            return mappersController
+                .MapDivisionWithForeignKeyValueDTOToModel(divisionWithKeyDTO);
         }
     }
 }

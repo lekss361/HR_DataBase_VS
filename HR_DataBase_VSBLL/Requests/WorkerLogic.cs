@@ -7,11 +7,10 @@ namespace HR_DataBase_VSBLL.Mappers
 {
     public class WorkerLogic
     {
-        WorkersDTO workersDTO = new WorkersDTO();
-        List<WorkersDTO> listWorkersDTOs = new List<WorkersDTO>();
-        private List<Worker> listWorkers;
-        DapperWorker dapper = new DapperWorker();
-        MappersController mappersController = new MappersController();
+        private WorkersDTO workersDTO = new WorkersDTO();
+        private List<WorkersDTO> listWorkersDTOs = new List<WorkersDTO>();
+        private DapperWorker dapper = new DapperWorker();
+        private MappersController mappersController = new MappersController();
 
         public int AddNewWorker(Worker worker)
         {
@@ -23,8 +22,7 @@ namespace HR_DataBase_VSBLL.Mappers
         {
             workersDTO = mappersController.MapWorkerModelToDTO(worker);
             listWorkersDTOs = dapper.SearchWorkerBySameParam(workersDTO);
-            listWorkers = mappersController.MapWorkersDTOToModels(listWorkersDTOs);
-            return listWorkers;
+            return mappersController.MapWorkersDTOToModels(listWorkersDTOs);
         }
     }
 }

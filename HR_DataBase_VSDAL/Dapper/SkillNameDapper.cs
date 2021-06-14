@@ -10,7 +10,6 @@ namespace HR_DataBase_VSDAL.Dapper
 {
     public class SkillNameDapper
     {
-        int Id;
         private List<SkillNameWithTypeDTO> skillNameWithTypeDTO = new List<SkillNameWithTypeDTO>();
         private string _query;
         private string _value;
@@ -26,9 +25,8 @@ namespace HR_DataBase_VSDAL.Dapper
             _value = $" N'{SkillNameDTO.SkillName}', N'{SkillNameDTO.SkillType}'";
             using (IDbConnection connection = new SqlConnection(_connectionString))
             {
-                Id = connection.QueryFirst<int>(@$"{_query}{_value}");
+                return connection.QueryFirst<int>(@$"{_query}{_value}");
             }
-            return Id;
         }
 
         public List<SkillNameWithTypeDTO> GetSkillNameByTypeId(int id)

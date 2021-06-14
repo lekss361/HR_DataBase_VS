@@ -64,7 +64,7 @@ namespace HR.SkillMatrix.UI.Pages
             worker.StatusID = 1;
             worker.Education = Education.Text;
             worker.BirthDay = BirthDay.SelectedDate.Value.Date.ToString("MM.dd.yyyy");
-            worker.ContactID = mapperContacts.AddNew(Contacts);
+            worker.ContactID = mapperContacts.AddContacts(Contacts);
             worker.LocationID = mapperLocation.AddNewLocation(Location);
             worker.PositionID = PositionsWithDirectionName.id;
             worker.DivisionID = DivisionByCompany.id;

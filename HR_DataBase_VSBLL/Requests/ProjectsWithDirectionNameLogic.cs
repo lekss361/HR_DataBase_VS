@@ -7,14 +7,13 @@ namespace HR_DataBase_VSBLL.Mappers
 {
     public class ProjectsWithDirectionNameLogic
     {
-        DapperProjectsWithDirectionName dapper = new DapperProjectsWithDirectionName();
-        MappersController mappersController = new MappersController();
+        private DapperProjectsWithDirectionName dapper = new DapperProjectsWithDirectionName();
+        private MappersController mappersController = new MappersController();
 
         public List<ProjectsWithDirectionName> GetAllProjectsWithDirectionName()
         {
             List<ProjectsWithDirectionNameDTO> projectsWithDirectionNameDTODtos = dapper.GetProjectsWithDirectionName();
-            List<ProjectsWithDirectionName> projectsWithDirectionName = mappersController.MapProjectsWithDirectionNameDTOToModel(projectsWithDirectionNameDTODtos);
-            return projectsWithDirectionName;
+            return mappersController.MapProjectsWithDirectionNameDTOToModel(projectsWithDirectionNameDTODtos);
         }
     }
 }

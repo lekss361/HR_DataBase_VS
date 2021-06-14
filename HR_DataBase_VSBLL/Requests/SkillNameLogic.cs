@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using AutoMapper;
 using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSDAL.Models;
 using HR_DataBase_VSDAL.Dapper;
@@ -8,35 +7,27 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
 {
     public class SkillNameLogic
     {
-        private int _id;
-        SkillNameDapper dapper = new SkillNameDapper();
-        SkillNameWithTypeDTO skillNameWithTypeDto = new SkillNameWithTypeDTO();
-        List<SkillNameWithType> skillNameWithTypes = new List<SkillNameWithType>();
+        private SkillNameDapper dapper = new SkillNameDapper();
+        private SkillNameWithTypeDTO skillNameWithTypeDto = new SkillNameWithTypeDTO();
         private List<SkillNameWithTypeDTO> skillNameWithTypeDTO = new List<SkillNameWithTypeDTO>();
-        MappersController mappersController = new MappersController();
+        private MappersController mappersController = new MappersController();
 
-        public SkillNameWithTypeDTO AddNewSkillName(SkillNameWithType skillName)
+        public int AddNewSkillName(SkillNameWithType skillName)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<SkillNameWithType, SkillNameWithTypeDTO>());
-            Mapper mapper = new Mapper(config);
             skillNameWithTypeDto = mappersController.MapSkillNameWithTypeModelToDTO(skillName);
-            dapper.AddNewSkillName(skillNameWithTypeDto);
-            return skillNameWithTypeDto;
+            return dapper.AddNewSkillName(skillNameWithTypeDto);
         }
 
         public List<SkillNameWithType> GetSkillNameByTypeId(int id)
         {
-            _id = id;
-            skillNameWithTypeDTO = dapper.GetSkillNameByTypeId(_id);
-            skillNameWithTypes = mappersController.MapSkillNameWithTypeDTOToModel(skillNameWithTypeDTO);
-            return skillNameWithTypes;
+            skillNameWithTypeDTO = dapper.GetSkillNameByTypeId(id);
+            return mappersController.MapSkillNameWithTypeDTOToModel(skillNameWithTypeDTO);
         }
 
         public List<SkillNameWithType> GetSkillNameByAllType()
         {
             skillNameWithTypeDTO = dapper.GetSkillNameByAllType();
-            skillNameWithTypes = mappersController.MapSkillNameWithTypeDTOToModel(skillNameWithTypeDTO);
-            return skillNameWithTypes;
+            return mappersController.MapSkillNameWithTypeDTOToModel(skillNameWithTypeDTO);
         }
 
     }
