@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using HR_DataBase_VSBLL.Tests.Requests.Worker;
+using HR_DataBase_VSDAL.Models;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,46 +19,31 @@ namespace HR_DataBase_VSBLL.Models
             _MappersController = new MappersController();
         }
 
-        [TestCaseSource(typeof(GetModelsFromDTOSource))]
-        public void GetModelsFromDTO_WhenValidTestPassed_ShouldReturnListLocationModels(Comments comments, List<StatusesDTO> expected)
+        [TestCaseSource(typeof(MapWorkerModelToDTOSource))]
+        public void GetModelsFromDTO_WhenValidTestPassed_ShouldReturnListLocationModels(List<WorkersDTO> workers, List<WorkersDTO> expected)
         {
-            Comments actual = _MappersController.GetModelsFromDTO(comments);
+            List<Worker> actual = _MappersController.MapWorkersDTOToModels(workers);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(null)]
+        public void GetModelsFromDTO_WhenInvaildTestPassed_ShouldReturnArgumentNullException(List<WorkersDTO> workers)
+        {
+            Assert.Throws<ArgumentNullException>(() => _MappersController.MapWorkersDTOToModels(workers));
+        }
+
+        [TestCaseSource(typeof(MapWorkersDTOToModelsSource))]
+        public void GetDTOFromModel_WhenValidTestPassed_ShouldReturnLocationDTO(Worker worker, WorkersDTO expected)
+        {
+            WorkersDTO actual = _MappersController.MapWorkerModelToDTO(worker);
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestCase(null)]
-        public void GetModelsFromDTO_WhenInvaildTestPassed_ShouldReturnArgumentNullException(List<LocationDTO> locationsModel)
+        public void GetDTOFromModel_WhenInvaildTestPassed_ShouldReturnArgumentNullException(Worker worker)
         {
-            Assert.Throws<ArgumentNullException>(() => _MappersController.GetModelsFromDTO(locationsModel));
-        }
-
-        [TestCaseSource(typeof(GetDTOFromModelSource))]
-        public void GetDTOFromModel_WhenValidTestPassed_ShouldReturnLocationDTO(StatusesDTO locationModel, LocationDTO expected)
-        {
-            LocationDTO actual = _MappersController.GetDTOFromModel(locationModel);
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestCase(null)]
-        public void GetDTOFromModel_WhenInvaildTestPassed_ShouldReturnArgumentNullException(StatusesDTO locationModel)
-        {
-            Assert.Throws<ArgumentNullException>(() => _MappersController.GetDTOFromModel(locationModel));
-        }
-
-        [TestCaseSource(typeof(GetModelFromDTOSource))]
-        public void GetModelsFromDTO_WhenInvaildTestPassed_ShouldReturnLocationModelByID(LocationDTO actualLocationDTO, StatusesDTO expected)
-        {
-            StatusesDTO actual = _MappersController.GetModelFromDTO(actualLocationDTO);
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestCase(null)]
-        public void GetModelFromDTO_WhenInvaildTestPassed_ShouldReturnArgumentNullException(LocationDTO locationDTO)
-        {
-            Assert.Throws<ArgumentNullException>(() => _MappersController.GetModelFromDTO(locationDTO));
+            Assert.Throws<ArgumentNullException>(() => _MappersController.MapWorkerModelToDTO(worker));
         }
     }
 }

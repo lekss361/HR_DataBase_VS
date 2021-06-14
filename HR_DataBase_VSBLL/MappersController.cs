@@ -18,7 +18,7 @@ namespace HR_DataBase_VSBLL
         public CompaniesDTO MapCompaniesModelToDTO(Company company)
         {
             Mapper mapper = new Mapper(new MapperConfiguration(
-                cfg => cfg.CreateMap<Company, CompaniesDTO>()));
+                cfg => cfg.CreateMap<Models.Company, CompaniesDTO>()));
             return mapper.Map<CompaniesDTO>(company);
         }
 
@@ -36,11 +36,11 @@ namespace HR_DataBase_VSBLL
             return mapper.Map<List<CompaniesWithContactAndLocation>>(companiesWithContactAndLocationDTO);
         }
 
-        public List<Company> MapCompaniesDTOToModel(List<CompaniesDTO> companies)
+        public List<Models.Company> MapCompaniesWithContactAndLocationDTODTOToModel(List<CompaniesDTO> companies)
         {
             Mapper mapper = new Mapper(new MapperConfiguration(
-                cfg => cfg.CreateMap<CompaniesDTO, Company>()));
-            return mapper.Map<List<Company>>(companies);
+                cfg => cfg.CreateMap<CompaniesDTO, Models.Company>()));
+            return mapper.Map<List<Models.Company>>(companies);
         }
 
         public Contacts MapContactsDTOToModel(ContactsDTO contacts)
@@ -91,24 +91,24 @@ namespace HR_DataBase_VSBLL
             return mapper.Map<DivisionWithForeignKeyValue>(division);
         }
 
-        public LocationDTO MapLocationModelToDTO(Location location)
+        public HR_DataBase_VSDAL.Models.Company MapLocationModelToDTO(Location location)
         {
             Mapper mapper = new Mapper(new MapperConfiguration(
-                cfg => cfg.CreateMap<Location, LocationDTO>()));
-            return mapper.Map<LocationDTO>(location);
+                cfg => cfg.CreateMap<Location, HR_DataBase_VSDAL.Models.Company>()));
+            return mapper.Map<HR_DataBase_VSDAL.Models.Company>(location);
         }
 
-        public Location MapLocationDTOToModel(LocationDTO location)
+        public Location MapLocationDTOToModel(HR_DataBase_VSDAL.Models.Company location)
         {
             Mapper mapper = new Mapper(new MapperConfiguration(
-                cfg => cfg.CreateMap<LocationDTO, Location>()));
+                cfg => cfg.CreateMap<HR_DataBase_VSDAL.Models.Company, Location>()));
             return mapper.Map<Location>(location);
         }
 
-        public List<Location> MapLocationDTOToModel(List<LocationDTO> locations)
+        public List<Location> MapLocationDTOToModel(List<HR_DataBase_VSDAL.Models.Company> locations)
         {
             Mapper mapper = new Mapper(new MapperConfiguration(
-                cfg => cfg.CreateMap<LocationDTO, Location>()));
+                cfg => cfg.CreateMap<HR_DataBase_VSDAL.Models.Company, Location>()));
             return mapper.Map<List<Location>>(locations);
         }
 

@@ -24,7 +24,7 @@ namespace HR.SkillMatrix.UI.Pages
     /// </summary>
     public partial class ListOfCompanies : Page
     {
-        public Company Company;
+        public HR_DataBase_VSBLL.Models.Company Company;
         private int id;
         private readonly MainWindow _mainWindow;
         private readonly NewWindow _newWindow;

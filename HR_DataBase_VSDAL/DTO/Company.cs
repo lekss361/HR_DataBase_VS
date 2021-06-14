@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HR_DataBase_VSDAL.Models
 {
-    public class LocationDTO
+    public class Company
     {
         public int id { get; set; }
         public int? LocationIndex { get; set; }

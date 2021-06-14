@@ -1,6 +1,6 @@
 ﻿namespace HR_DataBase_VSBLL.Models
 {
-    public class StatusesDTO
+    public class CompaniesDTO
     {
     }
 }

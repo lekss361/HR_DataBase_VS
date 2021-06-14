@@ -7,7 +7,7 @@ namespace HR_DataBase_VSBLL.Mappers
 {
     public class LocationLogic
     {
-        private LocationDTO locationDTO = new LocationDTO();
+        private HR_DataBase_VSDAL.Models.Company locationDTO = new HR_DataBase_VSDAL.Models.Company();
         private DapperLocation dapper = new DapperLocation();
         private MappersController mappersController = new MappersController();
 
@@ -19,7 +19,7 @@ namespace HR_DataBase_VSBLL.Mappers
 
         public List<Location> GetAllLocation()
         {
-            List<LocationDTO> locationDtos = dapper.GetAllLocation();
+            List<HR_DataBase_VSDAL.Models.Company> locationDtos = dapper.GetAllLocation();
             return mappersController.MapLocationDTOToModel(locationDtos);
         }
 

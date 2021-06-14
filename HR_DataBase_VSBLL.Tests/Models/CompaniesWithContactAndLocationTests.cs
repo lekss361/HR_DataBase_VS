@@ -1,4 +1,9 @@
-﻿using System;
+﻿using HR_DataBase_VSBLL.Tests.Requests.Comments;
+using HR_DataBase_VSBLL.Tests.Requests.Company;
+using HR_DataBase_VSDAL.DTO;
+using HR_DataBase_VSDAL.Models;
+using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,54 +13,54 @@ namespace HR_DataBase_VSBLL.Models
 {
     public class CompaniesWithContactAndLocationTests
     {
-        private LocationMapper _locationMapper;
+        private MappersController _mapper;
 
         [SetUp]
         public void Setup()
         {
-            _locationMapper = new LocationMapper();
+            _mapper = new MappersController();
         }
 
-        [TestCaseSource(typeof(GetModelsFromDTOSource))]
-        public void GetModelsFromDTO_WhenValidTestPassed_ShouldReturnListLocationModels(List<LocationDTO> actualLocationsDTO, List<StatusesDTO> expected)
+        [TestCaseSource(typeof(MapCompaniesModelToDTOSource))]
+        public void GetModelsFromDTO_WhenValidTestPassed_ShouldReturnListLocationModels(Company company, HR_DataBase_VSDAL.Models.CompaniesDTO expected)
         {
-            List<StatusesDTO> actual = _locationMapper.GetModelsFromDTO(actualLocationsDTO);
+            HR_DataBase_VSDAL.Models.CompaniesDTO actual = _mapper.MapCompaniesModelToDTO(company);
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestCase(null)]
-        public void GetModelsFromDTO_WhenInvaildTestPassed_ShouldReturnArgumentNullException(List<LocationDTO> locationsModel)
+        public void GetModelsFromDTO_WhenInvaildTestPassed_ShouldReturnArgumentNullException(Company company)
         {
-            Assert.Throws<ArgumentNullException>(() => _locationMapper.GetModelsFromDTO(locationsModel));
+            Assert.Throws<ArgumentNullException>(() => _mapper.MapCompaniesModelToDTO(company));
         }
 
-        [TestCaseSource(typeof(GetDTOFromModelSource))]
-        public void GetDTOFromModel_WhenValidTestPassed_ShouldReturnLocationDTO(StatusesDTO locationModel, LocationDTO expected)
+        [TestCaseSource(typeof(MapCompaniesWithContactAndLocationDTODTOToModelSource))]
+        public void GetDTOFromModel_WhenValidTestPassed_ShouldReturnLocationDTO(CompaniesDTO company, Company expected)
         {
-            LocationDTO actual = _locationMapper.GetDTOFromModel(locationModel);
+            Company actual = _mapper.MapCompanyWithForeignKeyValueDTOToModel(company);
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestCase(null)]
-        public void GetDTOFromModel_WhenInvaildTestPassed_ShouldReturnArgumentNullException(StatusesDTO locationModel)
+        public void GetDTOFromModel_WhenInvaildTestPassed_ShouldReturnArgumentNullException(CompaniesDTO locationModel)
         {
-            Assert.Throws<ArgumentNullException>(() => _locationMapper.GetDTOFromModel(locationModel));
+            Assert.Throws<ArgumentNullException>(() => _mapper.MapCompaniesWithContactAndLocationDTODTOToModel(locationModel));
         }
 
         [TestCaseSource(typeof(GetModelFromDTOSource))]
-        public void GetModelsFromDTO_WhenInvaildTestPassed_ShouldReturnLocationModelByID(LocationDTO actualLocationDTO, StatusesDTO expected)
+        public void GetModelsFromDTO_WhenInvaildTestPassed_ShouldReturnLocationModelByID(Company actualLocationDTO, CompaniesDTO expected)
         {
-            StatusesDTO actual = _locationMapper.GetModelFromDTO(actualLocationDTO);
+            CompaniesDTO actual = _mapper.GetModelFromDTO(actualLocationDTO);
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestCase(null)]
-        public void GetModelFromDTO_WhenInvaildTestPassed_ShouldReturnArgumentNullException(LocationDTO locationDTO)
+        public void GetModelFromDTO_WhenInvaildTestPassed_ShouldReturnArgumentNullException(Company locationDTO)
         {
-            Assert.Throws<ArgumentNullException>(() => _locationMapper.GetModelFromDTO(locationDTO));
+            Assert.Throws<ArgumentNullException>(() => _mapper.GetModelFromDTO(locationDTO));
         }
     }
 }

@@ -28,7 +28,7 @@ namespace HR.SkillMatrix.UI.Pages
         private Location location = new Location();
         private Contacts contact = new Contacts();
         public CompanyWithForeignKeyValue Company;
-        private Company company = new Company();
+        private HR_DataBase_VSBLL.Models.Company company = new HR_DataBase_VSBLL.Models.Company();
         private readonly MainWindow _mainWindow;
         CompanyLogic mapperCompany = new CompanyLogic();
         public AboutCompany(MainWindow mainWindow, int id)

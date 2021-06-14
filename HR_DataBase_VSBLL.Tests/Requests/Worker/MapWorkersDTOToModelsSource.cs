@@ -61,7 +61,7 @@ namespace HR_DataBase_VSBLL.Tests.Requests.Worker
             yield return new object[]
             {
                 2,
-                new LocationDTO()
+                new HR_DataBase_VSDAL.Models.Company()
                 {
                     ID = 2,
                     CityID=2,

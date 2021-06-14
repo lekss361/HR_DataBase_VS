@@ -18,9 +18,9 @@ namespace HR_DataBase_VSBLL.Models
         }
 
         [TestCaseSource(typeof(GetModelsFromDTOSource))]
-        public void GetModelsFromDTO_WhenValidTestPassed_ShouldReturnListLocationModels(List<LocationDTO> actualLocationsDTO, List<StatusesDTO> expected)
+        public void GetModelsFromDTO_WhenValidTestPassed_ShouldReturnListLocationModels(List<LocationDTO> actualLocationsDTO, List<CompaniesDTO> expected)
         {
-            List<StatusesDTO> actual = _locationMapper.GetModelsFromDTO(actualLocationsDTO);
+            List<CompaniesDTO> actual = _locationMapper.GetModelsFromDTO(actualLocationsDTO);
 
             Assert.AreEqual(expected, actual);
         }
@@ -32,7 +32,7 @@ namespace HR_DataBase_VSBLL.Models
         }
 
         [TestCaseSource(typeof(GetDTOFromModelSource))]
-        public void GetDTOFromModel_WhenValidTestPassed_ShouldReturnLocationDTO(StatusesDTO locationModel, LocationDTO expected)
+        public void GetDTOFromModel_WhenValidTestPassed_ShouldReturnLocationDTO(CompaniesDTO locationModel, LocationDTO expected)
         {
             LocationDTO actual = _locationMapper.GetDTOFromModel(locationModel);
 
@@ -40,15 +40,15 @@ namespace HR_DataBase_VSBLL.Models
         }
 
         [TestCase(null)]
-        public void GetDTOFromModel_WhenInvaildTestPassed_ShouldReturnArgumentNullException(StatusesDTO locationModel)
+        public void GetDTOFromModel_WhenInvaildTestPassed_ShouldReturnArgumentNullException(CompaniesDTO locationModel)
         {
             Assert.Throws<ArgumentNullException>(() => _locationMapper.GetDTOFromModel(locationModel));
         }
 
         [TestCaseSource(typeof(GetModelFromDTOSource))]
-        public void GetModelsFromDTO_WhenInvaildTestPassed_ShouldReturnLocationModelByID(LocationDTO actualLocationDTO, StatusesDTO expected)
+        public void GetModelsFromDTO_WhenInvaildTestPassed_ShouldReturnLocationModelByID(LocationDTO actualLocationDTO, CompaniesDTO expected)
         {
-            StatusesDTO actual = _locationMapper.GetModelFromDTO(actualLocationDTO);
+            CompaniesDTO actual = _locationMapper.GetModelFromDTO(actualLocationDTO);
 
             Assert.AreEqual(expected, actual);
         }

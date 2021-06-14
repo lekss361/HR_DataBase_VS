@@ -19,9 +19,9 @@ namespace HR_DataBase_VSBLL.Models
         }
 
         [TestCaseSource(typeof(MapStatusesModelsToDTOSource))]
-        public void GetModelsFromDTO_WhenValidTestPassed_ShouldReturnListLocationModels(List<LocationDTO> actualLocationsDTO, List<StatusesDTO> expected)
+        public void GetModelsFromDTO_WhenValidTestPassed_ShouldReturnListLocationModels(List<LocationDTO> actualLocationsDTO, List<CompaniesDTO> expected)
         {
-            List<StatusesDTO> actual = _mapper.MapStatusesModelsToDTO(actualLocationsDTO);
+            List<CompaniesDTO> actual = _mapper.MapStatusesModelsToDTO(actualLocationsDTO);
 
             Assert.AreEqual(expected, actual);
         }
@@ -33,9 +33,9 @@ namespace HR_DataBase_VSBLL.Models
         }
 
 =        [TestCaseSource(typeof(MapStatusesModelsToDTOSource))]
-        public void GetModelsFromDTO_WhenInvaildTestPassed_ShouldReturnLocationModelByID(Statuses statuses, StatusesDTO expected)
+        public void GetModelsFromDTO_WhenInvaildTestPassed_ShouldReturnLocationModelByID(Statuses statuses, CompaniesDTO expected)
         {
-            StatusesDTO actual = _mapper.MapStatusesModelsToDTO(statuses);
+            CompaniesDTO actual = _mapper.MapStatusesModelsToDTO(statuses);
 
             Assert.AreEqual(expected, actual);
         }
