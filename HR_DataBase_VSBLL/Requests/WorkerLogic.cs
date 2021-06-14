@@ -26,6 +26,8 @@ namespace HR_DataBase_VSBLL.Mappers
             return mappersController.MapWorkersDTOToModels(listWorkersDTOs);
         }
 
+
+
         public WorkerWithForeignKeyValue GetWorkerByID(int id)
         {
             workerWithForeignKeyValueDTO = dapper.GetWorkerWithForeignKeyValueByID(id);

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR_DataBase_VSBLL.Mappers;
 using HR_DataBase_VSBLL.Models;
 
 namespace HR.SkillMatrix.UI.Pages
@@ -23,23 +24,43 @@ namespace HR.SkillMatrix.UI.Pages
     public partial class SearchResult : Page
     {
         private readonly MainWindow _mainWindow;
-        private readonly NewWindow _newWindow;
+        public NewWindow _newWindow;
+        WorkerLogic mapperWorker = new WorkerLogic();
+        private int id;
         public SearchResult(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
         }
-        public SearchResult(NewWindow newWindow, List<Worker> workers)
+        public SearchResult(MainWindow mainWindow, List<int> listId)
         {
             InitializeComponent();
-            int a=workers.Count;
-            _newWindow = newWindow;
-            DataGridSeacrhResults.ItemsSource = workers;
+            List<WorkerWithForeignKeyValue> workerWithForeignKeyValue = new List<WorkerWithForeignKeyValue>();
+            foreach (var tmp in listId)
+            {
+                workerWithForeignKeyValue.Add(mapperWorker.GetWorkerByID(tmp));
+            }
+            _mainWindow = mainWindow;
+            DataGridSeacrhResults.ItemsSource = workerWithForeignKeyValue;
         }
 
         private void UIElement_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
+            DataGrid dg = (DataGrid)sender;
+            WorkerWithForeignKeyValue item = (WorkerWithForeignKeyValue)dg.CurrentItem;
+            if (item != null)
+            {
+                id = item.id;
+            }
+            //if (_mainWindow != null)
+            //{
+            //    AboutWorker aboutCompany = new AboutWorker(_mainWindow, id);
+            //    _mainWindow.Content = aboutCompany;
+            //}
+            _newWindow = new NewWindow();
+            AboutWorker aboutCompany = new AboutWorker(_newWindow, id);
+            _newWindow.Content = aboutCompany;
+            _newWindow.ShowDialog();
         }
     }
 }

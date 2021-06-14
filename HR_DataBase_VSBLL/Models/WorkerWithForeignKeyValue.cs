@@ -9,7 +9,7 @@ namespace HR_DataBase_VSBLL.Models
    public class WorkerWithForeignKeyValue
     {
 
-        public int? id { get; set; }
+        public int id { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Patronymic { get; set; }

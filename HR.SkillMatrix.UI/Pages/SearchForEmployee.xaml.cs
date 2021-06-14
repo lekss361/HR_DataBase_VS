@@ -36,6 +36,7 @@ namespace HR.SkillMatrix.UI.Pages
         Worker worker = new Worker();
         public List<Worker> workers = new List<Worker>();
         private readonly MainWindow _mainWindow;
+        private readonly NewWindow _newWindow;
         public SearchForEmployee(MainWindow mainWindow)
         {
             InitializeComponent();
@@ -125,11 +126,16 @@ namespace HR.SkillMatrix.UI.Pages
                 }
 
                 workers = mapper.SearchWorkersBySameParams(worker);
-                
+                List<int> listId = new List<int>();
+                foreach (var tmp in workers)
+                {
+                    listId.Add(tmp.Id);
+                }
+
                 NewWindow newWindow = new NewWindow();
-                SearchResult searchResult = new SearchResult(newWindow, workers);
-                newWindow.Content = searchResult;
-                newWindow.ShowDialog();
+                SearchResult searchResult = new SearchResult(_mainWindow, listId);
+                _mainWindow.Content = searchResult;
+                _mainWindow.Show();
             }
         }
 

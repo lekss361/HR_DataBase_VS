@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HR.SkillMatrix.UI.Windows;
 using HR_DataBase_VSBLL.Mappers;
 using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSDAL.Models;
@@ -31,10 +32,11 @@ namespace HR.SkillMatrix.UI.Pages
         private Location location = new Location();
         private Contacts contact = new Contacts();
         private readonly MainWindow _mainWindow;
-        public AboutWorker(MainWindow mainWindow,int id)
+        private readonly NewWindow _newWindow;
+        public AboutWorker(NewWindow newWindow, int id)
         {
             InitializeComponent();
-            _mainWindow = mainWindow;
+            _newWindow = newWindow;
 
             WorkerWithForeignKeyValue workerWithForeignKeyValue = mapperWorker.GetWorkerByID(id);
             TextBoxName.Text = workerWithForeignKeyValue.FirstName;
@@ -57,7 +59,6 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxEducation.Text = workerWithForeignKeyValue.Education;
             TextBoxHobby.Text = workerWithForeignKeyValue.Hobby;
             SkillNameLogic mapperSkillName = new SkillNameLogic();
-            DataGridSkillsAndLevels.ItemsSource = mapperSkillName.GetSkillNameByAllType();
 
         }
 
@@ -77,7 +78,6 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxPatronymic.IsEnabled = true;
             TextBoxCompany.IsEnabled = true;
             TextBoxDivision.IsEnabled = true;
-            TextBoxProject.IsEnabled = true;
             TextBoxSex.IsEnabled = true;
             TextBoxDateOfBirth.IsEnabled = true;
             TextBoxPhone.IsEnabled = true;
@@ -101,7 +101,6 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxPatronymic.IsEnabled = false;
             TextBoxCompany.IsEnabled = false;
             TextBoxDivision.IsEnabled = false;
-            TextBoxProject.IsEnabled = false;
             TextBoxSex.IsEnabled = false;
             TextBoxDateOfBirth.IsEnabled = false;
             TextBoxPhone.IsEnabled = false;
