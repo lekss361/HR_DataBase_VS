@@ -193,6 +193,7 @@
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Divisions\UpdateDivisionByID.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\ProjectMaps\AddNewProjectsMapByWorkerId.sql" />
     <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\GetWorkerBySameParams.sql" />
+    <Build Include="HR_DataBase_VSDB\Stored Procedures\Workers\GetAllWorkerInformationByID.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HR_DataBase_VSDB\Stored Procedures\Projects\AddNewProject.sql" />

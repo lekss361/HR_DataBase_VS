@@ -3,7 +3,7 @@
 AS
 SELECT
 Com.id, Com.[Name], Com.[Information],
-Con.Id AS ContactID,Con.Phone, Con.Email, Con.Information as ContactInformation,
+Con.id AS ContactID,Con.Phone, Con.Email, Con.Information as ContactInformation,
 L.Id AS LocationID, L.City, L.Street, L.Country, L.ApartmentNumber, L.LocationIndex, L.HouseNumber
 FROM [HR_DataBase_VSDB].[Companies] as Com
 left join [HR_DataBase_VSDB].[Contacts] as Con on (Com.ContactID=Con.id)
