@@ -57,7 +57,7 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxEducation.Text = workerWithForeignKeyValue.Education;
             TextBoxHobby.Text = workerWithForeignKeyValue.Hobby;
             SkillNameLogic mapperSkillName = new SkillNameLogic();
-            DataGridSkillsAndLevels.ItemsSource = mapperSkillName.GetSkillNameByAllType();
+            //DataGridSkillsAndLevels.ItemsSource = mapperSkillName.GetSkillNameByAllType();
 
         }
 
@@ -77,7 +77,7 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxPatronymic.IsEnabled = true;
             TextBoxCompany.IsEnabled = true;
             TextBoxDivision.IsEnabled = true;
-            TextBoxProject.IsEnabled = true;
+            //TextBoxProject.IsEnabled = true;
             TextBoxSex.IsEnabled = true;
             TextBoxDateOfBirth.IsEnabled = true;
             TextBoxPhone.IsEnabled = true;
@@ -101,7 +101,7 @@ namespace HR.SkillMatrix.UI.Pages
             TextBoxPatronymic.IsEnabled = false;
             TextBoxCompany.IsEnabled = false;
             TextBoxDivision.IsEnabled = false;
-            TextBoxProject.IsEnabled = false;
+            //TextBoxProject.IsEnabled = false;
             TextBoxSex.IsEnabled = false;
             TextBoxDateOfBirth.IsEnabled = false;
             TextBoxPhone.IsEnabled = false;

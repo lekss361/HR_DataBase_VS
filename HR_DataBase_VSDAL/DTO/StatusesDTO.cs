@@ -14,8 +14,8 @@ namespace HR_DataBase_VSDAL.Models
         public override bool Equals(object obj)
         {
             return obj is StatusesDTO dTO &&
-                   Name == dTO.Name;
-                    Id == dTO.Id;
+                   Name == dTO.Name&&
+                   Id == dTO.Id;
         }
     }
 }
