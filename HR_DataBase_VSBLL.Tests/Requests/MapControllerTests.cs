@@ -180,13 +180,6 @@ namespace HR_DataBase_VSBLL.Tests.Requests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCaseSource(typeof(MapWorkerModelToDTO_Source))]
-        public void MapWorkerModelToDTO(Worker worker, WorkersDTO expected)
-        {
-            WorkersDTO actual = mappers.MapWorkerModelToDTO(worker);
-            Assert.AreEqual(expected, actual);
-        }
-
         [TestCaseSource(typeof(MapWorkersDTOToModels_Source))]
         public void MapWorkersDTOToModels(List<WorkersDTO> workers, List<Worker> expected)
         {
