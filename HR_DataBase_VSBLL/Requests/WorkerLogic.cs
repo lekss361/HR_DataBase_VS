@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using System.Collections.Generic;
 using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSDAL.Dapper;
 using HR_DataBase_VSDAL.Models;
@@ -12,38 +7,24 @@ namespace HR_DataBase_VSBLL.Mappers
 {
     public class WorkerLogic
     {
-        int Id;
-
         WorkersDTO workersDTO = new WorkersDTO();
-        List<WorkersDTO> workersDTOs = new List<WorkersDTO>();
-        List<Worker> workers = new List<Worker>();
+        List<WorkersDTO> listWorkersDTOs = new List<WorkersDTO>();
+        private List<Worker> listWorkers;
+        DapperWorker dapper = new DapperWorker();
+        MappersController mappersController = new MappersController();
 
-        /// <summary>
-        /// Mapper моделей UI в DTO
-        /// </summary>
-        /// <param name="worker"></param>
-        public int MapToWorkersDTO(Worker worker)
+        public int AddNewWorker(Worker worker)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Worker, WorkersDTO>());
-
-            Mapper mapper = new Mapper(config);
-            DapperWorker dapper = new DapperWorker();
-
-            workersDTO = mapper.Map<WorkersDTO>(worker);
-            Id=dapper.AddNewWorker(workersDTO);
-            return Id;
+            workersDTO = mappersController.MapToWorkersDTO(worker);
+            return dapper.AddNewWorker(workersDTO);
         }
 
         public List<Worker> SearchWorkersBySameParams(Worker worker)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Worker, WorkersDTO>());
-            var configListDTOToListModel = new MapperConfiguration(cfg => cfg.CreateMap<List<WorkersDTO>, List<Worker>>());
-           
-            Mapper mapper = new Mapper(config);
-            Mapper mapperList = new Mapper(configListDTOToListModel);
-            DapperWorker dapper = new DapperWorker();
-            workersDTOs =  dapper.SearchWorkerBySameParam(mapper.Map<WorkersDTO>(worker));
-            return mapperList.Map<List<Worker>>(workersDTOs);
+            workersDTO = mappersController.MapWorkerModelToWorkerDTO(worker);
+            listWorkersDTOs = dapper.SearchWorkerBySameParam(workersDTO);
+            listWorkers = mappersController.MapListWorkersDTOToListWorkers(listWorkersDTOs);
+            return listWorkers;
         }
     }
 }

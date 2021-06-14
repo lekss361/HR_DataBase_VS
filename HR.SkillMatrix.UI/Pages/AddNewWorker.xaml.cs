@@ -69,9 +69,9 @@ namespace HR.SkillMatrix.UI.Pages
             worker.PositionID = PositionsWithDirectionName.id;
             worker.DivisionID = DivisionByCompany.id;
 
-            int workerId = mapper.MapToWorkersDTO(worker);
+            int workerId = mapper.AddNewWorker(worker);
             PreviousWork.WorkerID = workerId;
-            mapperPreviousJob.MapToPreviousWorkDTO(PreviousWork);
+            mapperPreviousJob.AddPreviousWork(PreviousWork);
 
             ProjectMaps = new ProjectMaps();
             ProjectMaps.WorkerID = workerId;

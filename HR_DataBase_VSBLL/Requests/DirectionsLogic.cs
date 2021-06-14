@@ -12,41 +12,31 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
 {
     public class DirectionsLogic
     {
+        MappersController mappersController = new MappersController();
+        List<Directions> directions = new List<Directions>();
+        DirectionsDTO directionsDTO = new DirectionsDTO();
+        DirectionsDapper dapper = new DirectionsDapper();
+
         /// <summary>
         /// Mapper моделей UI в DTO
         /// </summary>
         /// <param name="directions"></param>
-        public DirectionsDTO MapToDirectionsDTO(Directions directions)
+        public DirectionsDTO AddNewDirections(Directions directions)
         {
-            DirectionsDTO directionsDTO = new DirectionsDTO();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Directions, DirectionsDTO>()
                 .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name)));
             Mapper mapper = new Mapper(config);
-            DirectionsDapper dapper = new DirectionsDapper();
 
-            directionsDTO = mapper.Map<DirectionsDTO>(directions);
+            directionsDTO = mappersController.MapToDirectionsDTO(directions);
             dapper.AddNewDirections(directionsDTO);
             return directionsDTO;
-        }
-        public List<Directions> MapToDirectionsModel(List<DirectionsDTO> directionsDTO)
-        {
-            List<Directions> directions = new List<Directions>();
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<DirectionsDTO, Directions>());
-            Mapper mapper = new Mapper(config);
-            DirectionsDapper dapper = new DirectionsDapper();
-
-            directions = mapper.Map<List<Directions>>(directionsDTO);
-            dapper.GetAllDirections();
-            return directions;
         }
 
         public List<Directions> GetAllDirections()
         {
-            DirectionsDapper dapper = new DirectionsDapper();
             List<DirectionsDTO> directionsDTO = dapper.GetAllDirections();
-            List<Directions> directions = MapToDirectionsModel(directionsDTO);
+            List<Directions> directions = mappersController.MapToDirectionsModel(directionsDTO);
             return directions;
         }
     }

@@ -50,7 +50,7 @@ namespace HR.SkillMatrix.UI.Pages
             companies.LocationID = mapperLocation.AddNewLocation(Location);
             companies.Information = textBoxDescription.Text;
 
-            mapper.MapToCompaniesDTO(companies);
+            mapper.AddNewCompany(companies);
 
             Saved saved = new Saved();
             saved.Show();

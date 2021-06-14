@@ -5,12 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Mappers\DtoToModels\**" />
-    <EmbeddedResource Remove="Mappers\DtoToModels\**" />
-    <None Remove="Mappers\DtoToModels\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Dapper" Version="2.0.90" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
@@ -18,10 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HR_DataBase_VSDAL\HR_DataBase_VSDAL.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Mappers\" />
   </ItemGroup>
 
 </Project>

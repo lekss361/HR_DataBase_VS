@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HR.SkillMatrix.UI.Windows;
+using HR_DataBase_VSBLL;
 using HR_DataBase_VSBLL.Mappers;
 using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
 using HR_DataBase_VSBLL.Models;
@@ -30,6 +31,8 @@ namespace HR.SkillMatrix.UI.Pages
         public Directions Directions;
         public int companyId;
         private readonly MainWindow _mainWindow;
+        MappersController mappersController = new MappersController();
+
         public AddNewDivision(MainWindow mainWindow)
         {
             InitializeComponent();
@@ -51,7 +54,7 @@ namespace HR.SkillMatrix.UI.Pages
             divisions.DirectionsID = Directions.id;
             divisions.Information = textBoxDescription.Text;
 
-            mapper.MapToDivisionsDTO(divisions);
+            mappersController.MapToDivisionsDTO(divisions);
 
             Saved saved = new Saved();
             saved.Show();

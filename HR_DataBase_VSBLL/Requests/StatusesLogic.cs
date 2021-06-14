@@ -12,29 +12,15 @@ namespace HR_DataBase_VSBLL.Mappers.ModelsToDTO
 {
     public class StatusesLogic
     {
+        private StatusesDapper dapper;
+        private StatusesDTO statusesDTO;
+        MappersController mappersController = new MappersController();
 
-
-        /// <summary>
-        /// Mapper моделей UI в DTO
-        /// </summary>
-        /// <param name="statuses"></param>
-        public StatusesDTO MapToStatusesDTO(Statuses statuses)
+        public StatusesDTO AddNewStatuses(Statuses statuses)
         {
-            StatusesDTO statusesDTO = new StatusesDTO();
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Statuses, StatusesDTO>()
-
-            .ForMember(dest => dest.Name, option => option.MapFrom(source => source.Name)));
-
-
-            Mapper mapper = new Mapper(config);
-            StatusesDapper dapper = new StatusesDapper();
-
-            statusesDTO = mapper.Map<StatusesDTO>(statuses);
+            statusesDTO = mappersController.MapToStatusesDTO(statuses);
             dapper.AddNewStatuses(statusesDTO);
             return statusesDTO;
         }
-
-
     }
 }
