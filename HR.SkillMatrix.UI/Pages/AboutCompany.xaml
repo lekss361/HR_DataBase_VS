@@ -21,10 +21,10 @@
         </Grid.RowDefinitions>
 
         <Label Content="О компании" HorizontalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Grid.Column="2" Margin="10,34,0,0" VerticalAlignment="Top" Width="140" Click="ButtonBack_Click" Height="39"/>
-        <Button x:Name="ButtonChange" Content="Изменить" HorizontalAlignment="Left" Grid.Column="2" Margin="155,34,0,0" VerticalAlignment="Top" Width="140" Height="39" Click="ButtonChange_Click"/>
-        <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Grid.Column="2" Margin="300,34,0,0" VerticalAlignment="Top" Width="140"  Height="39" Click="ButtonSave_Click" />
-        <Button x:Name="ButtonCancellation" Content="Отменить" HorizontalAlignment="Left" Grid.Column="2"  Margin="445,34,0,0" VerticalAlignment="Top" Width="140" Height="39" Click="ButtonCancellation_Click" />
+        <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Grid.Column="2" Margin="12,30,0,0" VerticalAlignment="Top" Width="140" Click="ButtonBack_Click" Height="40"/>
+        <Button x:Name="ButtonChange" Content="Изменить" HorizontalAlignment="Left" Grid.Column="2" Margin="157,30,0,0" VerticalAlignment="Top" Width="140" Height="40" Click="ButtonChange_Click"/>
+        <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Grid.Column="2" Margin="302,30,0,0" VerticalAlignment="Top" Width="140"  Height="40" Click="ButtonSave_Click" />
+        <Button x:Name="ButtonCancellation" Content="Отменить" HorizontalAlignment="Left" Grid.Column="2"  Margin="447,30,0,0" VerticalAlignment="Top" Width="140" Height="40" Click="ButtonCancellation_Click" />
 
         <DataGrid x:Name="DataGridDivisions" Grid.Row="1" AutoGenerateColumns="False" Margin="0,433,0,0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"  MouseLeftButtonDown="DataGridDivisions_MouseLeftButtonDown" IsReadOnly="True" Height="158" VerticalAlignment="Top">
             <DataGrid.Columns>

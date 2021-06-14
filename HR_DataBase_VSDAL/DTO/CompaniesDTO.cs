@@ -13,5 +13,15 @@ namespace HR_DataBase_VSDAL.Models
         public string Information { get; set; }
         public int ContactID { get; set; }
         public int LocationID { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is CompaniesDTO company &&
+                   Id == company.Id &&
+                   Name == company.Name &&
+                   Information == company.Information &&
+                   ContactID == company.ContactID &&
+                   LocationID == company.LocationID;
+        }
     }
 }

@@ -22,5 +22,24 @@ namespace HR_DataBase_VSBLL.Models
         public string HouseNumber { get; set; }
         public string ApartmentNumber { get; set; }
         public string LocationIndex { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is CompanyWithForeignKeyValue value &&
+                   id == value.id &&
+                   ContactID == value.ContactID &&
+                   LocationID == value.LocationID &&
+                   Name == value.Name &&
+                   Information == value.Information &&
+                   Phone == value.Phone &&
+                   Email == value.Email &&
+                   ContactInformation == value.ContactInformation &&
+                   Country == value.Country &&
+                   City == value.City &&
+                   Street == value.Street &&
+                   HouseNumber == value.HouseNumber &&
+                   ApartmentNumber == value.ApartmentNumber &&
+                   LocationIndex == value.LocationIndex;
+        }
     }
 }

@@ -19,5 +19,16 @@ namespace HR_DataBase_VSBLL.Models
         public Divisions()
         {
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Divisions divisions &&
+                   Name == divisions.Name &&
+                   Information == divisions.Information &&
+                   CompanyID == divisions.CompanyID &&
+                   ContactID == divisions.ContactID &&
+                   LocationID == divisions.LocationID &&
+                   DirectionsID == divisions.DirectionsID;
+        }
     }
 }

@@ -22,6 +22,24 @@ namespace HR_DataBase_VSDAL.Models
         public int? DivisionID { get; set; }
         public string? Hobby { get; set; }
 
+        public override bool Equals(object obj)
+        {
+            return obj is WorkersDTO dTO &&
+                   Id == dTO.Id &&
+                   FirstName == dTO.FirstName &&
+                   LastName == dTO.LastName &&
+                   Patronymic == dTO.Patronymic &&
+                   BirthDay == dTO.BirthDay &&
+                   Education == dTO.Education &&
+                   ContactID == dTO.ContactID &&
+                   LocationID == dTO.LocationID &&
+                   Sex == dTO.Sex &&
+                   StatusID == dTO.StatusID &&
+                   PositionID == dTO.PositionID &&
+                   DivisionID == dTO.DivisionID &&
+                   Hobby == dTO.Hobby;
+        }
+
         //public WorkersDTO
         //(
         //    int id,

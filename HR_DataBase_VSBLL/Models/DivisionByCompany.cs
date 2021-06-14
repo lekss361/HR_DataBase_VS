@@ -19,5 +19,17 @@ namespace HR_DataBase_VSBLL.Models
         public DivisionByCompany()
         {
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is DivisionByCompany company &&
+                   id == company.id &&
+                   Name == company.Name &&
+                   DirectionName == company.DirectionName &&
+                   Phone == company.Phone &&
+                   Email == company.Email &&
+                   Country == company.Country &&
+                   City == company.City;
+        }
     }
 }

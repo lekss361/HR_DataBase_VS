@@ -39,7 +39,7 @@ namespace HR_DataBase_VSDAL.Dapper
         /// Находим запись по ID
         /// </summary>
         /// <returns>DTO записи из БД</returns>
-        public CommentsDTO GetAllCommentsByWorkersID(int id)
+        virtual public CommentsDTO GetAllCommentsByWorkersID(int id)
         {
             _Query = "exec [HR_DataBase_VSDB].[GetAllCommentsByWorkersID]";
             _Value =
