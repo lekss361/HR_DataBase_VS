@@ -62,5 +62,11 @@ namespace HR.SkillMatrix.UI.Pages
             _newWindow.Content = aboutCompany;
             _newWindow.ShowDialog();
         }
+
+        private void ButtonBack_OnClick(object sender, RoutedEventArgs e)
+        {
+            SearchForEmployee createNewPage = new SearchForEmployee(_mainWindow);
+            _mainWindow.Content = createNewPage;
+        }
     }
 }
