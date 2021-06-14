@@ -58,42 +58,22 @@
                     <Label Grid.Row="5" Grid.Column="0" Content="Должность" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
                     <Label Grid.Row="6" Grid.Column="0" Content="Проект" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
                     <Label Grid.Row="7" Grid.Column="0" Content="Статус" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
-                    <Label Grid.Row="9" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <!--<Label Grid.Row="9" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
                     <Label Grid.Row="10" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
                     <Label Grid.Row="11" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
                     <Label Grid.Row="12" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
                     <Label Grid.Row="13" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
-                    <Label Grid.Row="14" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>
+                    <Label Grid.Row="14" Grid.Column="0" Content="Навык" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="421" FontSize="20"/>-->
                     <TextBox x:Name="TextBoxSurname" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="842" Height="50" TextChanged="TextBoxSurname_TextChanged"/>
                     <TextBox x:Name="TextBoxName" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="842" Height="50" TextChanged="TextBoxName_TextChanged"/>
                     <TextBox x:Name="TextBoxPatronymic" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="842" Height="50" TextChanged="TextBoxPatronymic_TextChanged"/>
-                    <ComboBox Grid.Row="3" Grid.Column="1" x:Name="BoxCompanies" HorizontalAlignment="Center" VerticalAlignment="Center" Width="842" Height="50" Initialized="BoxCompanies_OnInitialized" SelectionChanged="BoxCompanies_SelectionChanged" >
-                        <ComboBoxItem IsSelected="True">
-                            <TextBlock>Выбрать компанию</TextBlock>
-                        </ComboBoxItem>
-                        <!--<Button x:Name="AddCompany" Content="Добавить компанию" Click="AddCompany_OnClick"></Button>-->
-                    </ComboBox>
-                    <ComboBox Grid.Row="4" Grid.Column="1" x:Name="BoxDivisions" HorizontalAlignment="Center" VerticalAlignment="Center" Width="842" Height="50" Initialized="BoxDivisions_OnInitialized" >
-                        <ComboBoxItem IsSelected="True">
-                            <TextBlock>Выбрать отдел</TextBlock>
-                        </ComboBoxItem>
-                    </ComboBox>
-                    <ComboBox Grid.Row="5" Grid.Column="1" x:Name="BoxPositions" HorizontalAlignment="Center" VerticalAlignment="Center" Width="842" Height="50" Initialized="BoxPositions_OnInitialized" >
-                        <ComboBoxItem IsSelected="True">
-                            <TextBlock>Выбрать должность</TextBlock>
-                        </ComboBoxItem>
-                    </ComboBox>
-                    <ComboBox Grid.Row="6" Grid.Column="1" x:Name="BoxProjects" HorizontalAlignment="Center" VerticalAlignment="Center" Width="842" Height="50" Initialized="BoxProjects_OnInitialized" >
-                        <ComboBoxItem IsSelected="True">
-                            <TextBlock>Выбрать проект</TextBlock>
-                        </ComboBoxItem>
-                    </ComboBox>
-                    <ComboBox Grid.Row="7" Grid.Column="1" x:Name="BoxStatuses" HorizontalAlignment="Center" VerticalAlignment="Center" Width="842" Height="50" Initialized="BoxStatuses_OnInitialized">
-                        <ComboBoxItem IsSelected="True">
-                            <TextBlock>Выбрать статус</TextBlock>
-                        </ComboBoxItem>
-                    </ComboBox>
-                    <ComboBox Grid.Row="9" Grid.Column="1" x:Name="BoxSkill1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="546" Height="50" Initialized="BoxSkill1_OnInitialized">
+                    <Button x:Name="ButtonChooseCompany" Grid.Row="3" Grid.Column="1" Content="Выбрать компанию" HorizontalContentAlignment="Left" Click="ButtonChooseCompany_OnClick"/>
+                    <Button x:Name="ButtonChooseDepartment" Grid.Row="4" Grid.Column="1" Content="Выбрать отдел" HorizontalContentAlignment="Left" Click="ButtonChooseDepartment_OnClick"/>
+                    <Button x:Name="ButtonChoosePosition" Grid.Row="5" Grid.Column="1" Content="Выбрать должность" HorizontalContentAlignment="Left" Click="ButtonChoosePosition_OnClick"/>
+                    <Button x:Name="ButtonChooseProject" Grid.Row="6" Grid.Column="1" Content="Выбрать проект" HorizontalContentAlignment="Left" Click="ButtonChooseProject_OnClick"/>
+                    <Button x:Name="ButtonChooseStatus" Grid.Row="7" Grid.Column="1" Content="Выбрать статус" HorizontalContentAlignment="Left" Click="ButtonChooseStatus_OnClick"/>
+
+                    <!--<ComboBox Grid.Row="9" Grid.Column="1" x:Name="BoxSkill1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="546" Height="50" Initialized="BoxSkill1_OnInitialized">
                         <ComboBoxItem IsSelected="True">
                             <TextBlock>Выбрать навык</TextBlock>
                         </ComboBoxItem>
@@ -152,7 +132,7 @@
                         <ComboBoxItem IsSelected="True">
                             <TextBlock>Выбрать уровень</TextBlock>
                         </ComboBoxItem>
-                    </ComboBox>
+                    </ComboBox>-->
                 </Grid>
             </StackPanel>
         </ScrollViewer>

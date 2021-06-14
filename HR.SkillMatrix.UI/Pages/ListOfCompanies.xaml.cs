@@ -49,7 +49,6 @@ namespace HR.SkillMatrix.UI.Pages
             {
                 id = item.id;
             }
-
             if (_mainWindow != null)
             {
                 AboutCompany aboutCompany = new AboutCompany(_mainWindow, id);

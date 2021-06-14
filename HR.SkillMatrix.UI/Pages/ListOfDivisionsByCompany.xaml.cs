@@ -50,10 +50,10 @@ namespace HR.SkillMatrix.UI.Pages
             if (item != null)
             {
                 DivisionByCompany.id = item.id;
+                _newWindow.Close();
+                Saved saved = new Saved();
+                saved.ShowDialog();
             }
-            _newWindow.Close();
-            Saved saved = new Saved();
-            saved.ShowDialog();
         }
     }
 }
