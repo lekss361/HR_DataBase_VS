@@ -31,9 +31,10 @@ namespace HR.SkillMatrix.UI.Pages
         public DivisionByCompany DivisionByCompany;
         public PositionsWithDirectionName PositionsWithDirectionName;
         public ProjectMaps ProjectMaps;
+        public Statuses Statuses;
         public List<int> ProjectsId;
         Worker worker = new Worker();
-        List<Worker> workers = new List<Worker>();
+        public List<Worker> workers = new List<Worker>();
         private readonly MainWindow _mainWindow;
         public SearchForEmployee(MainWindow mainWindow)
         {
@@ -90,7 +91,6 @@ namespace HR.SkillMatrix.UI.Pages
             ListOfDivisionsByCompany listOfDivisionsByCompany = new ListOfDivisionsByCompany(newWindow, Company.Id) { DivisionByCompany = this.DivisionByCompany };
             newWindow.Content = listOfDivisionsByCompany;
             newWindow.ShowDialog();
-            worker.DivisionID = DivisionByCompany.id;
         }
 
         private void ButtonChoosePosition_OnClick(object sender, RoutedEventArgs e)
@@ -99,8 +99,8 @@ namespace HR.SkillMatrix.UI.Pages
             NewWindow newWindow = new NewWindow();
             ListOfPosition listOfPosition = new ListOfPosition(newWindow) { PositionsWithDirectionName = this.PositionsWithDirectionName };
             newWindow.Content = listOfPosition;
-            newWindow.Show();
-            worker.PositionID = PositionsWithDirectionName.id;
+            newWindow.ShowDialog();
+            
         }
 
         private void Find_Click(object sender, RoutedEventArgs e)
@@ -109,8 +109,27 @@ namespace HR.SkillMatrix.UI.Pages
             //    !string.IsNullOrEmpty(TextBoxName.Text) ||
             //    !string.IsNullOrEmpty(TextBoxPatronymic.Text))
             {
+                //workers = new List<Worker>();
                 WorkerLogic mapper = new WorkerLogic();
+                if (Statuses!=null)
+                {
+                    worker.StatusID = Statuses.Id;
+                }
+                if (PositionsWithDirectionName != null)
+                {
+                    worker.PositionID = PositionsWithDirectionName.id;
+                }
+                if (DivisionByCompany != null)
+                {
+                    worker.DivisionID = DivisionByCompany.id;
+                }
+
                 workers = mapper.SearchWorkersBySameParams(worker);
+                
+                NewWindow newWindow = new NewWindow();
+                SearchResult searchResult = new SearchResult(newWindow, workers);
+                newWindow.Content = searchResult;
+                newWindow.ShowDialog();
             }
         }
 
@@ -120,12 +139,16 @@ namespace HR.SkillMatrix.UI.Pages
             NewWindow newWindow = new NewWindow();
             ListOfProject listOfListOfProject = new ListOfProject(newWindow) { ProjectsId = this.ProjectsId };
             newWindow.Content = listOfListOfProject;
-            newWindow.Show();
+            newWindow.ShowDialog();
         }
 
         private void ButtonChooseStatus_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            Statuses = new Statuses();
+            NewWindow newWindow = new NewWindow();
+            ListOfStatuses listOfStatuses = new ListOfStatuses(newWindow) { Statuses = this.Statuses };
+            newWindow.Content = listOfStatuses;
+            newWindow.ShowDialog();
         }
 
         private void Men_OnChecked(object sender, RoutedEventArgs e)
@@ -137,5 +160,23 @@ namespace HR.SkillMatrix.UI.Pages
         {
             worker.Sex = "Женский";
         }
+
+        //private void BoxStatuses_OnInitialized(object? sender, EventArgs e)
+        //{
+        //    StatusesLogic StatusesLogic = new StatusesLogic();
+        //    List<Statuses> statuses = StatusesLogic.GetAllStatuses();
+        //    foreach (var tmp in statuses)
+        //    {
+        //        BoxStatuses.Items.Add(tmp.Id + " " + tmp.Name);
+        //    }
+        //}
+
+        //private void BoxStatuses_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    var s = BoxStatuses.Items;
+        //    //ComboBox dg = (ComboBox)sender;
+        //    //Statuses item = (Statuses)dg.SelectedItem;
+        //    //worker.StatusID = item.Id;
+        //}
     }
 }

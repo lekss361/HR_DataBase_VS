@@ -13,46 +13,40 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HR.SkillMatrix.UI.Windows;
-using HR_DataBase_VSBLL.Mappers;
 using HR_DataBase_VSBLL.Mappers.ModelsToDTO;
 using HR_DataBase_VSBLL.Models;
+
 
 namespace HR.SkillMatrix.UI.Pages
 {
     /// <summary>
-    /// Interaction logic for ListOfDirections.xaml
+    /// Interaction logic for ListOfStatuses.xaml
     /// </summary>
-    public partial class ListOfDirections : Page
+    public partial class ListOfStatuses : Page
     {
-        public Directions Directions;
+        public Statuses Statuses;
         private readonly MainWindow _mainWindow;
         private readonly NewWindow _newWindow;
-        public ListOfDirections(MainWindow mainWindow)
+        public ListOfStatuses(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
-            FillDataGrid();
         }
-        public ListOfDirections(NewWindow newWindow)
+        public ListOfStatuses(NewWindow newWindow)
         {
             InitializeComponent();
             _newWindow = newWindow;
-            FillDataGrid();
+            StatusesLogic maperStatusesLogic = new StatusesLogic();
+            DataGridStatuses.ItemsSource = maperStatusesLogic.GetAllStatuses();
         }
 
-        private void FillDataGrid()
-        {
-            DirectionsLogic mapperDirections = new DirectionsLogic();
-            DataGridDirections.ItemsSource = mapperDirections.GetAllDirections();
-        }
-
-        private void DataGridDirections_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void DataGridStatuses_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DataGrid dg = (DataGrid)sender;
-            Directions item = (Directions)dg.CurrentItem;
+            Statuses item = (Statuses)dg.CurrentItem;
             if (item != null)
             {
-                Directions.id = item.id;
+                Statuses.Id = item.Id;
             }
             Saved saved = new Saved();
             saved.ShowDialog();
