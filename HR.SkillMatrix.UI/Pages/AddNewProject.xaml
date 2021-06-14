@@ -18,7 +18,7 @@
             <TextBlock HorizontalAlignment="Left" Height="30" Margin="456,403,0,0" Text="Название проекта" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" FontSize="18"/>
             <TextBlock HorizontalAlignment="Left" Height="30" Margin="456,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" FontSize="18"><Run Language="ru-ru" Text="Направление"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Height="30" Margin="456,487,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="18" Text="Информация  проекту"/>
-            <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="40" Margin="647,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" FontSize="18"/>
+            <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="24" Margin="647,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" FontSize="18"/>
             <TextBox x:Name="textBoxInformation" HorizontalAlignment="Left" Height="101" Margin="647,496,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" FontSize="18"/>
             <Button x:Name="ButtonAddDirection" Content="Добавить" HorizontalAlignment="Left" Margin="650,455,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="ButtonAddDirection_Click"  />
             <Label Content="Добавить проект" HorizontalAlignment="Left" Margin="725,285,0,0" VerticalAlignment="Top" FontSize="20"/>

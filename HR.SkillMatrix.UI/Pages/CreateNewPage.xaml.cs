@@ -62,5 +62,12 @@ namespace HR.SkillMatrix.UI.Pages
             AddNewDirections addNewDirections = new AddNewDirections(_mainWindow);
             _mainWindow.Content = addNewDirections;
         }
+
+        private void AddNewPosition_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewPositions addNewPositions = new AddNewPositions(_mainWindow);
+            _mainWindow.Content = addNewPositions;
+
+        }
     }
 }
