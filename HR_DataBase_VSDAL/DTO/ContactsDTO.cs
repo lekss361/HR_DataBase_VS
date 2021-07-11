@@ -1,5 +1,4 @@
-﻿
-namespace HR_DataBase_VSDAL.Models
+﻿namespace HR_DataBase_VSDAL.Models
 {
     public class ContactsDTO
     {

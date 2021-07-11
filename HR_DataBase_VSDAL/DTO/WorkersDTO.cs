@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HR_DataBase_VSDAL.Models
+﻿namespace HR_DataBase_VSDAL.Models
 {
     public class WorkersDTO
     {
@@ -39,42 +33,5 @@ namespace HR_DataBase_VSDAL.Models
                    DivisionID == dTO.DivisionID &&
                    Hobby == dTO.Hobby;
         }
-
-        //public WorkersDTO
-        //(
-        //    int id,
-        //    string firstName,
-        //    string lastName,
-        //    string patronymic,
-        //    string birthDay,
-        //    string education,
-        //    int? contactID,
-        //    int? locationID,
-        //    string sex,
-        //    int statusID,
-        //    int? positionID,
-        //    int? divisionID,
-        //    string hobby = null
-        //)
-        //{
-        //    Id = id;
-        //    FirstName = firstName;
-        //    LastName = lastName;
-        //    Patronymic = patronymic;
-        //    BirthDay = birthDay;
-        //    Education = education;
-        //    ContactID = contactID;
-        //    LocationID = locationID;
-        //    Sex = sex;
-        //    StatusID = statusID;
-        //    PositionID = positionID;
-        //    DivisionID = divisionID;
-        //    Hobby = hobby;
-        //}
-
-        //public WorkersDTO()
-        //{
-
-        //}
     }
 }
