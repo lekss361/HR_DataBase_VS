@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HR.SkillMatrix.UI.Pages;
+﻿using HR.SkillMatrix.UI.Pages;
 using HR.SkillMatrix.UI.Windows;
 using HR_DataBase_VSBLL.Models;
 
 namespace HR.SkillMatrix.UI
 {
-    public class PageSwaper
+    public class PageSwapper
     {
-        private static PageSwaper _pageSwaper;
+        private static PageSwapper _pageSwapper;
         private MainWindow _mainWindow;
         private AboutCompany _aboutCompany;
         private AboutDivision _aboutDivision;
@@ -39,23 +34,23 @@ namespace HR.SkillMatrix.UI
         private SearchResult _searchResult;
         private NewWindow _newWindow;
 
-        private PageSwaper()
+        private PageSwapper()
         {
 
         }
 
-        private PageSwaper(MainWindow mainWindow)
+        private PageSwapper(MainWindow mainWindow)
         {
             _mainWindow = mainWindow;
         }
 
-        public static PageSwaper GetPageSwaper()
+        public static PageSwapper GetPageSwapper()
         {
-            return _pageSwaper ??= new PageSwaper();
+            return _pageSwapper ??= new PageSwapper();
         }
-        public static PageSwaper SetPageSwaper(MainWindow mainWindow)
+        public static PageSwapper SetPageSwapper(MainWindow mainWindow)
         {
-            return _pageSwaper = new PageSwaper(mainWindow);
+            return _pageSwapper = new PageSwapper(mainWindow);
         }
 
         public void NewWindow(AddLocationMenu addLocationMenu)

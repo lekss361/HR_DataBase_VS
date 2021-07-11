@@ -3,7 +3,6 @@ using HR_DataBase_VSBLL.Models;
 using HR_DataBase_VSDAL.Models;
 using HR_DataBase_VSDAL.Dapper;
 
-
 namespace HR_DataBase_VSBLL.Mappers
 {
     public class DivisionByCompanyLogic
