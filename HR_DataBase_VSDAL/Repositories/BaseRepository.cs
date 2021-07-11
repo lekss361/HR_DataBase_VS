@@ -9,7 +9,7 @@ namespace HR_DataBase_VSDAL.Repositories
             @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRDB;Integrated Security=True;Persist Security Info=False;Pooling=False;TrustServerCertificate=False";
 
         protected IDbConnection _connection;
-
+        //a
         protected BaseRepository()
         {
             _connection = new SqlConnection(_connectionString);
